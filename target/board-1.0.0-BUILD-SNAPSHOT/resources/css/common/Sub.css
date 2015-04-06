@@ -1,0 +1,75 @@
+@CHARSET "EUC-KR";
+#sub_icon{
+	padding-left:3px; padding-right:2px; width:8px;
+}
+.sub_side_bg{
+	background-image:url('/resources/img/main/sub_btn.png');
+	background-repeat:no-repeat;
+	background-size:100%;
+	height:40px;
+	padding-left:17px;
+	font-size:15px;
+	cursor:hand;
+	cursor:pointer;
+	font-weight:bolder;
+	color:#ffffff;
+}
+#Sub_header_text{
+	position:relative;
+	top:30px;
+	margin:0 auto;
+}
+#sub_header{
+	background-image:url('/resources/img/common/sub_header.jpg');
+	background-repeat:no-repeat;
+	background-size:100%;
+	height:92px;
+}
+#sub_contents{
+	width:100%;
+	border-collapse:collapse;
+}
+#sub_side{
+	 width:200px;
+	 height:100%;
+	 vertical-align:top;
+	 border-right:2px solid grey;
+}
+#sub_side_table{
+	 width:170px;
+	 height:100%;
+}
+#sub_content{
+}
+
+ #sub_content table{
+  width:98%; border:1px solid black; border-collapse:collapse; margin-top:10px;
+  border-bottom:1px solid grey;
+  font-family:"¸¼Àº °íµñ";
+  font-size:11px;
+  color:#333;
+ }
+ #sub_content table th{
+  background-color:rgba(198,198,198,0.5);
+  border:1px solid grey;
+  border-bottom-width:2px;
+  border-bottom-style:solid;
+  border-bottom-color:grey;
+  font-size:1.1em;
+  padding:6px;
+ }
+ #sub_content table td{
+  border:1px solid grey;
+  border-bottom-width:1px;
+  border-bottom-style:dotted;
+  border-bottom-color:grey;
+  padding:6px;
+ }
+ #sub_content table tr.a:hover{
+  background-color:#D9E5FF;
+  cursor:pointer;
+  cursor:hand;
+ }
+ #sub_title{
+ padding:12px 0px 0px 10px;
+ }

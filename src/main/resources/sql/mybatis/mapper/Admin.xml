@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="forms_mapper">
+	<select id="getPaymentListAdmin" resultType="com.kgmp.mfds.vo.Forms"  parameterType="Map" >
+		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from forms T1, (SELECT @rownum := 0) T2 where ${search} LIKE CONCAT('%', #{find}, '%') and (payment=2 or payment=3) ORDER BY forms_seq desc)as forms) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getPaymentQtyAdmin" resultType="int" parameterType="Map" >
+		select count(*) from (select * from forms where ${search} LIKE CONCAT('%', #{find}, '%'))as forms
+	</select>
+	<update id="modifyPaymetPicAdmin" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set payment_pic=#{payment_pic}, payment=3, payment_add_date=DATE_FORMAT(now(),'%Y/%m/%d') where forms_seq=#{forms_seq}
+	</update>
+	<select id="getMemberListAdmin" resultType="com.kgmp.mfds.vo.Member"  parameterType="Map" >
+		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from member T1, (SELECT @rownum := 0) T2 where ${search} LIKE CONCAT('%', #{find}, '%') ORDER BY member_seq desc)as member) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getMemberQtyAdmin" resultType="int" parameterType="Map" >
+		select count(*) from (select * from member where ${search} LIKE CONCAT('%', #{find}, '%'))as forms
+	</select>
+	<select id="selectMember" resultType="com.kgmp.mfds.vo.Member" parameterType="int" >
+		select * from member where member_seq=#{member_seq}
+	</select>
+	<select id="getHelpListAdmin" resultType="com.kgmp.mfds.vo.Forms"  parameterType="Map" >
+		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from forms T1, (SELECT @rownum := 0) T2 where ${search} LIKE CONCAT('%', #{find}, '%') and (help_state=1 or help_state=2 or help_state=3 or help_state=4) ORDER BY forms_seq desc)as forms) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getHelpQtyAdmin" resultType="int" parameterType="Map" >
+		select count(*) from (select * from forms where ${search} LIKE CONCAT('%', #{find}, '%'))as forms
+	</select>
+	<select id="AdminloginCheck" parameterType="com.kgmp.mfds.vo.Admin" resultType="com.kgmp.mfds.vo.Admin">
+		select * from admin_table where id=#{id} and pw=#{pw}
+	</select>
+	<update id="adminModify" parameterType="com.kgmp.mfds.vo.Admin">
+		update admin_table set id=#{id}, pw=#{pw}
+	</update>
+	<select id="adminInfo" resultType="com.kgmp.mfds.vo.Admin">
+		select * from admin_table
+	</select>
+</mapper>

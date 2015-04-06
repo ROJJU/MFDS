@@ -1,0 +1,28 @@
+@CHARSET "utf-8";
+ #sub_content table{
+  width:98%; border:1px solid black; border-collapse:collapse; margin-top:10px;
+  border-bottom:1px solid grey;
+  color:#333;
+  font-size:11px;
+ }
+ #sub_content table th{
+  background-color:rgba(198,198,198,0.5);
+  border:1px solid grey;
+  border-bottom-width:2px;
+  border-bottom-style:solid;
+  border-bottom-color:grey;
+  font-size:1.1em;
+  padding:6px;
+ }
+ #sub_content table td{
+  border:1px solid grey;
+  border-bottom-width:1px;
+  border-bottom-style:dotted;
+  border-bottom-color:grey;
+  padding:6px;
+ }
+ #sub_content table tr.a:hover{
+  background-color:#D9E5FF;
+  cursor:pointer;
+  cursor:hand;
+ }

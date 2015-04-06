@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/kgmp/mfds/controller/FileController.java=UTF-8
+encoding//src/main/java/com/kgmp/mfds/service/Notice_service_impl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/account/Forms.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/forms/LoadContent.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/forms/New_forms.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/forms/Search_popup.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/member/Join_step1.jsp=UTF-8
+encoding//src/main/webapp/resources/error/400error.jsp=UTF-8
+encoding//src/main/webapp/resources/inc/Main_header.jsp=UTF-8
+encoding//src/main/webapp/resources/inc/Side_menu.jsp=UTF-8
+encoding/<project>=UTF-8
