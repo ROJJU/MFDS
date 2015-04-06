@@ -7,7 +7,7 @@
 <link rel="shortcut icon" href="http://www.k-gmp.co.kr/favicon.ico"/>
 </head>
 <frameset rows="0,*" frameborder="no" framespacing="0"><frame src="/AdminLogin" frameborder="No" framespacing="0" marginheight="" marginwidth="0" noresize scrolling="no">
-<frame name="main" src="/Login2.do" frameborder="No" framespacing="0" noresize scrolling="auto">
+<frame name="main" src="/Login.do" frameborder="No" framespacing="0" noresize scrolling="auto">
 </frameset>
 <body>
 
