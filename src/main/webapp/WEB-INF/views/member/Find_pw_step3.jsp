@@ -40,7 +40,7 @@
 				</table><br>
 				<center>
 					<input type="image" src="/resources/img/btn/kr_back_btn.png" onclick="javaScript:history.go(-1)">
-					<input type="image" src="/resources/img/member/Submit_button.png" onclick="javaScript:location.href='/Login'"></center>
+					<input type="image" src="/resources/img/member/Submit_button.png" onclick="javaScript:location.href='/Login.do'"></center>
 			</div>
 		</div>
 	</body>
