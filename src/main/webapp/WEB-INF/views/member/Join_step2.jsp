@@ -44,7 +44,7 @@
 									<tr height="30px">
 										<td bgcolor="#BDBDBD">&nbsp;이메일 주소</td>
 										<td>
-											&nbsp;<input type="text" style="width:60px;" name="email1" readonly> @ <input type="text" style="width:90px;" name="email2" readonly>
+											&nbsp;<input type="text" style="width:60px;" name="email1" readonly onclick="emailClick(this);"> @ <input type="text" style="width:90px;" name="email2" readonly onclick="emailClick(this);">
 											&nbsp;<input type="button" value="이메일 인증" onclick="emailCheck()">
 											<input type="hidden">
 										</td>
@@ -138,6 +138,17 @@
 			function emailCheck(){
 					window.open('/MemberOTP.do','getPost','width=400 height=250 scrollbars=yes');
 			}
+			
+			function emailClick(email){
+				if(email.value==null||email.value==""){
+					window.open('/MemberOTP.do','getPost','width=400 height=250 scrollbars=yes');
+				}else{
+					if(confirm('이미 인증을 받았습니다. 변경하시겠습니까?')){
+						window.open('/MemberOTP.do','getPost','width=400 height=250 scrollbars=yes');
+					}
+				}
+				alert(test.value);
+		}
 		</script>
 	</body>
 </html>
