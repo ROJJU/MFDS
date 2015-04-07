@@ -194,4 +194,16 @@ public class Forms_service_impl implements Forms_service{
 			e.printStackTrace();
 		}
 	}
+	
+	public String update_otp(Forms forms){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.update_otp(forms);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
 }

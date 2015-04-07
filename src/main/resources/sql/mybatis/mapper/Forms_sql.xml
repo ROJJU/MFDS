@@ -51,5 +51,7 @@
 	<update id="updateContent1" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set contents1=null where forms_seq=#{forms_seq}
 	</update>
-<!--Forms e-->	
+	<update id="update_otp" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set otp=#{otp} where forms_seq=#{forms_seq}
+	</update>
 </mapper>

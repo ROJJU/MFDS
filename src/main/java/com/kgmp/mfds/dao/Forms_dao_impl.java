@@ -92,4 +92,7 @@ private SqlSession sqlSession;
 		public void updateContent1(Forms forms){
 			sqlSession.update("updateContent1", forms);
 		}
+		public void update_otp(Forms forms){
+			sqlSession.update("update_otp", forms);
+		}
 }

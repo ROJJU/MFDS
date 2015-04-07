@@ -150,8 +150,7 @@
 				var otp1=document.getElementById("otp1").value;
 				var otp2=document.getElementById("otp2").value;
 				if(otp1==otp2){
-					alert('확인되었습니다.');
-					goUrl('/Forms.do?forms_seq='+forms_seq+'&list_seq=1');
+					goUrl('/updateOtp.do?forms_seq='+forms_seq+'&list_seq=1&otp='+otp1);
 				}else{
 					alert('잘못된 OTP를 입력하셨습니다.');
 				}

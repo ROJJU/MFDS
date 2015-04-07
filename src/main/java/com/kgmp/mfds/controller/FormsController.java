@@ -436,7 +436,7 @@ public class FormsController {
 		mav.setViewName("/Check_proc");
 		return mav;
 	}
-	//TO DO~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
 	@RequestMapping(value = "/updateOtp.do")
 	public ModelAndView updateOtp(Model model,
 			@RequestParam("forms_seq") int forms_seq,
@@ -445,11 +445,10 @@ public class FormsController {
 		Forms forms = new Forms();
 		String check=null;
 		String msg="";
-		
 		forms.setOtp(otp);
 		forms.setForms_seq(forms_seq);
 		try{
-		check=forms_service.update_power(forms);
+		check=forms_service.update_otp(forms);
 		if(check.equals("yes")){
 			msg="성공하셨습니다.";
 		}else{
@@ -458,7 +457,7 @@ public class FormsController {
 		}catch(Exception e){
 		e.printStackTrace();
 		}
-		String url ="/NewForms.do?forms_seq="+forms_seq;
+		String url ="/Forms.do?forms_seq="+forms_seq+"&list_seq=1&otp="+otp;
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);
 		mav.setViewName("/Check_proc");

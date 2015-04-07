@@ -15,4 +15,5 @@ public interface Forms_service {
 	String update_mix(Forms forms);
 	String update_power(Forms forms);
 	void updateContent1(Forms forms);
+	String update_otp(Forms forms);
 }

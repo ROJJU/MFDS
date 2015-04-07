@@ -22,4 +22,5 @@ public interface Forms_dao {
 	void update_mix(Forms forms);
 	void update_power(Forms forms);
 	void updateContent1(Forms forms);
+	void update_otp(Forms forms);
 }

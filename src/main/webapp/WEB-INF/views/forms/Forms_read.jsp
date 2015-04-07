@@ -137,6 +137,8 @@
 		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
 		  <%}%>
 	  }
+	 
+	;
 	</script>
 </head>
 	<body>
@@ -146,6 +148,8 @@
 			<div id="total_content">
 				<jsp:include page="/resources/inc/Sub_header.jsp"/>
 				<div>
+				<input type="hidden" value="${forms.otp}" name="otp1" id="otp1">
+				<input type="hidden" value="<%=request.getParameter("otp")%>" name="otp2" id="otp2">
 					<table id="container">
 						<tr>
 							<td id="side_menu_place2" rowspan="1">
@@ -184,6 +188,16 @@
 		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 		<script type="text/javascript">
+		function CheckOtp(){
+				var otp1=document.getElementById("otp1").value;
+				var otp2=document.getElementById("otp2").value;
+				if(otp1==otp2){
+					//..ok
+				}else{
+					alert('OTP가 잘못되었습니다.. 메인페이지로 돌아갑니다.');
+					location.href='/Main.do';
+				}
+			}CheckOtp();
 		var forms_seq2=document.getElementById("forms_seq").value;
 		requestHello('1');
 		 
