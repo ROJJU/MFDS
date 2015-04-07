@@ -39,7 +39,7 @@
 						<br>
 						<input type="text" value="(<%=request.getParameter("post2") %>)<%=request.getParameter("post") %>" style="width:98%; height:20px;" readonly id="post1">
 						<hr>
-						나머지 주소를 입력하신 후 <font color="red">'주소입력'</font> 버튼을 눌러주세요.<br><br>
+						나머지 주소를 입력하신 후 <font color="red">[주소입력]</font> 버튼을 눌러주세요.<br><br>
 						<input type="text" style="width:98%; height:20px;" id="post2"><br><br>
 					</div><br>
 					</form>
