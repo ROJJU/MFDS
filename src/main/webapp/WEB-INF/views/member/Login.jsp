@@ -87,11 +87,11 @@
 				</div>
 	
 				<div data-iview:image="/resources/img/member/main3.jpg" data-iview:type="video" data-iview:transition="strip-right-fade,strip-left-fade">
-					<video src="/resources/img/common/Dream.mp4" controls width="100%" poster="/resources/img/member/main3.jpg"></video>
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/xq72hc4va9w" frameborder="0" allowfullscreen></iframe>
+					<!--  <video src="https://www.youtube.com/watch?v=xq72hc4va9w&feature=youtu.be" controls width="100%" poster="/resources/img/member/main3.jpg"></video>-->
 					<div class="iview-caption caption2" data-x="450" data-y="340" data-transition="wipeRight">Video</div>
-					<div class="iview-caption caption3" data-x="600" data-y="345" data-transition="wipeLeft">Support</div>
+					<div class="iview-caption caption3" data-x="600" data-y="345" data-transition="wipeLeft">Click!!</div>
 				</div>
-	
 				<div data-iview:image="<c:url value="/resources/img/member/main4.jpg"/>">
 					<div class="iview-caption blackcaption" data-x="15" data-y="65" data-transition="wipeLeft" data-easing="easeInOutElastic" style="width:280px; font-size:40px; background-color:#c4302b;">STED</div>
 					<div class="iview-caption blackcaption" data-x="15" data-y="135" data-transition="wipeLeft" data-easing="easeInOutElastic" style="width:280px;">▶ 웹페이지의 상호 호환성 가능</div>
