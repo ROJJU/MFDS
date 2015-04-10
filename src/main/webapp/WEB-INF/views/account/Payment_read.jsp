@@ -100,7 +100,7 @@
 																	<font color="red">아직 입금 확인이 안된 파일 입니다.</font>
 																</c:when>
 																<c:otherwise>
-																	<input type="button" value="세금계산서 보기" onclick="show_pic()" id="payment_pic_btn">
+																	<input type="image" src="/resources/img/account/bill.png"  onclick="show_pic()" id="payment_pic_btn">
 																	<div id="my_payment">
 																		<img src="/save/payment/${forms.payment_pic}" id="payment_pic" width="90%">
 																		<form action="/resources/inc/Download.jsp" method="post" name="down">
@@ -115,9 +115,9 @@
 													</table>
 													<div align="left"><br><br>
 													<center>
-														<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="50px;">
-														&nbsp;<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('my_payment').innerHTML)" width="50xp;">
-														&nbsp;<input type="image" src="/resources/img/btn/down_button.png" width="50px;" onclick="javaScript:document.down.submit();">
+														<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="60px;">
+														&nbsp;<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('my_payment').innerHTML)" width="60xp;">
+														&nbsp;<input type="image" src="/resources/img/btn/down_button.png" width="60px;" onclick="javaScript:document.down.submit();">
 													</center>
 													<br><hr>
 													<img src="/resources/img/common/kgmp_address.png" width="500px"><br><br><br><br>

@@ -175,7 +175,7 @@ int next =list_seq+1;
 									<tr>
 										<td style="border:1px solid black; padding:5px;" align="right">
 											<font color="red">가이드 라인 확인 버튼을 누르시면 해당 서식에 관한 예시 서류를 확인할 수 있습니다.</font>&nbsp;&nbsp;&nbsp;
-											<input type="button" value="가이드 라인 확인" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
+											<input type="image" src="/resources/img/btn/guide.png" width="40px" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
 										</td>
 									</tr>
 								</table>
@@ -226,16 +226,16 @@ int next =list_seq+1;
 								<br>
 								<div>
 									<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
-									<input type="image" src="/resources/img/btn/kr_back_btn.png" width="50px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=back%>')">
-									<input type="image" src="/resources/img/btn/kr_next_btn.png" width="50px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=next%>')">
-									<input type="image" src="/resources/img/btn/yetSave_button.png" width="50px;" onclick="onWrite()">
-								    <input type="image" src="/resources/img/btn/list_btn.png" width="50px;" onclick="goUrl('/MyPage.do?page_seq=6')">
+									<input type="image" src="/resources/img/btn/kr_back_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=back%>')">
+									<input type="image" src="/resources/img/btn/kr_next_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=next%>')">
+									<input type="image" src="/resources/img/btn/yetSave_button.png" width="60px;" onclick="onWrite()">
+								    <input type="image" src="/resources/img/btn/list_btn.png" width="60px;" onclick="goUrl('/MyPage.do?page_seq=6')">
 								    <c:choose>
 										<c:when test="${forms.contents1==null||forms.contents2==null||forms.contents3==null||forms.contents4==null||forms.contents5==null||forms.contents6==null||forms.contents7==null||forms.contents8==null||forms.contents10==null||forms.contents11==null||forms.contents12==null||forms.contents13==null||forms.contents14==null||forms.contents15==null||forms.contents16==null||forms.contents17==null||forms.contents18==null||forms.contents19==null||forms.contents20==null||forms.contents21==null||forms.contents22==null||forms.contents23==null||forms.contents24==null||forms.contents25==null||forms.contents26==null||forms.contents27==null||forms.contents28==null||forms.contents29==null||forms.contents30==null||forms.contents31==null||forms.contents32==null||forms.contents33==null||forms.contents34==null||forms.contents35==null||forms.contents36==null||forms.contents37==null}">
-											<input type="image" src="/resources/img/btn/final_button.png" width="50px" onclick="alert('작성하지 않은 서류가 있습니다.')">
+											<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="alert('작성하지 않은 서류가 있습니다.')">
 										</c:when>
 										<c:otherwise>
-											<input type="image" src="/resources/img/btn/final_button.png" width="50px" onclick="finalSave(${forms.forms_seq})">
+											<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="finalSave(${forms.forms_seq})">
 										</c:otherwise>
 									</c:choose>
 								</div><br><br><br><br>

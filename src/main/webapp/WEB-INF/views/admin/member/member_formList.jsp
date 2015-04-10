@@ -88,7 +88,7 @@
 					</td>
 				</tr>
 			</table><br><br>
-			<input type="image" src="/resources/img/btn/list_btn.png" onclick="goUrl('/AdminMember.do?page_seq=14')" width="50px;"><br><br>
+			<input type="image" src="/resources/img/btn/list_btn.png" onclick="goUrl('/AdminMember.do?page_seq=14')" width="60px;"><br><br>
 		</td>
     </tr>
 </table>

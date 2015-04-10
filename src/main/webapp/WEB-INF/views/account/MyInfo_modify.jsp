@@ -163,8 +163,8 @@
 										<hr>
 											<br><br>
 										</form>
-											<input type="image" src="/resources/img/btn/modify_btn.png" onclick="formCheck();">
-											<input type="image" src="/resources/img/member/cancel_btn.png" onclick="javaScript:history.go(-1)">
+											<input type="image" src="/resources/img/btn/modify_btn.png" onclick="formCheck();" width="60px">
+											<input type="image" src="/resources/img/btn/cancel_button.png" onclick="javaScript:history.go(-1)" width="60px">
 											<br><br>
 										</td>
 									</tr>

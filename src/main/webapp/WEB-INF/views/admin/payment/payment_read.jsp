@@ -78,11 +78,11 @@
 								<div align="left"><br><br>
 								<center>
 								<%if(request.getParameter("side_seq").equals("1")){%>
-									<input type="button" value="세금 계산서 수정" onclick="goUrl('/AdminPayment.do?page_seq=13&side_seq=<%=request.getParameter("side_seq")%>&forms_seq=${forms.forms_seq}')">
+									<input type="image" src="/resources/img/account/bill.png" width="72px" onclick="goUrl('/AdminPayment.do?page_seq=13&side_seq=<%=request.getParameter("side_seq")%>&forms_seq=${forms.forms_seq}')">
 								<%}else{%>
-									<input type="button" value="세금 계산서 입력" onclick="goUrl('/AdminPayment.do?page_seq=13&side_seq=<%=request.getParameter("side_seq")%>&forms_seq=${forms.forms_seq}')">
+									<input type="image" src="/resources/img/account/bill.png" width="72px" onclick="goUrl('/AdminPayment.do?page_seq=13&side_seq=<%=request.getParameter("side_seq")%>&forms_seq=${forms.forms_seq}')">
 								<%}%>
-									<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="50px;">
+									<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="60px;">
 								</center>
 								<br><hr>
 								<img src="/resources/img/common/kgmp_address.png" width="500px"><br><br><br><br>

@@ -59,7 +59,7 @@
 				</tr>
 			</c:forEach>
 			</table><br>
-			<input type="image" src="/resources/img/main/input_button.png" onclick="goUrl('/AdminNews.do?page_seq=6&side_seq=1')" width="50px;"><br><br>
+			<input type="image" src="/resources/img/main/input_button.png" onclick="goUrl('/AdminNews.do?page_seq=6&side_seq=1')" width="60px;"><br><br>
 			<center>${pageList}</center><br><br><br><br>
 		</td>
     </tr>

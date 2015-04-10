@@ -74,8 +74,8 @@
 							</table>
 							<div align="left"><br><br>
 								<center>
-									<input type="image" src="/resources/img/btn/save_btn.png" onclick="javaScript:document.payment_pic.submit()" width="50px">
-									<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-2);" width="50px;">
+									<input type="image" src="/resources/img/btn/save_btn.png" onclick="javaScript:document.payment_pic.submit()" width="60px">
+									<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-2);" width="60px;">
 								</center>
 								<br><hr>
 								<img src="/resources/img/common/kgmp_address.png" width="500px"><br><br><br><br>

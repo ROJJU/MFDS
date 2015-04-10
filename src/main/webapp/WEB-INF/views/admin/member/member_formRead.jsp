@@ -27,8 +27,8 @@
 				<b id="form"></b>
 			</form>
 		</div><br><br>
-			<input type="image" src="/resources/img/btn/kr_back_btn.png" width="50px;" onclick="javaScript:history.go(-1);">
-			<input type="image" src="/resources/img/btn/list_btn.png" onclick="goUrl('/AdminMember.do?page_seq=14')" width="50px;"><br><br>
+			<input type="image" src="/resources/img/btn/kr_back_btn.png" width="60px;" onclick="javaScript:history.go(-1);">
+			<input type="image" src="/resources/img/btn/list_btn.png" onclick="goUrl('/AdminMember.do?page_seq=14')" width="60px;"><br><br>
 		</td>
     </tr>
 </table>

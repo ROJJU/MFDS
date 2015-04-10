@@ -57,7 +57,7 @@
 														<td colspan="7" align="left">${notice.content}</td>
 													</tr>
 												</table><br>
-												<input type="image" src="/resources/img/btn/list_btn.png" onclick="javaScript:history.go(-1)" width="50px;">
+												<input type="image" src="/resources/img/btn/list_btn.png" onclick="javaScript:history.go(-1)" width="60px;">
 												<br><br><br><br><br>
 											</td>
 										</tr>

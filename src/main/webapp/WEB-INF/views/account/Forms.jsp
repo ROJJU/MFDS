@@ -66,7 +66,7 @@
 															<img src="/resources/img/forms/Books2.png" width="20px"><a class="file_text" href="/MyPage.do?page_seq=6">모두(<font color="black">${countAll}</font>)</a>&nbsp;
 														  	<img src="/resources/img/forms/Books1.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=1">임시저장(<font color="red">${countIng}</font>)</a>&nbsp;
 														 	<img src="/resources/img/forms/Books.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=2">작성완료(<font color="blue">${countDone}</font>)</a>&nbsp;
-														 	<input type="button" value="새로고침" onclick="location.href='/MyPage.do?page_seq=6';">
+														 	<input type="image" src="/resources/img/account/calendar_re.png" width="60px;" onclick="location.href='/MyPage.do?page_seq=6';">
 														</td>
 													</tr>
 												</table>
@@ -98,7 +98,25 @@
 																		</c:if>
 																	</c:if>
 																		<c:if test="${a.state=='1'}"><input type="image" src="/resources/img/forms/Books1.png"></c:if>
-																		<c:if test="${a.state=='2'}"><input type="image" src="/resources/img/forms/Books.png"></c:if>
+																		<c:if test="${a.state=='2'}">
+																			<c:choose>
+																				<c:when test="${a.help_state=='1'}">
+																					<input type="image" src="/resources/img/forms/Books_help1.png">
+																				</c:when>
+																				<c:when test="${a.help_state=='2'}">
+																					<input type="image" src="/resources/img/forms/Books_help2.png">
+																				</c:when>
+																				<c:when test="${a.help_state=='3'}">
+																					<input type="image" src="/resources/img/forms/Books_help1.png">
+																				</c:when>
+																				<c:when test="${a.help_state=='4'}">
+																					<input type="image" src="/resources/img/forms/Books_help2.png">
+																				</c:when>
+																				<c:otherwise>
+																					<input type="image" src="/resources/img/forms/Books.png">
+																				</c:otherwise>
+																			</c:choose>
+																		</c:if>
 																		<br>
 																		<c:if test="${a.payment=='1'}"><b style="color:red;">[미결제]</b></c:if>
 																		<c:if test="${a.payment=='2'}"><b style="color:blue;">[결제대기]</b></c:if>

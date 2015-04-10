@@ -11,10 +11,10 @@
 						 | <input type="image" src="/resources/img/btn/saveHWP_button.png" onClick="javaScript:save_hwp()" width="70px">
 						 <c:choose>
 				 			<c:when test="${forms.help_state==3||forms.help_state==1}">
-				 				| <input type="image" src="/resources/img/btn/modify_btn.png" onclick="javaScript:alert('보완 신청 진행 중 에는 수정할 수 없습니다.')" width="45px">
+				 				| <input type="image" src="/resources/img/btn/top_modify.png" onclick="javaScript:alert('보완 신청 진행 중 에는 수정할 수 없습니다.')" width="39px">
 				 			</c:when>
 				 			<c:otherwise>
-				 				| <input type="image" src="/resources/img/btn/modify_btn.png" onClick="goUrl('/NewForms.do?forms_seq=${forms.forms_seq}')" width="45px">
+				 				| <input type="image" src="/resources/img/btn/top_modify.png" onClick="goUrl('/NewForms.do?forms_seq=${forms.forms_seq}')" width="39px">
 				 			</c:otherwise>
 				 		</c:choose>
 						 <c:choose>
@@ -24,10 +24,10 @@
 						 	<c:otherwise>
 						 		<c:choose>
 						 			<c:when test="${forms.help_state==3||forms.help_state==1}">
-						 				| <input type="button" value="보완신청" onclick="javaScript:alert('보완 신청 진행 중 입니다.')">
+						 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="javaScript:alert('보완 신청 진행 중 입니다.')">
 						 			</c:when>
 						 			<c:otherwise>
-						 				| <input type="button" value="보완신청" onclick="help(${forms.forms_seq}, ${forms.help_state})">
+						 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="help(${forms.forms_seq}, ${forms.help_state})">
 						 			</c:otherwise>
 						 		</c:choose>
 						 	</c:otherwise>
@@ -36,18 +36,18 @@
 					<c:otherwise>
 						<c:choose>
 							<c:when test="${forms.mix=='1'}">
-								| <input type="button" value="조합의료기기 X" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+								| <input type="image" src="/resources/img/forms/mix_x.png" width="100px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
 							</c:when>
 							<c:otherwise>
-								| <input type="button" value="조합의료기기 O" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+								| <input type="button" src="/resources/img/forms/mix_o.png" width="100px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
 							</c:otherwise>
 						</c:choose>
 						<c:choose>
 							<c:when test="${forms.power=='1'}">
-								| <input type="button" value="전기 미사용" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
+								| <input type="image" src="/resources/img/forms/power_x.png" width="75px" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
 							</c:when>
 							<c:otherwise>
-								| <input type="button" value="전기 사용" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
+								| <input type="image" src="/resources/img/forms/power_o.png" width="75px"onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
 							</c:otherwise>
 						</c:choose>
 					</c:otherwise>

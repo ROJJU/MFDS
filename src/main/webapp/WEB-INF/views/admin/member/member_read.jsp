@@ -99,7 +99,7 @@
 					</td>
 				</tr>
 			</table><br>
-			<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="50px;"><br><br>
+			<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="60px;"><br><br>
 		</td>
     </tr>
 </table>

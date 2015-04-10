@@ -7,9 +7,9 @@
 	<body>
 		<div style=" background-color:#ffffff; text-align:center; height:34px; border-bottom:1px solid grey;">
 			HWP 저장 : 
-			<input type="button" value="Part1" onclick="HwpItPart1(<%=request.getParameter("forms_seq")%>)">
-			<input type="button" value="Part2" onclick="HwpItPart2(<%=request.getParameter("forms_seq")%>)">
-			<input type="button" value="Part3" onclick="HwpItPart3(<%=request.getParameter("forms_seq")%>)">
+			<input type="image" src="/resources/img/btn/Part1.png" width="40px" onclick="HwpItPart1(<%=request.getParameter("forms_seq")%>)">
+			<input type="image" src="/resources/img/btn/Part1.png" width="40px" onclick="HwpItPart2(<%=request.getParameter("forms_seq")%>)">
+			<input type="image" src="/resources/img/btn/Part1.png" width="40px" onclick="HwpItPart3(<%=request.getParameter("forms_seq")%>)">
 		</div>
 		<div style="height:12px;"></div>
 		<div  style="overflow-x:scroll; max-width:240px;">

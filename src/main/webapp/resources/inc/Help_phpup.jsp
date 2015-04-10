@@ -28,11 +28,10 @@
 			<input type="hidden" name="content_state" value="help_content2">
 			<%}%>
 		</form><br>
-		<p style="color:red; font-size:12px;">보완 서류는 담당직원이 검토 후 금액을 산정하여 가입 시 입력된 이메일로 관련 사항을 보내드립니다.<br>보완은 평균 입금 확인 후 24시간 내에 완성이 되며 총 2회까지 신청 가능 합니다.<br>
-		2회 이상은 신청이 되지 않으니 주의 바랍니다.</p> 
+		<img src="/resources/img/forms/help.jpg" width="100%"><br><br>
 		<center>
-			<input type="button" value="닫기" onclick="javaScript:window.close();">
-			<input type="button" value="보완신청" onclick="javaScript:document.help.submit();">
+			<input type="image" src="/resources/img/btn/close_btn.png" width="60px" onclick="javaScript:window.close();">
+			<input type="image" src="/resources/img/btn/help_btn.png" width="71px" onclick="javaScript:document.help.submit();">
 		</center>
 	</div>
 </body>

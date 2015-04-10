@@ -30,8 +30,8 @@
 				</div><br>
 			</form>
 			<div class="buttonDiv">
-			  	<input type="image" src="/resources/img/btn/write_btn.png" onclick="onWrite()" width="50px">
-			    <input type="image" src="/resources/img/btn/cancel_button.png" onclick="goUrl('/AdminNews.do?page_seq=1&side_seq=0');" width="50px">
+			  	<input type="image" src="/resources/img/btn/write_btn.png" onclick="onWrite()" width="60px">
+			    <input type="image" src="/resources/img/btn/cancel_button.png" onclick="goUrl('/AdminNews.do?page_seq=1&side_seq=0');" width="60px">
 		 	</div><br><br><br><br>
 		</td>
     </tr>

@@ -279,8 +279,8 @@ int a=-1;
 																<a href="/MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>"><input type="image" src="/resources/img/common/but-pre.png"></a>
 																&nbsp;<b style="font-size:40px;"><%=year%>년<%=month%>월</b>
 														  		<a href="/MyPage.do?page_seq=7&year=<%= month+1==13?year+1:year%>&month=<%=month+1==13?1:month+1 %>&forms_seq=<%=forms_seq%>"><input type="image" src="/resources/img/common/but-next.png"></a>
-																<br><br><input type="image" src="/resources/img/account/calendar_today.png" onclick = "goToday(<%=nowYear%>, <%=nowMonth%>)">
-																<input type="image" src="/resources/img/account/calendar_re.png" onclick="goUrl('/MyPage.do?page_seq=7')">
+																<br><br><input type="image" src="/resources/img/account/calendar_today.png" width="65px" onclick = "goToday(<%=nowYear%>, <%=nowMonth%>)">
+																<input type="image" src="/resources/img/account/calendar_re.png" width="65px" onclick="goUrl('/MyPage.do?page_seq=7')">
 														<br><br>
 													</div>
 													<div id="Table" width="100%">

@@ -42,9 +42,9 @@
 				<td colspan="7" align="left">${news.content}</td>
 			</tr>
 		</table><br>
-			<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="50px;">
-			<input type="image" src="/resources/img/btn/modify_btn.png" width="50px;" onclick="goUrl('/AdminNews.do?page_seq=9&news_seq=${news.news_seq}&side_seq=0');">
-			<input type="image" src="/resources/img/btn/del_button.png" width="50px" onclick="goUrl('/AdminNews.do?page_seq=10&news_seq=${news.news_seq}');">
+			<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="60px;">
+			<input type="image" src="/resources/img/btn/modify_btn.png" width="60px;" onclick="goUrl('/AdminNews.do?page_seq=9&news_seq=${news.news_seq}&side_seq=0');">
+			<input type="image" src="/resources/img/btn/del_button.png" width="60px" onclick="goUrl('/AdminNews.do?page_seq=10&news_seq=${news.news_seq}');">
 			<br><br><br><br><br>
 		</td>
     </tr>

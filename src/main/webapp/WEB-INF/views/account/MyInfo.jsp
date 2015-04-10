@@ -182,8 +182,8 @@
 								<table id="button" width="1064px">
 									<tr height=100px;>
 										<td align="center"><br>
-										<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('certificate').innerHTML)" width="50px">&nbsp;
-										<input type="image" src="/resources/img/btn/modify_btn.png" onclick="goUrl('/MyPage.do?page_seq=2');" width="50px">
+										<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('certificate').innerHTML)" width="60px">&nbsp;
+										<input type="image" src="/resources/img/btn/modify_btn.png" onclick="goUrl('/MyPage.do?page_seq=2');" width="60px">
 										<br><br>
 										</td>
 									</tr>
