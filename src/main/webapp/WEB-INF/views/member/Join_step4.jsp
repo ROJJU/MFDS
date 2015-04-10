@@ -155,8 +155,7 @@
 						<td align="center"><br>
 						<input type="image" src='<c:url value="/resources/img/member/Login_button_small.png"/>' onclick="javaScript:location.href='/Login.do'" height="47px;">&nbsp;
 						<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('body').innerHTML)"><br><br>
-						<font size="1.5px"><a href="#">이용약관</a> | <a href="#"><b>개인정보취급방침</b></a> | <a href="#">책임의 한계와 법적고지</a> | <a href="#">회원정보 고객센터</a></font><br><br>
-						<img src="<c:url value="/resources/img/common/kgmp_logo.gif"/>" width="50px">&nbsp;<font size="1px">Copyright © <b>K-GMP Corp.</b> All Rights Reserved.</font>
+						<hr><jsp:include page="/resources/inc/Member_footer.jsp"/>
 						</td>
 					</tr>
 				</table>

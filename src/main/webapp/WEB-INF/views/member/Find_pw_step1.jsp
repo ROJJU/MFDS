@@ -63,6 +63,8 @@
 						</td>
 					</tr>
 				</table>
+				<hr>
+				<jsp:include page="/resources/inc/Member_footer.jsp"/>
 			</div>
 		</div>
 	</body>

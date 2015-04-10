@@ -76,7 +76,7 @@
 										<td><b>이메일 주소</b></td>
 										<td>
 											<input type="text" style="width:60px;" name="email1" >
-										  @ <input type="text" style="width:62.5px;" name="email2" >
+										  @ <input type="text" style="width:85px;" name="email2" >
 										</td><td></td>
 									</tr>
 								</table>
@@ -90,7 +90,9 @@
 				<center>
 					<input type="image" src="/resources/img/btn/kr_back_btn.png" onclick="javaScript:history.go(-1)">
 					<input type="image" src="/resources/img/btn/kr_next_btn.png" onclick="formCheck();">
-				</center>
+				</center><br>
+				<hr>
+				<jsp:include page="/resources/inc/Member_footer.jsp"/>
 			</div>
 		</div>
 	</body>

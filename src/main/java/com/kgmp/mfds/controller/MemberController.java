@@ -2,12 +2,12 @@ package com.kgmp.mfds.controller;
 
 
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
 
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -31,7 +31,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kgmp.mfds.FileUpload;
 import com.kgmp.mfds.service.Account_service;
 import com.kgmp.mfds.service.Member_service;
-import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
 
 
@@ -573,5 +572,17 @@ public class MemberController {
     public String MemberOtp(Model model){
 		
 		return "/member/Otp";
+	}
+	
+	@RequestMapping(value = "/MemberTerms.do")
+    public String MemberTerms(Model model){
+		
+		return "/member/MemberTerms";
+	}
+	
+	@RequestMapping(value = "/MemberInfo.do")
+    public String MemberInfo(Model model){
+		
+		return "/member/MemberInfo";
 	}
 }

@@ -22,3 +22,10 @@
 	border:1px solid grey;
 	height:120px;
 	}
+	a{
+	text-decoration:none;
+	color:grey;
+	}
+	a:hover{
+	color:blue;
+	}

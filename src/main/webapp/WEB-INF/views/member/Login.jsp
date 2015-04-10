@@ -116,10 +116,7 @@
 	    <div class="btn-sign">
 			<a href="#login-box" class="login-window">Log in / Sign In</a>
 	    </div><br><br><br>
-	    <center>
-			<font size="1.5px"><a href="#" class="text">이용약관 | </a><a href="#" class="text">개인정보취급방침 | </a><a href="#" class="text">책임의 한계와 법적고지 | </a><a href="#" class="text">회원정보 고객센터</a></font><br><br>
-			<img src="<c:url value="/resources/img/common/kgmp_logo.gif"/>" width="50px">&nbsp;<font size="1px" color="grey">Copyright © <b>K-GMP Corp.</b> All Rights Reserved.</font>
-		</center><br><br>
+	   <jsp:include page="/resources/inc/Member_footer.jsp"/>
 	</div>
 <!--pop up box!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->        
      <div id="login-box" class="login-popup">

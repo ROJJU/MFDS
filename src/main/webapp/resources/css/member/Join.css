@@ -43,3 +43,10 @@
 			width:800px;
 			}
 			table#sign{width:800px;}
+			a{
+			text-decoration:none;
+			color:grey;
+			}
+			a:hover{
+			color:blue;
+			}

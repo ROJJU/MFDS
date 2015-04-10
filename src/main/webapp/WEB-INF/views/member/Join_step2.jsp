@@ -76,8 +76,7 @@
 				<table id="button" width="1064px">
 					<tr height=100px;>
 						<td align="center"><br>
-						<font size="1.5px"><a href="#">이용약관</a> | <a href="#"><b>개인정보취급방침</b></a> | <a href="#">책임의 한계와 법적고지</a> | <a href="#">회원정보 고객센터</a></font><br><br>
-						<img src="<c:url value="/resources/img/common/kgmp_logo.gif"/>" width="50px">&nbsp;<font size="1px">Copyright © <b>K-GMP Corp.</b> All Rights Reserved.</font>
+						<hr><jsp:include page="/resources/inc/Member_footer.jsp"/>
 						</td>
 					</tr>
 				</table>

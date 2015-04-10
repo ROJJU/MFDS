@@ -29,6 +29,13 @@
 			background-color:#ffffff;
 			height:120px;
 			}
+			a{
+			text-decoration:none;
+			color:grey;
+			}
+			a:hover{
+			color:blue;
+			}
 		</style>
 		<script type="text/javascript">
 		function checkAgree(){
@@ -257,8 +264,7 @@ STED SYSTEM의 회원 아이디(ID) 및 비밀번호의 비밀번호는 암호�
 					<tr height=100px;>
 						<td align="center"><br>
 						<input type="image" src="/resources/img/member/Agree_button.png" onclick="checkAgree();">&nbsp;<input type="image" src="/resources/img/member/Don't_agree_button.png" onclick="checkDontAgree();"><br><br>
-						<font size="1.5px"><a href="#">이용약관</a> | <a href="#"><b>개인정보취급방침</b></a> | <a href="#">책임의 한계와 법적고지</a> | <a href="#">회원정보 고객센터</a></font><br><br>
-						<img src="<c:url value="/resources/img/common/kgmp_logo.gif"/>"  width="50px">&nbsp;<font size="1px">Copyright © <b>K-GMP Corp.</b> All Rights Reserved.</font>
+						<hr><jsp:include page="/resources/inc/Member_footer.jsp"/>
 						</td>
 					</tr>
 				</table><br><br><br><br>
