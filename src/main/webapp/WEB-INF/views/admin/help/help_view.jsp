@@ -64,18 +64,18 @@
 							<c:if test="${a.help_state=='3'}"><font color="red">[보완 2차 신청]</font></c:if>
 							<c:if test="${a.help_state=='4'}"><font color="blue">[보완 2차 완료(최종)]</font></c:if>
 						</td>
-						<td><input type="button" value="신청내용보기" onclick="goUrl('/AdminHelp.do?page_seq=19&forms_seq=${a.forms_seq}')"></td>
+						<td><input type="image" src="/resources/img/admin/look.png" width="70px" onclick="goUrl('/AdminHelp.do?page_seq=19&forms_seq=${a.forms_seq}')"></td>
 						<td>
 						<c:choose>
 							<c:when test="${a.help_state=='1'||a.help_state=='3'}">
-								<input type="button" value="보완하기" onclick="goUrl('/AdminHelp.do?page_seq=20&forms_seq=${a.forms_seq}&list_seq=1')">
+								<input type="image" src="/resources/img/admin/help.png" width="60px" onclick="goUrl('/AdminHelp.do?page_seq=20&forms_seq=${a.forms_seq}&list_seq=1')">
 							</c:when>
 							<c:otherwise>
 								완료처리
 							</c:otherwise>
 						</c:choose>
 						</td>
-						<td><a href="mailto:${a.email1}@${a.email2}"><input type="button" value="계산서 발급"></a></td>
+						<td><a href="mailto:${a.email1}@${a.email2}"><input type="image" width="70px" src="/resources/img/admin/admin_bill.png" value="계산서 발급"></a></td>
 					</tr>
 				</c:forEach>
 			</table><br><br>

@@ -62,10 +62,10 @@
 					<td align="center">${a.company_phone1}-${a.company_phone2}-${a.company_phone3}</td>
 					<td align="center">${a.join_date}</td>
 					<td align="center">
-						<input type="button" value="상세보기" onclick="goUrl('/AdminMember.do?page_seq=15&member_seq=${a.member_seq}')">
+						<input type="image" src="/resources/img/admin/more.png" width="50px" title="상세보기" onclick="goUrl('/AdminMember.do?page_seq=15&member_seq=${a.member_seq}')">
 					</td>
 					<td align="center">
-						<input type="button" value="문서보기" onclick="goUrl('/AdminMember.do?page_seq=16&member_seq=${a.member_seq}&id1=${a.id1}&id2=${a.id2}&id3=${a.id3}&email1=${a.email1}&email2=${a.email2}')">
+						<input type="image" src="/resources/img/admin/form.png" width="50px" title="문서보기" onclick="goUrl('/AdminMember.do?page_seq=16&member_seq=${a.member_seq}&id1=${a.id1}&id2=${a.id2}&id3=${a.id3}&email1=${a.email1}&email2=${a.email2}')">
 					</td>
 				</tr>
 			</c:forEach>

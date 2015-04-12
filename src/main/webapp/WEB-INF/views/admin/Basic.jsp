@@ -28,7 +28,7 @@
 					</tr>
 				</table><br>
 			</form>
-			<center><input type="button" value="수정하기" onclick="document.adminInfo.submit()"></center>
+			<center><input type="image" src="/resources/img/btn/modify_btn.png" width="60px" onclick="document.adminInfo.submit()"></center>
 		</td>
     </tr>
 </table>
