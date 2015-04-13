@@ -21,6 +21,7 @@
 		<form action="/helpProc.do" method="post" name="help">
 			<input type="hidden" name="forms_seq" value="<%=request.getParameter("forms_seq")%>">
 			<input type="hidden" name="help_state" value="1">
+			<input type="hidden" name="otp" value="<%=request.getParameter("otp")%>">
 			<textarea style="width:100%;" rows="4" name="help_content"></textarea>
 			<%if(request.getParameter("help_state").equals("0")){%>
 			<input type="hidden" name="content_state" value="help_content">

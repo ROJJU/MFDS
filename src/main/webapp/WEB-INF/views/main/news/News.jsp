@@ -35,7 +35,7 @@
 													</table>
 													<div align="left" id="sub_title"><img src="/resources/img/forms/next.gif">&nbsp;News</div>
 													<div align="right" style="width:98%; padding-right:1px; padding-top:5px;">
-														<form action="/News" method="post" name="notice">
+														<form action="/News.do" method="post" name="notice">
 															<div id ="serch">
 																<select name="search">
 																	<option value="all">ALL</option>

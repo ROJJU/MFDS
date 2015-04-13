@@ -27,7 +27,7 @@
 						 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="javaScript:alert('보완 신청 진행 중 입니다.')">
 						 			</c:when>
 						 			<c:otherwise>
-						 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="help(${forms.forms_seq}, ${forms.help_state})">
+						 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="help(${forms.forms_seq}, ${forms.help_state}, <%=request.getParameter("otp")%>)">
 						 			</c:otherwise>
 						 		</c:choose>
 						 	</c:otherwise>

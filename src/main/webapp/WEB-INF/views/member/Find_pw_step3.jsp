@@ -30,8 +30,7 @@
 								</tr>
 								<tr>
 									<td width="100%" align="center">
-										<c:if test="${memberInfo.pw_1==null}"><img src="/resources/img/common/coution.gif">&nbsp;<b style="color:red;">해당 정보로 등록된 회원이 없습니다.</b></c:if>
-										<h1 style="color:#4374D9;">${memberInfo.pw_1}</h1>
+										<img src="/resources/img/common/coution.gif">&nbsp;<b style="color:red;">해당 정보로 등록된 비밀번호가 입력하신 E-MAIL로 전송되었습니다.</b>
 									</td>
 								</tr>
 							</table>

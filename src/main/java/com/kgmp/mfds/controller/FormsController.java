@@ -335,7 +335,8 @@ public class FormsController {
 	public ModelAndView help(Model model,
 						@RequestParam("forms_seq") int forms_seq,
 						@RequestParam("help_content") String help_content,
-						@RequestParam("content_state") String content_state){
+						@RequestParam("content_state") String content_state,
+						@RequestParam("otp") String otp){
 		ModelAndView mav = new ModelAndView();
 		String msg="";
 		//setting parameter s
@@ -361,7 +362,7 @@ public class FormsController {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		String url ="/Forms.do?forms_seq="+forms_seq;
+		String url ="/Forms.do?forms_seq="+forms_seq+"&otp="+otp;
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);
 		mav.setViewName("/Opener_check_proc");

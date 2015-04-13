@@ -34,9 +34,8 @@
 									</td>
 								</tr>
 							</table>
-							<form action="/join_check.do" method="post" name="check">
 								<table id="info" style="text-align:left;">
-								
+									<form action="/join_check.do" method="post" name="check">
 									<tr height="30px">
 										<td bgcolor="#BDBDBD">&nbsp;ID(사업자 등록번호)</td>
 										<td>&nbsp;<input type="text" style="width:30px;" maxlength="3" name="id1"> - <input type="text" style="width:20px;" maxlength="2" name="id2"> - <input type="text" style="width:50px;" maxlength="5" name="id3"></td>
@@ -44,8 +43,9 @@
 									<tr height="30px">
 										<td bgcolor="#BDBDBD">&nbsp;이메일 주소</td>
 										<td>
-											&nbsp;<input type="text" style="width:60px;" name="email1" id="email1" readonly onclick="emailClick(this);"> @ <input type="text" style="width:90px;" name="email2" id="email2" readonly onclick="emailClick(this);">
-											&nbsp;<input type="button" value="이메일 인증" onclick="emailCheck()">
+											&nbsp;<input type="text" style="width:80px;" name="email1" id="email1" readonly onclick="emailClick(this);"> @ <input type="text" style="width:110px;" name="email2" id="email2" readonly onclick="emailClick(this);">
+									</form>
+											&nbsp;<input type="image" src="/resources/img/btn/OTP.png" width="60px;" onclick="emailCheck()">
 											<input type="hidden">
 										</td>
 									</tr>
@@ -65,7 +65,6 @@
 									</tr>
 								</c:if>
 								</table>
-							</form>
 							<br>
 							<center>
 								<input type="image" src="/resources/img/member/Submit_button.png" onclick="formCheck();"><br>

@@ -113,8 +113,8 @@
 		  }
 	  }
 
-	 function help(forms_seq, help_state){
-		 window.open('/resources/inc/Help_phpup.jsp?forms_seq='+forms_seq+'&help_state='+help_state,'help','width=600 height=620 scrollbars=yes');		 
+	 function help(forms_seq, help_state, otp){
+		 window.open('/resources/inc/Help_phpup.jsp?forms_seq='+forms_seq+'&help_state='+help_state+'&otp='+otp,'help','width=600 height=620 scrollbars=yes');		 
 	 }
 	 
 	 function HwpItPart1(forms_seq){
@@ -138,7 +138,6 @@
 		  <%}%>
 	  }
 	 
-	;
 	</script>
 </head>
 	<body>
@@ -175,7 +174,7 @@
 								</div>
 								<br>
 								<div>
-									<input type="image" src="/resources/img/btn/list_btn.png" width="60px;" onclick="goUrl('/MyPage?page_seq=6')">&nbsp;
+									<input type="image" src="/resources/img/btn/list_btn.png" width="60px;" onclick="goUrl('/MyPage.do?page_seq=6')">&nbsp;
 									<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('form').innerHTML)" title="my form" width="60xp;">&nbsp;
 								</div><br><br><br><br>
 							</td>

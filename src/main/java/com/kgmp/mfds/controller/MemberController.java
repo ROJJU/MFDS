@@ -2,7 +2,6 @@ package com.kgmp.mfds.controller;
 
 
 import java.io.File;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -180,7 +179,7 @@ public class MemberController {
 							 @RequestParam("id3") String id3,
 							 @RequestParam("email1") String email1,
 							 @RequestParam("email2") String email2,
-							 @RequestParam("kor_name") String kor_name){
+							 @RequestParam("kor_name") String kor_name) throws FileNotFoundException, URISyntaxException{
 		//setting parameter s
 				Member member= new Member();
 				member.setId1(id1);
@@ -189,12 +188,28 @@ public class MemberController {
 				member.setEmail1(email1);
 				member.setEmail2(email2);
 				member.setKor_name(kor_name);
+				String pw1=null;
 		//setting parameter e
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("/member/Find_pw_step3");
 		try{
 			Member memberInfo = member_service.getPassword(member);
-			mav.addObject("memberInfo", memberInfo);
+			pw1 = memberInfo.getPw_1();
+			try{
+				MimeMessage message = mailSender.createMimeMessage();
+				 String from="K-GMP@K-GMP.com";
+				 String to=email1+"@"+email2;
+				 String subject="(주)한국지엠피 비밀번호 확인 메일";
+				 String msg="<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'><html><body style='width:600px border:1px solid grey;'><div style='margin:0 auto; padding:10px; width:700px; border:1px solid grey;'><div>	<div>		<img src='http://sted.co.kr/resources/img/common/header_bg2.jpg' width='100%'>	</div>	<div style='background-color:#102967; color:#ffffff; height:30px;'>		&nbsp;▶ 비밀번호 확인	</div></div><div><br><br>	안녕하세요. (주)한국지엠피 입니다.<br>	요청하신 STED 프로그램을 위한 비밀번호입니다.<br>	아래의 비밀번호를 입력하여 계속 진행 하실 수 있습니다.<br><br>	<b>E-MAIL :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+email1+"@"+email2+"</h1><br>	<b>비밀번호 :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+pw1+"</h1><br><br>	그 외에 STED 이용과 관련하여 궁금하신 사항이 있으시면 <a href='#'>FAQ</a>를 확인해 보십시오.<br><br>	(주)한국지엠피<br><br><br>	<p style='color:grey;'>본 메일은 발신전용입니다. 본 메일을 임의로 위.번조하여 사용할 경우 형사처벌의 대상이 될 수 있습니다. 궁금한 사항은 <a href='mailto:K-GMP@K-GMP.COM'>K-GMP@K-GMP.COM</a>으로 문의하십시오.</p><br><div style='background-color:#102967; color:#ffffff; height:30px; text-align:right;'>Copyright ⓒ K-GMP All Right Reserved&nbsp;</div></div></div></body></html>";			 
+				  message.setFrom(new InternetAddress(from));  
+				  message.addRecipient(RecipientType.TO, new InternetAddress(to));
+				  message.setSubject(subject);
+				  message.setText(msg, "utf-8", "html");
+				   
+				 mailSender.send(message);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}

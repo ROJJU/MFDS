@@ -39,10 +39,10 @@
 				</tr>		
 			</table><br>
 			<center>
-				<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="50px;">
+				<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-1);" width="60px;">
 				<c:choose>
 					<c:when test="${forms.help_state=='1'||forms.help_state=='3'}">
-						<input type="button" value="보완하기" onclick="goUrl('/AdminHelp.do?page_seq=20&forms_seq=${a.forms_seq}')">
+						<input type="image" src="/resources/img/admin/help.png" width="60px;" onclick="goUrl('/AdminHelp.do?page_seq=20&forms_seq=${a.forms_seq}')">
 					</c:when>
 				</c:choose>
 			</center>
