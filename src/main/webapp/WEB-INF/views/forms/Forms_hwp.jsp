@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%
+
 String title = request.getParameter("title");
 String add_date = request.getParameter("add_date");
 String destFileName = "["+add_date+"]"+title+".hwp";
