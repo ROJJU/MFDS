@@ -31,9 +31,9 @@
 	</beans:bean>
 	<!-- Spring mail configuration -->
 	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-	     <beans:property name="host" value="mail.sted.co.kr" />
-	     <beans:property name="port" value="587" />
-	     <beans:property name="username" value="sted1206@sted.co.kr" />
+	     <beans:property name="host" value="mail.sted.kr" />
+	     <beans:property name="port" value="25" />
+	     <beans:property name="username" value="sted1206@sted.kr"/>
 	     <beans:property name="password" value="kgmp0055^^" />
 	     <beans:property name="javaMailProperties">
 	        <beans:props>

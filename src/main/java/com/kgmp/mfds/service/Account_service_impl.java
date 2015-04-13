@@ -82,6 +82,16 @@ public class Account_service_impl implements Account_service{
 		return forms;
 	}
 	
+	public Forms getScheduleForms(int forms_seq){
+		Forms forms=null;
+		try{
+			forms=account_dao.getScheduleForms(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return forms;
+	}
+	
 	public Map<String, Object> selectPayment(int currentPage, String linkURL, String search, String find, String id1, String id2, String id3, String email1, String email2){
 		Map<String, Object> pageAll = new HashMap<String, Object>();
 		Map<String, Object> info = new HashMap<String, Object>();

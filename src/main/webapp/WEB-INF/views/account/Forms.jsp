@@ -107,10 +107,10 @@
 																					<input type="image" src="/resources/img/forms/Books_help2.png">
 																				</c:when>
 																				<c:when test="${a.help_state=='3'}">
-																					<input type="image" src="/resources/img/forms/Books_help1.png">
+																					<input type="image" src="/resources/img/forms/Books_help3.png">
 																				</c:when>
 																				<c:when test="${a.help_state=='4'}">
-																					<input type="image" src="/resources/img/forms/Books_help2.png">
+																					<input type="image" src="/resources/img/forms/Books_help4.png">
 																				</c:when>
 																				<c:otherwise>
 																					<input type="image" src="/resources/img/forms/Books.png">

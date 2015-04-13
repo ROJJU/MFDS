@@ -169,7 +169,7 @@ int a=-1;
 														</td>
 													</tr>
 													<tr><td style="vertical-align:top; height:5px;"><hr></td></tr>
-													<tr><td style="background-color:#DDDDDE; height:25px; padding-left:10px; color:grey;">▼ 내 일정</td></tr>
+													<tr><td style="background-color:#DDDDDE; height:25px; padding-left:10px; color:grey;">▼ 내 일정_<b style="color:red;">[${viewInfo.title}]</b></td></tr>
 													<tr>
 														<td style="vertical-align:top;">
 															 <ul id="example2" class="accordion">
@@ -242,9 +242,56 @@ int a=-1;
 												                    </div>
 												                </li>
 												                <li type="none">
-												                    <h3><img src="/resources/img/common/star.gif">&nbsp;처리기한 안내</h3>
+												                    <h3><img src="/resources/img/common/star.gif">&nbsp;처리기한 확인</h3>
 												                    <div class="panel loading">
-												                         An image in a paragraph.
+												                        <table>
+												                        	<tr>
+												                        		<td>폴더생성:</td>
+												                        		<td><a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=request.getParameter("find")%>&year=${viewInfo.add_year}&month=${viewInfo.add_month}">${viewInfo.add_year}년${viewInfo.add_month}월${viewInfo.add_day}일</a></td>
+												                        	</tr>
+												                        	<tr>
+												                        		<td>보완신청:</td>
+												                        		<td>
+												                        			<c:choose>
+																                    	<c:when test="${viewInfo.help_content==null}">
+																                    		<font color="red">-</font>
+																                    	</c:when>
+																                    	<c:otherwise>
+																                    		<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=request.getParameter("find")%>&year=${viewInfo.help_year}&month=${viewInfo.help_month}">${viewInfo.help_year}년${viewInfo.help_month}월${viewInfo.help_day}일</a>
+																                    	</c:otherwise>
+																                    </c:choose>
+												                        		</td>
+												                        	</tr>
+												                        	<tr>
+												                        		<td></td>
+												                        		<td>
+													                        		<c:choose>
+																                    	<c:when test="${viewInfo.help_content==null}">
+																                    		<font color="red">-</font>
+																                    	</c:when>
+																                    	<c:otherwise>
+																                    	<c:if test="${viewInfo.help_state=='1'}"><b style="color:blue;">[1차_진행중]</b></c:if>
+																						<c:if test="${viewInfo.help_state=='2'}"><b style="color:blue;">[1차_완료]</b></c:if>
+																						<c:if test="${viewInfo.help_state=='3'}"><b style="color:blue;">[2차_진행중]</b></c:if>
+																						<c:if test="${viewInfo.help_state=='4'}"><b style="color:blue;">[2차_완료]</b></c:if>
+																                    	</c:otherwise>
+																                    </c:choose>
+												                        		</td>
+												                        	</tr>
+												                        	<tr>
+												                        		<td>계산서발행:</td>
+												                        		<td>
+												                        			<c:choose>
+												                        				<c:when test="${viewInfo.payment_year==null}">
+												                        					<font color="red">-</font>
+												                        				</c:when>
+												                        				<c:otherwise>
+												                        					<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=request.getParameter("find")%>&year=${viewInfo.payment_year}&month=${viewInfo.payment_month}">${viewInfo.payment_year}년${viewInfo.payment_month}월${viewInfo.payment_day}일</a>
+												                        				</c:otherwise>
+												                        			</c:choose>
+											                        			</td>
+												                        	</tr>
+												                        </table>
 												                    </div>
 												                </li>
 												            </ul>
@@ -253,14 +300,15 @@ int a=-1;
 													<tr>
 														<td height="65px" style="padding-left:15px;">
 															총 등록된 서류 : <font color="red">${countAll}</font>건
-															<form action="/MyPage.do?page_seq=7" method="post" name="notice">
+															<form action="/MyPage.do" method="post" name="notice">
 																<input type="hidden" name="search" value="title">
-																<select name="find" style="width:170px;">
+																<select name="forms_seq" style="width:170px;">
 																	<option value="">::폴더 선택(모두보기)::</option>
 																	<c:forEach var="t" items="${title}">
-																		<option value="${t.title}">${t.title}</option>
+																		<option value="${t.forms_seq}">${t.title}</option>
 																	</c:forEach>
 																</select>
+																<input type="hidden" value="7" name="page_seq">
 																<input type="image" src="/resources/img/forms/small_search_button.png" onclick="javaScript:document.notice.submit();">
 															</form>
 														</td>

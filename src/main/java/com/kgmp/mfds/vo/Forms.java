@@ -91,7 +91,6 @@ public class Forms {
 	private String otp;
 	
 	
-	
 	public String getOtp() {
 		return otp;
 	}

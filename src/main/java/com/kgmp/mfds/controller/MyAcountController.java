@@ -2,8 +2,8 @@ package com.kgmp.mfds.controller;
 
 
 import java.io.FileNotFoundException;
+
 import java.net.URISyntaxException;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -155,11 +155,14 @@ public class MyAcountController{
 			form.setEmail2((String)session.getAttribute("email2"));
 			form.setSearch(search);
 			form.setFind(find);
+			form.setAdd_year(year);
+			form.setAdd_month(month);
+			
 			//setting parameter e
 			int countAll = account_service.countAll(form);
 			List<Forms> title = account_service.selectTitle(form);
 			List<Forms> forms = account_service.selectFormSchedule(form);
-			Viewinfo=account_service.getForms(forms_seq);
+			Viewinfo=account_service.getScheduleForms(forms_seq);
 			mav.addObject("countAll", countAll);
 			mav.addObject("viewInfo", Viewinfo);
 			mav.addObject("list", forms);

@@ -114,7 +114,7 @@
 	  }
 
 	 function help(forms_seq, help_state, otp){
-		 window.open('/resources/inc/Help_phpup.jsp?forms_seq='+forms_seq+'&help_state='+help_state+'&otp='+otp,'help','width=600 height=620 scrollbars=yes');		 
+		 window.open('/resources/inc/Help_phpup.jsp?forms_seq='+forms_seq+'&help_state='+help_state+'&otp='+otp,'help','width=600 height=580 scrollbars=yes');		 
 	 }
 	 
 	 function HwpItPart1(forms_seq){

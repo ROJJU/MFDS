@@ -19,7 +19,7 @@
 				 		</c:choose>
 						 <c:choose>
 						 	<c:when test="${forms.help_state==4}">
-						 		| <input type="button" value="보완신청" onclick="javaScript:alert('이미 보완신청 2회 완료 된 서류 입니다.')">
+						 		| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="javaScript:alert('이미 보완신청 2회 완료 된 서류 입니다.')">
 						 	</c:when>
 						 	<c:otherwise>
 						 		<c:choose>
@@ -36,10 +36,10 @@
 					<c:otherwise>
 						<c:choose>
 							<c:when test="${forms.mix=='1'}">
-								| <input type="image" src="/resources/img/forms/mix_x.png" width="100px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+								| <input type="image" src="/resources/img/forms/mix_x.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
 							</c:when>
 							<c:otherwise>
-								| <input type="button" src="/resources/img/forms/mix_o.png" width="100px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+								| <input type="image" src="/resources/img/forms/mix_o.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
 							</c:otherwise>
 						</c:choose>
 						<c:choose>

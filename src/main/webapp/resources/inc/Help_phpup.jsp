@@ -29,7 +29,7 @@
 			<input type="hidden" name="content_state" value="help_content2">
 			<%}%>
 		</form><br>
-		<img src="/resources/img/forms/help.jpg" width="100%"><br><br>
+		<img src="/resources/img/forms/help.png" width="100%"><br><br>
 		<center>
 			<input type="image" src="/resources/img/btn/close_btn.png" width="60px" onclick="javaScript:window.close();">
 			<input type="image" src="/resources/img/btn/help_btn.png" width="71px" onclick="javaScript:document.help.submit();">

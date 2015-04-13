@@ -42,6 +42,10 @@ public class Account_dao_impl implements Account_dao{
 		return (Forms) sqlSession.selectOne("getForms", forms_seq);
 	}
 	
+	public Forms getScheduleForms(int forms_seq){
+		return (Forms) sqlSession.selectOne("getScheduleForms", forms_seq);
+	}
+	
 	public int getPaymentQty(Map<String, Object> info){
 		return (Integer) sqlSession.selectOne("getPaymentQty", info);
 	}

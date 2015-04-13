@@ -13,7 +13,7 @@ if(request.getParameter("side_seq")!=null){
 <%if(session.getAttribute("id")==null||session.getAttribute("id").equals(" ")){%>
 <script>
 alert('잘못된 경로로 접근하였습니다.');
-location.href="/Admin";
+location.href="/Admin.do";
 </script>
 <%}%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
