@@ -348,7 +348,7 @@ public class MemberController {
 				System.out.println("file not null");
 			  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 			  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-			  String path = "www/save/member";
+			  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/member";
 			  FileUpload.fileUpload(file, path, replaceName);
 			}
 		}catch(Exception e){
@@ -400,7 +400,7 @@ public class MemberController {
 			}else{
 			msg="저장 실패 하였습니다.";
 			//del file s		
-			String fileDir = "www/save/member/"+replaceName;
+			String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/member/"+replaceName;
 			File f = new File(fileDir);
 			if( f.exists()) f.delete();
 			//del file e
@@ -479,10 +479,10 @@ public class MemberController {
 				System.out.println("file not null");
 			  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 			  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-			  String path = "www/save/member";
+			  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/member";
 			  FileUpload.fileUpload(file, path, replaceName);
 			//del file s		
-				String fileDir = "www/save/member/"+company_file_old;
+				String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/member/"+company_file_old;
 				File f = new File(fileDir);
 				if( f.exists()) f.delete();
 			//del file e
@@ -537,7 +537,7 @@ public class MemberController {
 			}else{
 				msg="저장 실패 하였습니다.";
 			//del file s		
-				String fileDir = "www/save/member/"+replaceName;
+				String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/member/"+replaceName;
 				File f = new File(fileDir);
 				if( f.exists()) f.delete();
 			//del file e

@@ -33,7 +33,7 @@
 					[<a href="javaScript:document.down.submit();">${news.n_file}</a>
 					<c:if test="${news.n_file==null}"><a style="color:red;">첨부된 파일이 없습니다.</a></c:if>
 					]<input type="hidden" name="n_file" value="${news.n_file}">
-					<input type="hidden" name="file_path" value="www/save/news">
+					<input type="hidden" name="file_path" value="/usr/local/tomcat/webapps/ROOT/resources/img/upload/news">
 				</form>
 				<font color="red"></font></td>
 			</tr>

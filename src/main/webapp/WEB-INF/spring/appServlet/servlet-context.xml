@@ -47,4 +47,5 @@
 	<!--resources link-->
 	<context:component-scan base-package="com.kgmp.mfds" />
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/favicon.ico" location="/resources/favicon.ico" /> 
 </beans:beans>

@@ -4,6 +4,11 @@
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<link rel="shortcut icon" href="/resources/favicon.ico"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/img/ico/STED-Favicon(72px)_v7.png">
+	<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png">
 	<title>K-GMP_STED</title>
 		<style type="text/css">
 			#m_header_wrap{

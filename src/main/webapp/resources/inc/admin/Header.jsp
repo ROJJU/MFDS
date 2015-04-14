@@ -22,7 +22,11 @@ location.href="/Admin.do";
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="/resources/css/admin/style_admin.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/common/Sub_table.css"/>
-<link rel="shortcut icon" href="http://www.k-gmp.co.kr/favicon.ico"/>
+<link rel="shortcut icon" href="http://sted.kr/resources/img/favicon.ico"/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/img/ico/STED-Favicon(72px)_v7.png">
+<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png">
 <script type="text/javascript" src="/resources/se/js/HuskyEZCreator.js" charset="utf-8"></script>
 <title>STED 관리자</title>
 <meta name="robots" content="all">

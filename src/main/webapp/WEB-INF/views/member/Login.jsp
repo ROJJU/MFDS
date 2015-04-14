@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/resources/inc/Login_header.jsp"/>
 <%
 	Cookie[] cookie=request.getCookies();
 	String id1 = "";
@@ -28,31 +29,19 @@
 		}
 	}
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="<c:url value="/resources/css/member/Login.css"/>"/>
-	<link rel="stylesheet" href="<c:url value="/resources/css/member/styles.css"/>"/>
-	<link rel="stylesheet" href="<c:url value="/resources/css/member/iview.css"/>"/>
-	<link rel="stylesheet" href="<c:url value="/resources/css/member/skin 1/style.css"/>"/>
-	<script src="<c:url value="/resources/js/member/jquery-1.7.1.min.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/member/raphael-min.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/member/jquery.easing.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/member/Login.js"/>"></script>
-	<script src="<c:url value="/resources/js/member/iview.js"/>"></script>
-	<script type="text/javascript">
-		function formCheck(){
-			document.login.submit();
-		}
-		
-		function inputSendit(){
-			if(event.keyCode==13) { 
-				document.login.submit();
-			}
-		}
-	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/img/ico/STED-Favicon(72px)_v7.png">
+	<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png">
+	<title>STED</title>
+	
+	<link rel="stylesheet" href="/resources/css/member/Login.css"/>
+	<link rel="stylesheet" href="/resources/css/member/styles.css"/>
+	<link rel="stylesheet" href="/resources/css/member/iview.css"/>
+	<link rel="stylesheet" href="/resources/css/member/skin 1/style.css"/>
 	<style type="text/css">
 		@media (max-width: 768px) {
 			  #iview{
@@ -69,7 +58,7 @@
 		    }
 	    }
 	</style>
-</head>
+	</head>
 <body>
 	<div id="cont">
 		<div id="hiddenLogo"><br><br><br><br><br><br><br><br><br><br><center><img src="/resources/img/common/sted_logo.png" width="330px"><br><br><br><br><br><br><br><br></center></div>
@@ -157,5 +146,21 @@
          </form>
 	</div>
 <!--POPUP END  -->
+	<script src="/resources/js/member/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/resources/js/member/raphael-min.js"></script>
+	<script type="text/javascript" src="/resources/js/member/jquery.easing.js"></script>
+	<script type="text/javascript" src="/resources/js/member/Login.js"></script>
+	<script src="/resources/js/member/iview.js"></script>
+	<script type="text/javascript">
+		function formCheck(){
+			document.login.submit();
+		}
+		
+		function inputSendit(){
+			if(event.keyCode==13) { 
+				document.login.submit();
+			}
+		}
+	</script>
 	</body>
 </html>

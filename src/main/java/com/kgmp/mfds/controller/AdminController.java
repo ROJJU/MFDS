@@ -97,7 +97,7 @@ public class AdminController {
 				if(check.equals("yes")){
 					msg="삭제에 성공하였습니다.";
 					//del file s		
-					String fileDir = "www/save/notice/"+fileName;
+					String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice/"+fileName;
 					File f = new File(fileDir);
 					if( f.exists()) f.delete();
 					//del file e
@@ -167,7 +167,7 @@ public class AdminController {
 				if(check.equals("yes")){
 					msg="삭제에 성공하였습니다.";
 					//del file s		
-					String fileDir = "www/save/news/"+fileName;
+					String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/news/"+fileName;
 					File f = new File(fileDir);
 					if( f.exists()) f.delete();
 					//del file e
@@ -204,7 +204,7 @@ public class AdminController {
 					System.out.println("file not null");
 				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 				  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-				  String path = "www/save/news";
+				  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/news";
 				  FileUpload.fileUpload(file, path, replaceName);
 				}
 			}catch(Exception e){
@@ -229,7 +229,7 @@ public class AdminController {
 			}else{
 				msg="저장 실패 하였습니다.";
 				//del file s		
-				String fileDir = "www/save/news/"+replaceName;
+				String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/news/"+replaceName;
 				File f = new File(fileDir);
 				if( f.exists()) f.delete();
 				//del file e
@@ -261,7 +261,7 @@ public class AdminController {
 					System.out.println("file not null");
 				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 				  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-				  String path = "www/save/notice";
+				  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice";
 				  FileUpload.fileUpload(file, path, replaceName);
 				}
 			}catch(Exception e){
@@ -286,7 +286,7 @@ public class AdminController {
 			}else{
 				msg="저장 실패 하였습니다.";
 				//del file s		
-				String fileDir = "www/save/notice/"+replaceName;
+				String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice/"+replaceName;
 				File f = new File(fileDir);
 				if( f.exists()) f.delete();
 				//del file e
@@ -325,10 +325,10 @@ public class AdminController {
 						System.out.println("file not null");
 					  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 					  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-					  String path = "www/save/news";
+					  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/news";
 					  FileUpload.fileUpload(file, path, replaceName);
 					  	//del file s		
-						String fileDir = "www/save/news/"+n_file_old;
+						String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/news/"+n_file_old;
 						File f = new File(fileDir);
 						if( f.exists()) f.delete();
 						//del file e
@@ -390,10 +390,10 @@ public class AdminController {
 						System.out.println("file not null");
 					  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 					  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-					  String path = "www/save/notice";
+					  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice";
 					  FileUpload.fileUpload(file, path, replaceName);
 						//del file s		
-						String fileDir = "www/save/notice/"+n_file_old;
+						String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice/"+n_file_old;
 						File f = new File(fileDir);
 						if( f.exists()) f.delete();
 						//del file e
@@ -490,10 +490,10 @@ public class AdminController {
 				  System.out.println("file not null");
 				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 				  replaceName = cal.getTimeInMillis() + fileType;  //change file name
-				  String path = "www/save/payment";
+				  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment";
 				  FileUpload.fileUpload(file, path, replaceName);
 				//del file s		
-					String fileDir = "www/save/payment/"+payment_pic_old;
+					String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment/"+payment_pic_old;
 					File f = new File(fileDir);
 					if( f.exists()) f.delete();
 				//del file e
@@ -518,7 +518,7 @@ public class AdminController {
 			}else{
 				msg="저장 실패 하였습니다.";
 				//del file s		
-				String fileDir = "www/save/payment/"+replaceName;
+				String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment/"+replaceName;
 				File f = new File(fileDir);
 				if( f.exists()) f.delete();
 				//del file e
