@@ -75,7 +75,7 @@ location.href="/";
 	}
 	document.onkeydown=KeyEventHandle;
 	document.onkeyup=KeyEventHandle;
-
+	 
 </script>
 <link rel="shortcut icon" href="/resources/favicon.ico"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
@@ -221,7 +221,7 @@ $(document).ready(function() {
 	});
 });
 function getSearch(){
-	window.open('/fileList','getInfo','width=755 height=526 scrollbars=yes');
+	window.open('/fileList.do','getInfo','width=755 height=526 scrollbars=yes');
 }
 
 function formsCoution(){

@@ -15,6 +15,9 @@
 	#my_info{
 		width:90%;
 	}
+	.heightTD{
+		height:30px;
+	}
 	</style>
 	<script type="text/javascript">
 		var win=null;
@@ -54,13 +57,13 @@
 											<hr><br>
 											<table id="total_info" style="text-align:left;">
 												<tr height="30px">
-													<td bgcolor="#BDBDBD" width="300px">&nbsp;<font color="red">*</font>&nbsp;<b>회원 정보</b></td>
+													<td bgcolor="#BDBDBD" width="100%">&nbsp;<font color="red">*</font>&nbsp;<b>회원 정보</b></td>
 												</tr>
 												<tr>
 													<td>
 														<table>
 															<tr>
-																<td width="125px;">ID(사업자 등록 번호) :</td>
+																<td width="140px;" class="heightTD">ID(사업자 등록 번호) :</td>
 																<td><input type="text" style="width:30px;" maxlength="3" name="id1" value="${memberInfo.id1}" readonly="readonly">
 																 - <input type="text" style="width:20px;" maxlength="2" name="id2" value="${memberInfo.id2}" readonly="readonly">
 																 - <input type="text" style="width:50px;" maxlength="5" name="id3" value="${memberInfo.id3}" readonly="readonly">
@@ -68,17 +71,17 @@
 																 </td><td></td>
 															</tr>
 															<tr>
-																<td>사용자 이메일 :</td>
+																<td class="heightTD">사용자 이메일 :</td>
 																<td>
 																	<input type="text" style="width:60px;" name="email1" value="${memberInfo.email1}" readonly="readonly">
 																  @ <input type="text" style="width:90px;" name="email2" value="${memberInfo.email2}" readonly="readonly">
 																 </td><td style="color:red;">&nbsp;거래 관련 이메일, 회사의 주요정책 관련 공지메일 등이 발송됩니다.</td>
 															</tr>
 															<tr>
-																<td>비밀번호 :</td><td><input type="password" id="pw_1" name="pw_1" value="${memberInfo.pw_1}"></td><td style="color:red;">&nbsp;8~15자의 영문/숫자/특수문자 혼용만 가능합니다.</td>
+																<td class="heightTD">비밀번호 :</td><td><input type="password" id="pw_1" name="pw_1" value="${memberInfo.pw_1}"></td><td style="color:red;">&nbsp;8~15자의 영문/숫자/특수문자 혼용만 가능합니다.</td>
 															</tr>
 															<tr>
-																<td>비밀번호 재확인:</td><td><input type="password" id="pw_2" name="pw_2"></td><td>&nbsp;<label id="lbl_pw_check"></label></td>
+																<td class="heightTD">비밀번호 재확인:</td><td><input type="password" id="pw_2" name="pw_2"></td><td>&nbsp;<label id="lbl_pw_check"></label></td>
 															</tr>
 														</table><br>
 													</td>
@@ -90,20 +93,20 @@
 													<td>
 														<table>
 															<tr>
-																<td width="125px;">이름 :</td><td>국문 <input type="text" name="kor_name" style="width:100px;" value="${memberInfo.kor_name}"> | 한문 <input type="text" name="cha_name" style="width:100px;" value="${memberInfo.cha_name}"> | 영문 <input type="text" name="eng_name" value="${memberInfo.eng_name}"><a style="color:red; text-decoration:none;" >&nbsp;공백/특수문자 사용할수 없습니다.</a></td>
+																<td width="125px;" class="heightTD">이름 :</td><td>국문 <input type="text" name="kor_name" style="width:100px;" value="${memberInfo.kor_name}"> | 한문 <input type="text" name="cha_name" style="width:100px;" value="${memberInfo.cha_name}"> | 영문 <input type="text" name="eng_name" value="${memberInfo.eng_name}"><a style="color:red; text-decoration:none;" >&nbsp;공백/특수문자 사용할수 없습니다.</a></td>
 															</tr>
 															<tr>
-																<td>주소 :</td>
+																<td class="heightTD">주소 :</td>
 																<td>
 																	<input type="button" value="우편번호찾기" onclick="getPost(1);">
 																	<input type="text" style="width:520px;" name="address" readonly value="${memberInfo.address}">
 																</td>
 															</tr>
 															<tr>
-																<td>전화번호 :</td><td><input type="text" style="width:60px;" name="phone1" value="${memberInfo.phone1}">-<input type="text" style="width:60px;" name="phone2" value="${memberInfo.phone2}">-<input type="text" style="width:60px;" name="phone3" value="${memberInfo.phone3}"></td>
+																<td class="heightTD">전화번호 :</td><td><input type="text" style="width:60px;" name="phone1" value="${memberInfo.phone1}">-<input type="text" style="width:60px;" name="phone2" value="${memberInfo.phone2}">-<input type="text" style="width:60px;" name="phone3" value="${memberInfo.phone3}"></td>
 															</tr>
 															<tr>
-																<td>휴대전화번호:</td><td><select style="width:64px;" name="cell_phone1" ><option value="010">010</option><option value="017">017</option><option value="019">019</option><option value="018">018</option></select>-<input type="text" style="width:60px;" name="cell_phone2" value="${memberInfo.cell_phone2}">-<input type="text" style="width:60px;" name="cell_phone3" value="${memberInfo.cell_phone3}"></td>
+																<td class="heightTD">휴대전화번호:</td><td><select style="width:64px;" name="cell_phone1" ><option value="010">010</option><option value="017">017</option><option value="019">019</option><option value="018">018</option></select>-<input type="text" style="width:60px;" name="cell_phone2" value="${memberInfo.cell_phone2}">-<input type="text" style="width:60px;" name="cell_phone3" value="${memberInfo.cell_phone3}"></td>
 															</tr>
 														</table><br>
 													</td>
@@ -115,46 +118,46 @@
 													<td>
 														<table>
 															<tr>
-																<td width="125px;">회사명 :</td><td>국문 <input type="text" name="company_kor" value="${memberInfo.company_kor}"> | 영문 <input type="text" name="company_eng" value="${memberInfo.company_eng}"><a style="color:red; text-decoration:none;">&nbsp;사업자 등록증과 같아야 합니다.</a></td>
+																<td width="125px;" class="heightTD">회사명 :</td><td>국문 <input type="text" name="company_kor" value="${memberInfo.company_kor}"> | 영문 <input type="text" name="company_eng" value="${memberInfo.company_eng}"><a style="color:red; text-decoration:none;">&nbsp;사업자 등록증과 같아야 합니다.</a></td>
 															</tr>
 															<tr>
 																<td></td>
 																<td><input type="button" value="상위 정보와 동일" onclick="copy();"> 위의 정보(담당자 정보)와 주소/전화번호가 같을 경우 눌러주세요</td>
 															</tr>
 															<tr>
-																<td>회사주소 :</td>
+																<td class="heightTD">회사주소 :</td>
 																<td>
 																	<input type="button" value="우편번호찾기" onclick="getPost(2)">
 																	<input type="text" style="width:520px;" name="company_address" readonly value="${memberInfo.company_address}">
 																</td>
 															</tr>
 															<tr>
-																<td>전화번호 :</td><td><input type="text" style="width:60px;" name="company_phone1" value="${memberInfo.company_phone1}">-<input type="text" style="width:60px;" name="company_phone2" value="${memberInfo.company_phone2}">-<input type="text" style="width:60px;" name="company_phone3" value="${memberInfo.company_phone3}"></td>
+																<td class="heightTD">전화번호 :</td><td><input type="text" style="width:60px;" name="company_phone1" value="${memberInfo.company_phone1}">-<input type="text" style="width:60px;" name="company_phone2" value="${memberInfo.company_phone2}">-<input type="text" style="width:60px;" name="company_phone3" value="${memberInfo.company_phone3}"></td>
 															</tr>
 															<tr>
-																<td>FAX번호:</td><td><input type="text" style="width:60px;" name="company_fax1" value="${memberInfo.company_fax1}">-<input type="text" style="width:60px;" name="company_fax2" value="${memberInfo.company_fax2}">-<input type="text" style="width:60px;" name="company_fax3" value="${memberInfo.company_fax3}"></td>
+																<td class="heightTD">FAX번호:</td><td><input type="text" style="width:60px;" name="company_fax1" value="${memberInfo.company_fax1}">-<input type="text" style="width:60px;" name="company_fax2" value="${memberInfo.company_fax2}">-<input type="text" style="width:60px;" name="company_fax3" value="${memberInfo.company_fax3}"></td>
 															</tr>
 															<tr>
-																<td>대표자:</td><td><input type="text" name="ceo" value="${memberInfo.ceo}"></td>
+																<td class="heightTD">대표자:</td><td><input type="text" name="ceo" value="${memberInfo.ceo}"></td>
 															</tr>
 															<tr>
-																<td style="vertical-align:top;">사업자 등록증 사본:</td>
-																<td><input type="file" name="company_file" ><a style="color:red; text-decoration:none;">&nbsp;이미지만 업로드 가능합니다.(bmp,gif,jpg,jpeg,png)</a><br>
+																<td style="vertical-align:top;" class="heightTD">사업자 등록증 사본:</td>
+																<td class="heightTD"><input type="file" name="company_file" ><a style="color:red; text-decoration:none;">&nbsp;이미지만 업로드 가능합니다.(bmp,gif,jpg,jpeg,png)</a><br>
 																현제 등록된 파일 : ${memberInfo.company_file} (파일명은 등록시 자동으로 변경 됩니다.)
 																<input type="hidden" value="${memberInfo.company_file}" name="company_file_old">
 																</td>
 															</tr>
 															<tr>
-																<td>고용보험 관리번호:</td><td><input type="text" name="insurance_no" value="${memberInfo.insurance_no}"></td>
+																<td class="heightTD">고용보험 관리번호:</td><td><input type="text" name="insurance_no" value="${memberInfo.insurance_no}"></td>
 															</tr>
 															<tr>
-																<td>주요생산품:</td><td><input type="text" name="product" value="${memberInfo.product}"></td>
+																<td class="heightTD">주요생산품:</td><td><input type="text" name="product" value="${memberInfo.product}"></td>
 															</tr>
 															<tr>
-																<td>매출액:</td><td><input type="text" name="finance" value="${memberInfo.finance}"> 만원</td>
+																<td class="heightTD">매출액:</td><td><input type="text" name="finance" value="${memberInfo.finance}"> 만원</td>
 															</tr>
 															<tr>
-																<td>종업원수:</td><td><input type="text" name="worker" value="${memberInfo.worker}"> 명</td>
+																<td class="heightTD">종업원수:</td><td><input type="text" name="worker" value="${memberInfo.worker}"> 명</td>
 															</tr>
 														</table><br>
 													</td>

@@ -171,11 +171,11 @@ int next =list_seq+1;
 							<td id="content_place">
 								<jsp:include page="/resources/inc/forms_tab/forms_tab.jsp"/>
 								<br>
-								<table style="width:962px; margin:0 auto; border:1px solid black;">
+								<table style="width:962px; margin:0 auto; border:1px solid black; background-color:#102967;">
 									<tr>
-										<td style="border:1px solid black; padding:5px;" align="right">
-											<font color="red">가이드 라인 확인 버튼을 누르시면 해당 서식에 관한 예시 서류를 확인할 수 있습니다.</font>&nbsp;&nbsp;&nbsp;
-											<input type="image" src="/resources/img/btn/guide.png" width="40px" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
+										<td style="border:1px solid black; padding:5px; background-color:#EAEAEA; " align="right">
+											<font color="red"><b>가이드 라인 확인 버튼을 누르시면 해당 서식에 관한 예시 서류를 확인할 수 있습니다.</b></font>&nbsp;&nbsp;&nbsp;
+											<input type="image" src="/resources/img/btn/guide.png" width="40px" title="가이드 라인" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
 										</td>
 									</tr>
 								</table>

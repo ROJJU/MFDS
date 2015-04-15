@@ -35,8 +35,12 @@ int a=-1;
     int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
     int week = cal.get(Calendar.DAY_OF_WEEK);
    String find="";
+   String search="";
     if(request.getParameter("find")!=null){
     	find=request.getParameter("find");
+    }
+    if(request.getParameter("search")!=null){
+    	search=request.getParameter("search");
     }
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -247,7 +251,7 @@ int a=-1;
 												                        <table>
 												                        	<tr>
 												                        		<td>폴더생성:</td>
-												                        		<td><a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=find%>&year=${viewInfo.add_year}&month=${viewInfo.add_month}">${viewInfo.add_year}년${viewInfo.add_month}월${viewInfo.add_day}일</a></td>
+												                        		<td><a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=search%>&find=<%=find%>&year=${viewInfo.add_year}&month=${viewInfo.add_month}">${viewInfo.add_year}년${viewInfo.add_month}월${viewInfo.add_day}일</a></td>
 												                        	</tr>
 												                        	<tr>
 												                        		<td>보완신청:</td>
@@ -257,7 +261,7 @@ int a=-1;
 																                    		<font color="red">-</font>
 																                    	</c:when>
 																                    	<c:otherwise>
-																                    		<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=find%>&year=${viewInfo.help_year}&month=${viewInfo.help_month}">${viewInfo.help_year}년${viewInfo.help_month}월${viewInfo.help_day}일</a>
+																                    		<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=search%>&find=<%=find%>&year=${viewInfo.help_year}&month=${viewInfo.help_month}">${viewInfo.help_year}년${viewInfo.help_month}월${viewInfo.help_day}일</a>
 																                    	</c:otherwise>
 																                    </c:choose>
 												                        		</td>
@@ -286,7 +290,7 @@ int a=-1;
 												                        					<font color="red">-</font>
 												                        				</c:when>
 												                        				<c:otherwise>
-												                        					<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=find%>&year=${viewInfo.payment_year}&month=${viewInfo.payment_month}">${viewInfo.payment_year}년${viewInfo.payment_month}월${viewInfo.payment_day}일</a>
+												                        					<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=search%>&find=<%=find%>&year=${viewInfo.payment_year}&month=${viewInfo.payment_month}">${viewInfo.payment_year}년${viewInfo.payment_month}월${viewInfo.payment_day}일</a>
 												                        				</c:otherwise>
 												                        			</c:choose>
 											                        			</td>

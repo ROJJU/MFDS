@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" href="<c:url value="/resources/css/common/Base.css"/>"/>
-	<meta name="robots" content="all">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<!--[if gte IE 9 ]><link rel="stylesheet" type="text/css" href="_styles.css" media="screen"><![endif]-->
 	<!--[if !IE]>--><link rel="stylesheet" type="text/css" href="/resources/css/forms/_styles.css" media="screen"><!--<![endif]-->
 	<style type="text/css">
@@ -70,7 +70,9 @@
 			  $(".__se_tbl").attr("border","1");
 			  $(".__se_tbl").attr("cellspacing","0");
 			  $(".__se_tbl").attr("bordercolor","black");
-			  $("td").attr("width","");
+			  $(".__se_tbl td").attr("width","");
+			  $(".hong td").attr("width","");
+			  $(".test td").attr("width","");
 			  $(".hong").attr("width","640px");
 			  $(".hong").attr("border","1");
 			  $(".hong").attr("cellspacing","0");
@@ -82,10 +84,15 @@
 			  $(".rule3").attr("width","100px");
 			  $(".rule4").attr("width","100px");
 			  $(".rule5").attr("width","100px");
-			  $("td").attr("bordercolor","black");
-			  $("td").attr("height","25px");
-			  $("td").css("border-top","1px");
-			  $("td").css("border-right","1px");
+			  $(".__se_tbl td").attr("bordercolor","black");
+			  $(".__se_tbl td").attr("height","25px");
+			  
+			  $(".hong td").attr("height","25px");
+			  $(".hong td").attr("bordercolor","black");
+			  
+			  $(".test td").attr("height","25px");
+			  $(".test td").attr("bordercolor","black");
+			  
 			  document.hwp.action="/download_hwpProc.do";
 			  document.hwp.method="post";
 			  document.hwp.contents.value=document.getElementById("form").innerHTML;

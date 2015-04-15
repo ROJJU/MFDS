@@ -31,6 +31,11 @@
 			 width:98%;
 			 padding:20px 0px 20px 0px;
 		}
+		
+		li{
+		cursor :hand;
+		cursor:pointer;
+		}
 	</style>
 	</head>
 	<body>

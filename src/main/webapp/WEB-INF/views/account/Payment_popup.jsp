@@ -18,6 +18,11 @@ function formCheck(){
 	}
 }
 </script>
+<style type="text/css">
+.box_style{
+height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1px solid grey;
+}
+</style>
 </head>
 <body style="padding:0px;">
 <table style="border-collapse:collapse; width:100%; margin-bottom:2px;">
@@ -55,8 +60,7 @@ function formCheck(){
 	<%if(request.getParameter("payment").equals("1")){ %>
 	<table width="100%">
 		<tr>
-			<td>
-				<div style="background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1px solid grey;">
+			<td class="box_style">
 				<form name="payment" action="/updatePaymentProc.do" method="post">
 					<table>
 						<tr height="25px">
@@ -68,7 +72,7 @@ function formCheck(){
 									<option value="기업은행(1002-542-000000)">기업은행(1002-542-000000)</option>
 								</select>
 							</td>
-							<td style="color:red; font-size:7px; width:100px;">&nbsp;*선택하십시오.</td>
+							<td style="color:red; font-size:10px; width:100px;">&nbsp;*선택하십시오.</td>
 						</tr>
 						<tr height="25px">
 							<td><b>예금주명</b></td>
@@ -86,23 +90,15 @@ function formCheck(){
 						</tr>
 					</table>
 				</form>
-				</div>
 			</td>
-			<td style=" vertical-align:top; padding-left:10px;">
+			<td width="2px"></td>
+			<td style=" vertical-align:top; padding-left:10px;" class="box_style">
 				<table width="100%">
+					<tr><td><b>최종 결제 금액</b><br><br></td></tr>
 					<tr>
 						<td>
-							<div style="background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1px solid grey;">
-								<table width="100%">
-									<tr><td><b>최종 결제 금액</b></td></tr>
-									<tr>
-										<td>
-											&nbsp;<input type="text" style="width:100%; text-align:right;" value="25,000,000 원&nbsp;&nbsp;" readonly><br>
-											&nbsp;<input type="text" style="width:100%; text-align:right;" value="이천오백만 원&nbsp;&nbsp;" readonly>
-										</td>
-									</tr>
-								</table>
-							</div>
+							&nbsp;<input type="text" style="width:100%; text-align:right;" value="25,000,000 원&nbsp;&nbsp;" readonly><br>
+							&nbsp;<input type="text" style="width:100%; text-align:right;" value="이천오백만 원&nbsp;&nbsp;" readonly>
 						</td>
 					</tr>
 				</table>

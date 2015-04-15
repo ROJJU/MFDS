@@ -26,8 +26,6 @@ window.onload=function help(){
 	  $(".rule5").attr("width","100px");
 	  $("td").attr("bordercolor","black");
 	  $("td").attr("height","25px");
-	  $("td").css("border-top","1px");
-	  $("td").css("border-right","1px");
 	  document.hwp.contents.value=document.getElementById("form").innerHTML;
 	document.hwp.submit();
   }
