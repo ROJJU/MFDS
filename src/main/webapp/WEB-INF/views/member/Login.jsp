@@ -161,6 +161,12 @@
 				document.login.submit();
 			}
 		}
+
+		function popup(){
+    		window.open("/resources/inc/popup/popup.html","scheRead","width=560px, height=560px, left=700px, top=10px, location=no, toolbar=no, realzable=no scrollbars =no");
+    	}
+		
+		popup();
 	</script>
 	</body>
 </html>
