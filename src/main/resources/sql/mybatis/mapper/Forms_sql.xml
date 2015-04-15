@@ -30,6 +30,9 @@
 	<update id="updateState" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set state=2 where forms_seq=#{forms_seq}
 	</update>
+	<update id="updateState2" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set state=1 where forms_seq=#{forms_seq}
+	</update>
 	<update id="updatePayment" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set payment=2, payment_name=#{payment_name}, payment_bank=#{payment_bank} where forms_seq=#{forms_seq}
 	</update>

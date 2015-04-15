@@ -82,7 +82,7 @@ function formCheck(){
 						</tr>
 						<tr height="25px">
 							<td><b>입금자명</b></td>
-							<td colspan="2"><font color="red"><b>2015년 1월 28일까지</b></font> 입급해 주셔야 합니다.</td>
+							<td colspan="2"><font color="red"><b>신청 후 [7일] 이내로</b></font> 입급해 주셔야 합니다.</td>
 						</tr>
 					</table>
 				</form>

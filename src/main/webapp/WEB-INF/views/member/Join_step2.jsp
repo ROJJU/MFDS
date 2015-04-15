@@ -59,7 +59,7 @@
 									<tr>
 										<td align="center" colspan="2" height="75px;" style=" background-color:yellow; color:red;">
 												<img src="/resources/img/common/coution.gif">&nbsp;<b style="font-size:15px; color:black;">[${id1}-${id2}-${id3}]</b>사용 가능한 정보 입니다.<br><br>
-												<input type="button" value="사용하기" onclick="javaScript:document.passInfo.submit();">
+												<input type="image" src="/resources/img/btn/use_btn.png" width="55px" onclick="javaScript:document.passInfo.submit();"><br>
 										</td>
 									</tr>
 								</c:if>

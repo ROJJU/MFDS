@@ -76,6 +76,9 @@ public class MemberController {
 		//setting parameter e
 			String msg=null;
 			String url=null;
+			logger.info("Check your ID : {}", id1+"-"+id2+"-"+id3);
+			logger.info("Check your EMAIL : {}", email1+"@"+email2);
+			logger.info("Check your PW : {}", pw_1);
 			try{
 				if(member_service.isLogin(member)){
 					msg="로그인 되었습니다.";

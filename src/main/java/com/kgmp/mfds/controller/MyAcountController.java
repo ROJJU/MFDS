@@ -157,12 +157,13 @@ public class MyAcountController{
 			form.setFind(find);
 			form.setAdd_year(year);
 			form.setAdd_month(month);
+			form.setForms_seq(forms_seq);
 			
 			//setting parameter e
 			int countAll = account_service.countAll(form);
 			List<Forms> title = account_service.selectTitle(form);
 			List<Forms> forms = account_service.selectFormSchedule(form);
-			Viewinfo=account_service.getScheduleForms(forms_seq);
+			Viewinfo=account_service.getScheduleForms(form);
 			mav.addObject("countAll", countAll);
 			mav.addObject("viewInfo", Viewinfo);
 			mav.addObject("list", forms);

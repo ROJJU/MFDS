@@ -16,4 +16,5 @@ public interface Forms_service {
 	String update_power(Forms forms);
 	void updateContent1(Forms forms);
 	String update_otp(Forms forms);
+	String updateState2(Forms forms);
 }

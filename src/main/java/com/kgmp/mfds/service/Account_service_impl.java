@@ -82,10 +82,10 @@ public class Account_service_impl implements Account_service{
 		return forms;
 	}
 	
-	public Forms getScheduleForms(int forms_seq){
+	public Forms getScheduleForms(Forms form){
 		Forms forms=null;
 		try{
-			forms=account_dao.getScheduleForms(forms_seq);
+			forms=account_dao.getScheduleForms(form);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

@@ -228,6 +228,7 @@ public class FormsController {
 		return mav;
 	}
 	
+	//up state
 	@RequestMapping(value = "/updateStateProc.do")
 	public ModelAndView updateState(@RequestParam("forms_seq") int forms_seq){
 		ModelAndView mav = new ModelAndView();
@@ -254,6 +255,33 @@ public class FormsController {
 		return mav;
 	}
 	
+	//down state
+	@RequestMapping(value = "/updateStateProc2.do")
+	public ModelAndView updateState2(@RequestParam("forms_seq") int forms_seq,
+									 @RequestParam("otp") int otp){
+		ModelAndView mav = new ModelAndView();
+		String msg=null;
+		String url=null;
+		Forms forms = new Forms();
+		forms.setForms_seq(forms_seq);
+		String check=null;
+		try{
+			check=forms_service.updateState2(forms);
+			if(check.equals("yes")){
+				msg="수정완료 후 최종저장 버튼을 눌러주시기 바랍니다.";
+				url="/NewForms.do?forms_seq="+forms_seq;
+			}else{
+				msg="실패하였습니다.";
+				url="/Forms.do?forms_seq="+forms_seq+"&otp="+otp;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("msg", msg);
+		mav.addObject("url", url);
+		mav.setViewName("/Check_proc");
+		return mav;
+	}
 
 	@RequestMapping(value = "/updatePaymentProc.do")
 	public ModelAndView updatePayment(@RequestParam("forms_seq") int forms_seq,

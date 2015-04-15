@@ -16,5 +16,5 @@ public interface Account_service {
 	String modifyPaymetPic(Forms forms);
 	List<Forms> selectFormSchedule(Forms form);
 	List<Forms> selectTitle(Forms form);
-	Forms getScheduleForms(int forms_seq);
+	Forms getScheduleForms(Forms form);
 }

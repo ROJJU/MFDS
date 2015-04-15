@@ -247,7 +247,7 @@ int a=-1;
 												                        <table>
 												                        	<tr>
 												                        		<td>폴더생성:</td>
-												                        		<td><a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=request.getParameter("find")%>&year=${viewInfo.add_year}&month=${viewInfo.add_month}">${viewInfo.add_year}년${viewInfo.add_month}월${viewInfo.add_day}일</a></td>
+												                        		<td><a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=find%>&year=${viewInfo.add_year}&month=${viewInfo.add_month}">${viewInfo.add_year}년${viewInfo.add_month}월${viewInfo.add_day}일</a></td>
 												                        	</tr>
 												                        	<tr>
 												                        		<td>보완신청:</td>
@@ -257,7 +257,7 @@ int a=-1;
 																                    		<font color="red">-</font>
 																                    	</c:when>
 																                    	<c:otherwise>
-																                    		<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=request.getParameter("find")%>&year=${viewInfo.help_year}&month=${viewInfo.help_month}">${viewInfo.help_year}년${viewInfo.help_month}월${viewInfo.help_day}일</a>
+																                    		<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=find%>&year=${viewInfo.help_year}&month=${viewInfo.help_month}">${viewInfo.help_year}년${viewInfo.help_month}월${viewInfo.help_day}일</a>
 																                    	</c:otherwise>
 																                    </c:choose>
 												                        		</td>
@@ -286,7 +286,7 @@ int a=-1;
 												                        					<font color="red">-</font>
 												                        				</c:when>
 												                        				<c:otherwise>
-												                        					<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=request.getParameter("find")%>&year=${viewInfo.payment_year}&month=${viewInfo.payment_month}">${viewInfo.payment_year}년${viewInfo.payment_month}월${viewInfo.payment_day}일</a>
+												                        					<a href="/MyPage.do?page_seq=7&forms_seq=${viewInfo.forms_seq}&search=<%=request.getParameter("search")%>&find=<%=find%>&year=${viewInfo.payment_year}&month=${viewInfo.payment_month}">${viewInfo.payment_year}년${viewInfo.payment_month}월${viewInfo.payment_day}일</a>
 												                        				</c:otherwise>
 												                        			</c:choose>
 											                        			</td>
@@ -300,17 +300,25 @@ int a=-1;
 													<tr>
 														<td height="65px" style="padding-left:15px;">
 															총 등록된 서류 : <font color="red">${countAll}</font>건
-															<form action="/MyPage.do" method="post" name="notice">
-																<input type="hidden" name="search" value="title">
-																<select name="forms_seq" style="width:170px;">
-																	<option value="">::폴더 선택(모두보기)::</option>
-																	<c:forEach var="t" items="${title}">
-																		<option value="${t.forms_seq}">${t.title}</option>
-																	</c:forEach>
-																</select>
-																<input type="hidden" value="7" name="page_seq">
-																<input type="image" src="/resources/img/forms/small_search_button.png" onclick="javaScript:document.notice.submit();">
-															</form>
+															<table>
+																<tr>
+																	<td>
+																		<form action="/MyPage.do" method="post" name="notice">
+																			<input type="hidden" name="search" value="title">
+																			<select name="forms_seq" style="width:170px;">
+																				<option value="all">::폴더 선택::</option>
+																				<c:forEach var="t" items="${title}">
+																					<option value="${t.forms_seq}">${t.title}</option>
+																				</c:forEach>
+																			</select>
+																			<input type="hidden" value="7" name="page_seq">
+																		</form>
+																	</td>
+																	<td>
+																		<input type="image" src="/resources/img/forms/small_search_button.png" onclick="moreInfo()">
+																	</td>
+																</tr>
+															</table>
 														</td>
 													</tr>
 													<tr><td style="vertical-align:top; height:5px;"><hr></td></tr>
@@ -399,7 +407,6 @@ int a=-1;
 																										<c:if test="${a.help_state=='3'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[2차_진행중]</b></c:if>
 																										<c:if test="${a.help_state=='4'}"><b style="color:red;"><img src="/resources/img/account/calendar_if.png" width="15px;">[2차_완료]</b></c:if>
 																										&nbsp;${a.title}<br>
-																										
 																										</a>
 																									</c:if>
 																								</c:if>
@@ -472,6 +479,15 @@ int a=-1;
                 //canToggle: true
             });
             $(".loading").removeClass("loading");
+            
+            function moreInfo(){
+            	var test = document.notice.forms_seq.value;
+            	if(test=='all'){
+            		alert('폴더를 선택해 주세요');
+            	}else{
+            		document.notice.submit();
+            	}
+            }
         </script>
 		<!--arcodion e-->
 	</body>

@@ -164,12 +164,69 @@
 							<td id="content_place">
 								<jsp:include page="/resources/inc/forms_tab/forms_tab.jsp"/>
 								<br>
+								<div style="width:920px; margin:0 auto; text-align:left; border:1px solid black; padding:8px 10px 8px 30px; background-color:#102967;">
+									<table>
+										<tr>
+											<td width="610px" style="color:#ffffff;">
+												<c:choose>
+													<c:when test="${list_seq==null}">
+														 | <input type="image" src="/resources/img/btn/saveHWP_button.png" onClick="javaScript:save_hwp()" width="70px">
+														 <c:choose>
+												 			<c:when test="${forms.help_state==3||forms.help_state==1}">
+												 				| <input type="image" src="/resources/img/btn/top_modify.png" onclick="javaScript:alert('보완 신청 진행 중 에는 수정할 수 없습니다.')" width="39px">
+												 			</c:when>
+												 			<c:otherwise>
+												 				| <input type="image" src="/resources/img/btn/top_modify.png" onClick="modifyForms(${forms.forms_seq}, <%=request.getParameter("otp")%>)" width="39px">
+												 			</c:otherwise>
+												 		</c:choose>
+														 <c:choose>
+														 	<c:when test="${forms.help_state==4}">
+														 		| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="javaScript:alert('이미 보완신청 2회 완료 된 서류 입니다.')">
+														 	</c:when>
+														 	<c:otherwise>
+														 		<c:choose>
+														 			<c:when test="${forms.help_state==3||forms.help_state==1}">
+														 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="javaScript:alert('보완 신청 진행 중 입니다.')">
+														 			</c:when>
+														 			<c:otherwise>
+														 				| <input type="image" src="/resources/img/btn/top_help.png" width="68px" onclick="help(${forms.forms_seq}, ${forms.help_state}, <%=request.getParameter("otp")%>)">
+														 			</c:otherwise>
+														 		</c:choose>
+														 	</c:otherwise>
+														 </c:choose>
+													</c:when>
+													<c:otherwise>
+														<c:choose>
+															<c:when test="${forms.mix=='1'}">
+																| <input type="image" src="/resources/img/forms/mix_x.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+															</c:when>
+															<c:otherwise>
+																| <input type="image" src="/resources/img/forms/mix_o.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${forms.power=='1'}">
+																| <input type="image" src="/resources/img/forms/power_x.png" width="75px" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
+															</c:when>
+															<c:otherwise>
+																| <input type="image" src="/resources/img/forms/power_o.png" width="75px"onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
+															</c:otherwise>
+														</c:choose>
+													</c:otherwise>
+												</c:choose>
+											</td>
+											<td align="right">
+												<img src="/resources/img/forms/Firewall.png" width="20px"><b style="color:#ffffff;">보안 기능 작동 중</b><img src="/resources/img/progress_bar.gif" width="170px">
+											</td>
+										</tr>
+									</table>
+								</div>
 								<div class="__se_tbl" style="width:900px; margin:0 auto; text-align:left; border:1px solid black; padding:30px;">
 								<form name="hwp">
 									<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
 									<input type="hidden" id="contents" name="contents">
 									<input type="hidden" name="add_date" value="${forms.add_date}">
-									<b id="form"></b>
+									<b id="form"><center><img src="/resources/img/loading1.gif"></center></b>
 								</form>
 								</div>
 								<br>
@@ -221,6 +278,12 @@
 		    }// 응답
 		    xhr.send(null);//전송
 		}// 서버에 요청
+		
+		function modifyForms(forms_seq, otp){
+			if(confirm('[작성 중] 서류로 변환됩니다. 계속 진행하시겠습니까?')){
+				goUrl('/updateStateProc2.do?forms_seq='+forms_seq+'&otp='+otp);
+			}
+		}
 		</script>
 	</body>
 </html>

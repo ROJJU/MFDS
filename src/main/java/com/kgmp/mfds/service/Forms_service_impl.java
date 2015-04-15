@@ -129,6 +129,18 @@ public class Forms_service_impl implements Forms_service{
 		return check;
 	}
 	
+	public String updateState2(Forms forms){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.updateState2(forms);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
+	
 	public String updatePayment(Forms forms){
 		String check=null;
 		try{

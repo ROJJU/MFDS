@@ -144,7 +144,7 @@
 							<br><br>
 						</form>
 							<input type="image" src="/resources/img/member/Submit_button.png" onclick="formCheck();">
-							<input type="image" src="/resources/img/member/cancel_btn.png" onclick="javaScript:location.href='/Login.do'">
+							<input type="image" src="/resources/img/btn/cancel_button.png" onclick="javaScript:location.href='/Login.do'">
 							<br><br>
 						</td>
 					</tr>

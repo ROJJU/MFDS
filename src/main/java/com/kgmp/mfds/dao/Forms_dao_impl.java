@@ -61,6 +61,10 @@ private SqlSession sqlSession;
 			sqlSession.update("updateState", forms);
 		}
 		
+		public void updateState2(Forms forms){
+			sqlSession.update("updateState2", forms);
+		}
+		
 		public void updatePayment(Forms forms){
 			sqlSession.update("updatePayment", forms);
 		}
