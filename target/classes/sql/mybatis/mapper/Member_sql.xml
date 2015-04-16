@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member_mapper">
+	<insert id="insertMember" parameterType="com.kgmp.mfds.vo.Member">
+		insert into member 
+		(id1, id2, id3, email1, email2, pw_1, kor_name, cha_name, eng_name, address, phone1, phone2, phone3, cell_phone1, cell_phone2, cell_phone3, company_kor, company_eng, company_address, company_phone1, company_phone2, company_phone3, company_fax1, company_fax2, company_fax3, ceo, company_file, insurance_no, product, finance, worker, join_date)
+		values(#{id1}, #{id2}, #{id3}, #{email1}, #{email2}, #{pw_1}, #{kor_name}, #{cha_name}, #{eng_name}, #{address}, #{phone1}, #{phone2}, #{phone3}, #{cell_phone1}, #{cell_phone2}, #{cell_phone3}, #{company_kor}, #{company_eng}, #{company_address}, #{company_phone1}, #{company_phone2}, #{company_phone3}, #{company_fax1}, #{company_fax2}, #{company_fax3}, #{ceo}, #{company_file}, #{insurance_no}, #{product}, #{finance}, #{worker}, now())
+	</insert>
+	<update id="updateMember" parameterType="com.kgmp.mfds.vo.Member">
+		update member set id1=#{id1}, id2=#{id2}, id3=#{id3}, email1=#{email1}, email2=#{email2}, pw_1=#{pw_1}, kor_name=#{kor_name}, cha_name=#{cha_name}, eng_name=#{eng_name}, address=#{address}, phone1=#{phone1}, phone2=#{phone2}, phone3=#{phone3}, cell_phone1=#{cell_phone1}, cell_phone2=#{cell_phone2}, cell_phone3=#{cell_phone3}, company_kor=#{company_kor}, company_eng=#{company_eng}, company_address=#{company_address}, company_phone1=#{company_phone1}, company_phone2=#{company_phone2}, company_phone3= #{company_phone3}, company_fax1=#{company_fax1}, company_fax2=#{company_fax2}, company_fax3=#{company_fax3}, ceo=#{ceo}, company_file=#{company_file}, insurance_no=#{insurance_no}, product=#{product}, finance=#{finance}, worker=#{worker} where member_seq=#{member_seq}
+	</update>
+	<select id="getMember" parameterType="com.kgmp.mfds.vo.Member" resultType="com.kgmp.mfds.vo.Member">
+		select * from member where id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
+	</select>
+	<select id="loginCheck" parameterType="com.kgmp.mfds.vo.Member" resultType="com.kgmp.mfds.vo.Member">
+		select * from member where id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} and pw_1=#{pw_1}
+	</select>
+	<select id="getEmailList" parameterType="com.kgmp.mfds.vo.Member" resultType="com.kgmp.mfds.vo.Member">
+		select replace(email1, substr(email1,2,3), '***') "email1", email2 from member where id1=#{id1} and id2=#{id2} and id3=#{id3}
+	</select>
+	<select id="getPost" parameterType="String" resultType="com.kgmp.mfds.vo.Member">
+		select addrs"id1", zip_code"id2" from post where sido LIKE CONCAT('%', #{post}, '%') or sigungu LIKE CONCAT('%', #{post}, '%') or dong LIKE CONCAT('%', #{post}, '%') or ri LIKE CONCAT('%', #{post}, '%') or addrs LIKE CONCAT('%', #{post}, '%')
+	</select>
+	<select id="getPassword" parameterType="com.kgmp.mfds.vo.Member" resultType="com.kgmp.mfds.vo.Member">
+		select * from member where id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} and kor_name=#{kor_name}
+	</select>
+</mapper>

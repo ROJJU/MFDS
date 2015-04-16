@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice_mapper">
+<!--notice s-->
+	<insert id="insertNotice" parameterType="com.kgmp.mfds.vo.Notice">
+		insert into notice (title, n_file, writer, add_date, hit, content)
+		 values(#{title}, #{n_file, jdbcType=VARCHAR}, #{writer}, now(), 0, #{content})
+	</insert>
+	<select id="getNoticeQty" resultType="int" >
+ 		select count(*) from (select * from notice where title LIKE CONCAT('%', #{find}, '%') or writer LIKE CONCAT('%', #{find}, '%'))as notice
+ 	</select>
+ 	<select id="getSearchQty" resultType="int" parameterType="Map" >
+		select count(*) from (select * from notice where ${search} LIKE CONCAT('%', #{find}, '%'))as notice
+	</select>
+	<select id="getNoticeList" parameterType="Map" resultType="com.kgmp.mfds.vo.Notice">
+ 		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from notice T1, (SELECT @rownum := 0) T2 WHERE  title LIKE CONCAT('%', #{find}, '%') or writer LIKE CONCAT('%', #{find}, '%') ORDER BY notice_seq DESC)as notice) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getSearch" parameterType="Map" resultType="com.kgmp.mfds.vo.Notice">
+		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from notice T1, (SELECT @rownum := 0) T2 WHERE ${search} LIKE CONCAT('%', #{find}, '%') ORDER BY notice_seq DESC)as notice) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getNotice" parameterType="int" resultType="com.kgmp.mfds.vo.Notice">
+		select * from notice where notice_seq = #{notice_seq}
+	</select>
+	<delete id="delNotice" parameterType="int">
+		delete from notice where notice_seq = #{notice_seq}
+	</delete>
+	<update id="hitNotice" parameterType="int">
+		update notice set hit=hit+1 where notice_seq = #{notice_seq}
+	</update>
+	<update id="modifyNotice" parameterType="com.kgmp.mfds.vo.Notice">
+		update notice set title=#{title}, n_file=#{n_file, jdbcType=VARCHAR}, writer=#{writer}, add_date=now(), content=#{content} where notice_seq = #{notice_seq}
+	</update>
+<!--notice e-->
+<!--news s-->
+	<insert id="insertNews" parameterType="com.kgmp.mfds.vo.Notice">
+		insert into news
+		(title, n_file, writer, add_date, hit, content)
+		 values(#{title}, #{n_file, jdbcType=VARCHAR}, #{writer}, now(), 0, #{content})
+	</insert>
+	<select id="getNewsQty" resultType="int" >
+ 		select count(*) from (select * from news where title LIKE CONCAT('%', #{find}, '%') or writer LIKE CONCAT('%', #{find}, '%')) as news
+ 	</select>
+ 	<select id="getNewsSearchQty" resultType="int" parameterType="Map" >
+		select count(*) from (select * from news where ${search} LIKE CONCAT('%', #{find}, '%')) as news
+	</select>
+	<select id="getNewsList" parameterType="Map" resultType="com.kgmp.mfds.vo.Notice">
+		SELECT * FROM (SELECT @rownum:=@rownum+1 as rn, a.* FROM (SELECT *	FROM (select * from news T1, (SELECT @rownum := 0) T2 WHERE  title LIKE CONCAT('%', #{find}, '%') or writer LIKE CONCAT('%', #{find}, '%') ORDER BY news_seq DESC)as news) a)as t3	WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getNewsSearch" parameterType="Map" resultType="com.kgmp.mfds.vo.Notice">
+		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from news T1, (SELECT @rownum := 0) T2 WHERE ${search} LIKE CONCAT('%', #{find}, '%') ORDER BY news_seq DESC)as news) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getNews" parameterType="int" resultType="com.kgmp.mfds.vo.Notice">
+		select * from news where news_seq = #{news_seq}
+	</select>
+	<delete id="delNews" parameterType="int">
+		delete from news where news_seq = #{news_seq}
+	</delete>
+	<update id="hitNews" parameterType="int">
+		update news set hit=hit+1 where news_seq = #{news_seq}
+	</update>
+	<update id="modifyNews" parameterType="com.kgmp.mfds.vo.Notice">
+		update news set title=#{title}, n_file=#{n_file, jdbcType=VARCHAR}, writer=#{writer}, add_date=now(), content=#{content} where news_seq = #{news_seq}
+	</update>
+<!--news e-->
+</mapper>

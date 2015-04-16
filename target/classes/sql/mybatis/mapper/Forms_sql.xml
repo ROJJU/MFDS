@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="forms_mapper">
+<!--Product s-->
+	<select id="getProductQty" resultType="int" >
+ 		select count(*) from (select * from product where kor_name LIKE CONCAT('%', #{find}, '%') or eng_name LIKE CONCAT('%', #{find}, '%'))as product
+ 	</select>
+ 	<select id="getProductSearchQty" resultType="int" parameterType="Map" >
+		select count(*) from (select * from product where ${search} LIKE CONCAT('%', #{find}, '%'))as product
+	</select>
+	<select id="getProductList" parameterType="Map" resultType="com.kgmp.mfds.vo.Forms">
+ 		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from product T1, (SELECT @rownum := 0) T2 WHERE kor_name LIKE CONCAT('%', #{find}, '%') or eng_name LIKE CONCAT('%', #{find}, '%') ORDER BY Product_seq DESC)as product) a)as t3	WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+	<select id="getProductSearch" parameterType="Map" resultType="com.kgmp.mfds.vo.Forms">
+		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from product T1, (SELECT @rownum := 0) T2 WHERE ${search} LIKE CONCAT('%', #{find}, '%') ORDER BY Product_seq DESC)as product) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+	</select>
+<!--Product e-->
+<!--Forms s-->
+	<insert id="insertForms" parameterType="com.kgmp.mfds.vo.Forms">
+		insert into forms
+		(kor_name, eng_name, div_mid, div_sub, p_class, mix, power, commit_no, company_name, company_addrs, license_num, making_name, making_addrs, title, add_date, contents1, contents2, contents3, contents4, contents5, contents6, contents7, contents8, contents9, contents10, contents11, contents12, contents13, contents14, contents15, contents16, contents17, contents18, contents19, contents20, contents21, contents22, contents23, contents24, contents25, contents26, contents27, contents28, contents29, contents30, contents31, contents32, contents33, contents34, contents35, contents36, contents37, state, id1, id2, id3, email1, email2, payment, payment_name, payment_bank, payment_pic, contents38, help_state, help_add_date, payment_add_date, help_content, help_content2, code, contents39, otp)
+		 values(#{kor_name}, #{eng_name}, #{div_mid}, #{div_sub}, #{p_class}, #{mix}, #{power}, #{commit_no, jdbcType=VARCHAR}, #{company_name, jdbcType=VARCHAR}, #{company_addrs, jdbcType=VARCHAR}, #{license_num}, #{making_name, jdbcType=VARCHAR}, #{making_addrs}, #{title, jdbcType=VARCHAR}, DATE_FORMAT(now(),'%Y/%m/%d'), #{contents1, jdbcType=VARCHAR}, #{contents2, jdbcType=VARCHAR}, #{contents3, jdbcType=VARCHAR}, #{contents4, jdbcType=VARCHAR}, #{contents5, jdbcType=VARCHAR}, #{contents6, jdbcType=VARCHAR}, #{contents7, jdbcType=VARCHAR}, #{contents8, jdbcType=VARCHAR}, #{contents9, jdbcType=VARCHAR}, #{contents10, jdbcType=VARCHAR}, #{contents11, jdbcType=VARCHAR}, #{contents12, jdbcType=VARCHAR}, #{contents13, jdbcType=VARCHAR}, #{contents14, jdbcType=VARCHAR}, #{contents15, jdbcType=VARCHAR}, #{contents16, jdbcType=VARCHAR}, #{contents17, jdbcType=VARCHAR}, #{contents18, jdbcType=VARCHAR}, #{contents19, jdbcType=VARCHAR}, #{contents20, jdbcType=VARCHAR}, #{contents21, jdbcType=VARCHAR}, #{contents22, jdbcType=VARCHAR}, #{contents23, jdbcType=VARCHAR}, #{contents24, jdbcType=VARCHAR}, #{contents25, jdbcType=VARCHAR}, #{contents26, jdbcType=VARCHAR}, #{contents27, jdbcType=VARCHAR}, #{contents28, jdbcType=VARCHAR}, #{contents29, jdbcType=VARCHAR}, #{contents30, jdbcType=VARCHAR}, #{contents31, jdbcType=VARCHAR}, #{contents32, jdbcType=VARCHAR}, #{contents33, jdbcType=VARCHAR}, #{contents34, jdbcType=VARCHAR}, #{contents35, jdbcType=VARCHAR}, #{contents36, jdbcType=VARCHAR}, #{contents37, jdbcType=VARCHAR}, #{state}, #{id1}, #{id2}, #{id3}, #{email1}, #{email2}, #{payment}, #{payment_name, jdbcType=VARCHAR}, #{payment_bank, jdbcType=VARCHAR}, #{payment_pic, jdbcType=VARCHAR}, #{contents38, jdbcType=VARCHAR}, 0, #{help_add_date, jdbcType=VARCHAR}, #{payment_add_date, jdbcType=VARCHAR}, #{help_content, jdbcType=VARCHAR}, #{help_content2, jdbcType=VARCHAR}, #{code}, #{contents39, jdbcType=VARCHAR}, #{otp, jdbcType=VARCHAR})
+	</insert>
+	<select id="getForms" parameterType="int" resultType="com.kgmp.mfds.vo.Forms">
+		select * from forms where forms_seq=#{forms_seq}
+	</select>
+	<update id="insertContents" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set ${contents_name}=#{contents} where forms_seq=#{forms_seq}
+	</update>
+	<update id="updateState" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set state=2 where forms_seq=#{forms_seq}
+	</update>
+	<update id="updateState2" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set state=1 where forms_seq=#{forms_seq}
+	</update>
+	<update id="updatePayment" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set payment=2, payment_name=#{payment_name}, payment_bank=#{payment_bank} where forms_seq=#{forms_seq}
+	</update>
+	<update id="updateHelp" parameterType="map">
+		update forms set help_state=#{help_state}, ${content_state}=#{help_content}, help_add_date=DATE_FORMAT(now(),'%Y/%m/%d') where forms_seq=#{forms_seq}
+	</update>
+	<select id="getUserForms" parameterType="com.kgmp.mfds.vo.Forms" resultType="com.kgmp.mfds.vo.Forms">
+		select * from forms where forms_seq=#{forms_seq} and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
+	</select>
+	<update id="updateHelpState" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set help_state=#{help_state} where forms_seq=#{forms_seq}
+	</update>
+	<update id="update_mix" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set mix=#{mix} where forms_seq=#{forms_seq}
+	</update>
+	<update id="update_power" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set power=#{power} where forms_seq=#{forms_seq}
+	</update>
+	<update id="updateContent1" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set contents1=null where forms_seq=#{forms_seq}
+	</update>
+	<update id="update_otp" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set otp=#{otp} where forms_seq=#{forms_seq}
+	</update>
+</mapper>
