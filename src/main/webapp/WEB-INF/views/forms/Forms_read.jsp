@@ -11,9 +11,11 @@
 	<style type="text/css">
 	.__se_tbl{
 	width:100%;
+	border-collapse:separate;
 	}
 	.hong{
 	width:100%;
+	border-collapse:separate;
 	}	
 	</style>
 	<script type="text/javascript">
@@ -174,7 +176,7 @@
 								<div style="width:920px; margin:0 auto; text-align:left; border:1px solid black; padding:8px 10px 8px 30px; background-color:#102967;">
 									<table>
 										<tr>
-											<td width="610px" style="color:#ffffff;">
+											<td width="590px" style="color:#ffffff;">
 												<c:choose>
 													<c:when test="${list_seq==null}">
 														 | <input type="image" src="/resources/img/btn/saveHWP_button.png" onClick="javaScript:save_hwp()" width="70px">
@@ -292,5 +294,10 @@
 			}
 		}
 		</script>
+		<a style="color:#ffffff" href="#">
+			<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:100px; right:2px; border-top:3px solid grey;">
+			TOP
+			</div>
+		</a>
 	</body>
 </html>

@@ -19,16 +19,18 @@ function notice_closeWin() {
  self.close();
 }
 //-->
-
 </script>
+<style type="text/css">
+select, input, img, input.type-image{/* border: 0 none; */ vertical-align:middle;}
+</style>
 </head>
 <body style="margin:0 auto;">
 <img src="/resources/img/forms/notice.jpg" width="100%">
 <div style="height:40px;"></div>
 <div style="position:fixed; bottom:0px; background-color:#EAEAEA; width:100%; padding:5px; text-align:right; ">
-	<form name="form1" method="post" action="">
+	<form name="form1" method="get" action="">
 	<input type="checkbox" name="pop1" id="pop1"><label for="pop1" style="cursor:hand; cursor:pointer;">오늘은 이창을 다시 열지않음.</label>
-	<input type="button" value="확인" OnClick="notice_closeWin()">&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="image" src="/resources/img/member/Submit_button.png" width="50px" OnClick="notice_closeWin()">&nbsp;&nbsp;&nbsp;&nbsp;
 	</form>
 </div>
 </body>

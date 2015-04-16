@@ -25,8 +25,8 @@ function formCheck(){
 </script>
 </head>
 <body>
-<div style="margin:0 auto; width:350px;"><br>
-	<table>
+<div style="margin:0 auto; width:360px;"><br>
+	<table width="100%">
 		<tr><td align="center" height="30px" colspan="2"><font size="2px">인증받을<b>이메일</b>주소를 입력해 주세요.
 			<br>해당 이메일은 <b style="color:red;">[서류열람, 비밀번호 확인]</b>등에 사용 됩니다.</font></td></tr>
 		<tr>
@@ -36,9 +36,9 @@ function formCheck(){
 				<input type="text" name="email2" style="width:100px;">
 			</form>
 			</td>
-			<td>
-				<input type="image" src="/resources/img/main/input_button.png" onclick="formCheck();" width="40px;">
-				<input type="image" src="/resources/img/btn/cancel_button.png" onclick="javaScript:window.close();" width="40px;">
+			<td align="left">
+				<input type="image" src="/resources/img/main/input_button.png" onclick="formCheck();" width="50px;">
+				<input type="image" src="/resources/img/btn/cancel_button.png" onclick="javaScript:window.close();" width="50px;">
 			</td>
 		</tr>
 		<tr><td align="center" colspan="2"><br><hr><img src="/resources/img/common/sted_logo.png" width="300px"><hr></td></tr>

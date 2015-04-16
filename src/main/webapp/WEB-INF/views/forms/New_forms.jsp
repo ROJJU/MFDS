@@ -33,7 +33,6 @@ int next =list_seq+1;
 <!--text edieter e-->
 	<meta name="robots" content="all">
 	<script type="text/javascript">
-	<!--
 	//쿠키값 가져오는 함수
 	function notice_getCookie( name ) {
 	 var nameOfCookie = name + "=";
@@ -171,10 +170,10 @@ int next =list_seq+1;
 							<td id="content_place">
 								<jsp:include page="/resources/inc/forms_tab/forms_tab.jsp"/>
 								<br>
-								<table style="width:962px; margin:0 auto; border:1px solid black; background-color:#102967;">
+								<table style="width:962px; margin:0 auto; border:1px solid black; background-color:#102967;" cellpadding="0" cellspacing="1">
 									<tr>
-										<td style="border:1px solid black; padding:5px; background-color:#EAEAEA; " align="right">
-											<font color="red"><b>가이드 라인 확인 버튼을 누르시면 해당 서식에 관한 예시 서류를 확인할 수 있습니다.</b></font>&nbsp;&nbsp;&nbsp;
+										<td style="border:1px solid black; padding:3px; background-color:#EAEAEA; " align="right">
+											<img src="/resources/img/forms/guide_text.gif">&nbsp;&nbsp;&nbsp;
 											<input type="image" src="/resources/img/btn/guide.png" width="40px" title="가이드 라인" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
 										</td>
 									</tr>
@@ -253,7 +252,7 @@ int next =list_seq+1;
 			 nhn.husky.EZCreator.createInIFrame({
 			 oAppRef: oEditors,
 			 elPlaceHolder: document.getElementById('txtContent'), // html editor가 들어갈 textarea id 입니다.
-			 sSkinURI: "resources/se/SmartEditor2Skin.html",  // html editor가 skin url 입니다.
+			 sSkinURI: "/resources/se/SmartEditor2Skin.html"  // html editor가 skin url 입니다.
 			 });
 			 
 			var onWrite = function(){
@@ -265,7 +264,7 @@ int next =list_seq+1;
 			};
 			 
 			var pasteHTML = function(filename){                     //업로드한 사진을 화면에 보여주게 만드는 스크립트입니다.
-			    var sHTML = '<img src="http://sted.co.kr/resources/upload/'+filename+'">'; //사진이 저장된 경로입니다.
+			    var sHTML = '<img src="http://sted.kr/resources/upload/'+filename+'">'; //사진이 저장된 경로입니다.
 			    oEditors.getById["txtContent"].exec("PASTE_HTML", [sHTML]);
 			};
 			
@@ -298,5 +297,10 @@ int next =list_seq+1;
             $(".loading").removeClass("loading");
         </script>
 		<!--arcodion e-->
+		<a style="color:#ffffff" href="#">
+			<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:100px; right:2px; border-top:3px solid grey;">
+			TOP
+			</div>
+		</a>
 	</body>
 </html>

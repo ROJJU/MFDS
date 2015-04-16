@@ -68,10 +68,18 @@
 													<tr>
 														<td align="left">
 															<div class="button"><strong>Documentation</strong> - <em>check your forms</em></div>
-															<img src="/resources/img/forms/Books2.png" width="20px"><a class="file_text" href="/MyPage.do?page_seq=6">모두(<font color="black">${countAll}</font>)</a>&nbsp;
-														  	<img src="/resources/img/forms/Books1.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=1">임시저장(<font color="red">${countIng}</font>)</a>&nbsp;
-														 	<img src="/resources/img/forms/Books.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=2">작성완료(<font color="blue">${countDone}</font>)</a>&nbsp;
-														 	<input type="image" src="/resources/img/account/calendar_re.png" width="60px;" onclick="location.href='/MyPage.do?page_seq=6';">
+															<table style="border:none; width:100%;">
+																<tr>
+																	<td style="border:none;">
+																		<img src="/resources/img/forms/Books2.png" width="20px"><a class="file_text" href="/MyPage.do?page_seq=6">모두(<font color="black">${countAll}</font>)</a>&nbsp;
+																	  	<img src="/resources/img/forms/Books1.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=1">임시저장(<font color="red">${countIng}</font>)</a>&nbsp;
+																	 	<img src="/resources/img/forms/Books.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=2">작성완료(<font color="blue">${countDone}</font>)</a>&nbsp;
+																	</td>
+																	<td align="right" style="border:none;">
+																		<input type="image" src="/resources/img/btn/repage_btn.png" width="25px;" title="새로고침" onclick="location.href='/MyPage.do?page_seq=6';">
+																	</td>
+																</tr>
+															</table>
 														</td>
 													</tr>
 												</table>
@@ -106,13 +114,13 @@
 																		<c:if test="${a.state=='2'}">
 																			<c:choose>
 																				<c:when test="${a.help_state=='1'}">
-																					<input type="image" src="/resources/img/forms/Books_help1.png">
+																					<input type="image" src="/resources/img/forms/Books_help3.png">
 																				</c:when>
 																				<c:when test="${a.help_state=='2'}">
 																					<input type="image" src="/resources/img/forms/Books_help2.png">
 																				</c:when>
 																				<c:when test="${a.help_state=='3'}">
-																					<input type="image" src="/resources/img/forms/Books_help3.png">
+																					<input type="image" src="/resources/img/forms/Books_help1.png">
 																				</c:when>
 																				<c:when test="${a.help_state=='4'}">
 																					<input type="image" src="/resources/img/forms/Books_help4.png">

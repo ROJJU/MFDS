@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <!--error page setting -->
   <error-page>
     <error-code>404</error-code>
     <location>/resources/error/404error.jsp</location>
@@ -12,6 +13,7 @@
     <error-code>500</error-code>
     <location>/resources/error/500error.jsp</location>
   </error-page>
+  <!--error page setting end-->
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -31,6 +33,13 @@
         classpath:context/**/applicationContext*.xml
         </param-value>
   </context-param>
+  <context-param>
+	  <param-name>log4jConfigLocation</param-name>
+	  <param-value>/WEB-INF/log4j.properties</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>

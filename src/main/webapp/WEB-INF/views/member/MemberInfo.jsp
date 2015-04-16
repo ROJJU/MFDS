@@ -258,7 +258,7 @@
 				</table><br><br><br><br>
 			</div>
 			<a style="color:#ffffff" href="#">
-				<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:2px; right:2px;">
+				<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:2px; right:2px;border-top:3px solid grey;">
 				TOP
 				</div>
 			</a>

@@ -35,7 +35,7 @@ int a=-1;
     int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
     int week = cal.get(Calendar.DAY_OF_WEEK);
    String find="";
-   String search="";
+   String search="title";
     if(request.getParameter("find")!=null){
     	find=request.getParameter("find");
     }

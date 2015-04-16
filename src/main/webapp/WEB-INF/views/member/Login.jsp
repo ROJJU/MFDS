@@ -161,12 +161,29 @@
 				document.login.submit();
 			}
 		}
-
-		function popup(){
-    		window.open("/resources/inc/popup/popup.html","scheRead","width=560px, height=560px, left=700px, top=10px, location=no, toolbar=no, realzable=no scrollbars =no");
-    	}
 		
-		popup();
+		//쿠키값 가져오는 함수
+		function notice_getCookie( name ) {
+		 var nameOfCookie = name + "=";
+		 var x = 0;
+		 while ( x <= document.cookie.length ) {
+		  var y = (x+nameOfCookie.length);
+		   if (document.cookie.substring( x, y ) == nameOfCookie ) {
+		    if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+		     endOfCookie = document.cookie.length;
+		     return unescape( document.cookie.substring( y, endOfCookie ) );
+		    }
+		    x = document.cookie.indexOf( " ", x ) + 1;
+		    if ( x == 0 )
+		    break;
+		   }
+		   return "";
+		  }
+		//쿠키 체크로 팝업여부 결정
+		if ( notice_getCookie( "pop2" ) != "done" ) {
+		//팝업창 경로,위치,크기
+			window.open("/resources/inc/popup/popup.html","scheRead","width=560px, height=590px, left=700px, top=10px, location=no, toolbar=no, realzable=no scrollbars =no");
+		}
 	</script>
 	</body>
 </html>

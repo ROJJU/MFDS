@@ -64,10 +64,10 @@
 											</c:when>
 											<c:otherwise>
 												<div id="my_payment">
-													<img src="/save/payment/${forms.payment_pic}">
+													<img src="/resources/img/upload/payment/${forms.payment_pic}">
 													<form action="/resources/inc/Download.jsp" method="post" name="down">
 														<input type="hidden" name="n_file" value="${forms.payment_pic}">
-														<input type="hidden" name="file_path" value="www/save/payment">
+														<input type="hidden" name="file_path" value="/resources/img/upload/payment">
 													</form>
 												</div>
 											</c:otherwise>

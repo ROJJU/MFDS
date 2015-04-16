@@ -48,8 +48,8 @@ document.onkeyup=KeyEventHandle;
 				<input type="hidden" value="${email2}" id="email2">
 				<input type="text" name="otp1" id="otp1">
 				<input type="hidden" value="${num}" name="otp2" id="otp2">
-				<input type="image" src="/resources/img/main/input_button.png" onclick="CheckOtp()" width="40px;">
-				<input type="image" src="/resources/img/btn/kr_back_btn.png" onclick="javaScript:history.go(-1)" width="40px;"><br>
+				<input type="image" src="/resources/img/main/input_button.png" onclick="CheckOtp()" width="50px;">
+				<input type="image" src="/resources/img/btn/kr_back_btn.png" onclick="javaScript:history.go(-1)" width="50px;"><br>
 				<a style="font-size:11px; color:red;">* email 도착은 <b>30초</b>에서 최대 <b>1분</b>정도 소요가 됩니다. *</a>
 			</td>
 		</tr>

@@ -3,6 +3,22 @@
 <head>
 <meta charset="EUC-KR">
 <title>KGMP Notice</title>
+<script type="text/javascript">
+function notice_setCookie( name, value, expiredays ) {
+ var todayDate = new Date();
+ todayDate.setDate( todayDate.getDate() + expiredays );
+ document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+//체크후 닫기를 눌렀을때 쿠키를 만들고 창닫는다.
+function notice_closeWin() {
+ if ( document.forms[0].pop1.checked )
+ notice_setCookie( "pop2", "done" , 1); //1일
+ self.close();
+}
+</script>
+<style type="text/css">
+select, input, img, input.type-image{/* border: 0 none; */ vertical-align:middle;}
+</style>
 </head>
 <body bgcolor="#0064A8">
  <table style="border:4px #00397F solid; border-collapse:collapse; margin:0 auto; width:95%;">
@@ -14,7 +30,7 @@
 				<tr style="">
 					<td style="padding:5px; border-bottom:1px solid grey;">
 						<div style="overflow-y:scroll; height:360px; font-size:11px">
-							<center><img src="popup.jpg" width="100%"><br></center><br><br>
+							<center><img src="/resources/img/popup.jpg" width="100%"><br></center><br><br>
 						</div>
 						<!--
 						<div style="padding:5px; background-color:#102967; width:100%; margin:0 auto; border-radius:8%;">
@@ -32,6 +48,12 @@
 		</td>
 	</tr>
  </table>
+ <div style="position:fixed; bottom:0px; background-color:#EAEAEA; width:100%; padding:5px; text-align:right; left:0px;">
+	<form name="form1" method="post" action="">
+	<input type="checkbox" name="pop1" id="pop1"><label for="pop1" style="cursor:hand; cursor:pointer;">오늘은 이창을 다시 열지않음.</label>
+	<input type="image" src="/resources/img/member/Submit_button.png" width="50px" OnClick="notice_closeWin()">&nbsp;&nbsp;&nbsp;&nbsp;
+	</form>
+ </div>
  <script>
 	function getSearch(){
 		window.open('popup_img.html','getInfo','width=755 height=526');

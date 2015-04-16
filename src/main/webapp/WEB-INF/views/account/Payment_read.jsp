@@ -102,10 +102,10 @@
 																<c:otherwise>
 																	<input type="image" src="/resources/img/account/bill.png"  onclick="show_pic()" id="payment_pic_btn">
 																	<div id="my_payment">
-																		<img src="/save/payment/${forms.payment_pic}" id="payment_pic" width="90%">
+																		<img src="/resources/img/upload/payment/${forms.payment_pic}" id="payment_pic" width="90%">
 																		<form action="/resources/inc/Download.jsp" method="post" name="down">
 																			<input type="hidden" name="n_file" value="${forms.payment_pic}">
-																			<input type="hidden" name="file_path" value="c:/save">
+																			<input type="hidden" name="file_path" value="/resources/img/upload/payment">
 																		</form>
 																	</div>
 																</c:otherwise>
