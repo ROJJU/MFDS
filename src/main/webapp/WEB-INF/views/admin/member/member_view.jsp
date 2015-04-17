@@ -77,5 +77,3 @@
 <jsp:include page="/resources/inc/admin/Footer.jsp"/>
 </body>
 </html>
-</body>
-</html>

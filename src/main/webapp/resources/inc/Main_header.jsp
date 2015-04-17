@@ -53,7 +53,6 @@ location.href="/";
 	function getSearch(){
 		window.open('/Search.do','getInfo','width=755 height=526');
 	}
-	
 	document.onmousedown = function (){// 우클릭 방지
 		 if(event.button == 2 || event.button == 3){
 		  document.oncontextmenu = function() {return false;};
@@ -75,7 +74,6 @@ location.href="/";
 	}
 	document.onkeydown=KeyEventHandle;
 	document.onkeyup=KeyEventHandle;
-	
 </script>
 <link rel="shortcut icon" href="/resources/favicon.ico"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">

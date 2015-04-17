@@ -81,7 +81,11 @@
 								<td>대표자:</td><td>${memberInfo.ceo}</td>
 							</tr>
 							<tr>
-								<td>사업자 등록증 사본:</td><td>${memberInfo.company_file}</td>
+								<td>사업자 등록증 사본:</td>
+								<td>
+									${memberInfo.company_file}
+									<input type="image" src="/resources/img/admin/more.png" width="20px" title="상세보기" onclick="openPic('${memberInfo.company_file}')">	
+								</td>
 							</tr>
 							<tr>
 								<td>고용보험 관리번호:</td><td>${memberInfo.insurance_no}</td>
@@ -103,8 +107,11 @@
 		</td>
     </tr>
 </table>
+<script>
+	function openPic(company_file){
+		window.open("/resources/inc/popup/openPic.jsp?company_file="+company_file,"openPic","width=700px, height=920px, left=700px, top=10px, location=no, toolbar=no, realzable=no scrollbars =no");
+	}
+</script>
 <jsp:include page="/resources/inc/admin/Footer.jsp"/>
-</body>
-</html>
 </body>
 </html>

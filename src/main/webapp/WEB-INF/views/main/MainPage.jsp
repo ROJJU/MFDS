@@ -15,6 +15,7 @@
 	#top_background{
 	color:#ffffff; font-weight:bold;
 	background-image:url('/resources/img/main/main_top_back.png'); background-size:cover 550px; background-repeat:no-repeat; padding-top:50px;
+	height:647px;
 	}
 	</style>
 	</head>
@@ -36,7 +37,8 @@
 									<h4>With Korea Medical Industry Institute of Goods Management Procedure</h4><br><br>
 									<div id="video_box">
 										<video preload autoplay loop width="100%">
-											<source src="/resources/video/kgmp.mp4">
+											<source src="/resources/video/kgmp.mp4" type="video/mp4" codec="avc.1.42e01e, mp4a.40.2">
+											<img src="/resources/img/main/kgmp.png" width="100%">
 										</video>
 									</div>
 								</div>

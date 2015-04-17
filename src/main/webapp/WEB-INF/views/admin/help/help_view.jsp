@@ -19,17 +19,29 @@
 	</tr>
 	<tr>
 		<td>
-			<form action="/AdminHelp.do?page_seq=18&side_seq=0" method="post" name="notice">
-				<div id ="serch">
-					<select name="search">
-						<option value="id1">선택</option>
-						<option value="title">폴더명</option>
-						<option value="kor_name">품목명[국문]</option>
-						<option value="eng_name">품목명[영문]</option>
-					</select>
-					<input type="text" name="find">  <input type="image" src="/resources/img/forms/small_search_button.png" onclick="javaScript:document.notice.submit();">
-				</div>
-			</form>
+			<table>
+				<tr>
+					<td>
+						<form action="/AdminHelp.do?page_seq=18&side_seq=0" method="post" name="notice">
+							<div id ="serch">
+								<select name="search">
+									<option value="id1">선택</option>
+									<option value="title">폴더명</option>
+									<option value="kor_name">품목명[국문]</option>
+									<option value="eng_name">품목명[영문]</option>
+								</select>
+								<input type="text" name="find">  <input type="image" src="/resources/img/forms/small_search_button.png" onclick="javaScript:document.notice.submit();">
+							</div>
+						</form>
+					</td>
+					<td>&nbsp;
+						<a href="/AdminHelp.do?page_seq=18&search=help_state&find=1"><img src="/resources/img/forms/Books_help1.png" width="25px">&nbsp;1차 진행 중</a>
+						<a href="/AdminHelp.do?page_seq=18&search=help_state&find=2"><img src="/resources/img/forms/Books_help2.png" width="25px">&nbsp;1차 완료</a>
+						<a href="/AdminHelp.do?page_seq=18&search=help_state&find=3"><img src="/resources/img/forms/Books_help3.png" width="25px">&nbsp;2차 진행 중</a>
+						<a href="/AdminHelp.do?page_seq=18&search=help_state&find=4"><img src="/resources/img/forms/Books_help4.png" width="25px">&nbsp;2차 완료</a>
+					</td>
+				</tr>
+			</table>
 		</td>
 	</tr>
 	<tr>
