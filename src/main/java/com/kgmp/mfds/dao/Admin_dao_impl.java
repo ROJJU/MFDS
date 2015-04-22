@@ -31,6 +31,10 @@ public class Admin_dao_impl implements Admin_dao{
 		return (Forms) sqlSession.selectOne("getForms", forms_seq);
 	}
 	
+	public Forms paymentgetForms(int forms_seq){
+		return (Forms) sqlSession.selectOne("paymentgetForms", forms_seq);
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Member> getMemberList(Map<String, Object> info){
 		return sqlSession.selectList("getMemberListAdmin", info);

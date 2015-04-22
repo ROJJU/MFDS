@@ -452,7 +452,7 @@ public class AdminController {
 		}else if(page_seq.equals("12")){
 			Forms forms = null;
 			try{
-				forms=admin_service.getForms(forms_seq);
+				forms=admin_service.paymentgetForms(forms_seq);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -461,7 +461,7 @@ public class AdminController {
 		}else if(page_seq.equals("13")){
 			Forms forms = null;
 			try{
-				forms=admin_service.getForms(forms_seq);
+				forms=admin_service.paymentgetForms(forms_seq);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -476,7 +476,7 @@ public class AdminController {
 						  @RequestParam("forms_seq") int forms_seq,
 						  @RequestParam("payment_pic") MultipartFile payment_pic){
 		Forms formsInfo = null;
-		formsInfo=admin_service.getForms(forms_seq);
+		formsInfo=admin_service.paymentgetForms(forms_seq);
 		String payment_pic_old=formsInfo.getPayment_pic();
 		//file upload s
 		String replaceName=null;

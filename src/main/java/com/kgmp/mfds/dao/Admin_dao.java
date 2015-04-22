@@ -18,4 +18,5 @@ public interface Admin_dao {
 	List<Forms> getHelpList(Map<String, Object> info);
 	Admin loginCheck(Admin admin);
 	Admin adminInfo();
+	Forms paymentgetForms(int forms_seq);
 }

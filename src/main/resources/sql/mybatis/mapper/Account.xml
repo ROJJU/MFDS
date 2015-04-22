@@ -3,7 +3,7 @@
 <mapper namespace="forms_mapper">
 <!-- my page forms s-->
 	<select id="selectFormList" resultType="com.kgmp.mfds.vo.Forms" parameterType="com.kgmp.mfds.vo.Forms">
-		select * from forms where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} order by forms_seq desc
+		select help_state, forms_seq, title, kor_name, eng_name, state, payment, add_date from forms where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} order by forms_seq desc
 	</select>
 	<select id="selectTitle" resultType="com.kgmp.mfds.vo.Forms" parameterType="com.kgmp.mfds.vo.Forms">
 		select title, forms_seq from forms where id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} order by forms_seq desc
@@ -21,7 +21,7 @@
 		select count(*) from forms where state=2 and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
 	</select>
 	<select id="getPaymentList" resultType="com.kgmp.mfds.vo.Forms"  parameterType="Map" >
-		SELECT * FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from forms T1, (SELECT @rownum := 0) T2 where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} and (payment=2 or payment=3) ORDER BY forms_seq desc)as forms) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
+		SELECT forms_seq, p_class, div_mid, title, kor_name, eng_name, payment_bank, payment_name, state, payment FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from forms T1, (SELECT @rownum := 0) T2 where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} and (payment=2 or payment=3) ORDER BY forms_seq desc)as forms) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
 	</select>
 	<select id="getPaymentQty" resultType="int" parameterType="Map" >
 		select count(*) from (select * from forms where ${search} LIKE CONCAT('%', #{find}, '%')) as payment

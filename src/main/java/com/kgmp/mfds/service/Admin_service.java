@@ -17,4 +17,5 @@ public interface Admin_service {
 	Admin loginCheck(Admin admin);
 	String adminModify(Admin admin);
 	Admin adminInfo();
+	Forms paymentgetForms(int forms_seq);
 }

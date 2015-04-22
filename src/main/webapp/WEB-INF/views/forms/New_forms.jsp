@@ -90,7 +90,7 @@ int next =list_seq+1;
 	  }
 	  
 	  function mixCheck(forms_seq, mix){
-		  if(confirm('1번 신청서 양식이 초기화 됩니다. 진행 하시겠습니까 ?')){
+		  if(confirm('1번 신청서 양식이 초기화 됩니다. 진행 하시겠습니까 ? 진행하시기 전에 1번 신청서 양식을 복사 하시기 바랍니다.')){
 			  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix;
 		  }
 	  }
@@ -172,8 +172,11 @@ int next =list_seq+1;
 								<br>
 								<table style="width:962px; margin:0 auto; border:1px solid black; background-color:#102967;" cellpadding="0" cellspacing="1">
 									<tr>
+										<td style="color:#ffffff;">
+											<jsp:include page="/resources/inc/forms_tab/forms_tab_under.jsp"/>
+										</td>
 										<td style="border:1px solid black; padding:3px; background-color:#EAEAEA; " align="right">
-											<img src="/resources/img/forms/guide_text.gif">&nbsp;&nbsp;&nbsp;
+											<img src="/resources/img/forms/guide_text.gif" width="500px">&nbsp;&nbsp;&nbsp;
 											<input type="image" src="/resources/img/btn/guide.png" width="40px" title="가이드 라인" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
 										</td>
 									</tr>

@@ -101,6 +101,16 @@ public class Admin_service_impl implements Admin_service{
 		return forms;
 	}
 	
+	public Forms paymentgetForms(int forms_seq){
+		Forms forms=null;
+		try{
+			forms=admin_dao.paymentgetForms(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return forms;
+	}
+	
 	public Map<String, Object> getMember(int currentPage, String linkURL, String search, String find){
 		Map<String, Object> pageAll = new HashMap<String, Object>();
 		Map<String, Object> info = new HashMap<String, Object>();
