@@ -19,7 +19,7 @@
 #nav ul li:hover { border-left: 0px solid transparent; border-right: 0px solid transparent; }
 
 #nav ul a { display: block; height: 20px; line-height: 20px; padding: 8px 5px; color: #666; border-bottom: 1px solid transparent; text-transform:  uppercase; color: #797979; font-weight: normal; }
-#nav ul a:hover { text-decoration: none; border-right-color: transparent; border-left-color: transparent; background: transparent; color: #4e4e4e; }
+#nav ul a:hover { text-decoration: none; font-weight:bolder; border-left-color: transparent; background: transparent; color: #ffffff; background-color:#102967; border-right:5px solid #ffffff;}
 
 * html #nav ul { margin: 0 0 0 -2px; }
 

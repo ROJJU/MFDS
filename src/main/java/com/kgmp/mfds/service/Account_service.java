@@ -17,4 +17,5 @@ public interface Account_service {
 	List<Forms> selectFormSchedule(Forms form);
 	List<Forms> selectTitle(Forms form);
 	Forms getScheduleForms(Forms form);
+	Forms popupgetForms(int forms_seq);
 }

@@ -201,7 +201,7 @@ public class MyAcountController{
 						  @RequestParam("forms_seq") int forms_seq){
 		Forms forms = null;
 		try{
-			forms=account_service.getForms(forms_seq);
+			forms=account_service.popupgetForms(forms_seq);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

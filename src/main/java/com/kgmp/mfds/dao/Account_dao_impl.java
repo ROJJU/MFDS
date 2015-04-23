@@ -42,6 +42,10 @@ public class Account_dao_impl implements Account_dao{
 		return (Forms) sqlSession.selectOne("getForms", forms_seq);
 	}
 	
+	public Forms popupgetForms(int forms_seq){
+		return (Forms) sqlSession.selectOne("popupgetForms", forms_seq);
+	}
+	
 	public Forms getScheduleForms(Forms form){
 		return (Forms) sqlSession.selectOne("getScheduleForms", form);
 	}

@@ -18,4 +18,5 @@ public interface Account_dao {
 	List<Forms> selectFormSchedule(Forms form);
 	List<Forms> selectTitle(Forms form);
 	Forms getScheduleForms(Forms form);
+	Forms popupgetForms(int forms_seq);
 }

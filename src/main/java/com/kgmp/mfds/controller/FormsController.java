@@ -66,6 +66,7 @@ public class FormsController {
     public ModelAndView newForms(Model model,
 	    					   @RequestParam("forms_seq") int forms_seq,
 	    					   @RequestParam(value = "list_seq", required = false, defaultValue = "1") String list_seq,
+	    					   @RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name,
 							   HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		//setting parameter s
@@ -91,6 +92,7 @@ public class FormsController {
 		formsInfo.setEmail1((String)session.getAttribute("email1"));
 		formsInfo.setEmail2((String)session.getAttribute("email2"));
 		formsInfo.setForms_seq(forms_seq);
+		formsInfo.setContents_name(contents_name);
 		//setting parameter e
 		mav.setViewName("/forms/New_forms");
 		

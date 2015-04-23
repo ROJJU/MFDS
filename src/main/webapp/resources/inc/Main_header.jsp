@@ -8,7 +8,7 @@ if(request.getParameter("list_seq")!=null){
 int back =list_seq-1;
 int next =list_seq+1;
 %>
-<%if(session.getAttribute("id1")==null||session.getAttribute("id1").equals(" ")){%>
+<%if(session.getAttribute("id1")==null||session.getAttribute("id1").equals("")){%>
 <script>
 alert('잘못된 경로로 접근하였습니다.');
 location.href="/";
@@ -19,9 +19,10 @@ location.href="/";
 <head>
 <title>STED</title>
 	<!--drop down menu s-->
-	<script type="text/javascript" src="/resources/js/Main/jquery-1.3.2.js"></script>
-	<link rel="stylesheet" type="text/css" href="/resources/css/common/Header.css" media="all" />
-	<!--drop down menu e-->
+	<script type="text/javascript" src="/resources/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.google_menu.js"></script>
+	<link rel="stylesheet" type="text/css" href="/resources/css/google_menu.css"/>
+	<link rel="stylesheet" type="text/css" href="/resources/css/common/Header.css" media="all" /><!--drop down menu e-->
 <script type="text/javascript">
 		function goUrl(url){
 			location.href=url;
@@ -74,6 +75,10 @@ location.href="/";
 	}
 	document.onkeydown=KeyEventHandle;
 	document.onkeyup=KeyEventHandle;
+	
+	$('document').ready(function(){
+        $('.wrap').fixedMenu();
+    });
 </script>
 <link rel="shortcut icon" href="/resources/favicon.ico"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
@@ -209,15 +214,6 @@ location.href="/";
 		</div>
 	</div>
 <script type="text/javascript">
-$(document).ready(function() {	
-	$('#nav li').hover(function() {
-		$('ul', this).slideDown(200);
-		$(this).children('a:first').addClass("hov");
-	}, function() {
-		$('ul', this).slideUp(100);
-		$(this).children('a:first').removeClass("hov");		
-	});
-});
 function getSearch(){
 	window.open('/fileList.do','getInfo','width=755 height=526 scrollbars=yes');
 }

@@ -82,6 +82,16 @@ public class Account_service_impl implements Account_service{
 		return forms;
 	}
 	
+	public Forms popupgetForms(int forms_seq){
+		Forms forms=null;
+		try{
+			forms=account_dao.popupgetForms(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return forms;
+	}
+	
 	public Forms getScheduleForms(Forms form){
 		Forms forms=null;
 		try{
