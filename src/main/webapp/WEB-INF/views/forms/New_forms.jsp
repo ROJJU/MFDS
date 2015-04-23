@@ -291,7 +291,6 @@ int next =list_seq+1;
 		</script>
 </div>
 		<!--arcodion s-->
-		<script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script><!--this is for time and arcodion  -->
         <script type="text/javascript" src="/resources/js/account/jquery.accordion.2.0.js" ></script>
         <script type="text/javascript">
             $('#example2').accordion({

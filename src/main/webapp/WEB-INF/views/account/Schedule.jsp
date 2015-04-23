@@ -466,7 +466,7 @@ int a=-1;
 		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 		<!--timer s-->
-		<script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script><!--this is for time and arcodion  -->
+		<!--this is for time and arcodion  -->
 		<script src="/resources/js/flipclock/libs/base.js"></script>
 		<script src="/resources/js/flipclock/flipclock.js"></script>
 		<script src="/resources/js/flipclock/faces/counter.js"></script>
