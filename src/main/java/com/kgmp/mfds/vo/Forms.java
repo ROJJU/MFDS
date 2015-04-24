@@ -89,8 +89,289 @@ public class Forms {
 	private String help_day;
 	private String help_content2;
 	private String otp;
+	private String ck_form;
+	private String ck_form1;
+	private String ck_form2;
+	private String ck_form3;
+	private String ck_form4;
+	private String ck_form5;
+	private String ck_form6;
+	private String ck_form7;
+	private String ck_form8;
+	private String ck_form9;
+	private String ck_form10;
+	private String ck_form11;
+	private String ck_form12;
+	private String ck_form13;
+	private String ck_form14;
+	private String ck_form15;
+	private String ck_form16;
+	private String ck_form17;
+	private String ck_form18;
+	private String ck_form19;
+	private String ck_form20;
+	private String ck_form21;
+	private String ck_form22;
+	private String ck_form23;
+	private String ck_form24;
+	private String ck_form25;
+	private String ck_form26;
+	private String ck_form27;
+	private String ck_form28;
+	private String ck_form29;
+	private String ck_form30;
+	private String ck_form31;
+	private String ck_form32;
+	private String ck_form33;
+	private String ck_form34;
+	private String ck_form35;
+	private String ck_form36;
+	private String ck_form37;
+	private String ck_form38;
+	private String ck_form39;
 	
 	
+	
+	public String getck_form() {
+		return ck_form;
+	}
+	public void setck_form(String ck_form) {
+		this.ck_form = ck_form;
+	}
+	public String getck_form1() {
+		return ck_form1;
+	}
+	public void setck_form1(String ck_form1) {
+		this.ck_form1 = ck_form1;
+	}
+	public String getck_form2() {
+		return ck_form2;
+	}
+	public void setck_form2(String ck_form2) {
+		this.ck_form2 = ck_form2;
+	}
+	public String getck_form3() {
+		return ck_form3;
+	}
+	public void setck_form3(String ck_form3) {
+		this.ck_form3 = ck_form3;
+	}
+	public String getck_form4() {
+		return ck_form4;
+	}
+	public void setck_form4(String ck_form4) {
+		this.ck_form4 = ck_form4;
+	}
+	public String getck_form5() {
+		return ck_form5;
+	}
+	public void setck_form5(String ck_form5) {
+		this.ck_form5 = ck_form5;
+	}
+	public String getck_form6() {
+		return ck_form6;
+	}
+	public void setck_form6(String ck_form6) {
+		this.ck_form6 = ck_form6;
+	}
+	public String getck_form7() {
+		return ck_form7;
+	}
+	public void setck_form7(String ck_form7) {
+		this.ck_form7 = ck_form7;
+	}
+	public String getck_form8() {
+		return ck_form8;
+	}
+	public void setck_form8(String ck_form8) {
+		this.ck_form8 = ck_form8;
+	}
+	public String getck_form9() {
+		return ck_form9;
+	}
+	public void setck_form9(String ck_form9) {
+		this.ck_form9 = ck_form9;
+	}
+	public String getck_form10() {
+		return ck_form10;
+	}
+	public void setck_form10(String ck_form10) {
+		this.ck_form10 = ck_form10;
+	}
+	public String getck_form11() {
+		return ck_form11;
+	}
+	public void setck_form11(String ck_form11) {
+		this.ck_form11 = ck_form11;
+	}
+	public String getck_form12() {
+		return ck_form12;
+	}
+	public void setck_form12(String ck_form12) {
+		this.ck_form12 = ck_form12;
+	}
+	public String getck_form13() {
+		return ck_form13;
+	}
+	public void setck_form13(String ck_form13) {
+		this.ck_form13 = ck_form13;
+	}
+	public String getck_form14() {
+		return ck_form14;
+	}
+	public void setck_form14(String ck_form14) {
+		this.ck_form14 = ck_form14;
+	}
+	public String getck_form15() {
+		return ck_form15;
+	}
+	public void setck_form15(String ck_form15) {
+		this.ck_form15 = ck_form15;
+	}
+	public String getck_form16() {
+		return ck_form16;
+	}
+	public void setck_form16(String ck_form16) {
+		this.ck_form16 = ck_form16;
+	}
+	public String getck_form17() {
+		return ck_form17;
+	}
+	public void setck_form17(String ck_form17) {
+		this.ck_form17 = ck_form17;
+	}
+	public String getck_form18() {
+		return ck_form18;
+	}
+	public void setck_form18(String ck_form18) {
+		this.ck_form18 = ck_form18;
+	}
+	public String getck_form19() {
+		return ck_form19;
+	}
+	public void setck_form19(String ck_form19) {
+		this.ck_form19 = ck_form19;
+	}
+	public String getck_form20() {
+		return ck_form20;
+	}
+	public void setck_form20(String ck_form20) {
+		this.ck_form20 = ck_form20;
+	}
+	public String getck_form21() {
+		return ck_form21;
+	}
+	public void setck_form21(String ck_form21) {
+		this.ck_form21 = ck_form21;
+	}
+	public String getck_form22() {
+		return ck_form22;
+	}
+	public void setck_form22(String ck_form22) {
+		this.ck_form22 = ck_form22;
+	}
+	public String getck_form23() {
+		return ck_form23;
+	}
+	public void setck_form23(String ck_form23) {
+		this.ck_form23 = ck_form23;
+	}
+	public String getck_form24() {
+		return ck_form24;
+	}
+	public void setck_form24(String ck_form24) {
+		this.ck_form24 = ck_form24;
+	}
+	public String getck_form25() {
+		return ck_form25;
+	}
+	public void setck_form25(String ck_form25) {
+		this.ck_form25 = ck_form25;
+	}
+	public String getck_form26() {
+		return ck_form26;
+	}
+	public void setck_form26(String ck_form26) {
+		this.ck_form26 = ck_form26;
+	}
+	public String getck_form27() {
+		return ck_form27;
+	}
+	public void setck_form27(String ck_form27) {
+		this.ck_form27 = ck_form27;
+	}
+	public String getck_form28() {
+		return ck_form28;
+	}
+	public void setck_form28(String ck_form28) {
+		this.ck_form28 = ck_form28;
+	}
+	public String getck_form29() {
+		return ck_form29;
+	}
+	public void setck_form29(String ck_form29) {
+		this.ck_form29 = ck_form29;
+	}
+	public String getck_form30() {
+		return ck_form30;
+	}
+	public void setck_form30(String ck_form30) {
+		this.ck_form30 = ck_form30;
+	}
+	public String getck_form31() {
+		return ck_form31;
+	}
+	public void setck_form31(String ck_form31) {
+		this.ck_form31 = ck_form31;
+	}
+	public String getck_form32() {
+		return ck_form32;
+	}
+	public void setck_form32(String ck_form32) {
+		this.ck_form32 = ck_form32;
+	}
+	public String getck_form33() {
+		return ck_form33;
+	}
+	public void setck_form33(String ck_form33) {
+		this.ck_form33 = ck_form33;
+	}
+	public String getck_form34() {
+		return ck_form34;
+	}
+	public void setck_form34(String ck_form34) {
+		this.ck_form34 = ck_form34;
+	}
+	public String getck_form35() {
+		return ck_form35;
+	}
+	public void setck_form35(String ck_form35) {
+		this.ck_form35 = ck_form35;
+	}
+	public String getck_form36() {
+		return ck_form36;
+	}
+	public void setck_form36(String ck_form36) {
+		this.ck_form36 = ck_form36;
+	}
+	public String getck_form37() {
+		return ck_form37;
+	}
+	public void setck_form37(String ck_form37) {
+		this.ck_form37 = ck_form37;
+	}
+	public String getck_form38() {
+		return ck_form38;
+	}
+	public void setck_form38(String ck_form38) {
+		this.ck_form38 = ck_form38;
+	}
+	public String getck_form39() {
+		return ck_form39;
+	}
+	public void setck_form39(String ck_form39) {
+		this.ck_form39 = ck_form39;
+	}
 	public String getOtp() {
 		return otp;
 	}

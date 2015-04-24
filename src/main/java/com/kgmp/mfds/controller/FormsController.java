@@ -204,7 +204,8 @@ public class FormsController {
 	public ModelAndView insertForms(@RequestParam("forms_seq") int forms_seq,
 									@RequestParam("contents") String contents,
 									@RequestParam("contents_name") String contents_name,
-									@RequestParam("url") String p_url){
+									@RequestParam("url") String p_url,
+									@RequestParam("ck_form") String ck_form){
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
 		String url=p_url;
@@ -212,6 +213,7 @@ public class FormsController {
 		forms.setForms_seq(forms_seq);
 		forms.setContents(contents);
 		forms.setContents_name(contents_name);
+		forms.setck_form(ck_form);
 		String check=null;
 		try{
 			check=forms_service.insertContents(forms);

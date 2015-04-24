@@ -7,6 +7,7 @@
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="contents26" name="contents_name">
 		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=26" name="url">
+		  	<input type="hidden" value="ck_form26" name="ck_form">
 		    <textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
 		    	<c:choose>
 		    		<c:when test="${forms.contents26!=null}">

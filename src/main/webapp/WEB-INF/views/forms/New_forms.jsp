@@ -232,14 +232,7 @@ int next =list_seq+1;
 									<input type="image" src="/resources/img/btn/kr_next_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=next%>')">
 									<input type="image" src="/resources/img/btn/yetSave_button.png" width="60px;" onclick="onWrite()">
 								    <input type="image" src="/resources/img/btn/list_btn.png" width="60px;" onclick="goUrl('/MyPage.do?page_seq=6')">
-								    <c:choose>
-										<c:when test="${forms.contents1==null||forms.contents2==null||forms.contents3==null||forms.contents4==null||forms.contents5==null||forms.contents6==null||forms.contents7==null||forms.contents8==null||forms.contents10==null||forms.contents11==null||forms.contents12==null||forms.contents13==null||forms.contents14==null||forms.contents15==null||forms.contents16==null||forms.contents17==null||forms.contents18==null||forms.contents19==null||forms.contents20==null||forms.contents21==null||forms.contents22==null||forms.contents23==null||forms.contents24==null||forms.contents25==null||forms.contents26==null||forms.contents27==null||forms.contents28==null||forms.contents29==null||forms.contents30==null||forms.contents31==null||forms.contents32==null||forms.contents33==null||forms.contents34==null||forms.contents35==null||forms.contents36==null||forms.contents37==null}">
-											<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="alert('작성하지 않은 서류가 있습니다.')">
-										</c:when>
-										<c:otherwise>
-											<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="finalSave(${forms.forms_seq})">
-										</c:otherwise>
-									</c:choose>
+									<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="finalSave(${forms.forms_seq})">
 								</div><br><br><br><br>
 							</td>
 						</tr>
