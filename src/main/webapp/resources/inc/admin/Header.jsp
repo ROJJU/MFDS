@@ -144,7 +144,7 @@ function goUrl(url){
 			</table>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:11px">
 				<tr>
-					<td height="26"  background="/resources/img/admin/left_<%="0".equals(side_seq)?"over":"off"%>.gif"><a href="/AdminMember.do?page_seq=14" class="left">문서 보완 관리</a></td>
+					<td height="26"  background="/resources/img/admin/left_<%="0".equals(side_seq)?"over":"off"%>.gif"><a href="/AdminHelp.do?page_seq=18" class="left">문서 보완 관리</a></td>
 				</tr>
 			</table>
 			<%}else if(page_seq.equals("20")){%>

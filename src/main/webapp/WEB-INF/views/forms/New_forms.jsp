@@ -255,7 +255,7 @@ int next =list_seq+1;
 			 oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용합니다.
 			 
 			 var boardWriteForm = document.getElementById("boardWriteForm");  
-			 boardWriteForm.action ="/FormsProc.do";  //저장할 페이지로 쏩니다. db를 쓰지 않으니 사용하지 않았습니다.
+			 boardWriteForm.action ="/FormsProc.do";  //저장할 페이지로 쏩니다.
 			 boardWriteForm.submit();  
 			};
 			 

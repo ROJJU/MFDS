@@ -208,7 +208,7 @@ public class FormsController {
 									@RequestParam("ck_form") String ck_form){
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
-		String url=p_url;
+		String url=p_url+"&contents_name="+contents_name;
 		Forms forms = new Forms();
 		forms.setForms_seq(forms_seq);
 		forms.setContents(contents);
