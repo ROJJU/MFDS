@@ -101,6 +101,26 @@ public class Admin_service_impl implements Admin_service{
 		return forms;
 	}
 	
+	public Forms adminGetForms(Forms formInfo){
+		Forms forms=null;
+		try{
+			forms=admin_dao.adminGetForms(formInfo);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return forms;
+	}
+	
+	public Forms getHelpContents(int forms_seq){
+		Forms forms=null;
+		try{
+			forms=admin_dao.getHelpContents(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return forms;
+	}
+	
 	public Forms paymentgetForms(int forms_seq){
 		Forms forms=null;
 		try{

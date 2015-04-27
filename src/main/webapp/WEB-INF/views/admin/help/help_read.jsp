@@ -35,7 +35,16 @@
 				</tr>
 				<tr>
 					<td>${forms.help_content}</td>
-					<td>${forms.help_content2}</td>
+					<td>
+						<c:choose>
+							<c:when test="${forms.help_content2==null||forms.help_content2==''}">
+								<font color="red">내역이 없습니다.</font>
+							</c:when>
+							<c:otherwise>
+								${forms.help_content2}
+							</c:otherwise>
+						</c:choose>
+					</td>
 				</tr>		
 			</table><br>
 			<center>

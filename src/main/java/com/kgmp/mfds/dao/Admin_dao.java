@@ -19,4 +19,6 @@ public interface Admin_dao {
 	Admin loginCheck(Admin admin);
 	Admin adminInfo();
 	Forms paymentgetForms(int forms_seq);
+	Forms getHelpContents(int forms_seq);
+	Forms adminGetForms(Forms formInfo);
 }

@@ -1,7 +1,6 @@
 package com.kgmp.mfds.controller;
 
 import java.io.File;
-
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
@@ -546,7 +545,8 @@ public class AdminController {
       					@RequestParam(value = "id3", required = false, defaultValue = "1") String id3,
       					@RequestParam(value = "email1", required = false, defaultValue = "1") String email1,
       					@RequestParam(value = "email2", required = false, defaultValue = "1") String email2,
-      					@RequestParam(value = "forms_seq", required = false, defaultValue = "1") int forms_seq){
+      					@RequestParam(value = "forms_seq", required = false, defaultValue = "1") int forms_seq,
+      					@RequestParam(value = "contents_name", required = false, defaultValue = "content1") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		if(page_seq.equals("14")){
 			mav.setViewName("/admin/member/member_view");
@@ -622,7 +622,8 @@ public class AdminController {
       					@RequestParam(value = "email1", required = false, defaultValue = "1") String email1,
       					@RequestParam(value = "email2", required = false, defaultValue = "1") String email2,
       					@RequestParam(value = "forms_seq", required = false, defaultValue = "1") int forms_seq,
-      					@RequestParam(value = "list_seq", required = false, defaultValue = "1") String list_seq){
+      					@RequestParam(value = "list_seq", required = false, defaultValue = "1") String list_seq,
+      					@RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		if(page_seq.equals("18")){
 			mav.setViewName("/admin/help/help_view");
@@ -636,12 +637,15 @@ public class AdminController {
 			mav.addObject("list", list);
 		}else if(page_seq.equals("19")){
 			Forms forms = null;
-			forms=admin_service.getForms(forms_seq);
+			forms=admin_service.getHelpContents(forms_seq);
 			mav.addObject("forms", forms);
 			mav.setViewName("/admin/help/help_read");
 		}else if(page_seq.equals("20")){
 			Forms forms = null;
-			forms=admin_service.getForms(forms_seq);
+			Forms formInfo = new Forms();
+			formInfo.setForms_seq(forms_seq);
+			formInfo.setContents_name(contents_name);
+			forms=admin_service.adminGetForms(formInfo);
 			mav.addObject("list_seq", list_seq);
 			mav.addObject("forms", forms);
 			mav.setViewName("/admin/help/help_modidfy");
@@ -670,7 +674,8 @@ public class AdminController {
 									@RequestParam("list_seq") int list_seq,
 									@RequestParam("contents") String contents,
 									@RequestParam("contents_name") String contents_name,
-									@RequestParam("url") String p_url){
+									@RequestParam("url") String p_url,
+									@RequestParam("ck_form") String ck_form){
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
 		String url="/AdminHelp.do?page_seq=20&forms_seq="+forms_seq+"&list_seq="+list_seq;
@@ -678,6 +683,7 @@ public class AdminController {
 		forms.setForms_seq(forms_seq);
 		forms.setContents(contents);
 		forms.setContents_name(contents_name);
+		forms.setck_form(ck_form);
 		String check=null;
 		try{
 			check=forms_service.insertContents(forms);

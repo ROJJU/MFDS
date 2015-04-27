@@ -31,6 +31,14 @@ public class Admin_dao_impl implements Admin_dao{
 		return (Forms) sqlSession.selectOne("getForms", forms_seq);
 	}
 	
+	public Forms adminGetForms(Forms formInfo){
+		return (Forms) sqlSession.selectOne("adminGetForms", formInfo);
+	}
+	
+	public Forms getHelpContents(int forms_seq){
+		return (Forms) sqlSession.selectOne("getHelpContents", forms_seq);
+	}
+	
 	public Forms paymentgetForms(int forms_seq){
 		return (Forms) sqlSession.selectOne("paymentgetForms", forms_seq);
 	}

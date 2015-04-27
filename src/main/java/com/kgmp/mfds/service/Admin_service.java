@@ -18,4 +18,6 @@ public interface Admin_service {
 	String adminModify(Admin admin);
 	Admin adminInfo();
 	Forms paymentgetForms(int forms_seq);
+	Forms getHelpContents(int forms_seq);
+	Forms adminGetForms(Forms formInfo);
 }
