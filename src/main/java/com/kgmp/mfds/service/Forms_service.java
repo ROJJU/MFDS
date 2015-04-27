@@ -17,4 +17,5 @@ public interface Forms_service {
 	void updateContent1(Forms forms);
 	String update_otp(Forms forms);
 	String updateState2(Forms forms);
+	Forms getFormsRead(Forms formsInfo);
 }

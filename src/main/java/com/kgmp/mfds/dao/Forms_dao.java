@@ -24,4 +24,5 @@ public interface Forms_dao {
 	void updateContent1(Forms forms);
 	void update_otp(Forms forms);
 	void updateState2(Forms forms);
+	Forms getFormsRead(Forms formsInfo);
 }

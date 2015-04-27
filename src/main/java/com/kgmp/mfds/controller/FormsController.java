@@ -320,11 +320,15 @@ public class FormsController {
 
 	@RequestMapping(value = "/LoadContent.do")
 	public ModelAndView loadContent(@RequestParam("forms_seq") int forms_seq,
-						@RequestParam("num") int num){
+									@RequestParam("num") int num,
+									@RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
+		Forms formsInfo = new Forms();
+		formsInfo.setContents_name(contents_name);
+		formsInfo.setForms_seq(forms_seq);
 		try{
-			forms=account_service.getForms(forms_seq);
+			forms=forms_service.getFormsRead(formsInfo);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

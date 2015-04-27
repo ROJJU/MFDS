@@ -42,11 +42,14 @@
 	<select id="getUserForms" parameterType="com.kgmp.mfds.vo.Forms" resultType="com.kgmp.mfds.vo.Forms">
 		select
 		ck_form1, ck_form2, ck_form3, ck_form4, ck_form5, ck_form6, ck_form7, ck_form8, ck_form9, ck_form10, ck_form11, ck_form12, ck_form13, ck_form14,
-		ck_form15, ck_form16, ck_form17, ck_form19, ck_form20, ck_form21, ck_form22, ck_form23, ck_form24, ck_form25, ck_form26, ck_form27, ck_form28,
+		ck_form15, ck_form16, ck_form17, ck_form18, ck_form19, ck_form20, ck_form21, ck_form22, ck_form23, ck_form24, ck_form25, ck_form26, ck_form27, ck_form28,
 		ck_form29, ck_form30, ck_form31, ck_form32, ck_form33, ck_form34, ck_form35, ck_form36, ck_form37, ck_form38, ck_form39,
 		help_state, mix, power, title, kor_name, eng_name, p_class, id1, id2, id3, email1, email2, add_date, ${contents_name}, otp, forms_seq 
 		from forms
 		where forms_seq=#{forms_seq} and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
+	</select>
+	<select id="getFormsRead" parameterType="com.kgmp.mfds.vo.Forms" resultType="com.kgmp.mfds.vo.Forms">
+		select ${contents_name} from forms where forms_seq=#{forms_seq}
 	</select>
 	<update id="updateHelpState" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set help_state=#{help_state} where forms_seq=#{forms_seq}
@@ -58,7 +61,7 @@
 		update forms set power=#{power} where forms_seq=#{forms_seq}
 	</update>
 	<update id="updateContent1" parameterType="com.kgmp.mfds.vo.Forms">
-		update forms set contents1=null where forms_seq=#{forms_seq}
+		update forms set contents1=null, ck_form1=null where forms_seq=#{forms_seq}
 	</update>
 	<update id="update_otp" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set otp=#{otp} where forms_seq=#{forms_seq}

@@ -231,18 +231,13 @@ public class MyAcountController{
 		int num=account_service.randomNum();
 		String email1=(String)session.getAttribute("email1");
 		String email2=(String)session.getAttribute("email2");
-		Forms forms = null;
-		try{
-			forms=account_service.getForms(forms_seq);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		
 		try{
 			MimeMessage message = mailSender.createMimeMessage();
 			 String test1="K-GMP@K-GMP.com";
 			 String test2=email1+"@"+email2;
 			 String test3="(주)한국지엠피 OTP 확인 메일";
-			 String test4="<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'><html><body style='width:600px border:1px solid grey;'><div style='margin:0 auto; padding:10px; width:700px; border:1px solid grey;'><div>	<div>		<img src='http://sted.co.kr/resources/img/common/header_bg2.jpg' width='100%'>	</div>	<div style='background-color:#102967; color:#ffffff; height:30px;'>		&nbsp;▶ 인증번호 확인	</div></div><div><br><br>	안녕하세요. (주)한국지엠피 입니다.<br>	진행하고계신 STED 프로그램을 위한 인증번호입니다.<br>	아래의 인증번호를 입력하여 계속 진행 하실 수 있습니다.<br><br>	<b>E-MAIL :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+forms.getEmail1()+"@"+forms.getEmail2()+"</h1><br>	<b>인증번호 :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+num+"</h1><br><br>	그 외에 STED 이용과 관련하여 궁금하신 사항이 있으시면 <a href='#'>FAQ</a>를 확인해 보십시오.<br><br>	(주)한국지엠피<br><br><br>	<p style='color:grey;'>본 메일은 발신전용입니다. 본 메일을 임의로 위.번조하여 사용할 경우 형사처벌의 대상이 될 수 있습니다. 궁금한 사항은 <a href='mailto:K-GMP@K-GMP.COM'>K-GMP@K-GMP.COM</a>으로 문의하십시오.</p><br><div style='background-color:#102967; color:#ffffff; height:30px; text-align:right;'>Copyright ⓒ K-GMP All Right Reserved&nbsp;</div></div></div></body></html>";			 
+			 String test4="<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'><html><body style='width:600px border:1px solid grey;'><div style='margin:0 auto; padding:10px; width:700px; border:1px solid grey;'><div>	<div>		<img src='http://sted.co.kr/resources/img/common/header_bg2.jpg' width='100%'>	</div>	<div style='background-color:#102967; color:#ffffff; height:30px;'>		&nbsp;▶ 인증번호 확인	</div></div><div><br><br>	안녕하세요. (주)한국지엠피 입니다.<br>	진행하고계신 STED 프로그램을 위한 인증번호입니다.<br>	아래의 인증번호를 입력하여 계속 진행 하실 수 있습니다.<br><br>	<b>E-MAIL :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+email1+"@"+email2+"</h1><br>	<b>인증번호 :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+num+"</h1><br><br>	그 외에 STED 이용과 관련하여 궁금하신 사항이 있으시면 <a href='#'>FAQ</a>를 확인해 보십시오.<br><br>	(주)한국지엠피<br><br><br>	<p style='color:grey;'>본 메일은 발신전용입니다. 본 메일을 임의로 위.번조하여 사용할 경우 형사처벌의 대상이 될 수 있습니다. 궁금한 사항은 <a href='mailto:K-GMP@K-GMP.COM'>K-GMP@K-GMP.COM</a>으로 문의하십시오.</p><br><div style='background-color:#102967; color:#ffffff; height:30px; text-align:right;'>Copyright ⓒ K-GMP All Right Reserved&nbsp;</div></div></div></body></html>";			 
 			  message.setFrom(new InternetAddress(test1));  
 			  message.addRecipient(RecipientType.TO, new InternetAddress(test2));
 			  message.setSubject(test3);

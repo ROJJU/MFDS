@@ -219,15 +219,15 @@
 				}
 			}CheckOtp();
 		var forms_seq2=document.getElementById("forms_seq").value;
-		requestHello('1');
+		requestHello('1', 'contents1');
 		 
 		window.onload=function check(){
 			if(forms_seq2==null||forms_seq2==""){
 			location.href="/resources/inc/Form_check.jsp";
 			}
 		 }
-		function requestHello(num) {
-		    URL = "/LoadContent.do?forms_seq="+forms_seq2+"&num="+num;
+		function requestHello(num, contents) {
+		    URL = "/LoadContent.do?forms_seq="+forms_seq2+"&num="+num+"&contents_name="+contents;
 		    xhr = getXMLHttpRequest();//XMLHttpRequest 객체 얻기
 		    xhr.open("GET", URL, true);//연결
 		    xhr.onreadystatechange = function () {//콜백 함수  등록
