@@ -391,21 +391,21 @@ int a=-1;
 																							<c:if test="${a.add_year==year}">
 																								<c:if test="${a.add_month==month}">
 																									<c:if test="${a.add_day==i}">
-																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>">&nbsp;<img src="/resources/img/account/calendar_je.png" width="15px;">&nbsp;${a.title}<br></a>
+																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>"><img src="/resources/img/account/calendar_je.png" width="15px;">&nbsp;${a.title}<br></a>
 																									</c:if>
 																								</c:if>
 																							</c:if>
 																							<c:if test="${a.payment_year==year}">
 																								<c:if test="${a.payment_month==month}">
 																									<c:if test="${a.payment_day==i}">
-																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>">&nbsp;<img src="/resources/img/account/calendar_ge.png" width="15px;">&nbsp;${a.title}<br></a>
+																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>"><img src="/resources/img/account/calendar_ge.png" width="15px;">&nbsp;${a.title}<br></a>
 																									</c:if>
 																								</c:if>
 																							</c:if>
 																							<c:if test="${a.help_year==year}">
 																								<c:if test="${a.help_month==month}">
 																									<c:if test="${a.help_day==i}">
-																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>">&nbsp;
+																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>">
 																										<c:if test="${a.help_state=='1'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[1차_진행중]</b></c:if>
 																										<c:if test="${a.help_state=='2'}"><b style="color:red;"><img src="/resources/img/account/calendar_if.png" width="15px;">[1차_완료]</b></c:if>
 																										<c:if test="${a.help_state=='3'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[2차_진행중]</b></c:if>
