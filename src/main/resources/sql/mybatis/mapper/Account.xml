@@ -9,7 +9,44 @@
 		select title, forms_seq from forms where id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} order by forms_seq desc
 	</select>
 	<select id="selectFormSchedule" resultType="com.kgmp.mfds.vo.Forms" parameterType="com.kgmp.mfds.vo.Forms">
-		select help_state, forms_seq, kor_name, eng_name, div_sub, p_class, mix, power, title, SUBSTR((add_date),1,4) "add_year", replace(SUBSTR((add_date),6,2), '0', '') "add_month", replace(SUBSTR((add_date),9,2), '0', '') "add_day", SUBSTR((payment_add_date),1,4) "payment_year", replace(SUBSTR((payment_add_date),6,2), '0', '') "payment_month", replace(SUBSTR((payment_add_date),9,2), '0', '') "payment_day", SUBSTR((help_add_date),1,4) "help_year", replace(SUBSTR((help_add_date),6,2), '0', '') "help_month", replace(SUBSTR((help_add_date),9,2), '0', '') "help_day" from forms where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} order by forms_seq desc
+		select
+		help_state, forms_seq, kor_name, eng_name, div_sub, p_class, mix, power, title,
+		SUBSTR((add_date),1,4) "add_year",
+		case SUBSTR((add_date),6,2)
+			when 10 then 10
+			else replace(SUBSTR((add_date),6,2), '0', '')
+		end "add_month",
+		case SUBSTR((add_date),9,2)
+			when 10 then 10
+			when 20 then 20
+			when 30 then 30
+			else replace(SUBSTR((add_date),9,2), '0', '') 
+		end "add_day",
+		SUBSTR((payment_add_date),1,4) "payment_year",
+		case SUBSTR((payment_add_date),6,2)
+			when 10 then 10
+			else replace(SUBSTR((payment_add_date),6,2), '0', '')
+		end "payment_month",
+		case SUBSTR((payment_add_date),9,2)
+			when 10 then 10
+			when 20 then 20
+			when 30 then 30
+			else replace(SUBSTR((payment_add_date),9,2), '0', '')
+		end "payment_day",
+		SUBSTR((help_add_date),1,4) "help_year",
+		case SUBSTR((help_add_date),6,2)
+			when 10 then 10
+			else replace(SUBSTR((help_add_date),6,2), '0', '')
+		end "help_month",
+		case SUBSTR((help_add_date),9,2)
+			when 10 then 10
+			when 20 then 20
+			when 30 then 30
+			else replace(SUBSTR((help_add_date),9,2), '0', '')
+		end "help_day"
+		from forms
+		where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
+		order by forms_seq desc
 	</select>
 	<select id="countAll" parameterType="com.kgmp.mfds.vo.Forms" resultType="int">
 		select count(*) from forms where id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
@@ -30,7 +67,43 @@
 		update forms set payment_pic=#{payment_pic}, payment=3, payment_add_date=DATE_FORMAT(now(),'%Y/%m/%d') where forms_seq=#{forms_seq}
 	</update>
 	<select id="getScheduleForms" parameterType="com.kgmp.mfds.vo.Forms" resultType="com.kgmp.mfds.vo.Forms">
-		select forms_seq, help_state, power, mix, p_class, eng_name, kor_name, div_sub, div_mid, help_content, title, SUBSTR((add_date),1,4) "add_year", replace(SUBSTR((add_date),6,2), '0', '') "add_month", replace(SUBSTR((add_date),9,2), '0', '') "add_day", SUBSTR((payment_add_date),1,4) "payment_year", replace(SUBSTR((payment_add_date),6,2), '0', '') "payment_month", replace(SUBSTR((payment_add_date),9,2), '0', '') "payment_day", SUBSTR((help_add_date),1,4) "help_year", replace(SUBSTR((help_add_date),6,2), '0', '') "help_month", replace(SUBSTR((help_add_date),9,2), '0', '') "help_day" from forms where forms_seq=#{forms_seq} and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
+		select
+		forms_seq, help_state, power, mix, p_class, eng_name, kor_name, div_sub, div_mid, help_content, title,
+		SUBSTR((add_date),1,4) "add_year",
+		case SUBSTR((add_date),6,2)
+			when 10 then 10
+			else replace(SUBSTR((add_date),6,2), '0', '')
+		end "add_month",
+		case SUBSTR((add_date),9,2)
+			when 10 then 10
+			when 20 then 20
+			when 30 then 30
+			else replace(SUBSTR((add_date),9,2), '0', '') 
+		end "add_day",
+		SUBSTR((payment_add_date),1,4) "payment_year",
+		case SUBSTR((payment_add_date),6,2)
+			when 10 then 10
+			else replace(SUBSTR((payment_add_date),6,2), '0', '')
+		end "payment_month",
+		case SUBSTR((payment_add_date),9,2)
+			when 10 then 10
+			when 20 then 20
+			when 30 then 30
+			else replace(SUBSTR((payment_add_date),9,2), '0', '')
+		end "payment_day",
+		SUBSTR((help_add_date),1,4) "help_year",
+		case SUBSTR((help_add_date),6,2)
+			when 10 then 10
+			else replace(SUBSTR((help_add_date),6,2), '0', '')
+		end "help_month",
+		case SUBSTR((help_add_date),9,2)
+			when 10 then 10
+			when 20 then 20
+			when 30 then 30
+			else replace(SUBSTR((help_add_date),9,2), '0', '')
+		end "help_day"
+		from forms
+		where forms_seq=#{forms_seq} and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
 	</select>
 	<select id="popupgetForms" parameterType="int" resultType="com.kgmp.mfds.vo.Forms">
 		select forms_seq, title, id1, id2, id3, email1, email2, kor_name, eng_name, p_class, add_date, payment_pic from forms where forms_seq=#{forms_seq}
