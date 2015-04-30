@@ -339,11 +339,15 @@ public class FormsController {
 	
 	@RequestMapping(value = "/download_hwpProc.do")
 	public ModelAndView download_hwp(Model model,
-						@RequestParam("forms_seq") int forms_seq){
+						@RequestParam("forms_seq") int forms_seq,
+						@RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
+		Forms formsInfo = new Forms();
+		formsInfo.setForms_seq(forms_seq);
+		formsInfo.setContents_name(contents_name);
 		try{
-			forms=account_service.getForms(forms_seq);
+			forms=forms_service.getFormsRead(formsInfo);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -354,11 +358,97 @@ public class FormsController {
 	
 	@RequestMapping(value = "/change_hwpProc.do")
 	public ModelAndView change_hwp(Model model,
-						@RequestParam("forms_seq") int forms_seq){
+						@RequestParam("forms_seq") int forms_seq,
+						@RequestParam("num") int num){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
+		Forms formsInfo = new Forms();
+		String contents_name=null;
+		if(num==1){
+			contents_name = "contents1";
+		}else if(num==2){
+			contents_name = "contents2";
+		}else if(num==3){
+			contents_name = "contents3";
+		}else if(num==4){
+			contents_name = "contents4";
+		}else if(num==5){
+			contents_name = "contents5";
+		}else if(num==6){
+			contents_name = "contents6";
+		}else if(num==7){
+			contents_name = "contents7";
+		}else if(num==8){
+			contents_name = "contents8";
+		}else if(num==9){
+			contents_name = "contents9";
+		}else if(num==10){
+			contents_name = "contents10";
+		}else if(num==11){
+			contents_name = "contents11";
+		}else if(num==12){
+			contents_name = "contents12";
+		}else if(num==13){
+			contents_name = "contents13";
+		}else if(num==14){
+			contents_name = "contents14";
+		}else if(num==15){
+			contents_name = "contents15";
+		}else if(num==16){
+			contents_name = "contents16";
+		}else if(num==17){
+			contents_name = "contents17";
+		}else if(num==18){
+			contents_name = "contents18";
+		}else if(num==19){
+			contents_name = "contents19";
+		}else if(num==20){
+			contents_name = "contents20";
+		}else if(num==21){
+			contents_name = "contents21";
+		}else if(num==22){
+			contents_name = "contents22";
+		}else if(num==23){
+			contents_name = "contents23";
+		}else if(num==24){
+			contents_name = "contents24";
+		}else if(num==25){
+			contents_name = "contents25";
+		}else if(num==26){
+			contents_name = "contents26";
+		}else if(num==27){
+			contents_name = "contents27";
+		}else if(num==28){
+			contents_name = "contents28";
+		}else if(num==29){
+			contents_name = "contents29";
+		}else if(num==30){
+			contents_name = "contents30";
+		}else if(num==31){
+			contents_name = "contents31";
+		}else if(num==32){
+			contents_name = "contents32";
+		}else if(num==33){
+			contents_name = "contents33";
+		}else if(num==34){
+			contents_name = "contents34";
+		}else if(num==35){
+			contents_name = "contents35";
+		}else if(num==36){
+			contents_name = "contents36";
+		}else if(num==37){
+			contents_name = "contents37";
+		}else if(num==38){
+			contents_name = "contents38";
+		}else if(num==39){
+			contents_name = "contents39";
+		}else{
+			contents_name = "contents1";
+		}
+		formsInfo.setForms_seq(forms_seq);
+		formsInfo.setContents_name(contents_name);
 		try{
-			forms=account_service.getForms(forms_seq);
+			forms=forms_service.getFormsRead(formsInfo);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
