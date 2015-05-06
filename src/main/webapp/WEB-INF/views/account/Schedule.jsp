@@ -112,8 +112,8 @@ int a=-1;
 															<center>
 																<h2 style="padding:5px;">
 																	 <b><%=year%></b>년<b><%=month%>월</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	 <a href="/MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>"><input type="image" src="/resources/img/common/but-pre.png"></a>
-																     <a href="/MyPage.do?page_seq=7&year=<%= month+1==13?year+1:year%>&month=<%=month+1==13?1:month+1 %>&forms_seq=<%=forms_seq%>"><input type="image" src="/resources/img/common/but-next.png"></a>
+																	 <input type="image" src="/resources/img/common/but-pre.png" onclick="goUrl('/MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>');">
+																     <input type="image" src="/resources/img/common/but-next.png" onclick="goUrl('/MyPage.do?page_seq=7&year=<%= month+1==13?year+1:year%>&month=<%=month+1==13?1:month+1 %>&forms_seq=<%=forms_seq%>')">
 																</h2>
 															</center>
 															<table class="cal" align = "center" cellspacing= "1" cellpadding= "2"  >
@@ -336,9 +336,9 @@ int a=-1;
 											</td>
 											<td align="center">
 													<div id="sub_title" >
-																<a href="/MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>"><input type="image" src="/resources/img/common/but-pre.png"></a>
+																<input type="image" src="/resources/img/common/but-pre.png" onclick="goUrl('/MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>')">
 																&nbsp;<b style="font-size:40px;"><%=year%>년<%=month%>월</b>
-														  		<a href="/MyPage.do?page_seq=7&year=<%= month+1==13?year+1:year%>&month=<%=month+1==13?1:month+1 %>&forms_seq=<%=forms_seq%>"><input type="image" src="/resources/img/common/but-next.png"></a>
+														  		<input type="image" src="/resources/img/common/but-next.png" onclick="goUrl('/MyPage.do?page_seq=7&year=<%= month+1==13?year+1:year%>&month=<%=month+1==13?1:month+1 %>&forms_seq=<%=forms_seq%>')">
 																<br><br><input type="image" src="/resources/img/account/calendar_today.png" width="65px" onclick = "goToday(<%=nowYear%>, <%=nowMonth%>)">
 																<input type="image" src="/resources/img/account/calendar_re.png" width="65px" onclick="goUrl('/MyPage.do?page_seq=7')">
 														<br><br>
