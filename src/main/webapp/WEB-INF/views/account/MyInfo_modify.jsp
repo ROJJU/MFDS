@@ -135,9 +135,6 @@
 																<td class="heightTD">전화번호 :</td><td><input type="text" style="width:60px;" name="company_phone1" value="${memberInfo.company_phone1}">-<input type="text" style="width:60px;" name="company_phone2" value="${memberInfo.company_phone2}">-<input type="text" style="width:60px;" name="company_phone3" value="${memberInfo.company_phone3}"></td>
 															</tr>
 															<tr>
-																<td class="heightTD">FAX번호:</td><td><input type="text" style="width:60px;" name="company_fax1" value="${memberInfo.company_fax1}">-<input type="text" style="width:60px;" name="company_fax2" value="${memberInfo.company_fax2}">-<input type="text" style="width:60px;" name="company_fax3" value="${memberInfo.company_fax3}"></td>
-															</tr>
-															<tr>
 																<td class="heightTD">대표자:</td><td><input type="text" name="ceo" value="${memberInfo.ceo}"></td>
 															</tr>
 															<tr>
@@ -147,23 +144,18 @@
 																<input type="hidden" value="${memberInfo.company_file}" name="company_file_old">
 																</td>
 															</tr>
-															<tr>
-																<td class="heightTD">고용보험 관리번호:</td><td><input type="text" name="insurance_no" value="${memberInfo.insurance_no}"></td>
-															</tr>
-															<tr>
-																<td class="heightTD">주요생산품:</td><td><input type="text" name="product" value="${memberInfo.product}"></td>
-															</tr>
-															<tr>
-																<td class="heightTD">매출액:</td><td><input type="text" name="finance" value="${memberInfo.finance}"> 만원</td>
-															</tr>
-															<tr>
-																<td class="heightTD">종업원수:</td><td><input type="text" name="worker" value="${memberInfo.worker}"> 명</td>
-															</tr>
 														</table><br>
 													</td>
 												</tr>
 											</table>
 										<hr>
+										<input type="hidden" name="finance" value="-">
+										<input type="hidden" name="worker" value="-">
+										<input type="hidden" name="product" value="-">
+										<input type="hidden" name="insurance_no" value="0">
+										<input type="hidden" name="company_fax1" value="0">
+										<input type="hidden" name="company_fax2" value="0">
+										<input type="hidden" name="company_fax3" value="0">
 											<br><br>
 										</form>
 											<input type="image" src="/resources/img/btn/modify_btn.png" onclick="formCheck();" width="60px">

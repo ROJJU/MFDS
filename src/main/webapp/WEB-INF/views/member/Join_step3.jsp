@@ -116,25 +116,10 @@
 												<td>전화번호 :</td><td><input type="text" style="width:60px;" name="company_phone1">-<input type="text" style="width:60px;" name="company_phone2">-<input type="text" style="width:60px;" name="company_phone3"></td>
 											</tr>
 											<tr>
-												<td>FAX번호:</td><td><input type="text" style="width:60px;" name="company_fax1">-<input type="text" style="width:60px;" name="company_fax2">-<input type="text" style="width:60px;" name="company_fax3"></td>
-											</tr>
-											<tr>
 												<td>대표자:</td><td><input type="text" name="ceo"></td>
 											</tr>
 											<tr>
 												<td>사업자 등록증 사본:</td><td><input type="file" name="company_file"><a style="color:red; text-decoration:none;">&nbsp;이미지만 업로드 가능합니다.(bmp,gif,jpg,jpeg,png)</a></td>
-											</tr>
-											<tr>
-												<td>고용보험 관리번호:</td><td><input type="text" name="insurance_no" value="<%=request.getParameter("id1")%><%=request.getParameter("id2")%><%=request.getParameter("id3")%>0" readonly><br><font color="red"> * 고용보험 사업장관리번호는 4대보험이 통합되면서 해당 사업장의 사업자고유번호 (사업자등록증번호)+0으로 부여됩니다</font></td>
-											</tr>
-											<tr>
-												<td>주요생산품:</td><td><input type="text" name="product" maxlength="99"></td>
-											</tr>
-											<tr>
-												<td>매출액:</td><td><input type="text" name="finance" maxlength="99">&nbsp;만원</td>
-											</tr>
-											<tr>
-												<td>종업원수:</td><td><input type="text" name="worker" maxlength="99">&nbsp;명</td>
 											</tr>
 										</table><br>
 									</td>
@@ -142,6 +127,13 @@
 							</table>
 						<hr>
 							<br><br>
+							<input type="hidden" name="finance" value="-">
+							<input type="hidden" name="worker" value="-">
+							<input type="hidden" name="product" value="-">
+							<input type="hidden" name="insurance_no" value="0">
+							<input type="hidden" name="company_fax1" value="0">
+							<input type="hidden" name="company_fax2" value="0">
+							<input type="hidden" name="company_fax3" value="0">
 						</form>
 							<input type="image" src="/resources/img/member/Submit_button.png" onclick="formCheck();">
 							<input type="image" src="/resources/img/btn/cancel_button.png" onclick="javaScript:location.href='/Login.do'">

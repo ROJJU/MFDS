@@ -108,25 +108,10 @@
 												<td>전화번호 :</td><td>${memberInfo.company_phone1}-${memberInfo.company_phone2}-${memberInfo.company_phone3}</td>
 											</tr>
 											<tr>
-												<td>FAX번호:</td><td>${memberInfo.company_fax1}-${memberInfo.company_fax2}-${memberInfo.company_fax3}</td>
-											</tr>
-											<tr>
 												<td>대표자:</td><td>${memberInfo.ceo}</td>
 											</tr>
 											<tr>
 												<td>사업자 등록증 사본:</td><td>${memberInfo.company_file}</td>
-											</tr>
-											<tr>
-												<td>고용보험 관리번호:</td><td>${memberInfo.insurance_no}</td>
-											</tr>
-											<tr>
-												<td>주요생산품:</td><td>${memberInfo.product}</td>
-											</tr>
-											<tr>
-												<td>매출액:</td><td>${memberInfo.finance}</td>
-											</tr>
-											<tr>
-												<td>종업원수:</td><td>${memberInfo.worker}</td>
 											</tr>
 										</table><br>
 									</td>
@@ -152,7 +137,7 @@
 				<table id="button" width="1064px">
 					<tr height=100px;>
 						<td align="center"><br>
-						<input type="image" src='<c:url value="/resources/img/member/Login_button_small.png"/>' onclick="javaScript:location.href='/Login.do'" height="47px;">&nbsp;
+						<input type="image" src='<c:url value="/resources/img/member/Login_button_small.png"/>' onclick="javaScript:location.href='/Login.do'">&nbsp;
 						<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('body').innerHTML)"><br><br>
 						<hr><jsp:include page="/resources/inc/Member_footer.jsp"/>
 						</td>

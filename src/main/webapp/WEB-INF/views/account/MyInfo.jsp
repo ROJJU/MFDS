@@ -150,25 +150,10 @@
 															<td class="my_font"><b>전화번호 :</b></td><td class="my_font">${memberInfo.company_phone1}-${memberInfo.company_phone2}-${memberInfo.company_phone3}</td>
 														</tr>
 														<tr>
-															<td class="my_font"><b>FAX번호:</b></td><td class="my_font">${memberInfo.company_fax1}-${memberInfo.company_fax2}-${memberInfo.company_fax3}</td>
-														</tr>
-														<tr>
 															<td class="my_font"><b>대표자:</b></td><td class="my_font">${memberInfo.ceo}</td>
 														</tr>
 														<tr>
 															<td class="my_font"><b>사업자 등록증 사본:</b></td><td class="my_font">${memberInfo.company_file}</td>
-														</tr>
-														<tr>
-															<td class="my_font"><b>고용보험 관리번호:</b></td><td class="my_font">${memberInfo.insurance_no}</td>
-														</tr>
-														<tr>
-															<td class="my_font"><b>주요생산품:</b></td><td class="my_font">${memberInfo.product}</td>
-														</tr>
-														<tr>
-															<td class="my_font"><b>매출액:</b></td><td class="my_font">${memberInfo.finance}만원</td>
-														</tr>
-														<tr>
-															<td class="my_font"><b>종업원수:</b></td><td class="my_font">${memberInfo.worker}명</td>
 														</tr>
 													</table>
 												</td>

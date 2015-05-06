@@ -11,6 +11,12 @@ int next =list_seq+1;
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">
+	.firstForm{
+	 width:100%;
+	 border: 1px solid black;
+	}
+</style>
 <link rel="stylesheet" href="/resources/daumeditor-7.4.1/css/editor.css" type="text/css" charset="utf-8"/>
 <script src="/resources/daumeditor-7.4.1/js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
 		<!--[if gte IE 9]>
