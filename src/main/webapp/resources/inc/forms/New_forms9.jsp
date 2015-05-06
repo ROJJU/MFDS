@@ -16,7 +16,7 @@
 		    		<c:otherwise>
 		    			<c:choose>
 		    				<c:when test="${forms.power=='1'}">
-		    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ모양 및 구조</span></b></p><p><br></p><p><b>1. 모양 및 구조 - 작용원리</b></p><p><b><br></b></p><p><b>2. 모양 및 구조 - 외형</b></p><p><b>&nbsp; 가. 외관사진</b></p><p><b><br></b></p><p><b>&nbsp; 나. 외관설명</b></p><p><b><br></b></p><p><b>3. 모양 및 구조 - 치수</b></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
+		    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ모양 및 구조-특성</span></b></p><p><br></p><p><b>1. 작동원리</b></p><p><b><br></b></p><div><b>2, 전기적 정격</b></div><div><b><br></b></div><div><b>3, 정격에 대한 보호형식 및 보호정도</b></div><div><b><br></b></div><div><b>4. 안전장치</b></div><div><b><br></b></div><div><b>5. 작동계통도</b></div><div><b><br></b></div><div><b>6. 절연부의 전기회로도</b></div><div><b><br></b></div><p><b>7. 소프트웨어의 알고리즘 및 기능</b></p><p><b><br></b></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
 		    				</c:when>
 		    				<c:otherwise>
 		    					<h1>해당사항 없음</h1>
