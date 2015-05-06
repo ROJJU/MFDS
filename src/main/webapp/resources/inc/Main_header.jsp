@@ -94,24 +94,16 @@ location.href="/";
 					<li><a href="/Main.do">Homepage</a></li>
 					<li><a href="#">My page</a>
 						<ul>
-							<li><a href="/MyPage.do?page_seq=3">계산서 발행</a></li>
-							<li><a href="/MyPage.do">내 정보</a></li>
-							<li><a href="/MyPage.do?page_seq=7">일정관리</a></li>
+							<li><a href="/MyPage.do?page_seq=3">Payment</a></li>
+							<li><a href="/MyPage.do">My Info</a></li>
+							<li><a href="/MyPage.do?page_seq=7">Schedule</a></li>
 						</ul>
 					</li>
 					<li><a href="#">File</a>
 						<ul>
-							<li><a href="/MyPage.do?page_seq=6">내 문서</a></li>
-							<li><a href="javaScript:getSearch();">새 문서 작성</a></li>
+							<li><a href="/MyPage.do?page_seq=6">My Form</a></li>
+							<li><a href="javaScript:getSearch();">New Form</a></li>
 						</ul>			
-					</li>
-					<li><a href="#">Edit</a>
-						<ul>
-							<li><a href="#">다음단계</a></li>
-							<li><a href="#">잘라내기</a></li>
-							<li><a href="#">복사</a></li>
-							<li><a href="#">붙여넣기</a></li>
-						</ul>
 					</li>
 					<li><a href="#">Web Tools</a>
 						<ul>
@@ -121,7 +113,7 @@ location.href="/";
 					<li><a href="#">Help</a>
 						<ul>
 							<li><a href="/Support.do?page_seq=2">FAQ</a></li>
-							<li><a href="/About.do">STED 소개</a></li>
+							<li><a href="/About.do">About STED</a></li>
 						</ul>
 					</li>
 				</ul>
