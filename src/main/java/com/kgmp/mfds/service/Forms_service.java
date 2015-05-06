@@ -18,4 +18,5 @@ public interface Forms_service {
 	String update_otp(Forms forms);
 	String updateState2(Forms forms);
 	Forms getFormsRead(Forms formsInfo);
+	String delForm(Forms formsInfo);
 }

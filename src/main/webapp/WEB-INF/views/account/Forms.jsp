@@ -158,7 +158,6 @@
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 		
 	<!--forms files s-->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/resources/js/account/jquery.promptumenu.min.js"></script>
 	<script type="text/javascript" src="/resources/js/account/tinybox.js"></script>
 	<!--forms files e-->

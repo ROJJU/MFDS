@@ -38,7 +38,7 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 		</tr>
 		<tr>
 			<td class="list_table_td" style="padding-left:10px">파일명</td>
-			<td class="list_table_td" style="padding-left:10px">${forms.title}</td>
+			<td class="list_table_td" style="padding-left:10px"><input type="text" value="${forms.title}"></td>
 		</tr>
 		<tr>
 			<td class="list_table_td" style="padding-left:10px">ID(e-mail)</td>
@@ -64,7 +64,7 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 				<form name="payment" action="/updatePaymentProc.do" method="post">
 					<table>
 						<tr height="25px">
-							<td width="100px"><b>무통장 입급</b></td>
+							<td width="100px"><b>무통장 입금</b></td>
 							<td>
 								<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 								<select style="width:100%;" name="payment_bank">
@@ -86,7 +86,7 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 						</tr>
 						<tr height="25px">
 							<td><b>입금자명</b></td>
-							<td colspan="2"><font color="red"><b>신청 후 [7일] 이내로</b></font> 입급해 주셔야 합니다.</td>
+							<td colspan="2"><font color="red"><b>신청 후 [7일] 이내로</b></font> 입금해 주셔야 합니다.</td>
 						</tr>
 					</table>
 				</form>
@@ -129,6 +129,13 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 		<%}%>
 		<input type="image" src="/resources/img/btn/cancel_button.png" width="55px" onclick="javaScript:window.close();">
 	</center>
+</div>
+<div style="height:50px;">
+<!--blank-->
+</div>
+<div style="position:fixed; bottom:0px; width:100%; background-color:#f2f2f2; border-top:3px solid #050099; text-align:right; padding:5px 5px 5px 5px;">
+	<input type="button" value="폴더명 변경">&nbsp;
+	<input type="button" value="폴더 삭제" onclick="javaScript:location.href='/DelForms.do?forms_seq=<%=request.getParameter("forms_seq")%>'">&nbsp;&nbsp;&nbsp;
 </div>
 </body>
 </html>

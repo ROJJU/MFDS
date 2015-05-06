@@ -66,4 +66,7 @@
 	<update id="update_otp" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set otp=#{otp} where forms_seq=#{forms_seq}
 	</update>
+	<delete id="delForm" parameterType="com.kgmp.mfds.vo.Forms">
+		delete from forms where forms_seq=#{forms_seq} and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
+	</delete>
 </mapper>

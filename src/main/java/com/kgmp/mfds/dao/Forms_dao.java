@@ -25,4 +25,5 @@ public interface Forms_dao {
 	void update_otp(Forms forms);
 	void updateState2(Forms forms);
 	Forms getFormsRead(Forms formsInfo);
+	void delForm(Forms formsInfo);
 }

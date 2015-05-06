@@ -103,4 +103,7 @@ private SqlSession sqlSession;
 		public void update_otp(Forms forms){
 			sqlSession.update("update_otp", forms);
 		}
+		public void delForm(Forms formsInfo){
+			sqlSession.delete("delForm", formsInfo);
+		}
 }

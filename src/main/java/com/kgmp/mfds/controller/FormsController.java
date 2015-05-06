@@ -105,6 +105,43 @@ public class FormsController {
 		model.addAttribute("forms", forms);
         return mav;
     }
+	
+	@RequestMapping(value = "/DelForms.do")
+    public ModelAndView delForms(Model model,
+	    					   @RequestParam("forms_seq") int forms_seq,
+							   HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		String check=null;
+		String msg=null;
+		String url=null;
+		Forms formsInfo= new Forms();
+		formsInfo.setId1((String)session.getAttribute("id1"));
+		formsInfo.setId2((String)session.getAttribute("id2"));
+		formsInfo.setId3((String)session.getAttribute("id3"));
+		formsInfo.setEmail1((String)session.getAttribute("email1"));
+		formsInfo.setEmail2((String)session.getAttribute("email2"));
+		formsInfo.setForms_seq(forms_seq);
+		//setting parameter e
+		mav.setViewName("/forms/New_forms");
+		
+		try{
+			check=forms_service.delForm(formsInfo);
+			if(check.equals("yes")){
+				msg="성공하였습니다.";
+				url="/MyPage.do?page_seq=6";
+			}else{
+				msg="실패하였습니다.";
+				url="/MyPage.do?page_seq=6";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.setViewName("/Opener_check_proc");
+		mav.addObject("msg", msg);
+		mav.addObject("url", url);
+        return mav;
+    }
+
 
 	@RequestMapping(value = "/fileList.do")
     public ModelAndView fileList(Model model,

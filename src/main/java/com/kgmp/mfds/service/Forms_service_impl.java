@@ -104,6 +104,18 @@ public class Forms_service_impl implements Forms_service{
 		}
 		return check;
 	}
+	
+	public String delForm(Forms formsInfo){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.delForm(formsInfo);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
 
 	public String insertContents(Forms forms){
 		String check=null;
