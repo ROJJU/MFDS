@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -34,11 +33,7 @@ public class MainController {
 	@RequestMapping(value = "/")
 	public String home(Locale locale, 
 					   Model model,
-					   HttpSession session,
-					   HttpServletRequest request){
-		if(!request.isSecure()){
-		   return "redirect:https"+request.getRequestURL().toString().replace("http", "");
-		}
+					   HttpSession session){
 		session.invalidate();
 		logger.info("Welcome home! The client locale is {}.", locale);
 		return "/index";
