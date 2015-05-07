@@ -106,4 +106,7 @@ private SqlSession sqlSession;
 		public void delForm(Forms formsInfo){
 			sqlSession.delete("delForm", formsInfo);
 		}
+		public void update_title(Forms forms){
+			sqlSession.update("update_title", forms);
+		}
 }

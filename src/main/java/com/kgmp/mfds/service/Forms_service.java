@@ -19,4 +19,5 @@ public interface Forms_service {
 	String updateState2(Forms forms);
 	Forms getFormsRead(Forms formsInfo);
 	String delForm(Forms formsInfo);
+	String update_title(Forms forms);
 }

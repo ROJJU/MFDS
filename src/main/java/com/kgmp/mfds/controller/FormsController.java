@@ -627,4 +627,31 @@ public class FormsController {
 		mav.setViewName("/Check_proc");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/update_title.do")
+	public ModelAndView updateTitle(Model model,
+			@RequestParam("forms_seq") int forms_seq,
+			@RequestParam("title") String title){
+		ModelAndView mav = new ModelAndView();
+		Forms forms = new Forms();
+		String check=null;
+		String msg="";
+		forms.setForms_seq(forms_seq);
+		forms.setTitle(title);
+		try{
+		check=forms_service.update_title(forms);
+		if(check.equals("yes")){
+			msg="성공하셨습니다.";
+		}else{
+			msg="실패하셨습니다.";
+		}
+		}catch(Exception e){
+		e.printStackTrace();
+		}
+		String url ="/MyPage.do?page_seq=6";
+		mav.addObject("msg", msg);
+		mav.addObject("url", url);
+		mav.setViewName("/Opener_check_proc");
+		return mav;
+	}
 }

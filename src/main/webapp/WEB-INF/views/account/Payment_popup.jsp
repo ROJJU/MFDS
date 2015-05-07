@@ -38,7 +38,13 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 		</tr>
 		<tr>
 			<td class="list_table_td" style="padding-left:10px">파일명</td>
-			<td class="list_table_td" style="padding-left:10px"><input type="text" value="${forms.title}"></td>
+			<td class="list_table_td" style="padding-left:10px">
+				<form action="/update_title.do" name="update_title" method="post">
+					<input type="text" value="${forms.title}" name="title" id="title_new"><font color="red">&nbsp;*폴더명을 변경 하실 수 있습니다.</font>
+					<input type="hidden" value="${forms.title}" name="title_old" id="title_old">
+					<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
+				</form>
+			</td>
 		</tr>
 		<tr>
 			<td class="list_table_td" style="padding-left:10px">ID(e-mail)</td>
@@ -134,8 +140,22 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 <!--blank-->
 </div>
 <div style="position:fixed; bottom:0px; width:100%; background-color:#f2f2f2; border-top:3px solid #050099; text-align:right; padding:5px 5px 5px 5px;">
-	<input type="button" value="폴더명 변경">&nbsp;
+	<input type="button" value="폴더명 변경" onclick="checkTitle()">&nbsp;
 	<input type="button" value="폴더 삭제" onclick="javaScript:location.href='/DelForms.do?forms_seq=<%=request.getParameter("forms_seq")%>'">&nbsp;&nbsp;&nbsp;
 </div>
+<script type="text/javascript">
+ function checkTitle(){
+	 var title_new = document.getElementById("title_new").value;
+	 var title_old = document.getElementById("title_old").value;
+
+	 if(title_new==title_old){
+		 if(confirm('폴더명이 변경되지 않았습니다. 저장 하시겠습니까 ?')){
+			 document.update_title.submit();
+		 }
+	 }else{
+		 document.update_title.submit();
+	 }
+ }
+</script>
 </body>
 </html>

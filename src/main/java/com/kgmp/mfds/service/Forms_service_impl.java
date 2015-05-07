@@ -240,4 +240,16 @@ public class Forms_service_impl implements Forms_service{
 		}
 		return check;
 	}
+	
+	public String update_title(Forms forms){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.update_title(forms);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
 }

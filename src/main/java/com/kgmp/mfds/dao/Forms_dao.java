@@ -26,4 +26,5 @@ public interface Forms_dao {
 	void updateState2(Forms forms);
 	Forms getFormsRead(Forms formsInfo);
 	void delForm(Forms formsInfo);
+	void update_title(Forms forms);
 }
