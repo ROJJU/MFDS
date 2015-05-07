@@ -141,7 +141,7 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 </div>
 <div style="position:fixed; bottom:0px; width:100%; background-color:#f2f2f2; border-top:3px solid #050099; text-align:right; padding:5px 5px 5px 5px;">
 	<input type="button" value="폴더명 변경" onclick="checkTitle()">&nbsp;
-	<input type="button" value="폴더 삭제" onclick="javaScript:location.href='/DelForms.do?forms_seq=<%=request.getParameter("forms_seq")%>'">&nbsp;&nbsp;&nbsp;
+	<input type="button" value="폴더 삭제" onclick="checkDel(<%=request.getParameter("forms_seq")%>)">&nbsp;&nbsp;&nbsp;
 </div>
 <script type="text/javascript">
  function checkTitle(){
@@ -154,6 +154,12 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 		 }
 	 }else{
 		 document.update_title.submit();
+	 }
+ }
+ 
+ function checkDel(forms_seq){
+	 if(confirm('정말 폴더를 삭제 하시겠습니까? 안에 작성되어있는 서식은 복구 할 수 없습니다.')){
+		 location.href='/DelForms.do?forms_seq='+forms_seq;
 	 }
  }
 </script>
