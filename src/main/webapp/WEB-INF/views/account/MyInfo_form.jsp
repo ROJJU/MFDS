@@ -67,7 +67,7 @@
 									<div id="certificate">
 										<div>
 										<form action="/resources/inc/Download.jsp" method="post" name="down">
-											<input type="hidden" name="file_path" value="www/save/member">
+											<input type="hidden" name="file_path" value="/usr/local/tomcat/webapps/ROOT/resources/img/upload/member">
 											<input type="hidden" name="n_file" value="${memberInfo.company_file}">
 											<img src="/resources/img/upload/member/${memberInfo.company_file}" width="660px;" style="">
 										</form>

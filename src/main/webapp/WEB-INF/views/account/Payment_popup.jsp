@@ -140,8 +140,8 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 <!--blank-->
 </div>
 <div style="position:fixed; bottom:0px; width:100%; background-color:#f2f2f2; border-top:3px solid #050099; text-align:right; padding:5px 5px 5px 5px;">
-	<input type="button" value="폴더명 변경" onclick="checkTitle()">&nbsp;
-	<input type="button" value="폴더 삭제" onclick="checkDel(<%=request.getParameter("forms_seq")%>)">&nbsp;&nbsp;&nbsp;
+	<input type="image" src="/resources/img/btn/change_title.png" value="폴더명 변경" onclick="checkTitle()" width="80px">&nbsp;
+	<input type="image" src="/resources/img/btn/del_title.png" value="폴더 삭제" onclick="checkDel(<%=request.getParameter("forms_seq")%>)" width="80px">&nbsp;&nbsp;&nbsp;
 </div>
 <script type="text/javascript">
  function checkTitle(){

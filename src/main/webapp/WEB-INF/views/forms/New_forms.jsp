@@ -109,6 +109,41 @@ int next =list_seq+1;
 	a:hover{
 	color:#369;
 	}
+	/* ======================== 신청서 style!! */
+	.first_form{
+	width:100%;
+	border:1px solid black;
+	border-collapse:collapse;
+	}
+	.first_title{
+	background:             #666;
+    background:             #666 -webkit-gradient(linear, left top, left bottom, from(#999), to(#666)) no-repeat;
+    background:             #666 -moz-linear-gradient(top,  #999,  #666) no-repeat;
+	color:#ffffff;
+	padding:5px;
+	font-weight:bolder;
+	}
+	.first_th{
+	border:1px solid black;
+	width:150px;
+	background-color:#DDDDDE;
+	padding:5px;
+	}
+	.first_td{
+	border:1px solid black;
+	padding:5px;
+	}
+	.test1{
+	display:none;
+	}
+	.test2{
+	display:block;
+	}
+	.change{
+	cursor:hand;
+	cursor:pointer;
+	display:none;
+	}
 	</style>
 </head>
 	<body>

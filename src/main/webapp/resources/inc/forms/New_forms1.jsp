@@ -8,26 +8,284 @@
 		  	<input type="hidden" value="contents1" name="contents_name">
 		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1" name="url">
 		  	<input type="hidden" value="ck_form1" name="ck_form">
-		    <textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
-		    	<c:choose>
-		    		<c:when test="${forms.contents1!=null}">
-		    			${forms.contents1}
-		    		</c:when>
-		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ의료기기 기술문서 등 심사의뢰서</span></b></p><p>&nbsp;<span style="line-height: 1.5;">&nbsp;</span></p><table class="hong" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); text-align: left; font-weight: normal; background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 의뢰인</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b><span style="font-size: 10pt;">[성명(대표자)]</span></b></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;${memberInfo.ceo}</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">[주소]</span></b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;${memberInfo.company_address}</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">[생년월일]</span></b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="hong" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td class="" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); text-align: left; font-weight: normal; background-color: rgb(98, 132, 171);" bgcolor="#EAEAEA"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 제조(수입)업소</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[명칭(상호)]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; background-color: rgb(246, 248, 250);"><p><b>[소재지]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; background-color: rgb(246, 248, 250);"><p><b>[사업자등록번호]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; background-color: rgb(246, 248, 250);"><p><b>[입허가번호]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="hong" _se2_tbl_template="15" border="0" cellpadding="0" cellspacing="1" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 심사의뢰의 구분</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[심사의 종류]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[제조/수입 구분]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[제품의 구분]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="hong" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); text-align: left; font-weight: normal; background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 상세내용</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[제품명]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b>[상품명]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b>[업소명 표기 여부]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b>[품목명]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;${forms.title}</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;">[품목분류번호]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;${forms.code}</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;">[등급]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;${forms.p_class}</p></td></tr></tbody></table><div><div></div><table class="hong" _se2_tbl_template="15" border="0" cellpadding="0" cellspacing="1" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 사용목적</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[사용목적]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[성능]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="hong" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="#EAEAEA" class="" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); text-align: left; font-weight: normal; background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 신청항목</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[원재료]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;별첨</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b>[제조 방법]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;<span style="line-height: 1.5;">별첨</span></p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b>[사용 방법]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;<span style="line-height: 1.5;">별첨</span></p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b>[사용 시 주의사항]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;<span style="line-height: 1.5;">별첨</span></p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;">[저장 방법]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;<span style="line-height: 1.5;">별첨</span></p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;">[사용 기한]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;<span style="line-height: 1.5;">별첨</span></p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;">[시험 규격]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;<span style="line-height: 1.5;">별첨</span></p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p><b style="line-height: 1.5;">[허가 조건]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><div></div><table class="__se_tbl" _se2_tbl_template="15" border="0" cellpadding="0" cellspacing="1" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 제조원</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[제조 의뢰자]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[제조자]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="hong" _se2_tbl_template="15" border="0" cellpadding="0" cellspacing="1" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 비고</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[일회용의료기기 여부]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[추적관리대상 의료기기]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[비고(신청근거)]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[조합용 의료기기]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>
-		    			<c:choose>
-							<c:when test="${forms.mix=='1'}">
-							${forms.kor_name}, ${forms.code}, ${forms.p_class}
-							</c:when>
-							<c:otherwise>
-							-
-							</c:otherwise>
-						</c:choose>
-		    			</p></td></tr></tbody></table><div><table class="__se_tbl" border="0" cellpadding="0" cellspacing="1" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="3" rowspan="1" style="width: 1216px; height: 17px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><span style="font-size: 10pt;">&nbsp;</span><b><span style="font-size: 10pt;">&gt; 모델명</span></b></p></td></tr><tr><td class="" style="width: 514px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p><b><span style="font-size: 10pt;">[일련번호]</span></b></p></td><td class="" style="width: 499px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p><b><span style="font-size: 10pt;">[모델명]&nbsp;</span></b></p></td><td class="" style="width: 203px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p><b><span style="font-size: 10pt;">[수출용 여부]&nbsp;</span></b></p></td></tr><tr><td class="" style="width: 514px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td><td class="" style="width: 499px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td><td class="" style="width: 203px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="" style="width: 514px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td><td class="" style="width: 499px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td><td class="" style="width: 203px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="__se_tbl" border="0" cellpadding="0" cellspacing="1" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 26px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 포장단위&nbsp;</span></b></p></td></tr><tr><td class="" style="width: 300px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p><b><span style="font-size: 10pt;">[일련번호]</span></b></p></td><td class="" style="width: 921px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">[포장단위]</span></b></p></td></tr><tr><td class="" style="width: 300px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td><td class="" style="width: 921px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><br></td></tr><tr><td class="" style="width: 300px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><br></td><td class="" style="width: 921px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr></tbody></table><table class="hong" _se2_tbl_template="15" border="0" cellpadding="0" cellspacing="1" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="2" rowspan="1" style="width: 1221px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 모양 및 구조</span></b></p></td></tr><tr><td class="test" style="width: 203px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><span style="font-size: 10pt;"><b>[작용 원리]</b></span></p></td><td class="test2" style="width: 629px; height: 19px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;별첨</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[외형]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="width: 5px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[치수]</b></p></td><td class="test2" rowspan="1" colspan="1" style="width: 7px; height: 5px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td></tr><tr><td class="test" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b>[특성]</b></p></td><td class="test2" rowspan="1" colspan="1" style="padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>&nbsp;별첨</p></td></tr></tbody></table></div><div><div><table class="hong" border="0" cellpadding="0" cellspacing="1" _se2_tbl_template="15" style="background-color: rgb(166, 188, 209);"><tbody><tr><td class="" bgcolor="#EAEAEA" colspan="4" rowspan="1" style="width: 1212px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt; 담당자</span></b></p></td></tr><tr><td class="" style="width: 297px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b><span style="font-size: 10pt;">성명</span></b></p></td><td class="" style="width: 290px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>${memberInfo.kor_name}</p></td><td class="" style="width: 296px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b><span style="font-size: 10pt;">이메일</span></b></p></td><td class="" style="width: 329px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>${memberInfo.email1}@${memberInfo.email2}</p></td></tr><tr><td class="" style="width: 297px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b><span style="font-size: 10pt;">전화번호</span></b></p></td><td class="" style="width: 290px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(255, 255, 255);"><p>${memberInfo.phone1}-<span style="line-height: 1.5;">${memberInfo.phone2}-</span><span style="line-height: 1.5;">${memberInfo.phone3}</span></p></td><td class="" style="width: 296px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p><b><span style="font-size: 10pt;">휴대폰</span></b></p></td><td class="" style="width: 329px; height: 18px; padding: 3px 4px 2px; background-color: rgb(255, 255, 255);"><p><span style="color: rgb(61, 118, 171); line-height: 1.5;">${memberInfo.cell_phone1}-</span><span style="line-height: 1.5; color: rgb(61, 118, 171);">${memberInfo.cell_phone2}-</span><span style="line-height: 1.5; color: rgb(61, 118, 171);">${memberInfo.cell_phone3}</span></p></td></tr></tbody></table></div><p><span style="color: rgb(58, 50, 195); font-size: 10pt;"></span></p><p><span style="color: rgb(58, 50, 195); font-size: 10pt;"></span></p><p><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">&nbsp;</span></p><p><span style="color: rgb(58, 50, 195);"><i></i></span><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">「</span><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">의료기기법 시행규칙</span><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">」 </span><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">제</span><span lang="EN-US" style="text-indent: -12pt; line-height: 1.5; font-family: 돋움; letter-spacing: -0.7pt;">7</span><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">조제</span><span lang="EN-US" style="text-indent: -12pt; line-height: 1.5; font-family: 돋움; letter-spacing: -0.7pt;">2</span><span style="text-indent: -12pt; line-height: 1.5; letter-spacing: -0.7pt;">항에 따라 위와 같이 의료기기 기술문서 등의 심사를 의뢰합니다</span><span lang="EN-US" style="text-indent: -12pt; line-height: 1.5; font-family: 돋움; letter-spacing: -0.7pt;">.</span></p><p class="0" style="margin-right:13.6pt;text-indent:-12.0pt;margin-left:12.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0.0pt 0.0pt 0.0pt 0.0pt;">  <!--[if !supportEmptyParas]-->&nbsp;<!--[endif]-->  <o:p></o:p></p><p class="0" style="line-height: 120%;"><span lang="EN-US" style="font-family:돋움;mso-font-width:97%;letter-spacing:-0.7pt;font-size:13.0pt;">  </span><span style="mso-fareast-font-family:돋움;mso-font-width:97%;letter-spacing:-0.7pt;font-size:13.0pt;">식품의약품안전처장</span><span lang="EN-US" style="font-family:돋움;mso-font-width:97%;letter-spacing:-0.7pt;"> </span><span style="mso-fareast-font-family:돋움;mso-font-width:97%;letter-spacing:-0.7pt;">귀하</span></p><p><span style="line-height: 120%; letter-spacing: -0.7pt; font-size: 13pt;">기술문서심사기관장&nbsp;</span><span style="line-height: 120%; letter-spacing: -0.7pt;">귀하</span><span style="line-height: 120%;">  </span><img height="0pt" src="file:///C:\Users\kgmp2\AppData\Local\Temp\DRW000010641045.gif" v:shapes="_x220247480" width="0pt" style="line-height: 120%;"><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
-		    			</div></div>
-					</c:otherwise>
-		    	</c:choose>
-		    </textarea>
+		  	<p><b><span style="font-size: 12pt;">ㅣ 의료기기 기술문서 등 심사의뢰서</span></b></p><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="4">▶ 의뢰인</td></tr>
+		  		<tr>
+		  			<td class="first_th" >[성명(대표자)]</td>
+		  			<td class="first_td" width="300px">${memberInfo.kor_name}</td>
+		  			<td class="first_th">[생년월일]</td>
+		  			<td class="first_td"><input type="date" placeholder="YYYY-MM-DD" style="width:99%;"></td>
+	  			</tr>
+		  		<tr><td class="first_th">[주소]</td><td class="first_td" colspan="3">${memberInfo.address}</td></tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="4">▶ 제조(수입)업소</td></tr>
+		  		<tr>
+		  			<td class="first_th" >[명칭(상호)]</td>
+		  			<td class="first_td" width="300px" colspan="3"><input type="text" placeholder="업소명칭(상호)" style="width:99%;"></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[주소]</td>
+		  			<td class="first_td" colspan="3"><input type="text" placeholder="(우편번호)제조소의 소재지" style="width:99%;"></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th" >[사업자등록번호]</td>
+		  			<td class="first_td" width="300px"><input type="text" placeholder="사업자등록번호" style="width:99%;"></td>
+		  			<td class="first_th">[입허가번호]</td>
+		  			<td class="first_td"><input type="text" placeholder="입허가번호" style="width:98%;"></td></tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 심사의뢰의 구분</td></tr>
+		  		<tr><td class="first_th" >[심사의 종류]</td><td class="first_td" >기술문서 심사</td></tr>
+		  		<tr>
+		  			<td class="first_th">[제조/수입 구분]</td>
+		  			<td class="first_td" colspan="3">
+		  				<input type="radio">&nbsp; 제조
+		  				<input type="radio">&nbsp; 수입
+		  			</td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th" >[제품의 구분]</td>
+		  			<td class="first_td" >
+		  				<input type="radio">&nbsp; 새로운제품
+		  				<input type="radio">&nbsp; 개량제품
+		  				<input type="radio">&nbsp; 동등제품
+		  				<input type="radio">&nbsp; 해당없음
+		  				&nbsp; <font color="red">(3,4등급은 해당없음을 선택)</font>
+		  			</td>
+	  			</tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 상세내용</td></tr>
+		  		<tr><td class="first_th" >[제품명]</td><td class="first_td" >${forms.kor_name}, ${forms.code}</td></tr>
+		  		<tr>
+		  			<td class="first_th">[상품명]</td>
+		  			<td class="first_td"><input type="text" placeholder="상품명(2개 이상 입력 시, 콤마로 분리하여 입력)" style="width:98%;"></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th" >[업소명 표기 여부]</td>
+		  			<td class="first_td" >
+		  				<input type="radio">&nbsp; 예
+		  				<input type="radio">&nbsp; 아니요<br>
+		  				<font color="red">(제품명에 업소명을 출력할 경우 선택해 주세요. 상품명 입력을 안했을 경우 '업소명 표기 여부'가 표기로 전환됩니다.)</font>
+		  			</td>
+	  			</tr>
+		  		<tr><td class="first_th" >[품목명]</td><td class="first_td" >${forms.kor_name}</td></tr>
+		  		<tr><td class="first_th" >[품목분류번호]</td><td class="first_td" >${forms.code}</td></tr>
+		  		<tr><td class="first_th" >[등급]</td><td class="first_td" >${forms.p_class}</td></tr>
+		  	</table><br>
+	  		<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 사용목적</td></tr>
+		  		<tr>
+		  			<td class="first_th" >[사용목적]</td>
+		  			<td class="first_td" ><input type="text" style="width:98%;" placeholder="사용목적"></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[성능]</td>
+		  			<td class="first_td">
+		  				<input type="button" value="별첨추가">
+		  			</td>
+	  			</tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 신청항목</td></tr>
+		  		<tr><td class="first_th" >[원재료]</td><td class="first_td" >별첨</td></tr>
+		  		<tr><td class="first_th">[제조방법]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th">[사용방법]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th">[사용 시 주의사항]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th">[저장방법]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th">[사용기한]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th">[시험규격]</td><td class="first_td">별첨</td></tr>
+		  		<tr>
+		  			<td class="first_th">[허가조건]</td>
+		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="허가조건"></td>
+	  			</tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 제조원</td></tr>
+		  		<tr>
+		  			<td class="first_th" >[제조의뢰자]</td>
+		  			<td class="first_td" >
+		  				<input type="text" placeholder="명칭(직접입력)">
+		  				(<input type="text" placeholder="제조국(선택입력)" readonly>,
+		  				<input type="text" placeholder="소재지(직접입력)">)
+		  			</td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[제조자]</td>
+		  			<td class="first_td" >
+		  				<input type="text" placeholder="명칭(직접입력)">
+		  				(<input type="text" placeholder="제조국(선택입력)" readonly>,
+		  				<input type="text" placeholder="소재지(직접입력)">)
+		  			</td>
+	  			</tr>
+		  	</table>
+		  	<p>
+			  	<ul style="color:red;">
+			  		<li>제조자 항목은 제조의뢰자와 제조자가 동일할 경우 기재하고, 제조의뢰자와 제조자가 다를 경우에는 제조자 항목에 제품이 실제 조립되거나 생산되는 곳을 기재하고, 제조의뢰자에 법적제조책임자를 기재.</li>
+			  		<li>제조자가 다수인 경우[입력->줄추가] 메뉴를 이용하여 다중 입력이 가능합니다.</li>
+			  	</ul>
+		  	</p>
+		  	<br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 비고</td></tr>
+		  		<tr>
+		  			<td class="first_th" >[일회용의료기기 여부]</td>
+		  			<td class="first_td" >
+		  				<input type="radio">&nbsp; 예
+		  				<input type="radio">&nbsp; 아니요
+		  			</td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[추적관리대상의료기기]</td>
+		  			<td class="first_td">
+		  				<input type="radio">&nbsp; 예
+		  				<input type="radio">&nbsp; 아니요
+		  			</td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[비고(신청근거)]</td>
+		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="비고(신청근거)"></td>
+	  			</tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" >▶ 조합의료기기</td></tr>
+		  		<tr>
+		  			<td class="first_td" style="height:30px;"><input type="text" style="width:98%;" placeholder="품목명, 분류번호, 등급"></td>
+	  			</tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" >▶ 모델명/포장단위</td></tr>
+		  	</table>
+		    <textarea id="txtContent" name="contents" style="width:100%; color:#ffffff;">
+		    	▶ 모델명
+		    	<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+		    		<tbody>
+						<tr>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[품목명]</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+						</tr>
+					</tbody>
+				</table><br>
+				▶ 포장단위
+				<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+					<tbody>
+						<tr>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="234"><p>&nbsp;[일렬번호]</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="634"><p>&nbsp;[포장단위]</p></td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
+							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
+						</tr>
+					</tbody>
+				</table>
+		    </textarea><br><br>
+		    <table class="first_form">
+		  		<tr><td class="first_title" colspan="3">▶ 모양 및 구조</td></tr>
+		  		<tr>
+		  			<td class="first_th" >[작용원리]</td>
+		  			<td class="first_td">
+		  				<div id="logic_tool">
+			  				<input type="button" value="별첨추가" >
+			  				<input type="button" value="직접입력" onclick="logic_function1()" >
+		  				</div>
+		  				<textarea style="width:98%; display:none;" id="logic_text" placeholder="작용원리">-</textarea>
+	  				</td>
+	  				<td align="center"><a class="change" id="change1" onclick="logic_function2()">x</a></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[외형]</td>
+		  			<td class="first_td">
+		  				<div id="shape_tool">
+			  				<input type="button" value="별첨추가" >
+			  				<input type="button" value="직접입력" onclick="shape_function1()" >
+		  				</div>
+		  				<textarea style="width:98%; display:none;" id="shape_text" placeholder="외형">-</textarea>
+	  				</td>
+	  				<td align="center"><a class="change" id="change2" onclick="shape_function2()">x</a></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[치수]</td>
+		  			<td class="first_td">
+		  				<div id="size_tool">
+			  				<input type="button" value="별첨추가" >
+			  				<input type="button" value="직접입력" onclick="size_function1()" >
+		  				</div>
+		  				<textarea style="width:98%; display:none;" id="size_text" placeholder="치수">-</textarea>
+	  				</td>
+	  				<td align="center"><a class="change" id="change3" onclick="size_function2()">x</a></td>
+	  			</tr>
+		  		<tr>
+		  			<td class="first_th">[특성]</td>
+		  			<td class="first_td" >별첨</td>
+		  			<td align="center"></td>
+	  			</tr>
+		  	</table><br>
+		  	<table class="first_form">
+		  		<tr><td class="first_title" colspan="2">▶ 담당자</td></tr>
+		  		<tr><td class="first_th" >[성명]</td><td class="first_td">${memberInfo.kor_name}</td></tr>
+		  		<tr><td class="first_th">[전화번호]</td><td class="first_td">${memberInfo.phone1}-${memberInfo.phone2}-${memberInfo.phone3}</td></tr>
+		  		<tr><td class="first_th">[이메일]</td><td class="first_td">${memberInfo.email1}@${memberInfo.email2}</td></tr>
+		  		<tr><td class="first_th">[휴대폰]</td><td class="first_td">${memberInfo.cell_phone1}-${memberInfo.cell_phone2}-${memberInfo.cell_phone3}</td></tr>
+		  	</table><br>
 		  </div>
-	 </form><br><br><br><br>
+	 </form>
 </div>
+<script>
+	function logic_function1(){
+		$("#logic_text").css("display","block");
+		$("#logic_tool").css("display", "none");
+		$("#change1").css("display", "block");
+		document.getElementById('logic_text').value="";
+	}
+	
+	function logic_function2(){
+		$("#logic_text").css("display","none");
+		$("#logic_tool").css("display", "block");
+		$("#change1").css("display", "none");
+		document.getElementById('logic_text').value="-";
+	}
+	
+	function shape_function1(){
+		$("#shape_text").css("display","block");
+		$("#shape_tool").css("display", "none");
+		$("#change2").css("display", "block");
+		document.getElementById('shape_text').value="";
+	}
+	
+	function shape_function2(){
+		$("#shape_text").css("display","none");
+		$("#shape_tool").css("display", "block");
+		$("#change2").css("display", "none");
+		document.getElementById('shape_text').value="-";
+	}
+
+	function size_function1(){
+		$("#size_text").css("display","block");
+		$("#size_tool").css("display", "none");
+		$("#change3").css("display", "block");
+	}
+	
+	function size_function2(){
+		$("#size_text").css("display","none");
+		$("#size_tool").css("display", "block");
+		$("#change3").css("display", "none");
+	}
+</script>
