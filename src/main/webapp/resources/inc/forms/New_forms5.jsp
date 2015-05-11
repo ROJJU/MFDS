@@ -14,7 +14,7 @@
 		    			${forms.contents5}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ사용시 주의사항</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">1.다음환자에게는 사용하지 말것.</span></b></p><p><br></p><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">2.다음의 부작용/사고발생이 일어날 수 있다.</span></b></p><p><span style="line-height: 1.5;"><span style="font-size: 12pt;"><span style="font-size: 10pt;">​</span><br></span></span></p><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">3. 일반적 주의 사항</span></b></p><p><br></p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ사용시 주의사항</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">1.다음환자에게는 사용하지 말것.</span></b></p><p><br></p><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">2.다음의 부작용/사고발생이 일어날 수 있다.</span></b></p><p><font class="Apple-style-span" size="2"><span class="Apple-style-span" style="line-height: 19px;"><br></span></font></p><p><b style="line-height: 1.5;"><span style="font-size: 10pt;">3. 일반적 주의 사항</span></b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	
