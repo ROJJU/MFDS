@@ -255,7 +255,7 @@
 		}
 		
 		function getPost(num){
-			window.open('/Post?num='+num,'getPost','width=501 height=618 scrollbars=yes');
+			window.open('/Post.do?num='+num,'getPost','width=501 height=618 scrollbars=yes');
 		}
 		function copy(){
 			var address = document.join.address.value;
