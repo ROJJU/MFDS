@@ -35,6 +35,22 @@
 			top:4px;
 			}
 		</style>
+		<script type="text/javascript">
+		/*½Ã°£ ·Î±× Ãâ·Â ¼Ò½º!!!!*/
+		myD = new Date();
+		myYear = myD.getFullYear();
+		myMonth = myD.getMonth() + 1;
+		myDate = myD.getDate();
+		myDay = myD.getDay();
+		myHours = myD.getHours();
+		myMinutes = myD.getMinutes();
+		mySeconds = myD.getSeconds();
+		myMess1 = myYear + "Ò´" + myMonth + "êÅ" + myDate + "ìí";
+		myMess3 = myHours + "ãÁ" + myMinutes + "ÝÂ" + mySeconds + "õ©";
+		myMess = myMess1 + " " + myMess3;
+		console.log(myMess);
+		/*  */
+		</script>
 	</head>
 	<body>
 		<div id="m_header_wrap">
