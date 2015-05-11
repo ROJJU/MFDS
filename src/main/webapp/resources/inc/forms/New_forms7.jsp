@@ -14,7 +14,7 @@
 		    			${forms.contents7}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ사용기한</span></b></p><p><br></p><p><b>1. 사용기한</b></p><p><br></p><p><span style="color: rgb(255, 0, 0);">* 참고 : 유효기한 설정의 근거자료를 이미지로 첨부 하십시오.</span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ사용기한</span></b></p><p><br></p><p><b>1. 사용기한</b></p><p><br></p><p><span style="color: rgb(255, 0, 0);">* 참고 : 유효기한 설정의 근거자료를 이미지로 첨부 하십시오.</span></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

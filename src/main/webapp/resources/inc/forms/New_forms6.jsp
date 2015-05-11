@@ -14,7 +14,7 @@
 		    			${forms.contents6}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ저장방법</span></b></p><p><br></p><p><b>1. 저장방법</b></p><p><b><br></b></p><p><b>2.포장 형태 및 포장 단위</b></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ저장방법</span></b></p><p><br></p><p><b>1. 저장방법</b></p><p><br></p><p><b>2.포장 형태 및 포장 단위</b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

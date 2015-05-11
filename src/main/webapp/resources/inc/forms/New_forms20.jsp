@@ -25,7 +25,7 @@
 <td style="padding: 3px 4px 2px; color: rgb(61, 118, 171); width: 627px; height: 18px; background-color: rgb(255, 255, 255);"><p>&nbsp;</p></td>
 </tr>
 </tbody>
-</table><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><b>3. 안전대책 대응이 요구되는 위험요소</b></p><p><b><br></b></p><p><b>4. 중대한 위험요소에 대한 위험분석 및 위험경감 조치의 결과</b></p>
+</table><p><br></p><p><b>3. 안전대책 대응이 요구되는 위험요소</b></p><p><br></p><p><b>4. 중대한 위험요소에 대한 위험분석 및 위험경감 조치의 결과</b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

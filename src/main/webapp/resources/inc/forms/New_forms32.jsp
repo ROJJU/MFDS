@@ -14,7 +14,7 @@
 		    			${forms.contents32}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ복합, 조합된 의약품에 대한 정보 요약</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b>1.의약품의 식별과 출처</b></p><p><b>&nbsp; 가. 명칭:</b></p><p><b>&nbsp; 나. 제조사 명칭 및 소재지:</b></p><p><b>&nbsp; 다. 유래물질:</b></p><p><b><br></b></p><p><b>2. 의도적으로 포함된 이유</b></p><p><b><br></b></p><p><b>3.의도된 적용에서 안정성 및 성능 등에 대한 상세한 정보</b></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ복합, 조합된 의약품에 대한 정보 요약</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b>1.의약품의 식별과 출처</b></p><p><b>&nbsp; 가. 명칭:</b>&nbsp;</p><p><b>&nbsp; 나. 제조사 명칭 및 소재지:</b>&nbsp;</p><p><b>&nbsp; 다. 유래물질:</b>&nbsp;</p><p><b><br></b></p><p><b>2. 의도적으로 포함된 이유</b></p><p><br></p><p><b>3.의도된 적용에서 안정성 및 성능 등에 대한 상세한 정보</b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

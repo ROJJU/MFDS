@@ -14,7 +14,7 @@
 		    			${forms.contents16}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ기기설계 계요</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b>1.기원 또는 발견 경위</b></p><p><b><br></b></p><p><b>2.개발 경위</b></p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ기기설계 계요</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b>1.기원 또는 발견 경위</b></p><p><br></p><p><b>2.개발 경위</b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

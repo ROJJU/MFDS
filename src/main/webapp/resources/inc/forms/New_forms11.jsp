@@ -14,7 +14,7 @@
 		    			${forms.contents11}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ목차</span></b></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p><span style="color: rgb(58, 50, 195);"><i><br></i></span></p><p>&nbsp;</p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ목차</span></b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

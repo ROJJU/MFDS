@@ -14,7 +14,7 @@
 		    			${forms.contents10}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ기타</span></b></p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ기타</span></b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

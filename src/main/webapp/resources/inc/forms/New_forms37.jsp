@@ -14,7 +14,7 @@
 		    			${forms.contents37}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ제품검증 및 유효성 확인 자료</span></b></p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ위험분석 보고서</span></b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

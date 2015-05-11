@@ -14,7 +14,7 @@
 		    			${forms.contents3}
 		    		</c:when>
 		    		<c:otherwise>
-		    	<p><b><span style="font-size: 12pt;">ㅣ 제조방법</span></b></p><p>&nbsp;</p><p><span style="font-size: 10pt;"><b>제조원의 제조방법에 따른다.</b></span></p><p><b>&nbsp;</b></p><p><span style="color: rgb(255, 0, 0); font-size: 10pt;">(설명) 멸균의료기기의 경우 근거자료에 의거하여 멸균방법을 기재</span></p><p>&nbsp;</p><ul><li><span style="color: rgb(255, 0, 0); font-size: 10pt; line-height: 1.5;">&nbsp;제조방법</span></li><li><span style="color: rgb(255, 0, 0); font-size: 10pt; line-height: 1.5;">&nbsp;멸균방법 및 조건</span></li></ul><p>&nbsp;</p><p>&nbsp;</p>
+		    	<p><b><span style="font-size: 12pt;">ㅣ 제조방법</span></b></p><p>&nbsp;</p><p><span style="font-size: 10pt;"><b>제조원의 제조방법에 따른다.</b></span></p><p><br></p><p><span style="color: rgb(255, 0, 0); font-size: 10pt;">(설명) 멸균의료기기의 경우 근거자료에 의거하여 멸균방법을 기재</span></p><p><br></p><ul><li><span style="color: rgb(255, 0, 0); font-size: 10pt; line-height: 1.5;">&nbsp;제조방법</span></li><li><span style="color: rgb(255, 0, 0); font-size: 10pt; line-height: 1.5;">&nbsp;멸균방법 및 조건</span></li></ul>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	
