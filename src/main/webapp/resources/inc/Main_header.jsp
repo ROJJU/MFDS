@@ -79,20 +79,6 @@ location.href="/";
 	$('document').ready(function(){
         $('.wrap').fixedMenu();
     });
-	/*시간 로그 출력 소스!!!!*/
-	myD = new Date();
-	myYear = myD.getFullYear();
-	myMonth = myD.getMonth() + 1;
-	myDate = myD.getDate();
-	myDay = myD.getDay();
-	myHours = myD.getHours();
-	myMinutes = myD.getMinutes();
-	mySeconds = myD.getSeconds();
-	myMess1 = myYear + "年" + myMonth + "月" + myDate + "日";
-	myMess3 = myHours + "時" + myMinutes + "分" + mySeconds + "秒";
-	myMess = myMess1 + " " + myMess3;
-	console.log(myMess);
-	/*  */
 </script>
 <link rel="shortcut icon" href="/resources/favicon.ico"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
