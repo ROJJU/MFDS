@@ -72,4 +72,7 @@
 	<update id="update_title" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set title=#{title} where forms_seq=#{forms_seq}
 	</update>
+	<select id="getCountry" parameterType="String" resultType="com.kgmp.mfds.vo.Forms">
+		select * from country where country LIKE CONCAT('%', #{country}, '%')
+	</select>
 </mapper>

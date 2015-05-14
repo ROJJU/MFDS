@@ -1,5 +1,6 @@
 package com.kgmp.mfds.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kgmp.mfds.vo.Admin;
 import com.kgmp.mfds.vo.Forms;
+import com.kgmp.mfds.vo.Member;
 
 
 @Repository
@@ -109,4 +111,10 @@ private SqlSession sqlSession;
 		public void update_title(Forms forms){
 			sqlSession.update("update_title", forms);
 		}
+//country
+		@SuppressWarnings("unchecked")
+		public ArrayList<Forms> getCountry(String country){
+			return (ArrayList<Forms>) sqlSession.selectList("getCountry", country);
+		}
+		
 }

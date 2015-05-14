@@ -129,11 +129,27 @@ public class Forms {
 	private String ck_form37;
 	private String ck_form38;
 	private String ck_form39;
+//country part s
+	private int country_seq;
+	private String country;
+//country end
 	
 	
 	
 	public String getck_form() {
 		return ck_form;
+	}
+	public int getCountry_seq() {
+		return country_seq;
+	}
+	public void setCountry_seq(int country_seq) {
+		this.country_seq = country_seq;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	public void setck_form(String ck_form) {
 		this.ck_form = ck_form;

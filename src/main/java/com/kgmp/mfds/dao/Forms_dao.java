@@ -1,5 +1,6 @@
 package com.kgmp.mfds.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,4 +28,5 @@ public interface Forms_dao {
 	Forms getFormsRead(Forms formsInfo);
 	void delForm(Forms formsInfo);
 	void update_title(Forms forms);
+	ArrayList<Forms> getCountry(String country);
 }

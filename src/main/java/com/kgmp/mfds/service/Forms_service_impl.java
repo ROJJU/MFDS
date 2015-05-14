@@ -1,5 +1,6 @@
 package com.kgmp.mfds.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.kgmp.mfds.dao.Forms_dao;
 import com.kgmp.mfds.vo.Forms;
+import com.kgmp.mfds.vo.Member;
 
 
 @Service
@@ -251,5 +253,9 @@ public class Forms_service_impl implements Forms_service{
 			e.printStackTrace();
 		}
 		return check;
+	}
+	
+	public ArrayList<Forms> getCountry(String country){
+		return (ArrayList<Forms>)forms_dao.getCountry(country);
 	}
 }

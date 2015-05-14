@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div style="width:900px; margin:0 auto; text-align:left; border:1px solid black; padding:30px;">
-	<form id="boardWriteForm" method="post">
+	<form id="boardWriteForm" method="post" name="firstForm">
 		  <div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
@@ -27,7 +27,7 @@
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[주소]</td>
-		  			<td class="first_td" colspan="3"><input type="text" placeholder="(우편번호)제조소의 소재지" style="width:99%;"></td>
+		  			<td class="first_td" colspan="3"><input type="text" placeholder="(우편번호)제조소의 소재지" style="width:99%;" onclick="getPost('3')" id="addr" name="addr"></td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th" >[사업자등록번호]</td>
@@ -108,7 +108,7 @@
 		  			<td class="first_th" >[제조의뢰자]</td>
 		  			<td class="first_td" >
 		  				<input type="text" placeholder="명칭(직접입력)">
-		  				(<input type="text" placeholder="제조국(선택입력)" readonly>,
+		  				(<input type="text" placeholder="제조국(선택입력)" readonly onclick="popup_country('1')" name="country1" id="country1">,
 		  				<input type="text" placeholder="소재지(직접입력)">)
 		  			</td>
 	  			</tr>
@@ -116,7 +116,7 @@
 		  			<td class="first_th">[제조자]</td>
 		  			<td class="first_td" >
 		  				<input type="text" placeholder="명칭(직접입력)">
-		  				(<input type="text" placeholder="제조국(선택입력)" readonly>,
+		  				(<input type="text" placeholder="제조국(선택입력)" readonly onclick="popup_country('2')" name="country2" id="country2">,
 		  				<input type="text" placeholder="소재지(직접입력)">)
 		  			</td>
 	  			</tr>
@@ -287,5 +287,13 @@
 		$("#size_text").css("display","none");
 		$("#size_tool").css("display", "block");
 		$("#change3").css("display", "none");
+	}
+	
+	function popup_country(num){
+		window.open('/selectCountry.do?num='+num,'selectCountry','width=501 height=690 scrollbars=yes');
+	}
+	
+	function getPost(num){
+		window.open('/Post.do?num='+num,'getPost','width=501 height=618 scrollbars=yes');
 	}
 </script>

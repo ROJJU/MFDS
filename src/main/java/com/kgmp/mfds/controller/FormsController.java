@@ -1,6 +1,7 @@
 package com.kgmp.mfds.controller;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -654,4 +655,12 @@ public class FormsController {
 		mav.setViewName("/Opener_check_proc");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/selectCountry.do")
+    public String selectCountry(Model model,
+    				   @RequestParam(value = "country", required = false, defaultValue = "") String country){
+		ArrayList<Forms> list = forms_service.getCountry(country);
+		model.addAttribute("resultList", list);
+        return "/forms/Country";
+    }
 }

@@ -6,16 +6,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>KGMP</title>
 <script type="text/javascript">
-	function addAddrs1(){
+	function addAddress(num){
 		var post1 = document.post2.post1.value;
 		var post2 = document.post2.post2.value;
-		window.opener.document.join.address.value = post1+post2;
-		window.close();
-	}
-	function addAddrs2(){
-		var post1 = document.post2.post1.value;
-		var post2 = document.post2.post2.value;
-		window.opener.document.join.company_address.value = post1+post2;
+		if(num==1){
+			window.opener.document.join.address.value = post1+post2;
+		}else if(num==2){
+			window.opener.document.join.company_address.value = post1+post2;
+		}else{
+			window.opener.document.firstForm.addr.value = post1+post2;
+		}
 		window.close();
 	}
 </script>
@@ -47,11 +47,7 @@
 			</tr>
 			<tr>
 				<td align="center" style="border-top:3px solid rgb(14,90,146); height:40px;"><br>
-				<%if(request.getParameter("num").equals("1")){%>
-					<input type="image" src="/resources/img/btn/addrs_button.png" onclick="addAddrs1();">
-				<%}else{%>
-					<input type="image" src="/resources/img/btn/addrs_button.png" onclick="addAddrs2();">
-				<%}%>
+					<input type="image" src="/resources/img/btn/addrs_button.png" onclick="addAddress(<%=request.getParameter("num")%>);">
 					&nbsp;<input type="image" src="/resources/img/btn/kr_back_btn.png" onclick="javaScript:history.go(-1);">
 					&nbsp;<input type="image" src="/resources/img/btn/cancel_button.png" onclick="javaScript:window.close();">
 				</td>

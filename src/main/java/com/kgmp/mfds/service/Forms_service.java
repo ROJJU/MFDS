@@ -1,8 +1,10 @@
 package com.kgmp.mfds.service;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import com.kgmp.mfds.vo.Forms;
+import com.kgmp.mfds.vo.Member;
 
 public interface Forms_service {
 	Map<String, Object> getProducts(int currentPage, String string,	String search, String find, String list_seq);
@@ -20,4 +22,5 @@ public interface Forms_service {
 	Forms getFormsRead(Forms formsInfo);
 	String delForm(Forms formsInfo);
 	String update_title(Forms forms);
+	ArrayList<Forms> getCountry(String country);
 }
