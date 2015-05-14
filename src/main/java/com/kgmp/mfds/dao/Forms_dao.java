@@ -32,4 +32,5 @@ public interface Forms_dao {
 	ArrayList<Forms> getCountry(String country);
 	void insertFirstForms(int forms_seq);
 	FirstForm getFirstForm(int forms_seq);
+	void insertFirstContents(FirstForm firstForm);
 }

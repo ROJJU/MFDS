@@ -60,6 +60,10 @@ private SqlSession sqlSession;
 			sqlSession.update("insertContents", forms);
 		}
 		
+		public void insertFirstContents(FirstForm firstForm){
+			sqlSession.update("insertFirstContents", firstForm);
+		}
+		
 		public void updateState(Forms forms){
 			sqlSession.update("updateState", forms);
 		}

@@ -121,10 +121,19 @@ public class Forms_service_impl implements Forms_service{
 		return check;
 	}
 	
-	public boolean isFirstForm(int forms_seq){
+	public FirstForm getFirstForm(int forms_seq){
 		FirstForm firstForm = null;
-		firstForm=forms_dao.getFirstForm(forms_seq);
-		return (firstForm != null) ? true : false;
+		try{
+			firstForm=forms_dao.getFirstForm(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return firstForm;
+	}
+	
+	
+	public boolean isFirstForm(int forms_seq){
+		return (getFirstForm(forms_seq) != null) ? true : false;
 	}
 	
 	public String delForm(Forms formsInfo){
@@ -144,6 +153,18 @@ public class Forms_service_impl implements Forms_service{
 		try{
 			check="yes";
 			forms_dao.insertContents(forms);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
+	
+	public String insertFirstContents(FirstForm firstForm){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.insertFirstContents(firstForm);
 		}catch(Exception e){
 			check="no";
 			e.printStackTrace();

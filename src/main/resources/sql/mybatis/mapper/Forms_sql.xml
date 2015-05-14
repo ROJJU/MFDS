@@ -75,10 +75,43 @@
 	<select id="getCountry" parameterType="String" resultType="com.kgmp.mfds.vo.Forms">
 		select * from country where country LIKE CONCAT('%', #{country}, '%')
 	</select>
+<!--first form-->
 	<select id="getFirstForm" parameterType="int" resultType="com.kgmp.mfds.vo.FirstForm">
 		select * from first_form where forms_ref=#{forms_seq}
 	</select>
 	<insert id="insertFirstForms" parameterType="int">
 		insert into first_form (forms_ref) values(#{forms_seq});
 	</insert>
+	<update id="insertFirstContents" parameterType="com.kgmp.mfds.vo.FirstForm">
+		update first_form
+		set
+			birthDay = #{birthDay},
+			makeCompanyName=#{makeCompanyName},
+			makeAddr=#{makeAddr},
+			makeCompanyNo =#{makeCompanyNo},
+			makeLicenseNo =#{makeLicenseNo},
+			makingOrImport =#{makingOrImport},
+			divisionOfProduct =#{divisionOfProduct},
+			nameOfProduct =#{nameOfProduct},
+			checkForBrandName =#{checkForBrandName},
+			purpose =#{purpose},
+			permission=#{permission},
+			requestName=#{requestName},
+			country1=#{country1},
+			requestPlace=#{requestPlace},
+			makingName=#{makingName},
+			country2=#{country2},
+			makingPlace=#{makingPlace},
+			disposableness=#{disposableness},
+			chase=#{chase},
+			etc=#{etc},
+			model=#{model},
+			modelFileName=#{modelFileName},
+			pakingFileNmae=#{pakingFileNmae},
+			logic_text=#{logic_text},
+			shape_text=#{shape_text},
+			size_text=#{size_text}
+		where
+			 forms_ref=#{forms_ref}
+	</update>
 </mapper>

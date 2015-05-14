@@ -271,7 +271,7 @@ int next =list_seq+1;
 									<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
 									<input type="image" src="/resources/img/btn/kr_back_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=back%>')">
 									<input type="image" src="/resources/img/btn/kr_next_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=next%>')">
-									<input type="image" src="/resources/img/btn/yetSave_button.png" width="60px;" onclick="onWrite()">
+									<input type="image" src="/resources/img/btn/yetSave_button.png" width="60px;" onclick="onWrite('<%=request.getParameter("list_seq")%>')">
 								    <input type="image" src="/resources/img/btn/list_btn.png" width="60px;" onclick="goUrl('/MyPage.do?page_seq=6')">
 									<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="finalSave(${forms.forms_seq})">
 								</div><br><br><br><br>
@@ -292,11 +292,15 @@ int next =list_seq+1;
 			 sSkinURI: "/resources/se/SmartEditor2Skin.html"  // html editor가 skin url 입니다.
 			 });
 			 
-			var onWrite = function(){
+			var onWrite = function(list_seq){
 			 oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용합니다.
 			 
-			 var boardWriteForm = document.getElementById("boardWriteForm");  
-			 boardWriteForm.action ="/FormsProc.do";  //저장할 페이지로 쏩니다.
+			 var boardWriteForm = document.getElementById("boardWriteForm");
+				 if(list_seq==1){
+					boardWriteForm.action ="/FirstFormsProc.do";  //저장할 페이지로 쏩니다.
+				 }else{
+				 	boardWriteForm.action ="/FormsProc.do";  //저장할 페이지로 쏩니다.
+				 }
 			 boardWriteForm.submit();  
 			};
 			 

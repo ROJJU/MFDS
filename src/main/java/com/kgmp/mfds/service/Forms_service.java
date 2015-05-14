@@ -3,6 +3,7 @@ package com.kgmp.mfds.service;
 import java.util.ArrayList;
 import java.util.Map;
 
+import com.kgmp.mfds.vo.FirstForm;
 import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
 
@@ -25,4 +26,6 @@ public interface Forms_service {
 	ArrayList<Forms> getCountry(String country);
 	String insertFirstForms(int forms_seq);
 	boolean isFirstForm(int forms_seq);
+	FirstForm getFirstForm(int forms_seq);
+	String insertFirstContents(FirstForm firstForm);
 }

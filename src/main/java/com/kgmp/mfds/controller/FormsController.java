@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kgmp.mfds.service.Account_service;
 import com.kgmp.mfds.service.Forms_service;
 import com.kgmp.mfds.service.Member_service;
+import com.kgmp.mfds.vo.FirstForm;
 import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
 import com.kgmp.mfds.vo.Notice;
@@ -96,12 +97,15 @@ public class FormsController {
 		formsInfo.setContents_name(contents_name);
 		//setting parameter e
 		mav.setViewName("/forms/New_forms");
-		
+		FirstForm firstForm = null;
 		try{
 			forms=forms_service.getUserForms(formsInfo);
+			forms.getForms_seq();
+			firstForm = forms_service.getFirstForm(forms_seq);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		model.addAttribute("firstForm", firstForm);
 		model.addAttribute("list_seq", list_seq);
 		model.addAttribute("forms", forms);
         return mav;
@@ -255,6 +259,85 @@ public class FormsController {
 		String check=null;
 		try{
 			check=forms_service.insertContents(forms);
+			if(check.equals("yes")){
+				msg="성공하였습니다.";
+			}else{
+				msg="실패하였습니다.";
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("msg", msg);
+		mav.addObject("url", url);
+		mav.setViewName("/Check_proc");
+		return mav;
+	}
+		
+	@RequestMapping(value = "/FirstFormsProc.do")
+	public ModelAndView insertFirstForms(@RequestParam(value="forms_seq", required = false, defaultValue = "") int forms_seq,
+										@RequestParam(value="birthDay", required = false, defaultValue = "") String birthDay,
+										@RequestParam(value="makeCompanyName", required = false, defaultValue = "") String makeCompanyName,
+										@RequestParam(value="makeAddr", required = false, defaultValue = "") String makeAddr,
+										@RequestParam(value="makeCompanyNo", required = false, defaultValue = "") String makeCompanyNo,
+										@RequestParam(value="makeLicenseNo", required = false, defaultValue = "") String makeLicenseNo,
+										@RequestParam(value="makingOrImport", required = false, defaultValue = "") String makingOrImport,
+										@RequestParam(value="divisionOfProduct", required = false, defaultValue = "") String divisionOfProduct,
+										@RequestParam(value="nameOfProduct", required = false, defaultValue = "") String nameOfProduct,
+										@RequestParam(value="checkForBrandName", required = false, defaultValue = "") String checkForBrandName,
+										@RequestParam(value="purpose", required = false, defaultValue = "") String purpose,
+										@RequestParam(value="permission", required = false, defaultValue = "") String permission,
+										@RequestParam(value="requestName", required = false, defaultValue = "") String requestName,
+										@RequestParam(value="country1", required = false, defaultValue = "") String country1,
+										@RequestParam(value="requestPlace", required = false, defaultValue = "") String requestPlace,
+										@RequestParam(value="makingName", required = false, defaultValue = "") String makingName,
+										@RequestParam(value="country2", required = false, defaultValue = "") String country2,
+										@RequestParam(value="makingPlace", required = false, defaultValue = "") String makingPlace,
+										@RequestParam(value="disposableness", required = false, defaultValue = "") String disposableness,
+										@RequestParam(value="chase", required = false, defaultValue = "") String chase,
+										@RequestParam(value="etc", required = false, defaultValue = "") String etc,
+										@RequestParam(value="model", required = false, defaultValue = "") String model,
+										@RequestParam(value="modelFileName", required = false, defaultValue = "") String modelFileName,
+										@RequestParam(value="pakingFileNmae", required = false, defaultValue = "") String pakingFileNmae,
+										@RequestParam(value="logic_text", required = false, defaultValue = "") String logic_text,
+										@RequestParam(value="shape_text", required = false, defaultValue = "") String shape_text,
+										@RequestParam(value="size_text", required = false, defaultValue = "") String size_text,
+										@RequestParam(value="contents_name", required = false, defaultValue = "") String contents_name,
+										@RequestParam(value="p_url", required = false, defaultValue = "") String p_url){
+		ModelAndView mav = new ModelAndView();
+		String msg=null;
+		String url=p_url+"&contents_name="+contents_name;
+		FirstForm firstForm = new FirstForm();
+		firstForm.setForms_ref(forms_seq);
+		firstForm.setBirthDay(birthDay);
+		firstForm.setChase(chase);
+		firstForm.setCheckForBrandName(checkForBrandName);
+		firstForm.setCountry1(country1);
+		firstForm.setCountry2(country2);
+		firstForm.setDisposableness(disposableness);
+		firstForm.setDivisionOfProduct(divisionOfProduct);
+		firstForm.setEtc(etc);
+		firstForm.setLogic_text(logic_text);
+		firstForm.setMakeAddr(makeAddr);
+		firstForm.setMakeCompanyName(makeCompanyName);
+		firstForm.setMakeCompanyNo(makeCompanyNo);
+		firstForm.setMakeLicenseNo(makeLicenseNo);
+		firstForm.setMakingName(makingName);
+		firstForm.setMakingOrImport(makingOrImport);
+		firstForm.setMakingPlace(makingPlace);
+		firstForm.setModel(modelFileName);
+		firstForm.setModelFileName(modelFileName);
+		firstForm.setNameOfProduct(nameOfProduct);
+		firstForm.setPakingFileNmae(pakingFileNmae);
+		firstForm.setPermission(permission);
+		firstForm.setPurpose(purpose);
+		firstForm.setRequestName(requestName);
+		firstForm.setRequestPlace(requestPlace);
+		firstForm.setShape_text(shape_text);
+		firstForm.setSize_text(size_text);
+		String check=null;
+		try{
+			check=forms_service.insertFirstContents(firstForm);
 			if(check.equals("yes")){
 				msg="성공하였습니다.";
 			}else{

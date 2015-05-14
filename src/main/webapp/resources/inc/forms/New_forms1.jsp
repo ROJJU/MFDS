@@ -6,7 +6,7 @@
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="contents1" name="contents_name">
-		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1" name="url">
+		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1" name="p_url">
 		  	<input type="hidden" value="ck_form1" name="ck_form">
 		  	<p><b><span style="font-size: 12pt;">ㅣ 의료기기 기술문서 등 심사의뢰서</span></b></p><br>
 		  	<table class="first_form">
@@ -15,7 +15,7 @@
 		  			<td class="first_th" >[성명(대표자)]</td>
 		  			<td class="first_td" width="300px">${memberInfo.kor_name}</td>
 		  			<td class="first_th">[생년월일]</td>
-		  			<td class="first_td"><input type="date" placeholder="YYYY-MM-DD" style="width:99%;" name="birthDay"></td>
+		  			<td class="first_td"><input type="date" placeholder="YYYY-MM-DD" style="width:99%;" name="birthDay" value="${firstForm.birthDay}"></td>
 	  			</tr>
 		  		<tr><td class="first_th">[주소]</td><td class="first_td" colspan="3">${memberInfo.address}</td></tr>
 		  	</table><br>
@@ -23,17 +23,17 @@
 		  		<tr><td class="first_title" colspan="4">▶ 제조(수입)업소</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[명칭(상호)]</td>
-		  			<td class="first_td" width="300px" colspan="3"><input type="text" placeholder="업소명칭(상호)" style="width:99%;" name="makeCompanyName"></td>
+		  			<td class="first_td" width="300px" colspan="3"><input type="text" placeholder="업소명칭(상호)" style="width:99%;" name="makeCompanyName" value="${firstForm.makeCompanyName}"></td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[주소]</td>
-		  			<td class="first_td" colspan="3"><input type="text" placeholder="(우편번호)제조소의 소재지" style="width:99%;" onclick="getPost('3')" id="makeAddr" name="makeAddr"></td>
+		  			<td class="first_td" colspan="3"><input type="text" placeholder="(우편번호)제조소의 소재지" style="width:99%;" onclick="getPost('3')" id="makeAddr" name="makeAddr" value="${firstForm.makeAddr}" readonly></td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th" >[사업자등록번호]</td>
-		  			<td class="first_td" width="300px"><input type="text" placeholder="사업자등록번호" style="width:99%;" name="makeCompanyNo"></td>
+		  			<td class="first_td" width="300px"><input type="text" placeholder="사업자등록번호" style="width:99%;" name="makeCompanyNo" value="${firstForm.makeCompanyNo}"></td>
 		  			<td class="first_th">[입허가번호]</td>
-		  			<td class="first_td"><input type="text" placeholder="입허가번호" style="width:98%;" name="makeLicenseNo"></td></tr>
+		  			<td class="first_td"><input type="text" placeholder="입허가번호" style="width:98%;" name="makeLicenseNo" value="${firstForm.makeLicenseNo}"></td></tr>
 		  	</table><br>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 심사의뢰의 구분</td></tr>
@@ -41,17 +41,65 @@
 		  		<tr>
 		  			<td class="first_th">[제조/수입 구분]</td>
 		  			<td class="first_td">
-		  				<input type="radio" name="makingOrImport">&nbsp; 제조
-		  				<input type="radio" name="makingOrImport">&nbsp; 수입
+		  			<c:choose>
+		  				<c:when test="${firstForm.makingOrImport==1}">
+		  					<input type="radio" name="makingOrImport" value="1" checked>
+		  				</c:when>
+		  				<c:otherwise>
+		  					<input type="radio" name="makingOrImport" value="1">
+		  				</c:otherwise>
+		  			</c:choose>
+		  				&nbsp; 제조
+		  			<c:choose>
+		  				<c:when test="${firstForm.makingOrImport==2}">
+		  					<input type="radio" name="makingOrImport" value="2" checked>
+		  				</c:when>
+		  				<c:otherwise>
+		  					<input type="radio" name="makingOrImport" value="2">
+		  				</c:otherwise>
+		  			</c:choose>	
+		  				&nbsp; 수입
 		  			</td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th" >[제품의 구분]</td>
 		  			<td class="first_td" >
-		  				<input type="radio" name="divisionOfProduct">&nbsp; 새로운제품
-		  				<input type="radio" name="divisionOfProduct">&nbsp; 개량제품
-		  				<input type="radio" name="divisionOfProduct">&nbsp; 동등제품
-		  				<input type="radio" name="divisionOfProduct">&nbsp; 해당없음
+		  				<c:choose>
+		  					<c:when test="${firstForm.divisionOfProduct==1}">
+		  						<input type="radio" name="divisionOfProduct" value="1" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="divisionOfProduct" value="1">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 새로운제품
+		  				<c:choose>
+		  					<c:when test="${firstForm.divisionOfProduct==2}">
+		  						<input type="radio" name="divisionOfProduct" value="2" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="divisionOfProduct" value="2">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 개량제품
+		  				<c:choose>
+		  					<c:when test="${firstForm.divisionOfProduct==3}">
+		  						<input type="radio" name="divisionOfProduct" value="3" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="divisionOfProduct" value="3">
+		  					</c:otherwise>		  					
+		  				</c:choose>
+		  				&nbsp; 동등제품
+		  				<c:choose>
+		  					<c:when test="${firstForm.divisionOfProduct==4}">
+		  						<input type="radio" name="divisionOfProduct" value="4" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="divisionOfProduct" value="4">
+		  					</c:otherwise>		  					
+		  				</c:choose>
+		  				&nbsp; 해당없음
 		  				&nbsp; <font color="red">(3,4등급은 해당없음을 선택)</font>
 		  			</td>
 	  			</tr>
@@ -61,13 +109,28 @@
 		  		<tr><td class="first_th" >[제품명]</td><td class="first_td" >${forms.kor_name}, ${forms.code}</td></tr>
 		  		<tr>
 		  			<td class="first_th">[상품명]</td>
-		  			<td class="first_td"><input type="text" placeholder="상품명(2개 이상 입력 시, 콤마로 분리하여 입력)" style="width:98%;" name="nameOfProduct"></td>
+		  			<td class="first_td"><input type="text" placeholder="상품명(2개 이상 입력 시, 콤마로 분리하여 입력)" style="width:98%;" name="nameOfProduct" value="${firstForm.nameOfProduct}"></td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th" >[업소명 표기 여부]</td>
 		  			<td class="first_td" >
-		  				<input type="radio" name="checkForBrandName">&nbsp; 예
-		  				<input type="radio" name="checkForBrandName">&nbsp; 아니요<br>
+		  				<c:choose>
+		  					<c:when test="${firstForm.checkForBrandName==1}">
+		  						<input type="radio" name="checkForBrandName" value="1" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="checkForBrandName" value="1">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 예
+		  				<c:choose>
+		  					<c:when test="${firstForm.checkForBrandName==2}">
+		  						<input type="radio" name="checkForBrandName" value="2" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="checkForBrandName" value="2">
+		  					</c:otherwise>
+		  				</c:choose>&nbsp; 아니요<br>
 		  				<font color="red">(제품명에 업소명을 출력할 경우 선택해 주세요. 상품명 입력을 안했을 경우 '업소명 표기 여부'가 표기로 전환됩니다.)</font>
 		  			</td>
 	  			</tr>
@@ -79,7 +142,7 @@
 		  		<tr><td class="first_title" colspan="2">▶ 사용목적</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[사용목적]</td>
-		  			<td class="first_td" ><input type="text" style="width:98%;" placeholder="사용목적" name="purpose"></td>
+		  			<td class="first_td" ><input type="text" style="width:98%;" placeholder="사용목적" name="purpose" value="${firstForm.purpose}"></td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[성능]</td>
