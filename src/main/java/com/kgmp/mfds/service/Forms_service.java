@@ -23,4 +23,6 @@ public interface Forms_service {
 	String delForm(Forms formsInfo);
 	String update_title(Forms forms);
 	ArrayList<Forms> getCountry(String country);
+	String insertFirstForms(int forms_seq);
+	boolean isFirstForm(int forms_seq);
 }

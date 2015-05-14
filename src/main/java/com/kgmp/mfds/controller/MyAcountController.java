@@ -2,7 +2,6 @@ package com.kgmp.mfds.controller;
 
 
 import java.io.FileNotFoundException;
-
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kgmp.mfds.FileUpload;
 import com.kgmp.mfds.service.Account_service;
+import com.kgmp.mfds.service.Forms_service;
 import com.kgmp.mfds.service.Member_service;
 import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
@@ -38,6 +38,9 @@ public class MyAcountController{
 	
 	@Autowired
 	private Account_service account_service;
+	
+	@Autowired
+	private Forms_service forms_service;
 	
 	@Autowired
 	private Member_service member_service;
@@ -213,8 +216,22 @@ public class MyAcountController{
     public ModelAndView condition(Model model,
     							  @RequestParam("forms_seq") int forms_seq){
 		ModelAndView mav = new ModelAndView();
-		String msg="서류를 불러오는데 성공하였습니다.";
-		String url="/NewForms.do?forms_seq="+forms_seq+"&list_seq=1";
+		String check=null;
+		String msg=null;
+		String url=null;
+		if(forms_service.isFirstForm(forms_seq)){
+			check="yes";
+		}else{
+			check=forms_service.insertFirstForms(forms_seq);
+		}
+		
+		if(check.equals("yes")){
+			msg="서류를 불러오는데 성공하였습니다.";
+			url="/NewForms.do?forms_seq="+forms_seq+"&list_seq=1";
+		}else{
+			msg="서류를 불러오는데 실패하였습니다.";
+			url="/MyPage.do?page_seq=6";
+		}
 		mav.setViewName("/Opener_check_proc");
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);

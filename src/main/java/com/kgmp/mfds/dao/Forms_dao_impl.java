@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.kgmp.mfds.vo.Admin;
+import com.kgmp.mfds.vo.FirstForm;
 import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
 
@@ -115,6 +116,14 @@ private SqlSession sqlSession;
 		@SuppressWarnings("unchecked")
 		public ArrayList<Forms> getCountry(String country){
 			return (ArrayList<Forms>) sqlSession.selectList("getCountry", country);
+		}
+//firstform
+		public FirstForm getFirstForm(int forms_seq){
+			return (FirstForm)sqlSession.selectOne("getFirstForm", forms_seq);
+		}
+
+		public void insertFirstForms(int forms_seq){
+			sqlSession.insert("insertFirstForms", forms_seq);
 		}
 		
 }

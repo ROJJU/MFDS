@@ -1,6 +1,7 @@
 package com.kgmp.mfds.service;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.kgmp.mfds.dao.Forms_dao;
 import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
+import com.kgmp.mfds.vo.FirstForm;
 
 
 @Service
@@ -105,6 +107,24 @@ public class Forms_service_impl implements Forms_service{
 			e.printStackTrace();
 		}
 		return check;
+	}
+	
+	public String insertFirstForms(int forms_seq){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.insertFirstForms(forms_seq);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
+	
+	public boolean isFirstForm(int forms_seq){
+		FirstForm firstForm = null;
+		firstForm=forms_dao.getFirstForm(forms_seq);
+		return (firstForm != null) ? true : false;
 	}
 	
 	public String delForm(Forms formsInfo){

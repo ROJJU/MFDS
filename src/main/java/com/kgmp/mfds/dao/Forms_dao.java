@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.kgmp.mfds.vo.Admin;
+import com.kgmp.mfds.vo.FirstForm;
 import com.kgmp.mfds.vo.Forms;
 
 public interface Forms_dao {
@@ -29,4 +30,6 @@ public interface Forms_dao {
 	void delForm(Forms formsInfo);
 	void update_title(Forms forms);
 	ArrayList<Forms> getCountry(String country);
+	void insertFirstForms(int forms_seq);
+	FirstForm getFirstForm(int forms_seq);
 }

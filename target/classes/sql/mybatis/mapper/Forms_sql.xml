@@ -75,4 +75,10 @@
 	<select id="getCountry" parameterType="String" resultType="com.kgmp.mfds.vo.Forms">
 		select * from country where country LIKE CONCAT('%', #{country}, '%')
 	</select>
+	<select id="getFirstForm" parameterType="int" resultType="com.kgmp.mfds.vo.FirstForm">
+		select * from first_form where forms_ref=#{forms_seq}
+	</select>
+	<insert id="insertFirstForms" parameterType="int">
+		insert into first_form (forms_ref) values(#{forms_seq});
+	</insert>
 </mapper>

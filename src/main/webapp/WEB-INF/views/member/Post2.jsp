@@ -14,7 +14,7 @@
 		}else if(num==2){
 			window.opener.document.join.company_address.value = post1+post2;
 		}else{
-			window.opener.document.firstForm.addr.value = post1+post2;
+			window.opener.document.firstForm.makeAddr.value = post1+post2;
 		}
 		window.close();
 	}
