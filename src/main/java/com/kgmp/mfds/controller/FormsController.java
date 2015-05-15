@@ -1,7 +1,9 @@
 package com.kgmp.mfds.controller;
 
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,8 +17,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kgmp.mfds.FileUpload;
 import com.kgmp.mfds.service.Account_service;
 import com.kgmp.mfds.service.Forms_service;
 import com.kgmp.mfds.service.Member_service;
@@ -70,6 +74,8 @@ public class FormsController {
 	    					   @RequestParam(value = "list_seq", required = false, defaultValue = "1") String list_seq,
 	    					   @RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name,
 							   HttpSession session){
+		StringBuffer modelFileName = null;
+		StringBuffer pakingFileNmae = null;
 		ModelAndView mav = new ModelAndView();
 		//setting parameter s
 		Member member= new Member();
@@ -102,9 +108,13 @@ public class FormsController {
 			forms=forms_service.getUserForms(formsInfo);
 			forms.getForms_seq();
 			firstForm = forms_service.getFirstForm(forms_seq);
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "c:/save/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "c:/save/notice");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		model.addAttribute("pakingFileNmae", pakingFileNmae.toString());
+		model.addAttribute("modelFileName", modelFileName.toString());
 		model.addAttribute("firstForm", firstForm);
 		model.addAttribute("list_seq", list_seq);
 		model.addAttribute("forms", forms);
@@ -297,13 +307,82 @@ public class FormsController {
 										@RequestParam(value="chase", required = false, defaultValue = "") String chase,
 										@RequestParam(value="etc", required = false, defaultValue = "") String etc,
 										@RequestParam(value="model", required = false, defaultValue = "") String model,
-										@RequestParam(value="modelFileName", required = false, defaultValue = "") String modelFileName,
-										@RequestParam(value="pakingFileNmae", required = false, defaultValue = "") String pakingFileNmae,
+										@RequestParam(value="modelFileName", required = false, defaultValue = "") MultipartFile modelFileName,
+										@RequestParam(value="pakingFileNmae", required = false, defaultValue = "") MultipartFile pakingFileNmae,
 										@RequestParam(value="logic_text", required = false, defaultValue = "") String logic_text,
 										@RequestParam(value="shape_text", required = false, defaultValue = "") String shape_text,
 										@RequestParam(value="size_text", required = false, defaultValue = "") String size_text,
 										@RequestParam(value="contents_name", required = false, defaultValue = "") String contents_name,
-										@RequestParam(value="p_url", required = false, defaultValue = "") String p_url){
+										@RequestParam(value="p_url", required = false, defaultValue = "") String p_url,
+										@RequestParam(value="file1_old", required = false, defaultValue = "") String file1_old,
+										@RequestParam(value="file2_old", required = false, defaultValue = "") String file2_old){
+		//file upload s modelFileName
+		String replaceName1=null;
+		String replaceName2=null;
+		FirstForm firstFormGet = null;
+		String modelFileName_old =null;
+		String pakingFileNmae_old =null;
+		String model_check=null;
+		firstFormGet = forms_service.getFirstForm(forms_seq);
+		modelFileName_old=firstFormGet.getModelFileName();
+		pakingFileNmae_old=firstFormGet.getPakingFileNmae();
+			try{
+			 MultipartFile file = modelFileName;   //file name.
+			  Calendar cal = Calendar.getInstance();
+			  String fileName = file.getOriginalFilename();
+			  System.out.println("fileNmae:"+fileName);
+			  if(fileName.equals("")||fileName.equals(null)){
+					System.out.println("file null");
+					replaceName1=modelFileName_old;
+				}else{
+				  System.out.println("file not null");
+				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+				  replaceName1 = cal.getTimeInMillis() + fileType;  //change file name
+				  String path = "c:/save/notice";
+				  FileUpload.fileUpload(file, path, replaceName1);
+				//del file s		
+					String fileDir = "c:/save/notice/"+modelFileName_old;
+					File f = new File(fileDir);
+					if( f.exists()) f.delete();
+				//del file e
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		//file upload e
+			
+		//file upload s pakingFileNmae
+			try{
+				 MultipartFile file = pakingFileNmae;   //file name.
+				  Calendar cal = Calendar.getInstance();
+				  String fileName = file.getOriginalFilename();
+				  if(fileName.equals("")||fileName.equals(null)){
+						System.out.println("file null");
+						replaceName2=pakingFileNmae_old;
+					}else{
+					  System.out.println("file not null");
+					  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+					  replaceName2 = cal.getTimeInMillis() + fileType;  //change file name
+					  String path ="c:/save/notice";
+					  //String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment";
+					  FileUpload.fileUpload(file, path, replaceName2);
+					//del file s		
+					  String fileDir ="c:/save/notice"+pakingFileNmae_old;
+						//String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment/"+pakingFileNmae_old;
+						File f = new File(fileDir);
+						if( f.exists()) f.delete();
+					//del file e
+					}
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+		//file upload e
+		//check for model
+			if(replaceName1.equals(file1_old)&&replaceName2.equals(file2_old)){
+				model_check=model;
+			}else{
+				model_check=null;
+			}
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
 		String url=p_url+"&contents_name="+contents_name;
@@ -325,10 +404,10 @@ public class FormsController {
 		firstForm.setMakingName(makingName);
 		firstForm.setMakingOrImport(makingOrImport);
 		firstForm.setMakingPlace(makingPlace);
-		firstForm.setModel(modelFileName);
-		firstForm.setModelFileName(modelFileName);
+		firstForm.setModel(model_check);
+		firstForm.setModelFileName(replaceName1);
 		firstForm.setNameOfProduct(nameOfProduct);
-		firstForm.setPakingFileNmae(pakingFileNmae);
+		firstForm.setPakingFileNmae(replaceName2);
 		firstForm.setPermission(permission);
 		firstForm.setPurpose(purpose);
 		firstForm.setRequestName(requestName);
@@ -352,6 +431,7 @@ public class FormsController {
 		mav.setViewName("/Check_proc");
 		return mav;
 	}
+	
 	
 	//up state
 	@RequestMapping(value = "/updateStateProc.do")

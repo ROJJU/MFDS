@@ -1,7 +1,9 @@
 package com.kgmp.mfds.service;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -298,5 +300,24 @@ public class Forms_service_impl implements Forms_service{
 	
 	public ArrayList<Forms> getCountry(String country){
 		return (ArrayList<Forms>)forms_dao.getCountry(country);
+	}
+	
+	public StringBuffer inseretTxt(String replaceName1, String path){
+		StringBuffer termsTxt=new StringBuffer();
+        try{
+    		String filePath=path+"/"+replaceName1;
+	        InputStreamReader inputSR= new InputStreamReader(new FileInputStream(filePath),"UTF-8");
+	        BufferedReader br=new BufferedReader(inputSR);
+	        String line=null;
+		  int i=0;
+			  while((line=br.readLine())!=null){
+				  i++;
+			   termsTxt.append("<tr><td style='border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff'>"+i+"</td><td style='border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff'>"+line+"</td><td style='border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff'>예</td></tr>");
+			  }
+        }catch(Exception e){
+        	termsTxt.append("파읽 읽기를 실패했습니다. <br/>: "+e.getMessage());
+        }
+        
+        return termsTxt;
 	}
 }

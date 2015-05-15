@@ -129,5 +129,4 @@ private SqlSession sqlSession;
 		public void insertFirstForms(int forms_seq){
 			sqlSession.insert("insertFirstForms", forms_seq);
 		}
-		
 }

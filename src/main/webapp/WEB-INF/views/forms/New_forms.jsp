@@ -133,6 +133,11 @@ int next =list_seq+1;
 	border:1px solid black;
 	padding:5px;
 	}
+	.file_td{
+	border:1px solid #D5D5D5;
+	background-color:#EAEAEA;
+	padding:5px;
+	}
 	.test1{
 	display:none;
 	}
@@ -142,7 +147,6 @@ int next =list_seq+1;
 	.change{
 	cursor:hand;
 	cursor:pointer;
-	display:none;
 	}
 	</style>
 </head>

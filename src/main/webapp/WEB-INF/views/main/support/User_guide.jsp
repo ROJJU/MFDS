@@ -77,7 +77,7 @@
 														</table>
 														<table style="float:left; margin-right:40px;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide.jpeg" width="150px;"></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-form.jpg" width="150px;"></td>
 																<td style="vertical-align:top; padding-left:5px;"><b>제1부</b><br><b style="color:grey;">사용 시작</b></td>
 															</tr>
 															<tr>
@@ -89,7 +89,7 @@
 														</table>
 														<table style="float:left;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide.jpeg" width="150px;"></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-form.jpg" width="150px;"></td>
 																<td style="vertical-align:top; padding-left:5px;"><b>제1부</b><br><b style="color:grey;">사용 시작</b></td>
 															</tr>
 															<tr>
@@ -100,6 +100,7 @@
 															</tr>
 														</table>
 													</div>
+													<!--
 													<div style="text-align:left; position:relative; margin:0 auto; width:900px; padding-left:80px; top:199px; height:220px;">
 														<table style="float:left; margin-right:40px;">
 															<tr>
@@ -138,6 +139,7 @@
 															</tr>
 														</table>
 													</div>
+													  -->
 												</div>
 											</td>
 										</tr>

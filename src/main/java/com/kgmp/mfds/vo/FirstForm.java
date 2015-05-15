@@ -29,6 +29,22 @@ public class FirstForm {
 	private String logic_text;
 	private String shape_text;
 	private String size_text;
+	private String file1_old;
+	private String file2_old;
+	
+	
+	public String getFile1_old() {
+		return file1_old;
+	}
+	public void setFile1_old(String file1_old) {
+		this.file1_old = file1_old;
+	}
+	public String getFile2_old() {
+		return file2_old;
+	}
+	public void setFile2_old(String file2_old) {
+		this.file2_old = file2_old;
+	}
 	public int getFirst_seq() {
 		return first_seq;
 	}

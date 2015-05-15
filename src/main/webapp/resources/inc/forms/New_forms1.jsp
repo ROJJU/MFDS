@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div style="width:900px; margin:0 auto; text-align:left; border:1px solid black; padding:30px;">
-	<form id="boardWriteForm" method="post" name="firstForm">
+	<form id="boardWriteForm" method="post" name="firstForm" enctype="multipart/form-data">
 		  <div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
@@ -162,7 +162,7 @@
 		  		<tr><td class="first_th">[시험규격]</td><td class="first_td">별첨</td></tr>
 		  		<tr>
 		  			<td class="first_th">[허가조건]</td>
-		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="허가조건" name="permission"></td>
+		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="허가조건" name="permission" value="${firstForm.permission}"></td>
 	  			</tr>
 		  	</table><br>
 		  	<table class="first_form">
@@ -170,131 +170,259 @@
 		  		<tr>
 		  			<td class="first_th" >[제조의뢰자]</td>
 		  			<td class="first_td" >
-		  				<input type="text" placeholder="명칭(직접입력)" name="requestName">
-		  				(<input type="text" placeholder="제조국(선택입력)" readonly onclick="popup_country('1')" name="country1" id="country1">,
-		  				<input type="text" placeholder="소재지(직접입력)" name="requestPlace">)
+		  				<input type="text" placeholder="명칭(직접입력)" name="requestName" value="${firstForm.requestName}">
+		  				(<input type="text" placeholder="제조국(선택입력)" readonly onclick="popup_country('1')" name="country1" id="country1" value="${firstForm.country1}">,
+		  				<input type="text" placeholder="소재지(직접입력)" name="requestPlace" value="${firstForm.requestPlace}">)
 		  			</td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[제조자]</td>
 		  			<td class="first_td" >
-		  				<input type="text" placeholder="명칭(직접입력)" name="makingName">
-		  				(<input type="text" placeholder="제조국(선택입력)" readonly onclick="popup_country('2')" name="country2" id="country2">,
-		  				<input type="text" placeholder="소재지(직접입력)" name="makingPlace">)
+		  				<input type="text" placeholder="명칭(직접입력)" name="makingName" value="${firstForm.makingName}">
+		  				(<input type="text" placeholder="제조국(선택입력)" readonly onclick="popup_country('2')" name="country2" id="country2" value="${firstForm.country2}">,
+		  				<input type="text" placeholder="소재지(직접입력)" name="makingPlace" value="${firstForm.makingPlace}">)
 		  			</td>
 	  			</tr>
 		  	</table>
-		  	<p>
 			  	<ul style="color:red;">
 			  		<li>제조자 항목은 제조의뢰자와 제조자가 동일할 경우 기재하고, 제조의뢰자와 제조자가 다를 경우에는 제조자 항목에 제품이 실제 조립되거나 생산되는 곳을 기재하고, 제조의뢰자에 법적제조책임자를 기재.</li>
 			  	</ul>
-		  	</p>
 		  	<br>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 비고</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[일회용의료기기 여부]</td>
 		  			<td class="first_td" >
-		  				<input type="radio" name="disposableness">&nbsp; 예
-		  				<input type="radio" name="disposableness">&nbsp; 아니요
+		  				<c:choose>
+		  					<c:when test="${firstForm.makingName==1}">
+		  						<input type="radio" name="disposableness" value="1" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="disposableness" value="1">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 예
+		  				<c:choose>
+		  					<c:when test="${firstForm.makingName==2}">
+		  						<input type="radio" name="disposableness" value="2" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="disposableness" value="2">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 아니요
 		  			</td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[추적관리대상의료기기]</td>
 		  			<td class="first_td">
-		  				<input type="radio" name="chase">&nbsp; 예
-		  				<input type="radio" name="chase">&nbsp; 아니요
+		  				<c:choose>
+		  					<c:when test="${firstForm.chase==1}">
+		  						<input type="radio" name="chase" value="1" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="chase" value="1">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 예
+		  				<c:choose>
+		  					<c:when test="${firstForm.chase==2}">
+		  						<input type="radio" name="chase" value="2" checked>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<input type="radio" name="chase" value="2">
+		  					</c:otherwise>
+		  				</c:choose>
+		  				&nbsp; 아니요
 		  			</td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[비고(신청근거)]</td>
-		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="비고(신청근거)" name="etc"></td>
+		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="비고(신청근거)" name="etc" value="${firstForm.etc}"></td>
 	  			</tr>
 		  	</table><br>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" >▶ 조합의료기기</td></tr>
 		  		<tr>
-		  			<td class="first_td" style="height:30px;"><input type="text" style="width:98%;" placeholder="품목명, 분류번호, 등급" name="mix"></td>
+		  			<td class="first_td" style="height:30px;"><input type="text" style="width:98%;" placeholder="품목명, 분류번호, 등급" name="mix" value="${firstForm.etc}"></td>
 	  			</tr>
 		  	</table><br>
-		  	모델명 추가 : <input type="file" name="modelFileName"> | 포장단위 : <input type="file" name="pakingFileNmae"> <input type="button" value="업로드">
-		  	<font color="red">*.txt 파일만 첨부 가능합니다.</font>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" >▶ 모델명/포장단위</td></tr>
 		  	</table>
-		    <textarea id="txtContent" name="contents" style="width:100%; color:#ffffff;" name="model">
-		    	▶ 모델명
-		    	<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
-		    		<tbody>
-						<tr>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[품목명]</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
-						</tr>
-						<tr>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
-						</tr>
-						<tr>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
-						</tr>
-					</tbody>
-				</table><br>
-				▶ 포장단위
-				<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
-					<tbody>
-						<tr>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="234"><p>&nbsp;[일렬번호]</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="634"><p>&nbsp;[포장단위]</p></td>
-						</tr>
-						<tr>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
-						</tr>
-						<tr>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
-							<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
-						</tr>
-					</tbody>
-				</table>
+		  	<table class="first_form">
+		  		<tr>
+		  			<td class="file_td">모델명 추가 :</td>
+		  			<td class="file_td"><input type="file" name="modelFileName"></td>
+		  			<td class="file_td">
+		  				${firstForm.modelFileName} |
+		  				<input type="hidden" name="file1_old" value="${firstForm.modelFileName}">
+	  				</td>
+		  			<td rowspan="2" class="file_td">
+		  				<input type="button" value="업로드" onclick="onWrite('<%=request.getParameter("list_seq")%>')">
+		  				<font color="red">*.txt 파일만 첨부 가능합니다.</font>
+	  				</td>
+		  		</tr>
+		  		<tr>
+		  			<td class="file_td">포장단위 :</td>
+		  			<td class="file_td"><input type="file" name="pakingFileNmae"></td>
+		  			<td class="file_td">
+		  				${firstForm.pakingFileNmae} |
+		  				<input type="hidden" name="file2_old" value="${firstForm.pakingFileNmae}">
+	  				</td>
+		  		</tr>
+		  	</table>
+		    <textarea id="txtContent" style="width:100%; color:#ffffff;" name="model">
+		    <c:choose>
+		    	<c:when test="${firstForm.model!=null}">
+		    		${firstForm.model}
+		    	</c:when>
+		    	<c:otherwise>
+		    		▶ 모델명
+			    	<c:choose>
+			    		<c:when test="${firstForm.modelFileName!=null}">
+			    			<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+					    		<tr>
+									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
+									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
+									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+								</tr>
+					    		${modelFileName}
+			    			</table>
+			    		</c:when>
+			    		<c:otherwise>
+			    			<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+					    		<tbody>
+									<tr>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+									</tr>
+								</tbody>
+							</table>
+			    		</c:otherwise>
+			    	</c:choose>
+			    	<br>
+					▶ 포장단위
+					<c:choose>
+						<c:when test="${firstForm.pakingFileNmae!=null}">
+							<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+					    		<tr>
+									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
+									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
+									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+								</tr>
+					    		${pakingFileNmae}
+			    			</table>
+						</c:when>
+						<c:otherwise>
+							<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+								<tbody>
+									<tr>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="234"><p>&nbsp;[일렬번호]</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="634"><p>&nbsp;[포장단위]</p></td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</c:otherwise>
+					</c:choose>
+		    	</c:otherwise>
+		    </c:choose>
 		    </textarea><br><br>
 		    <table class="first_form">
 		  		<tr><td class="first_title" colspan="3">▶ 모양 및 구조</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[작용원리]</td>
-		  			<td class="first_td">
-		  				<div id="logic_tool">
-			  				<input type="button" value="별첨추가" >
-			  				<input type="button" value="직접입력" onclick="logic_function1()" >
-		  				</div>
-		  				<textarea style="width:98%; display:none;" id="logic_text" placeholder="작용원리" name="logic_text">-</textarea>
-	  				</td>
-	  				<td align="center"><a class="change" id="change1" onclick="logic_function2()">x</a></td>
+		  				<c:choose>
+		  					<c:when test="${firstForm.logic_text==''}">
+		  						<td class="first_td">
+			  						<div id="logic_tool" style="display:none;">
+						  				<input type="button" value="별첨추가" >
+						  				<input type="button" value="직접입력" onclick="logic_function1()">
+					  				</div>
+			  						<textarea style="width:98%;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
+		  						</td>
+		  						<td align="center"><a class="change" id="change1" onclick="logic_function2()">x</a></td>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<td class="first_td">
+			  						<div id="logic_tool">
+						  				<input type="button" value="별첨추가" >
+						  				<input type="button" value="직접입력" onclick="logic_function1()">
+					  				</div>
+					  				<textarea style="width:98%; display:none;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
+				  				</td>
+				  				<td align="center"><a class="change" style="display:none;" id="change1" onclick="logic_function2()">x</a></td>
+		  					</c:otherwise>
+		  				</c:choose>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[외형]</td>
-		  			<td class="first_td">
-		  				<div id="shape_tool">
-			  				<input type="button" value="별첨추가" >
-			  				<input type="button" value="직접입력" onclick="shape_function1()" >
-		  				</div>
-		  				<textarea style="width:98%; display:none;" id="shape_text" placeholder="외형" name="shape_text">-</textarea>
-	  				</td>
-	  				<td align="center"><a class="change" id="change2" onclick="shape_function2()">x</a></td>
+		  			<c:choose>
+	  					<c:when test="${firstForm.shape_text==''}">
+	  						<td class="first_td">
+				  				<div id="shape_tool" style="display:none;">
+					  				<input type="button" value="별첨추가" >
+					  				<input type="button" value="직접입력" onclick="shape_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; " id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change"  id="change2" onclick="shape_function2()">x</a></td>
+  						</c:when>
+	  					<c:otherwise>
+	  						<td class="first_td">
+				  				<div id="shape_tool">
+					  				<input type="button" value="별첨추가" >
+					  				<input type="button" value="직접입력" onclick="shape_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; display:none;" id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change" style="display:none;" id="change2" onclick="shape_function2()">x</a></td>
+	  					</c:otherwise>
+	  				</c:choose>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[치수]</td>
-		  			<td class="first_td">
-		  				<div id="size_tool">
-			  				<input type="button" value="별첨추가" >
-			  				<input type="button" value="직접입력" onclick="size_function1()" >
-		  				</div>
-		  				<textarea style="width:98%; display:none;" id="size_text" placeholder="치수" name="size_text">-</textarea>
-	  				</td>
-	  				<td align="center"><a class="change" id="change3" onclick="size_function2()">x</a></td>
+		  			<c:choose>
+	  					<c:when test="${firstForm.size_text==''}">
+	  						<td class="first_td">
+				  				<div id="size_tool" style="display:none;">
+					  				<input type="button" value="별첨추가" >
+					  				<input type="button" value="직접입력" onclick="size_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; " id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change"  id="change3" onclick="size_function2()">x</a></td>
+  						</c:when>
+	  					<c:otherwise>
+	  						<td class="first_td">
+				  				<div id="size_tool">
+					  				<input type="button" value="별첨추가" >
+					  				<input type="button" value="직접입력" onclick="size_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; display:none;" id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change" style="display:none;" id="change3" onclick="size_function2()">x</a></td>
+  						</c:otherwise>
+	  				</c:choose>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[특성]</td>
@@ -316,15 +444,17 @@
 	function logic_function1(){
 		$("#logic_text").css("display","block");
 		$("#logic_tool").css("display", "none");
-		$("#change1").css("display", "block");
+		$("#change1").css("display", "block");;
 		document.getElementById('logic_text').value="";
 	}
 	
 	function logic_function2(){
-		$("#logic_text").css("display","none");
-		$("#logic_tool").css("display", "block");
-		$("#change1").css("display", "none");
-		document.getElementById('logic_text').value="-";
+		if(confirm("직접입력된 내용은 모두 삭제 됩니다. 계속 진행하겠습니까 ?")){
+			$("#logic_text").css("display","none");
+			$("#logic_tool").css("display", "block");
+			$("#change1").css("display", "none");
+			document.getElementById('logic_text').value="-";
+		}
 	}
 	
 	function shape_function1(){
@@ -335,22 +465,28 @@
 	}
 	
 	function shape_function2(){
-		$("#shape_text").css("display","none");
-		$("#shape_tool").css("display", "block");
-		$("#change2").css("display", "none");
-		document.getElementById('shape_text').value="-";
+		if(confirm("직접입력된 내용은 모두 삭제 됩니다. 계속 진행하겠습니까 ?")){
+			$("#shape_text").css("display","none");
+			$("#shape_tool").css("display", "block");
+			$("#change2").css("display", "none");
+			document.getElementById('shape_text').value="-";
+		}
 	}
 
 	function size_function1(){
 		$("#size_text").css("display","block");
 		$("#size_tool").css("display", "none");
 		$("#change3").css("display", "block");
+		document.getElementById('size_text').value="";
 	}
 	
 	function size_function2(){
-		$("#size_text").css("display","none");
-		$("#size_tool").css("display", "block");
-		$("#change3").css("display", "none");
+		if(confirm("직접입력된 내용은 모두 삭제 됩니다. 계속 진행하겠습니까 ?")){
+			$("#size_text").css("display","none");
+			$("#size_tool").css("display", "block");
+			$("#change3").css("display", "none");
+			document.getElementById('size_text').value="-";
+		}
 	}
 	
 	function popup_country(num){
