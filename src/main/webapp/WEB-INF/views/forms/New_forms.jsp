@@ -175,10 +175,10 @@ int next =list_seq+1;
 												<c:when test="${list_seq=='8'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
 												<c:when test="${list_seq=='9'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
 												<c:when test="${list_seq=='10'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
-												<c:when test="${list_seq=='11'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
-												<c:when test="${list_seq=='12'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
-												<c:when test="${list_seq=='13'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
-												<c:when test="${list_seq=='14'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
+												<c:when test="${list_seq=='11'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
+												<c:when test="${list_seq=='12'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
+												<c:when test="${list_seq=='13'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
+												<c:when test="${list_seq=='14'}"><jsp:include page="/resources/inc/forms_side/New_list1.jsp"/></c:when>
 												<c:when test="${list_seq=='15'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
 												<c:when test="${list_seq=='16'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
 												<c:when test="${list_seq=='17'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
@@ -199,11 +199,15 @@ int next =list_seq+1;
 												<c:when test="${list_seq=='32'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
 												<c:when test="${list_seq=='33'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
 												<c:when test="${list_seq=='34'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
-												<c:when test="${list_seq=='35'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
-												<c:when test="${list_seq=='36'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
-												<c:when test="${list_seq=='37'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
-												<c:when test="${list_seq=='38'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
+												<c:when test="${list_seq=='35'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
+												<c:when test="${list_seq=='36'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
+												<c:when test="${list_seq=='37'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
+												<c:when test="${list_seq=='38'}"><jsp:include page="/resources/inc/forms_side/New_list2.jsp"/></c:when>
 												<c:when test="${list_seq=='39'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
+												<c:when test="${list_seq=='40'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
+												<c:when test="${list_seq=='41'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
+												<c:when test="${list_seq=='42'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
+												<c:when test="${list_seq=='43'}"><jsp:include page="/resources/inc/forms_side/New_list3.jsp"/></c:when>
 												<c:otherwise>
 													<jsp:include page="/resources/inc/forms_side/New_list1.jsp"/>
 												</c:otherwise>
@@ -266,6 +270,10 @@ int next =list_seq+1;
 										<c:when test="${list_seq=='37'}"><jsp:include page="/resources/inc/forms/New_forms37.jsp"/></c:when>
 										<c:when test="${list_seq=='38'}"><jsp:include page="/resources/inc/forms/New_forms38.jsp"/></c:when>
 										<c:when test="${list_seq=='39'}"><jsp:include page="/resources/inc/forms/New_forms39.jsp"/></c:when>
+										<c:when test="${list_seq=='40'}"><jsp:include page="/resources/inc/forms/New_forms40.jsp"/></c:when>
+										<c:when test="${list_seq=='41'}"><jsp:include page="/resources/inc/forms/New_forms41.jsp"/></c:when>
+										<c:when test="${list_seq=='42'}"><jsp:include page="/resources/inc/forms/New_forms42.jsp"/></c:when>
+										<c:when test="${list_seq=='43'}"><jsp:include page="/resources/inc/forms/New_forms43.jsp"/></c:when>
 										<c:otherwise>
 											<jsp:include page="/resources/inc/forms/New_forms1.jsp"/>
 										</c:otherwise>

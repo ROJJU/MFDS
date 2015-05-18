@@ -31,8 +31,14 @@ public class FirstForm {
 	private String size_text;
 	private String file1_old;
 	private String file2_old;
+	private String performance_text;
 	
-	
+	public String getPerformance_text() {
+		return performance_text;
+	}
+	public void setPerformance_text(String performance_text) {
+		this.performance_text = performance_text;
+	}
 	public String getFile1_old() {
 		return file1_old;
 	}

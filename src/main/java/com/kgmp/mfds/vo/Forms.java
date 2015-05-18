@@ -59,6 +59,10 @@ public class Forms {
 	private String contents37;
 	private String contents38;
 	private String contents39;
+	private String contents40;
+	private String contents41;
+	private String contents42;
+	private String contents43;
 	private int forms_seq;
 	private int state;
 	private String id1;
@@ -129,6 +133,10 @@ public class Forms {
 	private String ck_form37;
 	private String ck_form38;
 	private String ck_form39;
+	private String ck_form40;
+	private String ck_form41;
+	private String ck_form42;
+	private String ck_form43;
 //country part s
 	private int country_seq;
 	private String country;
@@ -138,6 +146,54 @@ public class Forms {
 	
 	public String getck_form() {
 		return ck_form;
+	}
+	public String getCk_form40() {
+		return ck_form40;
+	}
+	public void setCk_form40(String ck_form40) {
+		this.ck_form40 = ck_form40;
+	}
+	public String getCk_form41() {
+		return ck_form41;
+	}
+	public void setCk_form41(String ck_form41) {
+		this.ck_form41 = ck_form41;
+	}
+	public String getCk_form42() {
+		return ck_form42;
+	}
+	public void setCk_form42(String ck_form42) {
+		this.ck_form42 = ck_form42;
+	}
+	public String getCk_form43() {
+		return ck_form43;
+	}
+	public void setCk_form43(String ck_form43) {
+		this.ck_form43 = ck_form43;
+	}
+	public String getContents40() {
+		return contents40;
+	}
+	public void setContents40(String contents40) {
+		this.contents40 = contents40;
+	}
+	public String getContents41() {
+		return contents41;
+	}
+	public void setContents41(String contents41) {
+		this.contents41 = contents41;
+	}
+	public String getContents42() {
+		return contents42;
+	}
+	public void setContents42(String contents42) {
+		this.contents42 = contents42;
+	}
+	public String getContents43() {
+		return contents43;
+	}
+	public void setContents43(String contents43) {
+		this.contents43 = contents43;
 	}
 	public int getCountry_seq() {
 		return country_seq;

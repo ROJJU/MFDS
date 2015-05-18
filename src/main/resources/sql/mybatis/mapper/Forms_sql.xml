@@ -110,7 +110,8 @@
 			pakingFileNmae=#{pakingFileNmae},
 			logic_text=#{logic_text},
 			shape_text=#{shape_text},
-			size_text=#{size_text}
+			size_text=#{size_text},
+			performance_text=#{performance_text}
 		where
 			 forms_ref=#{forms_ref}
 	</update>

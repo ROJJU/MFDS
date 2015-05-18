@@ -6,7 +6,7 @@
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="36" name="contents_name">
-		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=36" name="url" id="p_url">
+		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=36&contents_name=<%=request.getParameter("contents_name")%>" name="url" id="p_url">
 		  	<input type="hidden" value="ck_form36" name="ck_form">
 		    <textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
 		    	<c:choose>
@@ -14,7 +14,7 @@
 		    			${forms.contents36}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ제조공정에 관한 자료</span></b></p><p><span style="line-height: 1.5;">&nbsp;</span></p>	
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ복합, 조합된 의약품에 대한 정보 요약</span></b></p><p><b style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></b></p><p><b>1.의약품의 식별과 출처</b></p><p><b>&nbsp; 가. 명칭:</b>&nbsp;</p><p><b>&nbsp; 나. 제조사 명칭 및 소재지:</b>&nbsp;</p><p><b>&nbsp; 다. 유래물질:</b>&nbsp;</p><p><b><br></b></p><p><b>2. 의도적으로 포함된 이유</b></p><p><br></p><p><b>3.의도된 적용에서 안정성 및 성능 등에 대한 상세한 정보</b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

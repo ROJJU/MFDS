@@ -316,7 +316,8 @@ public class FormsController {
 										@RequestParam(value="p_url", required = false, defaultValue = "") String p_url,
 										@RequestParam(value="file1_old", required = false, defaultValue = "") String file1_old,
 										@RequestParam(value="file2_old", required = false, defaultValue = "") String file2_old,
-										@RequestParam(value="ck_form", required = false, defaultValue = "") String ck_form){
+										@RequestParam(value="ck_form", required = false, defaultValue = "") String ck_form,
+										@RequestParam(value="performance_text", required = false, defaultValue = "") String performance_text){
 		//file upload s modelFileName
 		String replaceName1=null;
 		String replaceName2=null;
@@ -324,9 +325,13 @@ public class FormsController {
 		String modelFileName_old =null;
 		String pakingFileNmae_old =null;
 		String model_check=null;
-		firstFormGet = forms_service.getFirstForm(forms_seq);
-		modelFileName_old=firstFormGet.getModelFileName();
-		pakingFileNmae_old=firstFormGet.getPakingFileNmae();
+			try{
+				firstFormGet = forms_service.getFirstForm(forms_seq);
+				modelFileName_old=firstFormGet.getModelFileName();
+				pakingFileNmae_old=firstFormGet.getPakingFileNmae();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 			try{
 			 MultipartFile file = modelFileName;   //file name.
 			  Calendar cal = Calendar.getInstance();
@@ -379,10 +384,14 @@ public class FormsController {
 				}
 		//file upload e
 		//check for model
-			if(replaceName1.equals(file1_old)&&replaceName2.equals(file2_old)){
-				model_check=model;
-			}else{
-				model_check=null;
+			try{
+				if(replaceName1.equals(file1_old)&&replaceName2.equals(file2_old)){
+					model_check=model;
+				}else{
+					model_check=null;
+				}
+			}catch(Exception e){
+				e.printStackTrace();
 			}
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
@@ -415,6 +424,7 @@ public class FormsController {
 		firstForm.setRequestPlace(requestPlace);
 		firstForm.setShape_text(shape_text);
 		firstForm.setSize_text(size_text);
+		firstForm.setPerformance_text(performance_text);
 		String check=null;
 		try{
 			check=forms_service.insertFirstContents(firstForm);

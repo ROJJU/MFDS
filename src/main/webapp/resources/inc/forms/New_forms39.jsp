@@ -6,7 +6,7 @@
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="39" name="contents_name">
-		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=39" name="url" id="p_url">
+		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=39&contents_name=<%=request.getParameter("contents_name")%>" name="url" id="p_url">
 		  	<input type="hidden" value="ck_form39" name="ck_form">
 		    <textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
 		    	<c:choose>
@@ -14,7 +14,7 @@
 		    			${forms.contents39}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ참고문헌</span></b></p><p><br></p>
+		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ목차</span></b></p><p><br></p>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

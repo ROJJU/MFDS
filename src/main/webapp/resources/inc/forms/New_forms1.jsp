@@ -6,7 +6,7 @@
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="1" name="contents_name">
-		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1" name="p_url" id="p_url">
+		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1&contents_name=<%=request.getParameter("contents_name")%>" name="p_url" id="p_url">
 		  	<input type="hidden" value="ck_form1" name="ck_form">
 		  	<p><b><span style="font-size: 12pt;">ㅣ 의료기기 기술문서 등 심사의뢰서</span></b></p><br>
 		  	<table class="first_form">
@@ -139,16 +139,35 @@
 		  		<tr><td class="first_th" >[등급]</td><td class="first_td" >${forms.p_class}</td></tr>
 		  	</table><br>
 	  		<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 사용목적</td></tr>
+		  		<tr><td class="first_title" colspan="3">▶ 사용목적</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[사용목적]</td>
-		  			<td class="first_td" ><input type="text" style="width:98%;" placeholder="사용목적" name="purpose" value="${firstForm.purpose}"></td>
+		  			<td class="first_td" colspan="2"><input type="text" style="width:98%;" placeholder="사용목적" name="purpose" value="${firstForm.purpose}"></td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[성능]</td>
-		  			<td class="first_td">
-		  				<input type="button" value="별첨추가">
-		  			</td>
+		  			<c:choose>
+	  					<c:when test="${firstForm.performance_text!='-'}">
+	  						<td class="first_td">
+				  				<div id="performance_tool" style="display:none;">
+					  				별첨
+					  				<input type="button" value="직접입력" onclick="performance_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; " id="performance_text" placeholder="성능" name="performance_text">${firstForm.performance_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change"  id="change4" onclick="performance_function2()">x</a></td>
+  						</c:when>
+	  					<c:otherwise>
+	  						<td class="first_td">
+				  				<div id="performance_tool">
+					  				별첨
+					  				<input type="button" value="직접입력" onclick="performance_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; display:none;" id="performance_text" placeholder="성능" name="performance_text">${firstForm.performance_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change" style="display:none;" id="change4" onclick="performance_function2()">x</a></td>
+  						</c:otherwise>
+	  				</c:choose>
 	  			</tr>
 		  	</table><br>
 		  	<table class="first_form">
@@ -253,7 +272,7 @@
 		  	<table class="first_form">
 		  		<tr>
 		  			<td class="file_td">모델명 추가 :</td>
-		  			<td class="file_td"><input type="file" name="modelFileName"></td>
+		  			<td class="file_td"><input type="file" name="modelFileName" value="${firstForm.modelFileName}"></td>
 		  			<td class="file_td">
 		  				${firstForm.modelFileName} |
 		  				<input type="hidden" name="file1_old" value="${firstForm.modelFileName}">
@@ -265,7 +284,7 @@
 		  		</tr>
 		  		<tr>
 		  			<td class="file_td">포장단위 :</td>
-		  			<td class="file_td"><input type="file" name="pakingFileNmae"></td>
+		  			<td class="file_td"><input type="file" name="pakingFileNmae" ></td>
 		  			<td class="file_td">
 		  				${firstForm.pakingFileNmae} |
 		  				<input type="hidden" name="file2_old" value="${firstForm.pakingFileNmae}">
@@ -355,7 +374,7 @@
 		  					<c:when test="${firstForm.logic_text==''}">
 		  						<td class="first_td">
 			  						<div id="logic_tool" style="display:none;">
-						  				<input type="button" value="별첨추가" >
+						  				별첨
 						  				<input type="button" value="직접입력" onclick="logic_function1()">
 					  				</div>
 			  						<textarea style="width:98%;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
@@ -365,7 +384,7 @@
 		  					<c:otherwise>
 		  						<td class="first_td">
 			  						<div id="logic_tool">
-						  				<input type="button" value="별첨추가" >
+						  				별첨
 						  				<input type="button" value="직접입력" onclick="logic_function1()">
 					  				</div>
 					  				<textarea style="width:98%; display:none;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
@@ -380,7 +399,7 @@
 	  					<c:when test="${firstForm.shape_text==''}">
 	  						<td class="first_td">
 				  				<div id="shape_tool" style="display:none;">
-					  				<input type="button" value="별첨추가" >
+					  				별첨
 					  				<input type="button" value="직접입력" onclick="shape_function1()" >
 				  				</div>
 				  				<textarea style="width:98%; " id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
@@ -390,7 +409,7 @@
 	  					<c:otherwise>
 	  						<td class="first_td">
 				  				<div id="shape_tool">
-					  				<input type="button" value="별첨추가" >
+					  				별첨
 					  				<input type="button" value="직접입력" onclick="shape_function1()" >
 				  				</div>
 				  				<textarea style="width:98%; display:none;" id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
@@ -405,7 +424,7 @@
 	  					<c:when test="${firstForm.size_text==''}">
 	  						<td class="first_td">
 				  				<div id="size_tool" style="display:none;">
-					  				<input type="button" value="별첨추가" >
+					  				별첨
 					  				<input type="button" value="직접입력" onclick="size_function1()" >
 				  				</div>
 				  				<textarea style="width:98%; " id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
@@ -415,7 +434,7 @@
 	  					<c:otherwise>
 	  						<td class="first_td">
 				  				<div id="size_tool">
-					  				<input type="button" value="별첨추가" >
+					  				별첨
 					  				<input type="button" value="직접입력" onclick="size_function1()" >
 				  				</div>
 				  				<textarea style="width:98%; display:none;" id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
@@ -429,7 +448,11 @@
 		  			<td class="first_td" >별첨</td>
 		  			<td align="center"></td>
 	  			</tr>
-		  	</table><br>
+		  	</table>
+		  	<ul style="color:red;">
+		  		<li>기본 설정으로 별첨이 추가되어 있으며, 직접입력을 원하시는 경우 직접입력 버튼을 클릭하여 생기는 란에 기재하여 주시기 바랍니다. 다시 별첨을 첨부하시고 싶으실 경우 오른쪽 x 버튼을 클릭 하여 주시기 바랍니다.</li>
+		  		<li>별첨 작성 중 직접입력을 누르시더라도 임시저장을 하셨다면 작성하였던 별첨을 그대로 열람 하실 수 있습니다.</li>
+		  	</ul><br>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 담당자</td></tr>
 		  		<tr><td class="first_th" >[성명]</td><td class="first_td">${memberInfo.kor_name}</td></tr>
@@ -472,7 +495,7 @@
 			document.getElementById('shape_text').value="-";
 		}
 	}
-
+	
 	function size_function1(){
 		$("#size_text").css("display","block");
 		$("#size_tool").css("display", "none");
@@ -486,6 +509,22 @@
 			$("#size_tool").css("display", "block");
 			$("#change3").css("display", "none");
 			document.getElementById('size_text').value="-";
+		}
+	}
+	
+	function performance_function1(){
+		$("#performance_text").css("display","block");
+		$("#performance_tool").css("display", "none");
+		$("#change4").css("display", "block");
+		document.getElementById('performance_text').value="";
+	}
+	
+	function performance_function2(){
+		if(confirm("직접입력된 내용은 모두 삭제 됩니다. 계속 진행하겠습니까 ?")){
+			$("#performance_text").css("display","none");
+			$("#performance_tool").css("display", "block");
+			$("#change4").css("display", "none");
+			document.getElementById('performance_text').value="-";
 		}
 	}
 	

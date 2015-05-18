@@ -163,7 +163,7 @@ location.href="/";
 						<c:choose>
 							<c:when test="${list_seq!=null}">
 								<c:choose>
-									<c:when test="${list_seq==39}">
+									<c:when test="${list_seq==43}">
 										<input type="image" src="/resources/img/common/Top_next_x.png" title="다음" width="25px" class="top_icons">
 									</c:when>
 									<c:otherwise>
