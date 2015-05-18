@@ -72,7 +72,7 @@ public class FormsController {
     public ModelAndView newForms(Model model,
 	    					   @RequestParam("forms_seq") int forms_seq,
 	    					   @RequestParam(value = "list_seq", required = false, defaultValue = "1") String list_seq,
-	    					   @RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name,
+	    					   @RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name,
 							   HttpSession session){
 		StringBuffer modelFileName = null;
 		StringBuffer pakingFileNmae = null;
@@ -100,7 +100,7 @@ public class FormsController {
 		formsInfo.setEmail1((String)session.getAttribute("email1"));
 		formsInfo.setEmail2((String)session.getAttribute("email2"));
 		formsInfo.setForms_seq(forms_seq);
-		formsInfo.setContents_name(contents_name);
+		formsInfo.setContents_name("contents"+contents_name);
 		//setting parameter e
 		mav.setViewName("/forms/New_forms");
 		FirstForm firstForm = null;
@@ -260,17 +260,17 @@ public class FormsController {
 									@RequestParam("ck_form") String ck_form){
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
-		String url=p_url+"&contents_name="+contents_name;
+		String url=p_url;
 		Forms forms = new Forms();
 		forms.setForms_seq(forms_seq);
 		forms.setContents(contents);
-		forms.setContents_name(contents_name);
+		forms.setContents_name("contents"+contents_name);
 		forms.setck_form(ck_form);
 		String check=null;
 		try{
 			check=forms_service.insertContents(forms);
 			if(check.equals("yes")){
-				msg="성공하였습니다.";
+				msg="임시저장 완료하였습니다.";
 			}else{
 				msg="실패하였습니다.";
 			}
@@ -315,7 +315,8 @@ public class FormsController {
 										@RequestParam(value="contents_name", required = false, defaultValue = "") String contents_name,
 										@RequestParam(value="p_url", required = false, defaultValue = "") String p_url,
 										@RequestParam(value="file1_old", required = false, defaultValue = "") String file1_old,
-										@RequestParam(value="file2_old", required = false, defaultValue = "") String file2_old){
+										@RequestParam(value="file2_old", required = false, defaultValue = "") String file2_old,
+										@RequestParam(value="ck_form", required = false, defaultValue = "") String ck_form){
 		//file upload s modelFileName
 		String replaceName1=null;
 		String replaceName2=null;
@@ -385,7 +386,7 @@ public class FormsController {
 			}
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
-		String url=p_url+"&contents_name="+contents_name;
+		String url=p_url;
 		FirstForm firstForm = new FirstForm();
 		firstForm.setForms_ref(forms_seq);
 		firstForm.setBirthDay(birthDay);
@@ -418,7 +419,18 @@ public class FormsController {
 		try{
 			check=forms_service.insertFirstContents(firstForm);
 			if(check.equals("yes")){
-				msg="성공하였습니다.";
+				Forms forms = new Forms();
+				String finalCheck=null;
+				forms.setForms_seq(forms_seq);
+				forms.setContents("-");
+				forms.setContents_name("contents"+contents_name);
+				forms.setck_form(ck_form);
+				finalCheck=forms_service.insertContents(forms);
+				if(finalCheck.equals("yes")){
+					msg="임시저장 완료하였습니다.";
+				}else{
+					msg="실패하였습니다.";
+				}
 			}else{
 				msg="실패하였습니다.";
 			}
@@ -431,7 +443,6 @@ public class FormsController {
 		mav.setViewName("/Check_proc");
 		return mav;
 	}
-	
 	
 	//up state
 	@RequestMapping(value = "/updateStateProc.do")
@@ -522,11 +533,11 @@ public class FormsController {
 	@RequestMapping(value = "/LoadContent.do")
 	public ModelAndView loadContent(@RequestParam("forms_seq") int forms_seq,
 									@RequestParam("num") int num,
-									@RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name){
+									@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
 		Forms formsInfo = new Forms();
-		formsInfo.setContents_name(contents_name);
+		formsInfo.setContents_name("contents"+contents_name);
 		formsInfo.setForms_seq(forms_seq);
 		try{
 			forms=forms_service.getFormsRead(formsInfo);
@@ -541,12 +552,12 @@ public class FormsController {
 	@RequestMapping(value = "/download_hwpProc.do")
 	public ModelAndView download_hwp(Model model,
 						@RequestParam("forms_seq") int forms_seq,
-						@RequestParam(value = "contents_name", required = false, defaultValue = "contents1") String contents_name){
+						@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
 		Forms formsInfo = new Forms();
 		formsInfo.setForms_seq(forms_seq);
-		formsInfo.setContents_name(contents_name);
+		formsInfo.setContents_name("contents"+contents_name);
 		try{
 			forms=forms_service.getFormsRead(formsInfo);
 		}catch(Exception e){

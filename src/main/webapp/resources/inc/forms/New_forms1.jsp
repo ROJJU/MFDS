@@ -5,8 +5,8 @@
 		  <div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
-		  	<input type="hidden" value="contents1" name="contents_name">
-		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1" name="p_url">
+		  	<input type="hidden" value="1" name="contents_name">
+		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1" name="p_url" id="p_url">
 		  	<input type="hidden" value="ck_form1" name="ck_form">
 		  	<p><b><span style="font-size: 12pt;">ㅣ 의료기기 기술문서 등 심사의뢰서</span></b></p><br>
 		  	<table class="first_form">

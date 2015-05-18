@@ -227,7 +227,7 @@ public class MyAcountController{
 		
 		if(check.equals("yes")){
 			msg="서류를 불러오는데 성공하였습니다.";
-			url="/NewForms.do?forms_seq="+forms_seq+"&list_seq=1";
+			url="/NewForms.do?forms_seq="+forms_seq+"&list_seq=1&contents_name=1";
 		}else{
 			msg="서류를 불러오는데 실패하였습니다.";
 			url="/MyPage.do?page_seq=6";

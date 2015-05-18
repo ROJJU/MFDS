@@ -5,6 +5,13 @@ int list_seq=1;
 if(request.getParameter("list_seq")!=null){
 	list_seq=Integer.parseInt(request.getParameter("list_seq"));
 }
+
+int contents_name=1;
+if(request.getParameter("contents_name")!=null){
+	contents_name=Integer.parseInt(request.getParameter("contents_name"));
+}
+int backContentsName=contents_name-1;
+int nextContentsName=contents_name+1;
 int back =list_seq-1;
 int next =list_seq+1;
 %>
@@ -127,7 +134,7 @@ location.href="/";
 					<td>
 						<c:choose>
 							<c:when test="${list_seq!=null}">
-								<input type="image" src="/resources/img/common/Top_save.png" title="저장하기" width="25px" class="top_icons" onclick="onWrite()">
+								<input type="image" src="/resources/img/common/Top_save.png" title="저장하기" width="25px" class="top_icons" onclick="onWrite('<%=request.getParameter("list_seq")%>')">
 							</c:when>
 							<c:otherwise>
 								<input type="image" src="/resources/img/common/Top_save_x.png" title="저장하기" width="25px" class="top_icons" onclick="formsCoution()">
@@ -142,7 +149,7 @@ location.href="/";
 										<input type="image" src="/resources/img/common/Top_previous_x.png" title="이전" width="25px" class="top_icons">
 									</c:when>
 									<c:otherwise>
-										<input type="image" src="/resources/img/common/Top_previous.png" title="이전" width="25px" class="top_icons" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=back%>')">
+										<input type="image" src="/resources/img/common/Top_previous.png" title="이전" width="25px" class="top_icons" onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','<%=back%>','<%=backContentsName%>')">
 									</c:otherwise>
 								</c:choose>
 							</c:when>
@@ -160,7 +167,7 @@ location.href="/";
 										<input type="image" src="/resources/img/common/Top_next_x.png" title="다음" width="25px" class="top_icons">
 									</c:when>
 									<c:otherwise>
-										<input type="image" src="/resources/img/common/Top_next.png" title="다음" width="25px" class="top_icons" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=next%>')">
+										<input type="image" src="/resources/img/common/Top_next.png" title="다음" width="25px" class="top_icons" onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','<%=next%>','<%=nextContentsName%>')">
 									</c:otherwise>
 								</c:choose>
 							</c:when>
