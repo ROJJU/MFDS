@@ -29,4 +29,5 @@ public interface Forms_service {
 	FirstForm getFirstForm(int forms_seq);
 	String insertFirstContents(FirstForm firstForm);
 	StringBuffer inseretTxt(String replaceName1, String path);
+	String delFirstForm(int forms_seq);
 }

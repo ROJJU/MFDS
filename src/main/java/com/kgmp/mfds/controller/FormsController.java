@@ -142,8 +142,15 @@ public class FormsController {
 		try{
 			check=forms_service.delForm(formsInfo);
 			if(check.equals("yes")){
-				msg="성공하였습니다.";
-				url="/MyPage.do?page_seq=6";
+				String checkFirst = null;
+				checkFirst = forms_service.delFirstForm(forms_seq);
+				if(checkFirst.equals("yes")){
+					msg="성공하였습니다.";
+					url="/MyPage.do?page_seq=6";
+				}else{
+					msg="실패하였습니다.";
+					url="/MyPage.do?page_seq=6";
+				}
 			}else{
 				msg="실패하였습니다.";
 				url="/MyPage.do?page_seq=6";

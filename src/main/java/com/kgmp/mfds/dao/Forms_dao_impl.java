@@ -113,6 +113,11 @@ private SqlSession sqlSession;
 		public void delForm(Forms formsInfo){
 			sqlSession.delete("delForm", formsInfo);
 		}
+		
+		public void delFirstForm(int form_seq){
+			sqlSession.delete("delFirstForm", form_seq);
+		}
+		
 		public void update_title(Forms forms){
 			sqlSession.update("update_title", forms);
 		}

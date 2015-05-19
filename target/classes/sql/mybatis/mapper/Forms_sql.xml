@@ -115,4 +115,7 @@
 		where
 			 forms_ref=#{forms_ref}
 	</update>
+	<delete id="delFirstForm" parameterType="int">
+		delete from first_form where forms_ref=#{forms_seq}
+	</delete>
 </mapper>
