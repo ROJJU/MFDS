@@ -15,7 +15,7 @@
 		    		</c:when>
 		    		<c:otherwise>
 		    			<c:choose>
-		    				<c:when test="${firstForm.shape_text=='-'}">
+		    				<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
 		    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ모양 및 구조_치수</span></b></p><p><br></p>
 		    				</c:when>
 		    				<c:otherwise>

@@ -199,13 +199,101 @@
 		</ul>
 	</div>
 <%}else if(num.equals("10")){%>
+	<h1>모양 및 구조-작용원리</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>용도 및 특성, 당해 제품을 개발하기 위하여 적용한 원리 등에 관한 내용을 요약하여 기술하시면 됩니다.</li>
+			<li>‘사용목적’ 이외의 임상적 효능.효과 및 이와 관련된 용어가 표방 되지 않도록 주의하시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-외형</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>외관 사진: 구체적인 형상을 확인할 수 있는 선명한 외관 사진을 부착하기 바랍니다. 여러 가지 구성품이 있을 경우 각각에 대한 외관사진을 부착하시기 바랍니다.</li>
+			<li>외관 설명: 외관사진의 각 부분을 지적하고 주요 부분에 대한 설명을 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-치수</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>본 제품의 각 부분품(본체)의 외관도면을 그리고, 각 부분을 지적하여 표시하고, 해당되는 부분에 대한 치수 및 중량을 아래의 예와 같이 작성해 주시기 바랍니다.</li>
+			<li>중량에 있어서는 본체 및 구성품의 중량을 각각 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+<%}else if(num.equals("11")){%>
+	<h1>모양 및 구조-작용원리</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>용도 및 특성, 당해 제품을 개발하기 위하여 적용한 원리 등에 관한 내용을 요약하여 기술하시면 됩니다.</li>
+			<li>‘사용목적’ 이외의 임상적 효능.효과 및 이와 관련된 용어가 표방 되지 않도록 주의하시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-외형</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>외관 사진: 구체적인 형상을 확인할 수 있는 선명한 외관 사진을 부착하기 바랍니다. 여러 가지 구성품이 있을 경우 각각에 대한 외관사진을 부착하시기 바랍니다.</li>
+			<li>외관 설명: 외관사진의 각 부분을 지적하고 주요 부분에 대한 설명을 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-치수</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>본 제품의 각 부분품(본체)의 외관도면을 그리고, 각 부분을 지적하여 표시하고, 해당되는 부분에 대한 치수 및 중량을 아래의 예와 같이 작성해 주시기 바랍니다.</li>
+			<li>중량에 있어서는 본체 및 구성품의 중량을 각각 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+	<%}else if(num.equals("12")){%>
+	<h1>모양 및 구조-작용원리</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>용도 및 특성, 당해 제품을 개발하기 위하여 적용한 원리 등에 관한 내용을 요약하여 기술하시면 됩니다.</li>
+			<li>‘사용목적’ 이외의 임상적 효능.효과 및 이와 관련된 용어가 표방 되지 않도록 주의하시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-외형</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>외관 사진: 구체적인 형상을 확인할 수 있는 선명한 외관 사진을 부착하기 바랍니다. 여러 가지 구성품이 있을 경우 각각에 대한 외관사진을 부착하시기 바랍니다.</li>
+			<li>외관 설명: 외관사진의 각 부분을 지적하고 주요 부분에 대한 설명을 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-치수</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>본 제품의 각 부분품(본체)의 외관도면을 그리고, 각 부분을 지적하여 표시하고, 해당되는 부분에 대한 치수 및 중량을 아래의 예와 같이 작성해 주시기 바랍니다.</li>
+			<li>중량에 있어서는 본체 및 구성품의 중량을 각각 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+<%}else if(num.equals("13")){%>
+	<h1>성능</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>용도 및 특성, 당해 제품을 개발하기 위하여 적용한 원리 등에 관한 내용을 요약하여 기술하시면 됩니다.</li>
+			<li>‘사용목적’ 이외의 임상적 효능.효과 및 이와 관련된 용어가 표방 되지 않도록 주의하시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-외형</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>외관 사진: 구체적인 형상을 확인할 수 있는 선명한 외관 사진을 부착하기 바랍니다. 여러 가지 구성품이 있을 경우 각각에 대한 외관사진을 부착하시기 바랍니다.</li>
+			<li>외관 설명: 외관사진의 각 부분을 지적하고 주요 부분에 대한 설명을 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+	<h1>모양 및 구조-치수</h1>
+	<div style="padding:5px; background-color:#EAEAEA">
+		<ul>
+			<li>본 제품의 각 부분품(본체)의 외관도면을 그리고, 각 부분을 지적하여 표시하고, 해당되는 부분에 대한 치수 및 중량을 아래의 예와 같이 작성해 주시기 바랍니다.</li>
+			<li>중량에 있어서는 본체 및 구성품의 중량을 각각 작성해 주시기 바랍니다.</li>
+		</ul>
+	</div>
+<%}else if(num.equals("14")){%>
 	<h1>기타</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
 			<li>기타</li>
 		</ul>
 	</div>
-<%}else if(num.equals("11")){%>
+<%}else if(num.equals("15")){%>
 	<h1>목차</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 	<ul>
@@ -214,7 +302,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide11.png">
-<%}else if(num.equals("12")){%>
+<%}else if(num.equals("16")){%>
 	<h1>기기설명</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 	<ul>
@@ -230,7 +318,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide12.png">
-<%}else if(num.equals("13")){%>
+<%}else if(num.equals("17")){%>
 	<h1>제품사양</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 	<ul>
@@ -239,7 +327,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide13.png">
-<%}else if(num.equals("14")){%>
+<%}else if(num.equals("18")){%>
 	<h1>유사기기 및 기 허가된 제품에 대한 참고자료</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 	<ul>
@@ -262,7 +350,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide14.png">
-<%}else if(num.equals("15")){%>
+<%}else if(num.equals("19")){%>
 	<h1>표시기재(안)</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 	<ul>
@@ -285,30 +373,30 @@
 	<img src="/resources/img/forms/guide/form_guide15_6.png">
 	<img src="/resources/img/forms/guide/form_guide15_7.png">
 	<img src="/resources/img/forms/guide/form_guide15_8.png">
-<%}else if(num.equals("16")){%>
+<%}else if(num.equals("20")){%>
 	<h1>기기설계 계요</h1>
 	<img src="/resources/img/forms/guide/form_guide16.png">
 	<img src="/resources/img/forms/guide/form_guide16_2.png"><br><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide16_3.png">
-<%}else if(num.equals("17")){%>
+<%}else if(num.equals("21")){%>
 	<h1>제조공정 요약</h1>
 	<img src="/resources/img/forms/guide/form_guide17.png" ><br><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide17_1.png">
 	<img src="/resources/img/forms/guide/form_guide17_2.png">
 	<img src="/resources/img/forms/guide/form_guide17_3.png">
-<%}else if(num.equals("18")){%>
+<%}else if(num.equals("22")){%>
 	<h1>설계 및 제조장소 요약</h1>
 	<img src="/resources/img/forms/guide/form_guide18.png" ><br><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide18_1.png" >
-<%}else if(num.equals("19")){%>
+<%}else if(num.equals("23")){%>
 	<h1>필수원칙 체크 리스트</h1>
 	<img src="/resources/img/forms/guide/form_guide19.png" ><br><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide19_1.png" >
-<%}else if(num.equals("20")){%>
+<%}else if(num.equals("24")){%>
 	<h1>위험분석과 관리요약</h1>
 	<h2>위험분석과 관리요약</h2>
 	<div style="padding:5px; background-color:#EAEAEA">
@@ -354,7 +442,7 @@
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide20.png" >
 	<img src="/resources/img/forms/guide/form_guide20_1.png" >
-<%}else if(num.equals("21")){%>
+<%}else if(num.equals("25")){%>
 	<h1>규격에 대한 적합선언</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -364,7 +452,7 @@
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide21.png" >
 	<img src="/resources/img/forms/guide/form_guide21_2.png" >
-<%}else if(num.equals("22")){%>
+<%}else if(num.equals("26")){%>
 	<h1>기기설계의 유효성 확인 개요</h1>
 		<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -373,7 +461,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide22.png" >
-<%}else if(num.equals("23")){%>
+<%}else if(num.equals("27")){%>
 	<h1>전기 · 기계적 안전성​</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -382,7 +470,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide23.png" >
-<%}else if(num.equals("24")){%>
+<%}else if(num.equals("28")){%>
 	<h1>생물학적 안전성 시험 요약​</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -391,7 +479,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide24.png" >
-<%}else if(num.equals("25")){%>
+<%}else if(num.equals("29")){%>
 	<h1>방사선에 관한 안전성 시험 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -400,7 +488,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide25.png" >
-<%}else if(num.equals("26")){%>
+<%}else if(num.equals("30")){%>
 	<h1>전자파 안전성 시험 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -409,7 +497,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide26.png" >
-<%}else if(num.equals("27")){%>
+<%}else if(num.equals("31")){%>
 	<h1>성능에 관한 자료 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -418,7 +506,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide27.png" >
-<%}else if(num.equals("28")){%>
+<%}else if(num.equals("32")){%>
 	<h1>소프트웨어 검증 및 유효성 확인 자료 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -429,7 +517,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide28.png" >
-<%}else if(num.equals("29")){%>
+<%}else if(num.equals("33")){%>
 	<h1>물리, 화학적 특성 자료 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -439,7 +527,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide29.png" >
-<%}else if(num.equals("30")){%>
+<%}else if(num.equals("34")){%>
 	<h1>동물유래 물질에 대한 안전성 자료 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -448,7 +536,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide30.png" >
-<%}else if(num.equals("31")){%>
+<%}else if(num.equals("35")){%>
 	<h1>안전성 시험 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -457,7 +545,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide31.png" >
-<%}else if(num.equals("32")){%>
+<%}else if(num.equals("36")){%>
 	<h1>복합ㆍ조합된 의약품에 대한 정보 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -468,7 +556,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide32.png" >
-<%}else if(num.equals("33")){%>
+<%}else if(num.equals("37")){%>
 	<h1>동물시험 자료 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -477,7 +565,7 @@
 	</div><br>
 	<hr>[예시]<hr><br>
 	<img src="/resources/img/forms/guide/form_guide33.png" >
-<%}else if(num.equals("34")){%>
+<%}else if(num.equals("38")){%>
 	<h1>임상시험 자료 요약</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -494,7 +582,7 @@
 			<li> 첨부자료에 대한 전체 목차를 작성한다.</li>
 		</ul>
 	</div>
-<%}else if(num.equals("35")){%>
+<%}else if(num.equals("40")){%>
 	<h1>제조공정에 관한 자료</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -520,7 +608,7 @@
 			</li>
 		</ul>
 	</div>
-<%}else if(num.equals("36")){%>
+<%}else if(num.equals("41")){%>
 	<h1>위험분석 보고서</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -557,7 +645,7 @@
 			</li>
 		</ul>
 	</div>
-<%}else if(num.equals("37")){%>
+<%}else if(num.equals("42")){%>
 	<h1>제품검증 및 유효성 확인 자료</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>
@@ -580,7 +668,7 @@
 			</li>
 		</ul>
 	</div>
-<%}else if(num.equals("38")){%>
+<%}else if(num.equals("43")){%>
 	<h1>참고문헌</h1>
 	<div style="padding:5px; background-color:#EAEAEA">
 		<ul>

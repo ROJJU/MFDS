@@ -151,7 +151,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 			</c:choose>
 			<c:choose>
-				<c:when test="${firstForm.logic_text=='-'}">
+				<c:when test="${firstForm.logic_text==''||firstForm.logic_text==null}">
 		           <a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','10','10')">
 		           		<c:choose>
 			           		<c:when test="${forms.ck_form10==null}">
@@ -170,7 +170,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 			</c:choose>
 			<c:choose>
-				<c:when test="${firstForm.shape_text=='-'}">
+				<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
 		           <a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','11','11')">
 		           		<c:choose>
 			           		<c:when test="${forms.ck_form11==null}">
@@ -189,7 +189,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 			</c:choose>
 			<c:choose>
-				<c:when test="${firstForm.size_text=='-'}">
+				<c:when test="${firstForm.size_text==''||firstForm.size_text==null}">
 		           <a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','12','12')">
 		           		<c:choose>
 			           		<c:when test="${forms.ck_form12==null}">
@@ -208,7 +208,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 			</c:choose>
 			<c:choose>
-				<c:when test="${firstForm.performance_text=='-'}">
+				<c:when test="${firstForm.performance_text==''||firstForm.performance_text==null}">
 		           <a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','13','13')">
 		           		<c:choose>
 			           		<c:when test="${forms.ck_form13==null}">

@@ -1,0 +1,39 @@
+@CHARSET "utf-8";
+.first_form{
+	width:100%;
+	border:1px solid black;
+	border-collapse:collapse;
+	}
+	.first_title{
+	background:             #666;
+    background:             #666 -webkit-gradient(linear, left top, left bottom, from(#999), to(#666)) no-repeat;
+    background:             #666 -moz-linear-gradient(top,  #999,  #666) no-repeat;
+	color:#ffffff;
+	padding:5px;
+	font-weight:bolder;
+	}
+	.first_th{
+	border:1px solid black;
+	background-color:#DDDDDE;
+	padding:5px;
+	width:150px;
+	}
+	.first_td{
+	border:1px solid black;
+	padding:5px;
+	}
+	.file_td{
+	border:1px solid #D5D5D5;
+	background-color:#EAEAEA;
+	padding:5px;
+	}
+	.test1{
+	display:none;
+	}
+	.test2{
+	display:block;
+	}
+	.change{
+	cursor:hand;
+	cursor:pointer;
+	}

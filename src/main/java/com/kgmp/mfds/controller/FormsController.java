@@ -495,7 +495,7 @@ public class FormsController {
 			check=forms_service.updateState2(forms);
 			if(check.equals("yes")){
 				msg="수정완료 후 최종저장 버튼을 눌러주시기 바랍니다.";
-				url="/NewForms.do?forms_seq="+forms_seq;
+				url="/NewForms.do?forms_seq="+forms_seq+"&list_seq=1&contents_name=1";
 			}else{
 				msg="실패하였습니다.";
 				url="/Forms.do?forms_seq="+forms_seq+"&otp="+otp;
@@ -543,17 +543,35 @@ public class FormsController {
 	@RequestMapping(value = "/LoadContent.do")
 	public ModelAndView loadContent(@RequestParam("forms_seq") int forms_seq,
 									@RequestParam("num") int num,
-									@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name){
+									@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name,
+									HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
 		Forms formsInfo = new Forms();
-		formsInfo.setContents_name("contents"+contents_name);
+		FirstForm firstForm = null;
+		formsInfo.setContents_name(contents_name);
 		formsInfo.setForms_seq(forms_seq);
+		//setting parameter s
+		Member member= new Member();
+		member.setId1((String)session.getAttribute("id1"));
+		member.setId2((String)session.getAttribute("id2"));
+		member.setId3((String)session.getAttribute("id3"));
+		member.setEmail1((String)session.getAttribute("email1"));
+		member.setEmail2((String)session.getAttribute("email2"));
+		//setting parameter e
 		try{
-			forms=forms_service.getFormsRead(formsInfo);
+			Member memberInfo = member_service.selectMember(member);
+			mav.addObject("memberInfo", memberInfo);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		try{
+			forms=forms_service.getFormsRead(formsInfo);
+			firstForm = forms_service.getFirstForm(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("firstForm", firstForm);
 		mav.addObject("forms", forms);
 		mav.setViewName("/forms/LoadContent");
 	    return mav;
@@ -581,7 +599,8 @@ public class FormsController {
 	@RequestMapping(value = "/change_hwpProc.do")
 	public ModelAndView change_hwp(Model model,
 						@RequestParam("forms_seq") int forms_seq,
-						@RequestParam("num") int num){
+						@RequestParam("num") int num,
+						HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = null;
 		Forms formsInfo = new Forms();
@@ -664,16 +683,41 @@ public class FormsController {
 			contents_name = "contents38";
 		}else if(num==39){
 			contents_name = "contents39";
+		}else if(num==40){
+			contents_name = "contents40";
+		}else if(num==41){
+			contents_name = "contents41";
+		}else if(num==42){
+			contents_name = "contents42";
+		}else if(num==43){
+			contents_name = "contents43";
 		}else{
 			contents_name = "contents1";
 		}
 		formsInfo.setForms_seq(forms_seq);
 		formsInfo.setContents_name(contents_name);
+		FirstForm firstForm = null;
+		//setting parameter s
+		Member member= new Member();
+		member.setId1((String)session.getAttribute("id1"));
+		member.setId2((String)session.getAttribute("id2"));
+		member.setId3((String)session.getAttribute("id3"));
+		member.setEmail1((String)session.getAttribute("email1"));
+		member.setEmail2((String)session.getAttribute("email2"));
+		//setting parameter e
 		try{
-			forms=forms_service.getFormsRead(formsInfo);
+			Member memberInfo = member_service.selectMember(member);
+			mav.addObject("memberInfo", memberInfo);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		try{
+			forms=forms_service.getFormsRead(formsInfo);
+			firstForm = forms_service.getFirstForm(forms_seq);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("firstForm", firstForm);
 		mav.addObject("forms", forms);
 		mav.setViewName("/forms/Change_HWP");
 	    return mav;
@@ -720,7 +764,9 @@ public class FormsController {
 	@RequestMapping(value = "/update_mixProc.do")
 	public ModelAndView update_mix(Model model,
 						@RequestParam("forms_seq") int forms_seq,
-						@RequestParam("mix") String mix){
+						@RequestParam("mix") String mix,
+						@RequestParam("list_seq") String list_seq,
+						@RequestParam("contents_name") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = new Forms();
 		String mixValue = null;
@@ -745,7 +791,7 @@ public class FormsController {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		String url ="/NewForms.do?forms_seq="+forms_seq;
+		String url ="/NewForms.do?forms_seq="+forms_seq+"&list_seq="+list_seq+"&contents_name="+contents_name;
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);
 		mav.setViewName("/Check_proc");
@@ -755,7 +801,9 @@ public class FormsController {
 	@RequestMapping(value = "/update_powerProc.do")
 	public ModelAndView update_power(Model model,
 			@RequestParam("forms_seq") int forms_seq,
-			@RequestParam("power") String power){
+			@RequestParam("power") String power,
+			@RequestParam("list_seq") String list_seq,
+			@RequestParam("contents_name") String contents_name){
 		ModelAndView mav = new ModelAndView();
 		Forms forms = new Forms();
 		String powerValue = null;
@@ -779,7 +827,7 @@ public class FormsController {
 		}catch(Exception e){
 		e.printStackTrace();
 		}
-		String url ="/NewForms.do?forms_seq="+forms_seq;
+		String url ="/NewForms.do?forms_seq="+forms_seq+"&list_seq="+list_seq+"&contents_name="+contents_name;
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);
 		mav.setViewName("/Check_proc");

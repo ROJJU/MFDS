@@ -147,17 +147,7 @@
 		  		<tr>
 		  			<td class="first_th">[성능]</td>
 		  			<c:choose>
-	  					<c:when test="${firstForm.performance_text!='-'}">
-	  						<td class="first_td">
-				  				<div id="performance_tool" style="display:none;">
-					  				별첨
-					  				<input type="button" value="직접입력" onclick="performance_function1()" >
-				  				</div>
-				  				<textarea style="width:98%; " id="performance_text" placeholder="성능" name="performance_text">${firstForm.performance_text}</textarea>
-			  				</td>
-			  				<td align="center"><a class="change"  id="change4" onclick="performance_function2()">x</a></td>
-  						</c:when>
-	  					<c:otherwise>
+	  					<c:when test="${firstForm.performance_text==''||firstForm.performance_text==null}">
 	  						<td class="first_td">
 				  				<div id="performance_tool">
 					  				별첨
@@ -166,6 +156,16 @@
 				  				<textarea style="width:98%; display:none;" id="performance_text" placeholder="성능" name="performance_text">${firstForm.performance_text}</textarea>
 			  				</td>
 			  				<td align="center"><a class="change" style="display:none;" id="change4" onclick="performance_function2()">x</a></td>
+  						</c:when>
+	  					<c:otherwise>
+	  						<td class="first_td">
+				  				<div id="performance_tool" style="display:none;">
+					  				별첨
+					  				<input type="button" value="직접입력" onclick="performance_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; " id="performance_text" placeholder="성능" name="performance_text">${firstForm.performance_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change"  id="change4" onclick="performance_function2()">x</a></td>
   						</c:otherwise>
 	  				</c:choose>
 	  			</tr>
@@ -279,7 +279,15 @@
 	  				</td>
 		  			<td rowspan="2" class="file_td">
 		  				<input type="button" value="업로드" onclick="onWrite('<%=request.getParameter("list_seq")%>')">
-		  				<font color="red">*.txt 파일만 첨부 가능합니다.</font>
+		  				<font color="red">*.txt 파일만 첨부 가능합니다.</font><br>
+		  				<c:choose>
+		  					<c:when test="${firstForm.model==null}">
+		  					<font color="blue">에디터 부분 수정 후 업로드를 한번 더 눌러주세요</font>
+		  					</c:when>
+		  					<c:otherwise>
+		  					<font color="blue">완료 되었습니다.</font>
+		  					</c:otherwise>
+		  				</c:choose>
 	  				</td>
 		  		</tr>
 		  		<tr>
@@ -300,32 +308,32 @@
 		    		▶ 모델명
 			    	<c:choose>
 			    		<c:when test="${firstForm.modelFileName!=null}">
-			    			<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+			    			<table class="first_form">
 					    		<tr>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[모델명]</p></td>
+									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
 								</tr>
 					    		${modelFileName}
 			    			</table>
 			    		</c:when>
 			    		<c:otherwise>
-			    			<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+			    			<table class="first_form">
 					    		<tbody>
 									<tr>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[모델명]</p></td>
+										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
 									</tr>
 									<tr>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
 									</tr>
 									<tr>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="489"><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="189"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
 									</tr>
 								</tbody>
 							</table>
@@ -335,29 +343,32 @@
 					▶ 포장단위
 					<c:choose>
 						<c:when test="${firstForm.pakingFileNmae!=null}">
-							<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
+							<table class="first_form">
 					    		<tr>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[포장단위]</p></td>
+									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
 								</tr>
 					    		${pakingFileNmae}
 			    			</table>
 						</c:when>
 						<c:otherwise>
-							<table border="0" cellpadding="0" cellspacing="0" style="border:1px solid #000000; border-left:0; border-bottom:0;" class="__se_tbl">
-								<tbody>
+							<table class="first_form">
+					    		<tbody>
 									<tr>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="234"><p>&nbsp;[일렬번호]</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE" width="634"><p>&nbsp;[포장단위]</p></td>
+										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[포장단위]</p></td>
+										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
 									</tr>
 									<tr>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
 									</tr>
 									<tr>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="234"><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff" width="634"><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
 									</tr>
 								</tbody>
 							</table>
@@ -365,23 +376,17 @@
 					</c:choose>
 		    	</c:otherwise>
 		    </c:choose>
-		    </textarea><br><br>
+		    </textarea>
+		    <ul style="color:red;">
+		  		<li>상단 에디터 내의 양식은 모델명, 포장단위 추가를 위한 툴이며 최종 저장시 기본 양식으로 변경 됩니다.</li>
+		  		<li>외부 파일 첨부시 txt 파일외의 다른 파일을 넣을 경우 오류가 날 수 있습니다.</li>
+		  	</ul><br>
 		    <table class="first_form">
 		  		<tr><td class="first_title" colspan="3">▶ 모양 및 구조</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[작용원리]</td>
 		  				<c:choose>
-		  					<c:when test="${firstForm.logic_text==''}">
-		  						<td class="first_td">
-			  						<div id="logic_tool" style="display:none;">
-						  				별첨
-						  				<input type="button" value="직접입력" onclick="logic_function1()">
-					  				</div>
-			  						<textarea style="width:98%;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
-		  						</td>
-		  						<td align="center"><a class="change" id="change1" onclick="logic_function2()">x</a></td>
-		  					</c:when>
-		  					<c:otherwise>
+		  					<c:when test="${firstForm.logic_text==''||firstForm.logic_text==null}">
 		  						<td class="first_td">
 			  						<div id="logic_tool">
 						  				별첨
@@ -390,23 +395,23 @@
 					  				<textarea style="width:98%; display:none;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
 				  				</td>
 				  				<td align="center"><a class="change" style="display:none;" id="change1" onclick="logic_function2()">x</a></td>
-		  					</c:otherwise>
+	  						</c:when>
+		  					<c:otherwise>
+		  						<td class="first_td">
+			  						<div id="logic_tool" style="display:none;">
+						  				별첨
+						  				<input type="button" value="직접입력" onclick="logic_function1()">
+					  				</div>
+			  						<textarea style="width:98%;" id="logic_text" placeholder="작용원리" name="logic_text">${firstForm.logic_text}</textarea>
+		  						</td>
+		  						<td align="center"><a class="change" id="change1" onclick="logic_function2()">x</a></td>
+	  						</c:otherwise>
 		  				</c:choose>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[외형]</td>
 		  			<c:choose>
-	  					<c:when test="${firstForm.shape_text==''}">
-	  						<td class="first_td">
-				  				<div id="shape_tool" style="display:none;">
-					  				별첨
-					  				<input type="button" value="직접입력" onclick="shape_function1()" >
-				  				</div>
-				  				<textarea style="width:98%; " id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
-			  				</td>
-			  				<td align="center"><a class="change"  id="change2" onclick="shape_function2()">x</a></td>
-  						</c:when>
-	  					<c:otherwise>
+	  					<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
 	  						<td class="first_td">
 				  				<div id="shape_tool">
 					  				별첨
@@ -415,23 +420,23 @@
 				  				<textarea style="width:98%; display:none;" id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
 			  				</td>
 			  				<td align="center"><a class="change" style="display:none;" id="change2" onclick="shape_function2()">x</a></td>
-	  					</c:otherwise>
+  						</c:when>
+	  					<c:otherwise>
+	  						<td class="first_td">
+				  				<div id="shape_tool" style="display:none;">
+					  				별첨
+					  				<input type="button" value="직접입력" onclick="shape_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; " id="shape_text" placeholder="외형" name="shape_text">${firstForm.shape_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change"  id="change2" onclick="shape_function2()">x</a></td>
+  						</c:otherwise>
 	  				</c:choose>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[치수]</td>
 		  			<c:choose>
-	  					<c:when test="${firstForm.size_text==''}">
-	  						<td class="first_td">
-				  				<div id="size_tool" style="display:none;">
-					  				별첨
-					  				<input type="button" value="직접입력" onclick="size_function1()" >
-				  				</div>
-				  				<textarea style="width:98%; " id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
-			  				</td>
-			  				<td align="center"><a class="change"  id="change3" onclick="size_function2()">x</a></td>
-  						</c:when>
-	  					<c:otherwise>
+	  					<c:when test="${firstForm.size_text==''||firstForm.size_text==null}">
 	  						<td class="first_td">
 				  				<div id="size_tool">
 					  				별첨
@@ -440,6 +445,16 @@
 				  				<textarea style="width:98%; display:none;" id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
 			  				</td>
 			  				<td align="center"><a class="change" style="display:none;" id="change3" onclick="size_function2()">x</a></td>
+  						</c:when>
+	  					<c:otherwise>
+	  						<td class="first_td">
+				  				<div id="size_tool" style="display:none;">
+					  				별첨
+					  				<input type="button" value="직접입력" onclick="size_function1()" >
+				  				</div>
+				  				<textarea style="width:98%; " id="size_text" placeholder="치수" name="size_text">${firstForm.size_text}</textarea>
+			  				</td>
+			  				<td align="center"><a class="change"  id="change3" onclick="size_function2()">x</a></td>
   						</c:otherwise>
 	  				</c:choose>
 	  			</tr>
@@ -476,7 +491,7 @@
 			$("#logic_text").css("display","none");
 			$("#logic_tool").css("display", "block");
 			$("#change1").css("display", "none");
-			document.getElementById('logic_text').value="-";
+			document.getElementById('logic_text').value="";
 		}
 	}
 	
@@ -492,7 +507,7 @@
 			$("#shape_text").css("display","none");
 			$("#shape_tool").css("display", "block");
 			$("#change2").css("display", "none");
-			document.getElementById('shape_text').value="-";
+			document.getElementById('shape_text').value="";
 		}
 	}
 	
@@ -508,7 +523,7 @@
 			$("#size_text").css("display","none");
 			$("#size_tool").css("display", "block");
 			$("#change3").css("display", "none");
-			document.getElementById('size_text').value="-";
+			document.getElementById('size_text').value="";
 		}
 	}
 	
@@ -524,7 +539,7 @@
 			$("#performance_text").css("display","none");
 			$("#performance_tool").css("display", "block");
 			$("#change4").css("display", "none");
-			document.getElementById('performance_text').value="-";
+			document.getElementById('performance_text').value="";
 		}
 	}
 	

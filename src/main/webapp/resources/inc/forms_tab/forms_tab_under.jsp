@@ -32,18 +32,18 @@
 	<c:otherwise>
 		<c:choose>
 			<c:when test="${forms.mix=='1'}">
-				| <input type="image" src="/resources/img/forms/mix_x.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+				| <input type="image" src="/resources/img/forms/mix_x.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix}, <%=request.getParameter("list_seq")%>, <%=request.getParameter("contents_name")%>);">
 			</c:when>
 			<c:otherwise>
-				| <input type="image" src="/resources/img/forms/mix_o.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix});">
+				| <input type="image" src="/resources/img/forms/mix_o.png" width="90px" onclick="mixCheck(<%=request.getParameter("forms_seq")%>, ${forms.mix}, <%=request.getParameter("list_seq")%>, <%=request.getParameter("contents_name")%>);">
 			</c:otherwise>
 		</c:choose>
 		<c:choose>
 			<c:when test="${forms.power=='1'}">
-				| <input type="image" src="/resources/img/forms/power_x.png" width="75px" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
+				| <input type="image" src="/resources/img/forms/power_x.png" width="75px" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}&list_seq=<%=request.getParameter("list_seq")%>&contents_name=<%=request.getParameter("contents_name")%>');">
 			</c:when>
 			<c:otherwise>
-				| <input type="image" src="/resources/img/forms/power_o.png" width="75px"onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}');">
+				| <input type="image" src="/resources/img/forms/power_o.png" width="75px" onclick="goUrl('/update_powerProc.do?forms_seq=<%=request.getParameter("forms_seq")%>&power=${forms.power}&list_seq=<%=request.getParameter("list_seq")%>&contents_name=<%=request.getParameter("contents_name")%>');">
 			</c:otherwise>
 		</c:choose>
 	</c:otherwise>

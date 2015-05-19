@@ -15,7 +15,7 @@
 		    		</c:when>
 		    		<c:otherwise>
 		    			<c:choose>
-		    				<c:when test="${firstForm.performance_text=='-'}">
+		    				<c:when test="${firstForm.performance_text==''||firstForm.performance_text==null}">
 		    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ성능</span></b></p><p><br></p>
 		    				</c:when>
 		    				<c:otherwise>

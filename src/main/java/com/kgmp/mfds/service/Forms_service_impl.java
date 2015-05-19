@@ -312,7 +312,7 @@ public class Forms_service_impl implements Forms_service{
 		  int i=0;
 			  while((line=br.readLine())!=null){
 				  i++;
-			   termsTxt.append("<tr><td style='border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff'>"+i+"</td><td style='border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff'>"+line+"</td><td style='border:1px solid #000000; border-top:0; border-right:0; background-color:#ffffff'>예</td></tr>");
+			   termsTxt.append("<tr><td style='border:1px solid #000000; background-color:#ffffff;' border='1' border-color='black'>"+i+"</td><td style='border:1px solid #000000; background-color:#ffffff;' border='1' border-color='black'>"+line+"</td><td style='border:1px solid #000000; background-color:#ffffff;' border='1' border-color='black'>예</td></tr>");
 			  }
         }catch(Exception e){
         	termsTxt.append("파읽 읽기를 실패했습니다. <br/>: "+e.getMessage());

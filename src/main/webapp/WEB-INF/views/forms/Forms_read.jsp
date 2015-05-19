@@ -8,6 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<!--[if gte IE 9 ]><link rel="stylesheet" type="text/css" href="_styles.css" media="screen"><![endif]-->
 	<!--[if !IE]>--><link rel="stylesheet" type="text/css" href="/resources/css/forms/_styles.css" media="screen"><!--<![endif]-->
+	<link rel="stylesheet" href="/resources/css/forms/firstForm.css"><!--firstForm css-->
 	<style type="text/css">
 	.__se_tbl{
 	width:100%;
@@ -68,10 +69,12 @@
 		  
 		  function save_hwp(){
 			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+			  
 			  $(".__se_tbl").attr("width","640px");
 			  $(".__se_tbl").attr("border","1");
 			  $(".__se_tbl").attr("cellspacing","0");
 			  $(".__se_tbl").attr("bordercolor","black");
+
 			  $(".__se_tbl td").attr("width","");
 			  $(".hong td").attr("width","");
 			  $(".test td").attr("width","");
@@ -94,6 +97,14 @@
 			  
 			  $(".test td").attr("height","25px");
 			  $(".test td").attr("bordercolor","black");
+			  
+			  
+			  $(".first_form").attr("width","640px");
+			  $(".first_form").attr("border","1");
+			  $(".first_form").attr("cellspacing","0");
+			  $(".first_form").attr("bordercolor","black");
+			  $(".first_th").attr("width","150px");
+			  
 			  
 			  document.hwp.action="/download_hwpProc.do";
 			  document.hwp.method="post";
@@ -128,21 +139,21 @@
 	 
 	 function HwpItPart1(forms_seq){
 		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  <%for(int i=1;i<=10;i++){%>
+		  <%for(int i=1;i<=14;i++){%>
 		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
 		  <%}%>
 	  }
 	 
 	 function HwpItPart2(forms_seq){
 		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  <%for(int i=11;i<=34;i++){%>
+		  <%for(int i=15;i<=38;i++){%>
 		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
 		  <%}%>
 	  }
 	 
 	 function HwpItPart3(forms_seq){
 		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  <%for(int i=35;i<=39;i++){%>
+		  <%for(int i=39;i<=43;i++){%>
 		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
 		  <%}%>
 	  }
@@ -190,7 +201,7 @@
 									<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
 									<input type="hidden" id="contents" name="contents">
 									<input type="hidden" name="add_date" value="${forms.add_date}">
-									<b id="form"><center><img src="/resources/img/loading1.gif"></center></b>
+									<div id="form"><center><img src="/resources/img/loading1.gif"></center></div>
 								</form>
 								</div>
 								<br>

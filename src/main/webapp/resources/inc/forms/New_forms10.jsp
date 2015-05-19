@@ -15,7 +15,7 @@
 		    		</c:when>
 		    		<c:otherwise>
 		    			<c:choose>
-		    				<c:when test="${firstForm.logic_text=='-'}">
+		    				<c:when test="${firstForm.logic_text==''||firstForm.logic_text==null}">
 		    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ모양 및 구조_작용원리</span></b></p><p><br></p>
 		    				</c:when>
 		    				<c:otherwise>

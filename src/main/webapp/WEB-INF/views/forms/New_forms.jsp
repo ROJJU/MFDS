@@ -32,6 +32,7 @@ int next =list_seq+1;
 		  </style>
 		<![endif]-->
 <link rel="stylesheet" href="/resources/css/forms/arcodion.css"><!--arcodioEn css-->
+<link rel="stylesheet" href="/resources/css/forms/firstForm.css"><!--firstForm css-->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <!--text edieter s-->
 <script type="text/javascript" src="/resources/se/js/HuskyEZCreator.js" charset="utf-8"></script>
@@ -95,9 +96,9 @@ int next =list_seq+1;
 		  window.open('/resources/inc/forms_popup/Forms_guide.jsp?num='+num,'formGuide','width=755 height=526 scrollbars=yes');
 	  }
 	  
-	  function mixCheck(forms_seq, mix){
+	  function mixCheck(forms_seq, mix, list_seq, contents_name){
 		  if(confirm('1번 신청서 양식이 초기화 됩니다. 진행 하시겠습니까 ? 진행하시기 전에 1번 신청서 양식을 복사 하시기 바랍니다.')){
-			  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix;
+			  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix+'&list_seq='+list_seq+'&contents_name='+contents_name;
 		  }
 	  }
 	</script>
@@ -108,45 +109,6 @@ int next =list_seq+1;
 	}
 	a:hover{
 	color:#369;
-	}
-	/* ======================== 신청서 style!! */
-	.first_form{
-	width:100%;
-	border:1px solid black;
-	border-collapse:collapse;
-	}
-	.first_title{
-	background:             #666;
-    background:             #666 -webkit-gradient(linear, left top, left bottom, from(#999), to(#666)) no-repeat;
-    background:             #666 -moz-linear-gradient(top,  #999,  #666) no-repeat;
-	color:#ffffff;
-	padding:5px;
-	font-weight:bolder;
-	}
-	.first_th{
-	border:1px solid black;
-	width:150px;
-	background-color:#DDDDDE;
-	padding:5px;
-	}
-	.first_td{
-	border:1px solid black;
-	padding:5px;
-	}
-	.file_td{
-	border:1px solid #D5D5D5;
-	background-color:#EAEAEA;
-	padding:5px;
-	}
-	.test1{
-	display:none;
-	}
-	.test2{
-	display:block;
-	}
-	.change{
-	cursor:hand;
-	cursor:pointer;
 	}
 	</style>
 </head>
