@@ -8,11 +8,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMessage.RecipientType;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -515,7 +519,8 @@ public class FormsController {
 		mav.setViewName("/Check_proc");
 		return mav;
 	}
-
+	@Autowired
+	private JavaMailSender mailSender; // xml에 등록한 bean autowired
 	@RequestMapping(value = "/updatePaymentProc.do")
 	public ModelAndView updatePayment(@RequestParam("forms_seq") int forms_seq,
 									  @RequestParam("payment_name") String payment_name,
@@ -541,6 +546,23 @@ public class FormsController {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		//send e-mail s
+		try{
+			MimeMessage message = mailSender.createMimeMessage();
+			 String test1="K-GMP@K-GMP.com";
+			 String test2="K-GMP@K-GMP.com";
+			 String test3="STED] 결제 신청";
+			 String test4="<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'><html><body style='width:600px border:1px solid grey;'><div style='margin:0 auto; padding:10px; width:700px; border:1px solid grey;'><div>	<div>		<img src='http://sted.kr/resources/img/common/header_bg2.jpg' width='100%'>	</div>	<div style='background-color:#102967; color:#ffffff; height:30px;'>		&nbsp;▶ 결제신청 확인	</div></div><div><br><br>	안녕하세요. STED 자동 프로그램 입니다.<br>	<b>"+payment_name+"</b>님께서 입금 신청을 하였습니다.<br>	아래의 내용을 확인 하신 후 관리자 프로그램을 통해 계속 진행해 주세요.<br><br>	<b>예금자명 :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+payment_name+"</h1><br>	<b>무통장 계좌 :</b>	&nbsp;&nbsp;&nbsp;<h1 style='color:#303698;'>"+payment_bank+"</h1><br><br>	입금자는 신청 후 7일 이내에 입금을 완료 하여야합니다.<br> 프로그램 처리는 입금 확인 후 3일 이내에 완료 하여야 합니다.<br><br>	(주)한국지엠피_<a href='https://sted.kr/Admin.do'>관리자페이지로 바로가기</a><br><br><br>	<p style='color:grey;'>본 메일은 발신전용입니다. 본 메일을 임의로 위.번조하여 사용할 경우 형사처벌의 대상이 될 수 있습니다. 궁금한 사항은 <a href='mailto:K-GMP@K-GMP.COM'>K-GMP@K-GMP.COM</a>으로 문의하십시오.</p><br><div style='background-color:#102967; color:#ffffff; height:30px; text-align:right;'>Copyright ⓒ K-GMP All Right Reserved&nbsp;</div></div></div></body></html>";			 
+			  message.setFrom(new InternetAddress(test1));  
+			  message.addRecipient(RecipientType.TO, new InternetAddress(test2));
+			  message.setSubject(test3);
+			  message.setText(test4, "utf-8", "html");
+			   
+			 mailSender.send(message);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		//send e-mail e
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);
 		mav.setViewName("/Opener_check_proc");

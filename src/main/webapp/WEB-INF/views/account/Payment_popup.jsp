@@ -91,7 +91,7 @@ height:132; background-color:#EAEAEA;  border-radius:5%; padding:10px; border:1p
 							<td style="color:red; font-size:9px;"></td>
 						</tr>
 						<tr height="25px">
-							<td><b>입금자명</b></td>
+							<td><b></b></td>
 							<td colspan="2"><font color="red"><b>신청 후 [7일] 이내로</b></font> 입금해 주셔야 합니다.</td>
 						</tr>
 					</table>
