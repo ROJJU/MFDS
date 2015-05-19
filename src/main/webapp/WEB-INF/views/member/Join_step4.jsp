@@ -65,9 +65,6 @@
 											<tr>
 												<td>사용자 이메일 :</td><td>${memberInfo.email1}@${memberInfo.email2}</td><td></td>
 											</tr>
-											<tr>
-												<td>비밀번호 :</td><td>${memberInfo.pw_1}</td><td></td>
-											</tr>
 										</table><br>
 									</td>
 								</tr>
@@ -120,13 +117,12 @@
 						<hr>
 							<table id="sign" style="text-align:left;">
 								<tr>
-									<td>
+									<td style="font-size:14px;">
 										<center>
-											<br><br><br>
-											상기 정보에 따라 (주)한국지엠피 STED 회원 가입이 신청 되었음을 증명 합니다.<br><br><br>
-											${nowYear}년 ${nowMonth}월 ${nowDay}일<br><br><br>
-											<h1>(주)한국 지엠피<br><br>
-											한국의료산업품질연구원</h1>
+											<br><br>
+											상기 정보에 따라 (주)한국지엠피 STED 회원 가입이 신청 되었음을 증명 합니다.<br><br>
+											${nowYear}년 ${nowMonth}월 ${nowDay}일<br>
+											<img src="/resources/img/member/join4.jpg">
 										</center>
 									</td>
 								</tr>

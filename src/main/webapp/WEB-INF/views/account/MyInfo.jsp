@@ -9,7 +9,7 @@
 	<title>STED</title>
 	<style type="text/css">
 	.my_font{
-		font-size:10px;
+		font-size:12px;
 		height:10px;
 	}
 	#my_info{
@@ -50,7 +50,7 @@
 		    self.focus();
 		    win.document.open();
 		    win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
-		    win.document.write('.my_font{font-size:9px;} #my_info{width:600px;height:10px;}');
+		    win.document.write('.my_font{font-size:12px;} #my_info{width:600px;height:10px;} #info{position:absolute; top:-5px;margin:0 auto;}');
 		    win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
 		    win.document.write(printThis);
 		    win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
@@ -91,7 +91,7 @@
 											<tr><td height="380px;" style="border:none;"></td></tr>
 											<tr height="20px">
 												<td width="35px;"></td>
-												<td width="300px" style="font-size:14px; font-weight:bolder;"><b>회원 정보</b></td>
+												<td width="300px" style="font-size:13px; font-weight:bolder;"><b>회원 정보</b></td>
 											</tr>
 											<tr>
 												<td></td>
@@ -103,15 +103,12 @@
 														<tr>
 															<td class="my_font"><b>사용자 이메일 :</b></td><td class="my_font">${memberInfo.email1}@${memberInfo.email2}</td><td></td>
 														</tr>
-														<tr>
-															<td class="my_font"><b>비밀번호 :</b></td><td class="my_font">${memberInfo.pw_1}</td><td></td>
-														</tr>
 													</table>
 												</td>
 											</tr>
 											<tr height="20px">
 												<td></td>
-												<td width="300px" style="font-size:14px; font-weight:bolder;"><b>담당자 정보</b></td>
+												<td width="300px" style="font-size:13px; font-weight:bolder;"><b>담당자 정보</b></td>
 											</tr>
 											<tr>
 												<td></td>
@@ -134,7 +131,7 @@
 											</tr>
 											<tr height="20px">
 												<td></td>
-												<td width="300px" style="font-size:14px; font-weight:bolder;"><b>회사 정보</b></td>
+												<td width="300px" style="font-size:13px; font-weight:bolder;"><b>회사 정보</b></td>
 											</tr>
 											<tr>
 												<td></td>
@@ -162,7 +159,7 @@
 										</div>
 										</div>
 									</div>
-									</div>
+									</div><br><br>
 								</div>
 								<table id="button" width="1064px">
 									<tr height=100px;>
