@@ -18,6 +18,7 @@ int next =list_seq+1;
 	}
 </style>
 <link rel="stylesheet" href="/resources/daumeditor-7.4.1/css/editor.css" type="text/css" charset="utf-8"/>
+<link rel="stylesheet" href="/resources/css/forms/style.css">
 <script src="/resources/daumeditor-7.4.1/js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
 		<!--[if gte IE 9]>
 		  <style type="text/css">
@@ -183,11 +184,68 @@ int next =list_seq+1;
 								<br>
 								<table style="width:962px; margin:0 auto; border:1px solid black; background-color:#102967;" cellpadding="0" cellspacing="1">
 									<tr>
-										<td style="color:#ffffff;">
+										<td style="color:#ffffff;" width="230px">
 											<jsp:include page="/resources/inc/forms_tab/forms_tab_under.jsp"/>
 										</td>
+										<td style="color:#ffffff;">
+											<div id="percent">
+												계산중
+											</div>
+										</td>
+										<td>
+											<div class="container">
+												<input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" checked>
+											    <div class="progress">
+											      <div class="progress-bar" id="progressResult"></div>
+											    </div>
+											 </div>
+											 <!--ck_check-->
+											 <input type="hidden" id="ck_form1" value="${forms.ck_form1}">
+											 <input type="hidden" id="ck_form2" value="${forms.ck_form2}">
+											 <input type="hidden" id="ck_form3" value="${forms.ck_form3}">
+											 <input type="hidden" id="ck_form4" value="${forms.ck_form4}">
+											 <input type="hidden" id="ck_form5" value="${forms.ck_form5}">
+											 <input type="hidden" id="ck_form6" value="${forms.ck_form6}">
+											 <input type="hidden" id="ck_form7" value="${forms.ck_form7}">
+											 <input type="hidden" id="ck_form8" value="${forms.ck_form8}">
+											 <input type="hidden" id="ck_form9" value="${forms.ck_form9}">
+											 <input type="hidden" id="ck_form10" value="${forms.ck_form10}">
+											 <input type="hidden" id="ck_form11" value="${forms.ck_form11}">
+											 <input type="hidden" id="ck_form12" value="${forms.ck_form12}">
+											 <input type="hidden" id="ck_form13" value="${forms.ck_form13}">
+											 <input type="hidden" id="ck_form14" value="${forms.ck_form14}">
+											 <input type="hidden" id="ck_form15" value="${forms.ck_form15}">
+											 <input type="hidden" id="ck_form16" value="${forms.ck_form16}">
+											 <input type="hidden" id="ck_form17" value="${forms.ck_form17}">
+											 <input type="hidden" id="ck_form18" value="${forms.ck_form18}">
+											 <input type="hidden" id="ck_form19" value="${forms.ck_form19}">
+											 <input type="hidden" id="ck_form20" value="${forms.ck_form20}">
+											 <input type="hidden" id="ck_form21" value="${forms.ck_form21}">
+											 <input type="hidden" id="ck_form22" value="${forms.ck_form22}">
+											 <input type="hidden" id="ck_form23" value="${forms.ck_form23}">
+											 <input type="hidden" id="ck_form24" value="${forms.ck_form24}">
+											 <input type="hidden" id="ck_form25" value="${forms.ck_form25}">
+											 <input type="hidden" id="ck_form26" value="${forms.ck_form26}">
+											 <input type="hidden" id="ck_form27" value="${forms.ck_form27}">
+											 <input type="hidden" id="ck_form28" value="${forms.ck_form28}">
+											 <input type="hidden" id="ck_form29" value="${forms.ck_form29}">
+											 <input type="hidden" id="ck_form30" value="${forms.ck_form30}">
+											 <input type="hidden" id="ck_form31" value="${forms.ck_form31}">
+											 <input type="hidden" id="ck_form32" value="${forms.ck_form32}">
+											 <input type="hidden" id="ck_form33" value="${forms.ck_form33}">
+											 <input type="hidden" id="ck_form34" value="${forms.ck_form34}">
+											 <input type="hidden" id="ck_form35" value="${forms.ck_form35}">
+											 <input type="hidden" id="ck_form36" value="${forms.ck_form36}">
+											 <input type="hidden" id="ck_form37" value="${forms.ck_form37}">
+											 <input type="hidden" id="ck_form38" value="${forms.ck_form38}">
+											 <input type="hidden" id="ck_form39" value="${forms.ck_form39}">
+											 <input type="hidden" id="ck_form40" value="${forms.ck_form40}">
+											 <input type="hidden" id="ck_form41" value="${forms.ck_form41}">
+											 <input type="hidden" id="ck_form42" value="${forms.ck_form42}">
+											 <input type="hidden" id="ck_form43" value="${forms.ck_form43}">
+										</td>
 										<td style="border:1px solid black; padding:3px; background-color:#EAEAEA; " align="right">
-											<img src="/resources/img/forms/guide_text.gif" width="500px">&nbsp;&nbsp;&nbsp;
+											<img src="/resources/img/forms/guide_text.gif" width="400px">&nbsp;&nbsp;&nbsp;
 											<input type="image" src="/resources/img/btn/guide.png" width="40px" title="가이드 라인" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
 										</td>
 									</tr>
@@ -317,8 +375,229 @@ int next =list_seq+1;
 				location.href="/resources/inc/Form_check.jsp";
 				}
 			 }
+			function checkProcess(){
+				if(document.getElementById("ck_form1").value==null||document.getElementById("ck_form1").value==""){
+					var ck_form1 =0;
+				}else{
+					var ck_form1 = document.getElementById("ck_form1").value;
+				}
+				if(document.getElementById("ck_form2").value==null||document.getElementById("ck_form2").value==""){
+					var ck_form2 = 0;	
+				}else{
+					var ck_form2 = document.getElementById("ck_form2").value;
+				}
+				if(document.getElementById("ck_form3").value==null||document.getElementById("ck_form3").value==""){
+					var ck_form3 =0;
+				}else{
+					var ck_form3 = document.getElementById("ck_form3").value;
+				}
+				if(document.getElementById("ck_form4").value==null||document.getElementById("ck_form4").value==""){
+					var ck_form4 =0;
+				}else{
+					var ck_form4 = document.getElementById("ck_form4").value;
+				}
+				if(document.getElementById("ck_form5").value==null||document.getElementById("ck_form5").value==""){
+					var ck_form5 =0;
+				}else{
+					var ck_form5 = document.getElementById("ck_form5").value;
+				}
+				if(document.getElementById("ck_form6").value==null||document.getElementById("ck_form6").value==""){
+					var ck_form6 =0;
+				}else{
+					var ck_form6 = document.getElementById("ck_form6").value;
+				}
+				if(document.getElementById("ck_form7").value==null||document.getElementById("ck_form7").value==""){
+					var ck_form7 =0;
+				}else{
+					var ck_form7 = document.getElementById("ck_form7").value;
+				}
+				if(document.getElementById("ck_form8").value==null||document.getElementById("ck_form8").value==""){
+					var ck_form8 = 0;	
+				}else{
+					var ck_form8 = document.getElementById("ck_form8").value;
+				}
+				if(document.getElementById("ck_form9").value==null||document.getElementById("ck_form9").value==""){
+					var ck_form9 =0;
+				}else{
+					var ck_form9 = document.getElementById("ck_form9").value;
+				}
+				if(document.getElementById("ck_form10").value==null||document.getElementById("ck_form10").value==""){
+					var ck_form10 =0;
+				}else{
+					var ck_form10 = document.getElementById("ck_form10").value;
+				}
+				if(document.getElementById("ck_form11").value==null||document.getElementById("ck_form11").value==""){
+					var ck_form11 =0;
+				}else{
+					var ck_form11 = document.getElementById("ck_form11").value;
+				}
+				if(document.getElementById("ck_form12").value==null||document.getElementById("ck_form12").value==""){
+					var ck_form12 =0;
+				}else{
+					var ck_form12 = document.getElementById("ck_form12").value;
+				}
+				if(document.getElementById("ck_form13").value==null||document.getElementById("ck_form13").value==""){
+					var ck_form13 =0;
+				}else{
+					var ck_form13 = document.getElementById("ck_form13").value;
+				}
+				if(document.getElementById("ck_form14").value==null||document.getElementById("ck_form14").value==""){
+					var ck_form14 = 0;	
+				}else{
+					var ck_form14 = document.getElementById("ck_form14").value;
+				}
+				if(document.getElementById("ck_form15").value==null||document.getElementById("ck_form15").value==""){
+					var ck_form15 =0;
+				}else{
+					var ck_form15 = document.getElementById("ck_form15").value;
+				}
+				if(document.getElementById("ck_form16").value==null||document.getElementById("ck_form16").value==""){
+					var ck_form16 =0;
+				}else{
+					var ck_form16 = document.getElementById("ck_form16").value;
+				}
+				if(document.getElementById("ck_form17").value==null||document.getElementById("ck_form17").value==""){
+					var ck_form17 =0;
+				}else{
+					var ck_form17 = document.getElementById("ck_form17").value;
+				}
+				if(document.getElementById("ck_form18").value==null||document.getElementById("ck_form18").value==""){
+					var ck_form18 =0;
+				}else{
+					var ck_form18 = document.getElementById("ck_form18").value;
+				}
+				if(document.getElementById("ck_form19").value==null||document.getElementById("ck_form19").value==""){
+					var ck_form19 =0;
+				}else{
+					var ck_form19 = document.getElementById("ck_form19").value;
+				}
+				if(document.getElementById("ck_form20").value==null||document.getElementById("ck_form20").value==""){
+					var ck_form20 = 0;	
+				}else{
+					var ck_form20 = document.getElementById("ck_form20").value;
+				}
+				if(document.getElementById("ck_form21").value==null||document.getElementById("ck_form21").value==""){
+					var ck_form21 =0;
+				}else{
+					var ck_form21 = document.getElementById("ck_form21").value;
+				}
+				if(document.getElementById("ck_form22").value==null||document.getElementById("ck_form22").value==""){
+					var ck_form22 =0;
+				}else{
+					var ck_form22 = document.getElementById("ck_form22").value;
+				}
+				if(document.getElementById("ck_form23").value==null||document.getElementById("ck_form23").value==""){
+					var ck_form23 =0;
+				}else{
+					var ck_form23 = document.getElementById("ck_form23").value;
+				}
+				if(document.getElementById("ck_form24").value==null||document.getElementById("ck_form24").value==""){
+					var ck_form24 =0;
+				}else{
+					var ck_form24 = document.getElementById("ck_form24").value;
+				}
+				if(document.getElementById("ck_form25").value==null||document.getElementById("ck_form25").value==""){
+					var ck_form25 =0;
+				}else{
+					var ck_form25 = document.getElementById("ck_form25").value;
+				}
+				if(document.getElementById("ck_form26").value==null||document.getElementById("ck_form26").value==""){
+					var ck_form26 = 0;	
+				}else{
+					var ck_form26 = document.getElementById("ck_form26").value;
+				}
+				if(document.getElementById("ck_form27").value==null||document.getElementById("ck_form27").value==""){
+					var ck_form27 =0;
+				}else{
+					var ck_form27 = document.getElementById("ck_form27").value;
+				}
+				if(document.getElementById("ck_form28").value==null||document.getElementById("ck_form28").value==""){
+					var ck_form28 =0;
+				}else{
+					var ck_form28 = document.getElementById("ck_form28").value;
+				}
+				if(document.getElementById("ck_form29").value==null||document.getElementById("ck_form29").value==""){
+					var ck_form29 =0;
+				}else{
+					var ck_form29 = document.getElementById("ck_form29").value;
+				}
+				if(document.getElementById("ck_form30").value==null||document.getElementById("ck_form30").value==""){
+					var ck_form30 =0;
+				}else{
+					var ck_form30 = document.getElementById("ck_form30").value;
+				}
+				if(document.getElementById("ck_form31").value==null||document.getElementById("ck_form31").value==""){
+					var ck_form31 =0;
+				}else{
+					var ck_form31 = document.getElementById("ck_form31").value;
+				}
+				if(document.getElementById("ck_form32").value==null||document.getElementById("ck_form32").value==""){
+					var ck_form32 =0;
+				}else{
+					var ck_form32 = document.getElementById("ck_form32").value;
+				}
+				if(document.getElementById("ck_form33").value==null||document.getElementById("ck_form33").value==""){
+					var ck_form33 = 0;
+				}else{
+					var ck_form33 = document.getElementById("ck_form33").value;
+				}
+				if(document.getElementById("ck_form34").value==null||document.getElementById("ck_form34").value==""){
+					var ck_form34 =0;
+				}else{
+					var ck_form34 = document.getElementById("ck_form34").value;
+				}
+				if(document.getElementById("ck_form35").value==null||document.getElementById("ck_form35").value==""){
+					var ck_form35 =0;
+				}else{
+					var ck_form35 = document.getElementById("ck_form35").value;
+				}
+				if(document.getElementById("ck_form36").value==null||document.getElementById("ck_form36").value==""){
+					var ck_form36 =0;
+				}else{
+					var ck_form36 = document.getElementById("ck_form36").value;
+				}
+				if(document.getElementById("ck_form37").value==null||document.getElementById("ck_form37").value==""){
+					var ck_form37 = 0;
+				}else{
+					var ck_form37 = document.getElementById("ck_form37").value;
+				}
+				if(document.getElementById("ck_form38").value==null||document.getElementById("ck_form38").value==""){
+					var ck_form38 =0;
+				}else{
+					var ck_form38 = document.getElementById("ck_form38").value;
+				}
+				if(document.getElementById("ck_form39").value==null||document.getElementById("ck_form39").value==""){
+					var ck_form39 =0;
+				}else{
+					var ck_form39 = document.getElementById("ck_form39").value;
+				}
+				if(document.getElementById("ck_form40").value==null||document.getElementById("ck_form40").value==""){
+					var ck_form40 = 0;
+				}else{
+					var ck_form40 = document.getElementById("ck_form40").value;
+				}
+				if(document.getElementById("ck_form41").value==null||document.getElementById("ck_form41").value==""){
+					var ck_form41 =0;
+				}else{
+					var ck_form41 = document.getElementById("ck_form41").value;
+				}
+				if(document.getElementById("ck_form42").value==null||document.getElementById("ck_form42").value==""){
+					var ck_form42 =0;
+				}else{
+					var ck_form42 = document.getElementById("ck_form42").value;
+				}
+				if(document.getElementById("ck_form43").value==null||document.getElementById("ck_form43").value==""){
+					var ck_form43 = 0;
+				}else{
+					var ck_form43 = document.getElementById("ck_form43").value;
+				}
+				var sum = parseInt(ck_form1)+parseInt(ck_form2)+parseInt(ck_form3)+parseInt(ck_form4)+parseInt(ck_form5)+parseInt(ck_form6)+parseInt(ck_form7)+parseInt(ck_form8)+parseInt(ck_form9)+parseInt(ck_form10)+parseInt(ck_form11)+parseInt(ck_form12)+parseInt(ck_form13)+parseInt(ck_form14)+parseInt(ck_form15)+parseInt(ck_form16)+parseInt(ck_form17)+parseInt(ck_form18)+parseInt(ck_form19)+parseInt(ck_form20)+parseInt(ck_form21)+parseInt(ck_form22)+parseInt(ck_form23)+parseInt(ck_form24)+parseInt(ck_form25)+parseInt(ck_form26)+parseInt(ck_form27)+parseInt(ck_form28)+parseInt(ck_form29)+parseInt(ck_form30)+parseInt(ck_form31)+parseInt(ck_form32)+parseInt(ck_form33)+parseInt(ck_form34)+parseInt(ck_form35)+parseInt(ck_form36)+parseInt(ck_form37)+parseInt(ck_form38)+parseInt(ck_form39)+parseInt(ck_form40)+parseInt(ck_form41)+parseInt(ck_form42)+parseInt(ck_form43);
+				var result=sum*2.325581395348837;
+				document.getElementById("percent").innerHTML="<a style='color:#ffffff; font-size:8px;''>진행도</a><br><b>"+result.toFixed(0)+"</b>%";
+				document.getElementById("progressResult").style.width=result.toFixed(0)+"%";
+			}
+			checkProcess();
 		</script>
-</div>
 		<!--arcodion s-->
         <script type="text/javascript" src="/resources/js/account/jquery.accordion.2.0.js" ></script>
         <script type="text/javascript">
@@ -328,10 +607,8 @@ int next =list_seq+1;
             $(".loading").removeClass("loading");
         </script>
 		<!--arcodion e-->
-		<a style="color:#ffffff" href="#">
 			<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:100px; right:2px; border-top:3px solid grey;">
-			TOP
+			<a href="#" style="color:#ffffff;">TOP</a>
 			</div>
-		</a>
 	</body>
 </html>
