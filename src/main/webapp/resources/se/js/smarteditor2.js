@@ -427,6 +427,8 @@ nhn.FindReplace = jindo.$Class({
 		}
 	}
 });
+
+
 // "padding", "backgroundcolor", "border", "borderTop", "borderRight", "borderBottom", "borderLeft", "color", "textAlign", "fontWeight"
 nhn.husky.SE2M_TableTemplate = [
 	{},
@@ -21160,6 +21162,7 @@ nhn.husky.SE2B_CSSLoader = jindo.$Class({
 		return false;
 	}
 });
+
 //}
 /**
  * @name nhn.husky.SE2B_Customize_ToolBar

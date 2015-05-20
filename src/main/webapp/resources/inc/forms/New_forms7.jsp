@@ -14,7 +14,13 @@
 		    			${forms.contents7}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ사용기한</span></b></p><p><br></p><p><b>1. 사용기한</b></p><p><br></p><p><span style="color: rgb(255, 0, 0);">* 참고 : 유효기한 설정의 근거자료를 이미지로 첨부 하십시오.</span></p>
+			    			<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ사용기한</span></b></p>
+			    			<p><br></p>
+			    			<p><b>1. 사용기한</b></p>
+			    			<div onclick="javaScript:document.getElementById('guide').style.display='none';">
+				    			<p><br></p>
+				    			<p id="guide"><span style="color: rgb(255, 0, 0);">* 참고 : 유효기한 설정의 근거자료를 이미지로 첨부 하십시오.</span></p>
+			    			</div>
 		    		</c:otherwise>
 		    	</c:choose>
 		    	

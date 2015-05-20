@@ -299,6 +299,7 @@ int next =list_seq+1;
 			    oEditors.getById["txtContent"].exec("PASTE_HTML", [sHTML]);
 			};
 			
+			
 			function exit(){
 				localStorage.clear();
 				history.go(-1);
