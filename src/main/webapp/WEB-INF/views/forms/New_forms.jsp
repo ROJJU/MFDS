@@ -293,7 +293,9 @@ int next =list_seq+1;
 			}
 			 
 			var pasteHTML = function(filename){                     //업로드한 사진을 화면에 보여주게 만드는 스크립트입니다.
-			    var sHTML = '<img src="http://sted.kr/resources/upload/'+filename+'">'; //사진이 저장된 경로입니다.
+				var url="('ChangeSize.jsp?filename="+filename+"','sizeChange','width=300 height=500 scrollbars=yes')";
+			    //var sHTML = '<img src="http://sted.kr/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
+			    var sHTML = '<img src="/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
 			    oEditors.getById["txtContent"].exec("PASTE_HTML", [sHTML]);
 			};
 			
