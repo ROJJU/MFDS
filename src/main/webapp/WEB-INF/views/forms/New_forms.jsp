@@ -1,13 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-int list_seq=0;
-if(request.getParameter("list_seq")!=null){
-	list_seq=Integer.parseInt(request.getParameter("list_seq"));
-}
-int back =list_seq-1;
-int next =list_seq+1;
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -301,8 +293,6 @@ int next =list_seq+1;
 								<br>
 								<div>
 									<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
-									<input type="image" src="/resources/img/btn/kr_back_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=back%>')">
-									<input type="image" src="/resources/img/btn/kr_next_btn.png" width="60px;" onclick="goUrl('/NewForms.do?forms_seq=<%=request.getParameter("forms_seq") %>&list_seq=<%=next%>')">
 									<input type="image" src="/resources/img/btn/yetSave_button.png" width="60px;" onclick="onWrite('<%=request.getParameter("list_seq")%>')">
 								    <input type="image" src="/resources/img/btn/list_btn.png" width="60px;" onclick="goUrl('/MyPage.do?page_seq=6')">
 									<input type="image" src="/resources/img/btn/final_button.png" width="71px" onclick="finalSave(${forms.forms_seq})">
@@ -340,7 +330,7 @@ int next =list_seq+1;
 				 oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용합니다.
 				 var boardWriteForm = document.getElementById("boardWriteForm");
 				 //to do -> need change url link
-				 var firstFormUrl ='http://localhost/NewForms.do?forms_seq='+forms_seq+'&list_seq=1&contents_name=1';
+				 var firstFormUrl ='http://192.168.0.31/NewForms.do?forms_seq='+forms_seq+'&list_seq=1&contents_name=1';
 				 if(document.URL==firstFormUrl){
 					boardWriteForm.action ="/FirstFormsProc.do";  //저장할 페이지로 쏩니다.
 				 }else{
@@ -351,9 +341,9 @@ int next =list_seq+1;
 			}
 			 
 			var pasteHTML = function(filename){                     //업로드한 사진을 화면에 보여주게 만드는 스크립트입니다.
-				var url="('ChangeSize.jsp?filename="+filename+"','sizeChange','width=300 height=500 scrollbars=yes')";
+				var url="('ChangeSize.jsp?filename="+filename+"','sizeChange','width=300 height=420 scrollbars=yes')";
 			    //var sHTML = '<img src="http://sted.kr/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
-			    var sHTML = '<img src="/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
+			    var sHTML = '<img src="http://192.168.0.31/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
 			    oEditors.getById["txtContent"].exec("PASTE_HTML", [sHTML]);
 			};
 			

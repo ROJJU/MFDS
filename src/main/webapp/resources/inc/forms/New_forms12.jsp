@@ -24,7 +24,6 @@
 	    				</c:choose>
 		    		</c:otherwise>
 		    	</c:choose>
-		    	
 		    </textarea>
 		  </div>
 	 </form><br><br><br><br>

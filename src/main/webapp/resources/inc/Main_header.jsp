@@ -14,6 +14,7 @@ int backContentsName=contents_name-1;
 int nextContentsName=contents_name+1;
 int back =list_seq-1;
 int next =list_seq+1;
+
 %>
 <%if(session.getAttribute("id1")==null||session.getAttribute("id1").equals("")){%>
 <script>
@@ -160,6 +161,7 @@ location.href="/";
 					</td>
 					<td><input type="image" src="/resources/img/common/Top_home.png" title="메인" width="25px" class="top_icons" onclick="goUrl('/Main.do');"></td>
 					<td>
+						<input type="hidden" value="" id="">
 						<c:choose>
 							<c:when test="${list_seq!=null}">
 								<c:choose>

@@ -149,6 +149,16 @@ if(request.getParameter("list_seq")!=null){
 						<br>
 					</a>
 				</c:when>
+				<c:otherwise>
+					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','9','9')">
+		           		<img src="/resources/img/forms/Delete.png" width="15px;">
+			           	<%if(list_seq.equals("9")){%>
+			           	<img src="/resources/img/forms/modify.gif">
+			           	<%}%>
+						&nbsp;모양 및 구조-특성
+						<br>
+					</a>
+				</c:otherwise>
 			</c:choose>
 			<c:choose>
 				<c:when test="${firstForm.logic_text==''||firstForm.logic_text==null}">
@@ -168,6 +178,16 @@ if(request.getParameter("list_seq")!=null){
 						<br>
 					</a>
 				</c:when>
+				<c:otherwise>
+					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','10','10')">
+		           		<img src="/resources/img/forms/self.png" width="15px;">
+			           	<%if(list_seq.equals("10")){%>
+			           	<img src="/resources/img/forms/modify.gif">
+			           	<%}%>
+						&nbsp;모양 및 구조-작용원리
+						<br>
+					</a>
+				</c:otherwise>
 			</c:choose>
 			<c:choose>
 				<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
@@ -187,6 +207,16 @@ if(request.getParameter("list_seq")!=null){
 						<br>
 					</a>
 				</c:when>
+				<c:otherwise>
+					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','11','11')">
+		           		<img src="/resources/img/forms/self.png" width="15px;">
+			           	<%if(list_seq.equals("11")){%>
+			           	<img src="/resources/img/forms/modify.gif">
+			           	<%}%>
+						&nbsp;모양 및 구조-외형
+						<br>
+					</a>
+				</c:otherwise>
 			</c:choose>
 			<c:choose>
 				<c:when test="${firstForm.size_text==''||firstForm.size_text==null}">
@@ -206,6 +236,16 @@ if(request.getParameter("list_seq")!=null){
 						<br>
 					</a>
 				</c:when>
+				<c:otherwise>
+					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','12','12')">
+		           		<img src="/resources/img/forms/self.png" width="15px;">
+			           	<%if(list_seq.equals("12")){%>
+			           	<img src="/resources/img/forms/modify.gif">
+			           	<%}%>
+						&nbsp;모양 및 구조-치수
+						<br>
+					</a>
+				</c:otherwise>
 			</c:choose>
 			<c:choose>
 				<c:when test="${firstForm.performance_text==''||firstForm.performance_text==null}">
@@ -225,6 +265,16 @@ if(request.getParameter("list_seq")!=null){
 						<br>
 					</a>
 				</c:when>
+				<c:otherwise>
+					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','13','13')">
+		           		<img src="/resources/img/forms/self.png" width="15px;">
+			           	<%if(list_seq.equals("13")){%>
+			           	<img src="/resources/img/forms/modify.gif">
+			           	<%}%>
+						&nbsp;성능
+						<br>
+					</a>
+				</c:otherwise>
 			</c:choose>
            <a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','14','14')">
            		<c:choose>
