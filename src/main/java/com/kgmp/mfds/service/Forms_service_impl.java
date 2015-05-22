@@ -111,6 +111,18 @@ public class Forms_service_impl implements Forms_service{
 		return check;
 	}
 	
+	public String resetContents(Forms forms){
+		String check=null;
+		try{
+			check="yes";
+			forms_dao.resetContents(forms);
+		}catch(Exception e){
+			check="no";
+			e.printStackTrace();
+		}
+		return check;
+	}
+	
 	public String insertFirstForms(int forms_seq){
 		String check=null;
 		try{

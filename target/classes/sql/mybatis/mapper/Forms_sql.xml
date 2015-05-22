@@ -118,4 +118,7 @@
 	<delete id="delFirstForm" parameterType="int">
 		delete from first_form where forms_ref=#{forms_seq}
 	</delete>
+	<update id="resetContents" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set ${contents_name}=#{contents}, ${ck_form}=0 where forms_seq=#{forms_seq}
+	</update>
 </mapper>

@@ -34,4 +34,5 @@ public interface Forms_dao {
 	FirstForm getFirstForm(int forms_seq);
 	void insertFirstContents(FirstForm firstForm);
 	void delFirstForm(int forms_seq);
+	void resetContents(Forms forms);
 }

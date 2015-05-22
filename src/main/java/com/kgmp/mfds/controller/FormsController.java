@@ -125,6 +125,39 @@ public class FormsController {
         return mav;
     }
 	
+	@RequestMapping(value = "/ResetForm.do")
+    public ModelAndView resetForm(Model model,
+	    					   @RequestParam("forms_seq") int forms_seq,
+	    					   @RequestParam(value = "list_seq", required = false, defaultValue = "1") String list_seq,
+	    					   @RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name,
+	    					   @RequestParam("ck_form") String ck_form){
+		 ModelAndView mav = new ModelAndView();
+		 String msg = null;
+		 String url = "/NewForms.do?forms_seq="+forms_seq+"&list_seq="+list_seq+"&contents_name="+contents_name;
+		 try{
+			 Forms forms = new Forms();
+			String finalCheck=null;
+			forms.setForms_seq(forms_seq);
+			forms.setContents(null);
+			forms.setContents_name("contents"+contents_name);
+			forms.setck_form(ck_form);
+			finalCheck=forms_service.resetContents(forms);
+			if(finalCheck.equals("yes")){
+				msg="해당 서식이 초기화 됬습니다.";
+			}else{
+				msg="실패하였습니다.";
+			}
+		 }catch(Exception e){
+			e.printStackTrace();
+		 }
+		 
+			mav.addObject("msg", msg);
+			mav.addObject("url", url);
+			mav.setViewName("/Check_proc");
+		 
+		 return mav;
+	}
+	
 	@RequestMapping(value = "/DelForms.do")
     public ModelAndView delForms(Model model,
 	    					   @RequestParam("forms_seq") int forms_seq,

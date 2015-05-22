@@ -64,7 +64,7 @@
 				<jsp:include page="/resources/inc/Sub_footer.jsp"/>
 			</div>
 		</div>
-		<div class="total_footer" id="total_footer">test</div>
+		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 	</body>
 </html>

@@ -7,7 +7,7 @@
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="1" name="contents_name">
 		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1&contents_name=<%=request.getParameter("contents_name")%>" name="p_url" id="p_url">
-		  	<input type="hidden" value="ck_form1" name="ck_form">
+		  	<input type="hidden" value="ck_form1" name="ck_form" id="ck_form">
 		  	<p><b><span style="font-size: 12pt;">ㅣ 의료기기 기술문서 등 심사의뢰서</span></b></p><br>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="4">▶ 의뢰인</td></tr>

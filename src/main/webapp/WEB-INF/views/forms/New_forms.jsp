@@ -176,7 +176,7 @@
 								<br>
 								<table style="width:962px; margin:0 auto; border:1px solid black; background-color:#102967;" cellpadding="0" cellspacing="1">
 									<tr>
-										<td style="color:#ffffff;" width="230px">
+										<td style="color:#ffffff;" width="210px">
 											<jsp:include page="/resources/inc/forms_tab/forms_tab_under.jsp"/>
 										</td>
 										<td style="color:#ffffff;">
@@ -236,7 +236,10 @@
 											 <input type="hidden" id="ck_form42" value="${forms.ck_form42}">
 											 <input type="hidden" id="ck_form43" value="${forms.ck_form43}">
 										</td>
-										<td style="border:1px solid black; padding:3px; background-color:#EAEAEA; " align="right">
+										<td style="padding-right:8px;">
+											<input type="button" value="초기화" title="서식 초기화 가능" onclick="resetForm('<%=request.getParameter("forms_seq")%>', '<%=request.getParameter("list_seq")%>', '<%=request.getParameter("contents_name")%>');">
+										</td>
+										<td style="border:1px solid black; padding:3px; background-color:#EAEAEA; " align="right" width="510px">
 											<img src="/resources/img/forms/guide_text.gif" width="400px">&nbsp;&nbsp;&nbsp;
 											<input type="image" src="/resources/img/btn/guide.png" width="40px" title="가이드 라인" onclick="guide(<%=request.getParameter("list_seq")%>)"/>
 										</td>
@@ -307,6 +310,12 @@
 		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 		<script type="text/javascript">
+			function resetForm(forms_seq, list_seq, contents_name){
+				var ck_form = document.getElementById("ck_form").value;
+				location.href="/ResetForm.do?forms_seq="+forms_seq+"&list_seq="+list_seq+"&contents_name="+contents_name+"&ck_form="+ck_form;
+			}
+		
+		
 			var oEditors = [];
 			 nhn.husky.EZCreator.createInIFrame({
 			 oAppRef: oEditors,

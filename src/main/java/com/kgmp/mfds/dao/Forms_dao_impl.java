@@ -56,6 +56,10 @@ private SqlSession sqlSession;
 			sqlSession.update("modifyNotice", notice);
 		}
 		
+		public void resetContents(Forms forms){
+			sqlSession.update("resetContents", forms);
+		}	
+		
 		public void insertContents(Forms forms){
 			sqlSession.update("insertContents", forms);
 		}
