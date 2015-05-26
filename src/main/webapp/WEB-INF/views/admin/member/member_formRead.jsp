@@ -74,12 +74,26 @@
 	  }
 	//hwp > form
 	
-		  function HwpIt(forms_seq){
+		  function HwpItPart1(forms_seq){
+		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+		  <%for(int i=1;i<=14;i++){%>
+		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
+		  <%}%>
+		  }
+		 
+		 function HwpItPart2(forms_seq){
 			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-			  <%for(int i=1;i<=39;i++){%>
+			  <%for(int i=15;i<=38;i++){%>
 			  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
 			  <%}%>
-			  }
+		  }
+		 
+		 function HwpItPart3(forms_seq){
+			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+			  <%for(int i=39;i<=43;i++){%>
+			  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
+			  <%}%>
+		  }
 		  
 		  function save_hwp(){
 			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');

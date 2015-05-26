@@ -22,7 +22,9 @@ import com.kgmp.mfds.service.Account_service;
 import com.kgmp.mfds.service.Admin_service;
 import com.kgmp.mfds.service.Forms_service;
 import com.kgmp.mfds.service.Main_service;
+import com.kgmp.mfds.service.Member_service;
 import com.kgmp.mfds.vo.Admin;
+import com.kgmp.mfds.vo.FirstForm;
 import com.kgmp.mfds.vo.Forms;
 import com.kgmp.mfds.vo.Member;
 import com.kgmp.mfds.vo.Notice;
@@ -42,6 +44,9 @@ public class AdminController {
 	
 	@Autowired
 	private Admin_service admin_service;
+	
+	@Autowired
+	private Member_service member_service;
 	
 	@RequestMapping(value = "/AdminLogin.do")
     public String adminLogin(Model model){
@@ -80,7 +85,7 @@ public class AdminController {
 		String check=null;
 		if(page_seq.equals("1")){//select list notice info
 			//send parameter
-			Map<String, Object> pageAll = main_service.getNews(currentPage, "/AdminNews?page_seq=1", search, find);
+			Map<String, Object> pageAll = main_service.getNews(currentPage, "/AdminNews.do?page_seq=1", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
@@ -141,7 +146,7 @@ public class AdminController {
 				}
 		}else if(page_seq.equals("8")){//select list news info
 			//send parameter
-			Map<String, Object> pageAll = main_service.getNotice(currentPage, "/AdminNews?page_seq=8&side_seq=1", search, find);
+			Map<String, Object> pageAll = main_service.getNotice(currentPage, "/AdminNews.do?page_seq=8&side_seq=1", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
@@ -441,7 +446,7 @@ public class AdminController {
 		if(page_seq.equals("11")){
 			mav.setViewName("/admin/payment/payment_view");
 			//send parameter
-			Map<String, Object> pageAll = admin_service.getPayment(currentPage, "/AdminPayment?page_seq=11", search, find);
+			Map<String, Object> pageAll = admin_service.getPayment(currentPage, "/AdminPayment.do?page_seq=11", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
@@ -551,7 +556,7 @@ public class AdminController {
 		if(page_seq.equals("14")){
 			mav.setViewName("/admin/member/member_view");
 			//send parameter
-			Map<String, Object> pageAll = admin_service.getMember(currentPage, "/AdminMember?page_seq=14", search, find);
+			Map<String, Object> pageAll = admin_service.getMember(currentPage, "/AdminMember.do?page_seq=14", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
@@ -628,7 +633,7 @@ public class AdminController {
 		if(page_seq.equals("18")){
 			mav.setViewName("/admin/help/help_view");
 			//send parameter
-			Map<String, Object> pageAll = admin_service.getHelp(currentPage, "/AdminHelp?page_seq=18", search, find);
+			Map<String, Object> pageAll = admin_service.getHelp(currentPage, "/AdminHelp.do?page_seq=18", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
@@ -643,9 +648,26 @@ public class AdminController {
 		}else if(page_seq.equals("20")){
 			Forms forms = null;
 			Forms formInfo = new Forms();
+			FirstForm firstForm = null;
 			formInfo.setForms_seq(forms_seq);
 			formInfo.setContents_name(contents_name);
+			firstForm = forms_service.getFirstForm(forms_seq);
 			forms=admin_service.adminGetForms(formInfo);
+				//setting parameter s
+				Member member= new Member();
+				member.setId1(forms.getId1());
+				member.setId2(forms.getId2());
+				member.setId3(forms.getId3());
+				member.setEmail1(forms.getEmail1());
+				member.setEmail2(forms.getEmail2());
+				//setting parameter e
+				try{
+					Member memberInfo = member_service.selectMember(member);
+					mav.addObject("memberInfo", memberInfo);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			mav.addObject("firstForm", firstForm);
 			mav.addObject("list_seq", list_seq);
 			mav.addObject("forms", forms);
 			mav.setViewName("/admin/help/help_modidfy");
@@ -669,6 +691,223 @@ public class AdminController {
         return mav;
     }
 	
+	@RequestMapping(value = "/FirstFormsAdminProc.do")
+	public ModelAndView insertFirstFormsAdmin(@RequestParam(value="forms_seq", required = false, defaultValue = "") int forms_seq,
+										@RequestParam(value="birthDay", required = false, defaultValue = "") String birthDay,
+										@RequestParam(value="makeCompanyName", required = false, defaultValue = "") String makeCompanyName,
+										@RequestParam(value="makeAddr", required = false, defaultValue = "") String makeAddr,
+										@RequestParam(value="makeCompanyNo", required = false, defaultValue = "") String makeCompanyNo,
+										@RequestParam(value="makeLicenseNo", required = false, defaultValue = "") String makeLicenseNo,
+										@RequestParam(value="makingOrImport", required = false, defaultValue = "") String makingOrImport,
+										@RequestParam(value="divisionOfProduct", required = false, defaultValue = "") String divisionOfProduct,
+										@RequestParam(value="nameOfProduct", required = false, defaultValue = "") String nameOfProduct,
+										@RequestParam(value="checkForBrandName", required = false, defaultValue = "") String checkForBrandName,
+										@RequestParam(value="purpose", required = false, defaultValue = "") String purpose,
+										@RequestParam(value="permission", required = false, defaultValue = "") String permission,
+										@RequestParam(value="requestName", required = false, defaultValue = "") String requestName,
+										@RequestParam(value="country1", required = false, defaultValue = "") String country1,
+										@RequestParam(value="requestPlace", required = false, defaultValue = "") String requestPlace,
+										@RequestParam(value="makingName", required = false, defaultValue = "") String makingName,
+										@RequestParam(value="country2", required = false, defaultValue = "") String country2,
+										@RequestParam(value="makingPlace", required = false, defaultValue = "") String makingPlace,
+										@RequestParam(value="disposableness", required = false, defaultValue = "") String disposableness,
+										@RequestParam(value="chase", required = false, defaultValue = "") String chase,
+										@RequestParam(value="etc", required = false, defaultValue = "") String etc,
+										@RequestParam(value="model", required = false, defaultValue = "") String model,
+										@RequestParam(value="modelFileName", required = false, defaultValue = "") MultipartFile modelFileName,
+										@RequestParam(value="pakingFileNmae", required = false, defaultValue = "") MultipartFile pakingFileNmae,
+										@RequestParam(value="logic_text", required = false, defaultValue = "") String logic_text,
+										@RequestParam(value="shape_text", required = false, defaultValue = "") String shape_text,
+										@RequestParam(value="size_text", required = false, defaultValue = "") String size_text,
+										@RequestParam(value="contents_name", required = false, defaultValue = "") String contents_name,
+										@RequestParam(value="p_url", required = false, defaultValue = "") String p_url,
+										@RequestParam(value="file1_old", required = false, defaultValue = "") String file1_old,
+										@RequestParam(value="file2_old", required = false, defaultValue = "") String file2_old,
+										@RequestParam(value="ck_form", required = false, defaultValue = "") String ck_form,
+										@RequestParam(value="performance_text", required = false, defaultValue = "") String performance_text){
+		//file upload s modelFileName
+		String replaceName1=null;
+		String replaceName2=null;
+		FirstForm firstFormGet = null;
+		String modelFileName_old =null;
+		String pakingFileNmae_old =null;
+		String model_check=null;
+			try{
+				firstFormGet = forms_service.getFirstForm(forms_seq);
+				modelFileName_old=firstFormGet.getModelFileName();
+				pakingFileNmae_old=firstFormGet.getPakingFileNmae();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			try{
+			 MultipartFile file = modelFileName;   //file name.
+			  Calendar cal = Calendar.getInstance();
+			  String fileName = file.getOriginalFilename();
+			  System.out.println("fileNmae:"+fileName);
+			  if(fileName.equals("")||fileName.equals(null)){
+					System.out.println("file null");
+					replaceName1=modelFileName_old;
+				}else{
+				  System.out.println("file not null");
+				  System.out.println(modelFileName_old);
+				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+				  replaceName1 = cal.getTimeInMillis() + fileType;  //change file name
+				  String path = "c:/save/notice";
+				  FileUpload.fileUpload(file, path, replaceName1);
+				  try{
+						//del file s		
+						String fileDir = path+"/"+modelFileName_old;
+						File f = new File(fileDir);
+						if( f.exists()) f.delete();
+						//del file e
+				  }catch(Exception e){
+					  e.printStackTrace();
+				  }
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		//file upload e
+			
+		//file upload s pakingFileNmae
+			try{
+				 MultipartFile file = pakingFileNmae;   //file name.
+				  Calendar cal = Calendar.getInstance();
+				  String fileName = file.getOriginalFilename();
+				  if(fileName.equals("")||fileName.equals(null)){
+						System.out.println("file null");
+						replaceName2=pakingFileNmae_old;
+					}else{
+					  System.out.println("file not null");
+					  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+					  replaceName2 = cal.getTimeInMillis() + fileType;  //change file name
+					  String path ="c:/save/notice";
+					  //String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment";
+					  FileUpload.fileUpload(file, path, replaceName2);
+					  try{
+						//del file s		
+						  String fileDir =path+"/"+pakingFileNmae_old;
+						//String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment/"+pakingFileNmae_old;
+						File f = new File(fileDir);
+						if( f.exists())f.delete();
+						//del file e
+					  }catch(Exception e){
+						  e.printStackTrace();
+					  }
+					}
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+		//file upload e
+		//check for model
+			try{
+				if(replaceName1.equals(file1_old)&&replaceName2.equals(file2_old)){
+					model_check=model;
+				}else{
+					model_check=null;
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		ModelAndView mav = new ModelAndView();
+		String msg=null;
+		String url="/AdminHelp.do?page_seq=20&forms_seq="+forms_seq+"&list_seq=1&contents_name=contents"+contents_name;
+		FirstForm firstForm = new FirstForm();
+		firstForm.setForms_ref(forms_seq);
+		firstForm.setBirthDay(birthDay);
+		firstForm.setChase(chase);
+		firstForm.setCheckForBrandName(checkForBrandName);
+		firstForm.setCountry1(country1);
+		firstForm.setCountry2(country2);
+		firstForm.setDisposableness(disposableness);
+		firstForm.setDivisionOfProduct(divisionOfProduct);
+		firstForm.setEtc(etc);
+		firstForm.setLogic_text(logic_text);
+		firstForm.setMakeAddr(makeAddr);
+		firstForm.setMakeCompanyName(makeCompanyName);
+		firstForm.setMakeCompanyNo(makeCompanyNo);
+		firstForm.setMakeLicenseNo(makeLicenseNo);
+		firstForm.setMakingName(makingName);
+		firstForm.setMakingOrImport(makingOrImport);
+		firstForm.setMakingPlace(makingPlace);
+		firstForm.setModel(model_check);
+		firstForm.setModelFileName(replaceName1);
+		firstForm.setNameOfProduct(nameOfProduct);
+		firstForm.setPakingFileNmae(replaceName2);
+		firstForm.setPermission(permission);
+		firstForm.setPurpose(purpose);
+		firstForm.setRequestName(requestName);
+		firstForm.setRequestPlace(requestPlace);
+		firstForm.setShape_text(shape_text);
+		firstForm.setSize_text(size_text);
+		firstForm.setPerformance_text(performance_text);
+		String check=null;
+		try{
+			check=forms_service.insertFirstContents(firstForm);
+			if(check.equals("yes")){
+				Forms forms = new Forms();
+				String finalCheck=null;
+				forms.setForms_seq(forms_seq);
+				forms.setContents(null);
+				forms.setContents_name("contents"+contents_name);
+				forms.setck_form(ck_form);
+					if(firstForm.getLogic_text().equals(null)||firstForm.getLogic_text().equals("")){
+						Forms formsForReset = new Forms();
+						formsForReset.setForms_seq(forms_seq);
+						formsForReset.setContents(null);
+						formsForReset.setContents_name("contents10");
+						formsForReset.setck_form("ck_form10");
+						formsForReset.setList_seq("2");
+						forms_service.resetContents(formsForReset);
+					}
+					if(firstForm.getShape_text().equals(null)||firstForm.getShape_text().equals("")){
+						Forms formsForReset2 = new Forms();
+						formsForReset2.setForms_seq(forms_seq);
+						formsForReset2.setContents(null);
+						formsForReset2.setContents_name("contents11");
+						formsForReset2.setck_form("ck_form11");
+						formsForReset2.setList_seq("2");
+						forms_service.resetContents(formsForReset2);
+					}
+					if(firstForm.getSize_text().equals(null)||firstForm.getSize_text().equals("")){
+						Forms formsForReset3 = new Forms();
+						formsForReset3.setForms_seq(forms_seq);
+						formsForReset3.setContents(null);
+						formsForReset3.setContents_name("contents12");
+						formsForReset3.setck_form("ck_form12");
+						formsForReset3.setList_seq("2");
+						forms_service.resetContents(formsForReset3);
+					}
+					if(firstForm.getPerformance_text().equals(null)||firstForm.getPerformance_text().equals("")){
+						Forms formsForReset4 = new Forms();
+						formsForReset4.setForms_seq(forms_seq);
+						formsForReset4.setContents(null);
+						formsForReset4.setContents_name("contents13");
+						formsForReset4.setck_form("ck_form13");
+						formsForReset4.setList_seq("2");
+						forms_service.resetContents(formsForReset4);
+					}
+				finalCheck=forms_service.insertContents(forms);
+				System.out.println(forms.getContents_name());
+				if(finalCheck.equals("yes")){
+					msg="임시저장 완료하였습니다.";
+				}else{
+					msg="실패하였습니다.";
+				}
+			}else{
+				msg="실패하였습니다.";
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("msg", msg);
+		mav.addObject("url", url);
+		mav.setViewName("/Check_proc");
+		return mav;
+	}
+	
+	
 	@RequestMapping(value = "/FormsAdminProc.do")
 	public ModelAndView insertForms(@RequestParam("forms_seq") int forms_seq,
 									@RequestParam("list_seq") int list_seq,
@@ -678,11 +917,11 @@ public class AdminController {
 									@RequestParam("ck_form") String ck_form){
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
-		String url="/AdminHelp.do?page_seq=20&forms_seq="+forms_seq+"&list_seq="+list_seq;
+		String url="/AdminHelp.do?page_seq=20&forms_seq="+forms_seq+"&list_seq="+list_seq+"&contents_name=contents"+contents_name;
 		Forms forms = new Forms();
 		forms.setForms_seq(forms_seq);
 		forms.setContents(contents);
-		forms.setContents_name(contents_name);
+		forms.setContents_name("contents"+contents_name);
 		forms.setck_form(ck_form);
 		String check=null;
 		try{

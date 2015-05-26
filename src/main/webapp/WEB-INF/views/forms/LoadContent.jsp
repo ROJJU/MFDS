@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%if(request.getParameter("num").equals("1")){ %>
 <input type="hidden" value="1.Applications" id="title" name="title">
-<c:if test="${forms.contents1==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
 	<div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
@@ -512,6 +511,11 @@ ${forms.contents35}
 ${forms.contents36}
 ${forms.contents37}
 ${forms.contents38}
+${forms.contents39}
+${forms.contents40}
+${forms.contents41}
+${forms.contents42}
+${forms.contents43}
 <%}else{%>
 ${forms.contents1}
 <%}%>
