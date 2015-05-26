@@ -137,13 +137,20 @@ public class Forms {
 	private String ck_form41;
 	private String ck_form42;
 	private String ck_form43;
+	private String list_seq;
 //country part s
 	private int country_seq;
 	private String country;
 //country end
 	
 	
-	
+
+	public String getList_seq() {
+		return list_seq;
+	}
+	public void setList_seq(String list_seq) {
+		this.list_seq = list_seq;
+	}
 	public String getck_form() {
 		return ck_form;
 	}

@@ -58,7 +58,7 @@
 		update forms set mix=#{mix} where forms_seq=#{forms_seq}
 	</update>
 	<update id="update_power" parameterType="com.kgmp.mfds.vo.Forms">
-		update forms set power=#{power} where forms_seq=#{forms_seq}
+		update forms set power=#{power}, contents9=null, ck_form9=null where forms_seq=#{forms_seq}
 	</update>
 	<update id="updateContent1" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set contents1=null, ck_form1=null where forms_seq=#{forms_seq}
@@ -75,6 +75,9 @@
 	<select id="getCountry" parameterType="String" resultType="com.kgmp.mfds.vo.Forms">
 		select * from country where country LIKE CONCAT('%', #{country}, '%')
 	</select>
+	<update id="resetContents" parameterType="com.kgmp.mfds.vo.Forms">
+		update forms set ${contents_name}=#{contents}, ${ck_form}=null where forms_seq=#{forms_seq}
+	</update>
 <!--first form-->
 	<select id="getFirstForm" parameterType="int" resultType="com.kgmp.mfds.vo.FirstForm">
 		select * from first_form where forms_ref=#{forms_seq}
@@ -118,7 +121,37 @@
 	<delete id="delFirstForm" parameterType="int">
 		delete from first_form where forms_ref=#{forms_seq}
 	</delete>
-	<update id="resetContents" parameterType="com.kgmp.mfds.vo.Forms">
-		update forms set ${contents_name}=#{contents}, ${ck_form}=0 where forms_seq=#{forms_seq}
+	<update id="resetFirstContents" parameterType="com.kgmp.mfds.vo.Forms">
+		update first_form
+		set
+			birthDay = null,
+			makeCompanyName=null,
+			makeAddr=null,
+			makeCompanyNo =null,
+			makeLicenseNo =null,
+			makingOrImport =null,
+			divisionOfProduct =null,
+			nameOfProduct =null,
+			checkForBrandName =null,
+			purpose =null,
+			permission=null,
+			requestName=null,
+			country1=null,
+			requestPlace=null,
+			makingName=null,
+			country2=null,
+			makingPlace=null,
+			disposableness=null,
+			chase=null,
+			etc=null,
+			model=null,
+			modelFileName=null,
+			pakingFileNmae=null,
+			logic_text=null,
+			shape_text=null,
+			size_text=null,
+			performance_text=null
+		where
+			 forms_ref=#{forms_seq}
 	</update>
 </mapper>

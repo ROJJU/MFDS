@@ -114,8 +114,13 @@ public class Forms_service_impl implements Forms_service{
 	public String resetContents(Forms forms){
 		String check=null;
 		try{
+			if(forms.getList_seq().equals("1")){
+				forms_dao.resetContents(forms);
+				forms_dao.resetFirstContents(forms);
+			}else{
+				forms_dao.resetContents(forms);
+			}
 			check="yes";
-			forms_dao.resetContents(forms);
 		}catch(Exception e){
 			check="no";
 			e.printStackTrace();

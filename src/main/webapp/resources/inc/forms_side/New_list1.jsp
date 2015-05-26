@@ -180,7 +180,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 				<c:otherwise>
 					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','10','10')">
-		           		<img src="/resources/img/forms/self.png" width="15px;">
+		           		<img src="/resources/img/forms/self.png">
 			           	<%if(list_seq.equals("10")){%>
 			           	<img src="/resources/img/forms/modify.gif">
 			           	<%}%>
@@ -209,7 +209,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 				<c:otherwise>
 					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','11','11')">
-		           		<img src="/resources/img/forms/self.png" width="15px;">
+		           		<img src="/resources/img/forms/self.png">
 			           	<%if(list_seq.equals("11")){%>
 			           	<img src="/resources/img/forms/modify.gif">
 			           	<%}%>
@@ -238,7 +238,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 				<c:otherwise>
 					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','12','12')">
-		           		<img src="/resources/img/forms/self.png" width="15px;">
+		           		<img src="/resources/img/forms/self.png">
 			           	<%if(list_seq.equals("12")){%>
 			           	<img src="/resources/img/forms/modify.gif">
 			           	<%}%>
@@ -267,7 +267,7 @@ if(request.getParameter("list_seq")!=null){
 				</c:when>
 				<c:otherwise>
 					<a onclick="loadAndSave('<%=request.getParameter("forms_seq")%>','13','13')">
-		           		<img src="/resources/img/forms/self.png" width="15px;">
+		           		<img src="/resources/img/forms/self.png">
 			           	<%if(list_seq.equals("13")){%>
 			           	<img src="/resources/img/forms/modify.gif">
 			           	<%}%>

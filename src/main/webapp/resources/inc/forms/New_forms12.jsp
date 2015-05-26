@@ -9,21 +9,21 @@
 		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=12&contents_name=<%=request.getParameter("contents_name")%>" name="url" id="p_url">
 		  	<input type="hidden" value="ck_form12" name="ck_form" id="ck_form">
 		    <textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
-		    	<c:choose>
-		    		<c:when test="${forms.contents12!=null}">
-		    			${forms.contents12}
-		    		</c:when>
-		    		<c:otherwise>
-		    			<c:choose>
-		    				<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
-		    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ모양 및 구조_치수</span></b></p><p><br></p>
-		    				</c:when>
-		    				<c:otherwise>
-		    					<h1>해당사항 없음</h1>
-		    				</c:otherwise>
-	    				</c:choose>
-		    		</c:otherwise>
-		    	</c:choose>
+	    			<c:choose>
+	    				<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
+	    					<c:choose>
+					    		<c:when test="${forms.contents12!=null}">
+					    			${forms.contents12}
+					    		</c:when>
+					    		<c:otherwise>
+			    					<p><b style="line-height: 1.5;"><span style="font-size: 12pt;">ㅣ모양 및 구조_치수</span></b></p><p><br></p>
+					    		</c:otherwise>
+					    	</c:choose>
+	    				</c:when>
+	    				<c:otherwise>
+	    					<h1>해당사항 없음</h1>
+	    				</c:otherwise>
+    				</c:choose>
 		    </textarea>
 		  </div>
 	 </form><br><br><br><br>

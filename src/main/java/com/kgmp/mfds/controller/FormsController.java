@@ -137,6 +137,7 @@ public class FormsController {
 		 try{
 			 Forms forms = new Forms();
 			String finalCheck=null;
+			forms.setList_seq(list_seq);
 			forms.setForms_seq(forms_seq);
 			forms.setContents(null);
 			forms.setContents_name("contents"+contents_name);
@@ -386,15 +387,20 @@ public class FormsController {
 					replaceName1=modelFileName_old;
 				}else{
 				  System.out.println("file not null");
+				  System.out.println(modelFileName_old);
 				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 				  replaceName1 = cal.getTimeInMillis() + fileType;  //change file name
 				  String path = "c:/save/notice";
 				  FileUpload.fileUpload(file, path, replaceName1);
-				//del file s		
-					String fileDir = "c:/save/notice/"+modelFileName_old;
-					File f = new File(fileDir);
-					if( f.exists()) f.delete();
-				//del file e
+				  try{
+						//del file s		
+						String fileDir = path+"/"+modelFileName_old;
+						File f = new File(fileDir);
+						if( f.exists()) f.delete();
+						//del file e
+				  }catch(Exception e){
+					  e.printStackTrace();
+				  }
 				}
 			}catch(Exception e){
 				e.printStackTrace();
@@ -416,12 +422,16 @@ public class FormsController {
 					  String path ="c:/save/notice";
 					  //String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment";
 					  FileUpload.fileUpload(file, path, replaceName2);
-					//del file s		
-					  String fileDir ="c:/save/notice"+pakingFileNmae_old;
+					  try{
+						//del file s		
+						  String fileDir =path+"/"+pakingFileNmae_old;
 						//String fileDir = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment/"+pakingFileNmae_old;
 						File f = new File(fileDir);
-						if( f.exists()) f.delete();
-					//del file e
+						if( f.exists())f.delete();
+						//del file e
+					  }catch(Exception e){
+						  e.printStackTrace();
+					  }
 					}
 				}catch(Exception e){
 					e.printStackTrace();
@@ -476,10 +486,47 @@ public class FormsController {
 				Forms forms = new Forms();
 				String finalCheck=null;
 				forms.setForms_seq(forms_seq);
-				forms.setContents("-");
+				forms.setContents(null);
 				forms.setContents_name("contents"+contents_name);
 				forms.setck_form(ck_form);
+					if(firstForm.getLogic_text().equals(null)||firstForm.getLogic_text().equals("")){
+						Forms formsForReset = new Forms();
+						formsForReset.setForms_seq(forms_seq);
+						formsForReset.setContents(null);
+						formsForReset.setContents_name("contents10");
+						formsForReset.setck_form("ck_form10");
+						formsForReset.setList_seq("2");
+						forms_service.resetContents(formsForReset);
+					}
+					if(firstForm.getShape_text().equals(null)||firstForm.getShape_text().equals("")){
+						Forms formsForReset2 = new Forms();
+						formsForReset2.setForms_seq(forms_seq);
+						formsForReset2.setContents(null);
+						formsForReset2.setContents_name("contents11");
+						formsForReset2.setck_form("ck_form11");
+						formsForReset2.setList_seq("2");
+						forms_service.resetContents(formsForReset2);
+					}
+					if(firstForm.getSize_text().equals(null)||firstForm.getSize_text().equals("")){
+						Forms formsForReset3 = new Forms();
+						formsForReset3.setForms_seq(forms_seq);
+						formsForReset3.setContents(null);
+						formsForReset3.setContents_name("contents12");
+						formsForReset3.setck_form("ck_form12");
+						formsForReset3.setList_seq("2");
+						forms_service.resetContents(formsForReset3);
+					}
+					if(firstForm.getPerformance_text().equals(null)||firstForm.getPerformance_text().equals("")){
+						Forms formsForReset4 = new Forms();
+						formsForReset4.setForms_seq(forms_seq);
+						formsForReset4.setContents(null);
+						formsForReset4.setContents_name("contents13");
+						formsForReset4.setck_form("ck_form13");
+						formsForReset4.setList_seq("2");
+						forms_service.resetContents(formsForReset4);
+					}
 				finalCheck=forms_service.insertContents(forms);
+				System.out.println(forms.getContents_name());
 				if(finalCheck.equals("yes")){
 					msg="임시저장 완료하였습니다.";
 				}else{

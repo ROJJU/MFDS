@@ -58,7 +58,11 @@ private SqlSession sqlSession;
 		
 		public void resetContents(Forms forms){
 			sqlSession.update("resetContents", forms);
-		}	
+		}
+		
+		public void resetFirstContents(Forms forms){
+			sqlSession.update("resetFirstContents", forms);
+		}
 		
 		public void insertContents(Forms forms){
 			sqlSession.update("insertContents", forms);

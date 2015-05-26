@@ -90,9 +90,7 @@
 	  }
 	  
 	  function mixCheck(forms_seq, mix, list_seq, contents_name){
-		  if(confirm('1번 신청서 양식이 초기화 됩니다. 진행 하시겠습니까 ? 진행하시기 전에 1번 신청서 양식을 복사 하시기 바랍니다.')){
-			  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix+'&list_seq='+list_seq+'&contents_name='+contents_name;
-		  }
+		  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix+'&list_seq='+list_seq+'&contents_name='+contents_name;
 	  }
 	</script>
 	<style type="text/css">

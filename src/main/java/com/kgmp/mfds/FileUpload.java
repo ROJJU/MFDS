@@ -15,6 +15,7 @@ public static void fileUpload(MultipartFile fileData, String path, String fileNa
   String originalFileName = fileData.getOriginalFilename();
   String contentType = fileData.getContentType();
   long fileSize = fileData.getSize();
+/*
   System.out.println("file Info");
   System.out.println("fileName " + fileName);
   System.out.println("originalFileName :" + originalFileName);
@@ -22,6 +23,7 @@ public static void fileUpload(MultipartFile fileData, String path, String fileNa
   System.out.println("fileSize :" + fileSize);
   System.out.println("path :" + path);
   System.out.println("fileData :" + fileSize);
+*/
   InputStream is = null;
   OutputStream out = null;
   try {

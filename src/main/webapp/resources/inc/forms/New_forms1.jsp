@@ -3,7 +3,7 @@
 <div style="width:900px; margin:0 auto; text-align:left; border:1px solid black; padding:30px;">
 	<form id="boardWriteForm" method="post" name="firstForm" enctype="multipart/form-data">
 		  <div class="contentDiv">
-		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
+		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq" id="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="1" name="contents_name">
 		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=1&contents_name=<%=request.getParameter("contents_name")%>" name="p_url" id="p_url">
@@ -260,12 +260,14 @@
 		  			<td class="first_td"><input type="text" style="width:98%;" placeholder="비고(신청근거)" name="etc" value="${firstForm.etc}"></td>
 	  			</tr>
 		  	</table><br>
-		  	<table class="first_form">
-		  		<tr><td class="first_title" >▶ 조합의료기기</td></tr>
-		  		<tr>
-		  			<td class="first_td" style="height:30px;"><input type="text" style="width:98%;" placeholder="품목명, 분류번호, 등급" name="mix" value="${firstForm.etc}"></td>
-	  			</tr>
-		  	</table><br>
+		  	<c:if test="${forms.mix=='1'}">
+		  		<table class="first_form">
+			  		<tr><td class="first_title" >▶ 조합의료기기</td></tr>
+			  		<tr>
+			  			<td class="first_td" style="height:30px;"><input type="text" style="width:98%;" placeholder="품목명, 분류번호, 등급" name="mix" value="${firstForm.etc}"></td>
+		  			</tr>
+			  	</table><br>
+		  	</c:if>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" >▶ 모델명/포장단위</td></tr>
 		  	</table>
@@ -466,7 +468,7 @@
 		  	</table>
 		  	<ul style="color:red;">
 		  		<li>기본 설정으로 별첨이 추가되어 있으며, 직접입력을 원하시는 경우 직접입력 버튼을 클릭하여 생기는 란에 기재하여 주시기 바랍니다. 다시 별첨을 첨부하시고 싶으실 경우 오른쪽 x 버튼을 클릭 하여 주시기 바랍니다.</li>
-		  		<li>별첨 작성 중 직접입력을 누르시더라도 임시저장을 하셨다면 작성하였던 별첨을 그대로 열람 하실 수 있습니다.</li>
+		  		<li>별첨 작성 중 직접입력을 누르시면 기존에 작성 되어 있던 별첨 내용은 모두 삭제 됩니다.</li>
 		  	</ul><br>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 담당자</td></tr>
@@ -479,6 +481,8 @@
 	 </form>
 </div>
 <script>
+	 var forms_seq = document.getElementById("forms_seq").value;
+
 	function logic_function1(){
 		$("#logic_text").css("display","block");
 		$("#logic_tool").css("display", "none");
