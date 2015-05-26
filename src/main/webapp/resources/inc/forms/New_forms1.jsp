@@ -213,7 +213,7 @@
 		  			<td class="first_th" >[일회용의료기기 여부]</td>
 		  			<td class="first_td" >
 		  				<c:choose>
-		  					<c:when test="${firstForm.makingName==1}">
+		  					<c:when test="${firstForm.disposableness==1}">
 		  						<input type="radio" name="disposableness" value="1" checked>
 		  					</c:when>
 		  					<c:otherwise>
@@ -222,7 +222,7 @@
 		  				</c:choose>
 		  				&nbsp; 예
 		  				<c:choose>
-		  					<c:when test="${firstForm.makingName==2}">
+		  					<c:when test="${firstForm.disposableness==2}">
 		  						<input type="radio" name="disposableness" value="2" checked>
 		  					</c:when>
 		  					<c:otherwise>

@@ -479,6 +479,7 @@ public class FormsController {
 		firstForm.setShape_text(shape_text);
 		firstForm.setSize_text(size_text);
 		firstForm.setPerformance_text(performance_text);
+		System.out.println("makingName:"+makingName);
 		String check=null;
 		try{
 			check=forms_service.insertFirstContents(firstForm);
@@ -526,7 +527,6 @@ public class FormsController {
 						forms_service.resetContents(formsForReset4);
 					}
 				finalCheck=forms_service.insertContents(forms);
-				System.out.println(forms.getContents_name());
 				if(finalCheck.equals("yes")){
 					msg="임시저장 완료하였습니다.";
 				}else{
@@ -626,7 +626,7 @@ public class FormsController {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		//send e-mail s
+		//send payment check e-mail s
 		try{
 			MimeMessage message = mailSender.createMimeMessage();
 			 String test1="K-GMP@K-GMP.com";
