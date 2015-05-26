@@ -271,6 +271,16 @@ public class Forms_service_impl implements Forms_service{
 		return forms;
 	}
 	
+	public Forms getForms(Forms formsInfo){
+		Forms forms=null;
+		try{
+			forms=forms_dao.getForms(formsInfo);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return forms;
+	}
+	
 	public String update_mix(Forms forms){
 		String check=null;
 		try{

@@ -4,7 +4,7 @@
 <body>
 <c:choose>
 	<c:when test="${list_seq==null}">
-		 | <input type="image" src="/resources/img/btn/saveHWP_button.png" onClick="javaScript:save_hwp()" width="70px">
+		 | <input type="image" src="/resources/img/btn/saveHWP_button.png" onClick="javaScript:save_hwp('<%=request.getParameter("list_seq")%>')" width="70px">
 		 <c:choose>
 				<c:when test="${forms.help_state==3||forms.help_state==1}">
 					| <input type="image" src="/resources/img/btn/top_modify.png" onclick="javaScript:alert('보완 신청 진행 중 에는 수정할 수 없습니다.')" width="39px">

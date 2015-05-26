@@ -96,6 +96,10 @@ private SqlSession sqlSession;
 			return (Forms) sqlSession.selectOne("getFormsRead", formsInfo);
 		}
 		
+		public Forms getForms(Forms formsInfo){
+			return (Forms) sqlSession.selectOne("getForms", formsInfo);
+		}
+		
 		public void updateHelpState(Forms forms){
 			sqlSession.update("updateHelpState", forms);
 		}

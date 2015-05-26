@@ -655,6 +655,8 @@ public class FormsController {
 									@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name,
 									HttpSession session){
 		ModelAndView mav = new ModelAndView();
+		StringBuffer modelFileName = null;
+		StringBuffer pakingFileNmae = null;
 		Forms forms = null;
 		Forms formsInfo = new Forms();
 		FirstForm firstForm = null;
@@ -677,9 +679,56 @@ public class FormsController {
 		try{
 			forms=forms_service.getFormsRead(formsInfo);
 			firstForm = forms_service.getFirstForm(forms_seq);
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "c:/save/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "c:/save/notice");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		mav.addObject("pakingFileNmae", pakingFileNmae.toString());
+		mav.addObject("modelFileName", modelFileName.toString());
+		mav.addObject("firstForm", firstForm);
+		mav.addObject("forms", forms);
+		mav.setViewName("/forms/LoadContent");
+	    return mav;
+	}
+	
+	@RequestMapping(value = "/LoadAllContent.do")
+	public ModelAndView loadAllContent(@RequestParam("forms_seq") int forms_seq,
+									@RequestParam("num") int num,
+									@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name,
+									HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		StringBuffer modelFileName = null;
+		StringBuffer pakingFileNmae = null;
+		Forms forms = null;
+		Forms formsInfo = new Forms();
+		FirstForm firstForm = null;
+		formsInfo.setContents_name(contents_name);
+		formsInfo.setForms_seq(forms_seq);
+		//setting parameter s
+		Member member= new Member();
+		member.setId1((String)session.getAttribute("id1"));
+		member.setId2((String)session.getAttribute("id2"));
+		member.setId3((String)session.getAttribute("id3"));
+		member.setEmail1((String)session.getAttribute("email1"));
+		member.setEmail2((String)session.getAttribute("email2"));
+		//setting parameter e
+		try{
+			Member memberInfo = member_service.selectMember(member);
+			mav.addObject("memberInfo", memberInfo);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		try{
+			forms=forms_service.getForms(formsInfo);
+			firstForm = forms_service.getFirstForm(forms_seq);
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "c:/save/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "c:/save/notice");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("pakingFileNmae", pakingFileNmae.toString());
+		mav.addObject("modelFileName", modelFileName.toString());
 		mav.addObject("firstForm", firstForm);
 		mav.addObject("forms", forms);
 		mav.setViewName("/forms/LoadContent");

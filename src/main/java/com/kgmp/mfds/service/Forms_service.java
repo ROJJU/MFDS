@@ -31,4 +31,5 @@ public interface Forms_service {
 	StringBuffer inseretTxt(String replaceName1, String path);
 	String delFirstForm(int forms_seq);
 	String resetContents(Forms forms);
+	Forms getForms(Forms formsInfo);
 }

@@ -181,7 +181,7 @@ location.href="/";
 					<td>
 						<c:choose>
 							<c:when test="${forms.state==2}">
-								<input type="image" src="/resources/img/common/all_icon.png" title="모두 선택" width="25px" class="top_icons" onclick="requestHello('40')">
+								<input type="image" src="/resources/img/common/all_icon.png" title="모두 선택" width="25px" class="top_icons" onclick="requestHello('44')">
 							</c:when>
 							<c:otherwise>
 								<input type="image" src="/resources/img/common/all_icon_x.png" title="모두 선택" width="25px" class="top_icons" onclick="formsCoution2()">
