@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<input type="hidden" value="<%=request.getParameter("num")%>" id="num">
 <%if(request.getParameter("num").equals("1")){ %>
 <input type="hidden" value="1.Applications" id="title" name="title">
 	<div class="contentDiv">
