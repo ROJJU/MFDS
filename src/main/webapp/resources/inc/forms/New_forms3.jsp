@@ -14,7 +14,7 @@
 		    			${forms.contents3}
 		    		</c:when>
 		    		<c:otherwise>
-			    		<div onclick="javaScript:document.getElementById('guide').style.display='none';">
+			    		<div onclick="javaScript:document.getElementById('guide').innerHTML='';">
 			    			<p><b><span style="font-size: 12pt;">ㅣ 제조방법</span></b></p>
 			    			<p>&nbsp;</p>
 			    			<p><span style="font-size: 10pt;"><b>제조원의 제조방법에 따른다.</b></span></p>

@@ -14,7 +14,7 @@
 		    			${forms.contents4}
 		    		</c:when>
 		    		<c:otherwise>
-		    			<div onclick="javaScript:document.getElementById('guide').style.display='none';">
+		    			<div onclick="javaScript:document.getElementById('guide').innerHTML='';">
 		    				<p><span style="font-size: 12pt;"><b>ㅣ 사용방법</b></span></p>
 		    				<p>&nbsp;</p>
 		    				<p id="guide"><span style="color: rgb(58, 50, 195); font-size: 10pt;"><i>사용법은 다음과 같이 구분하여 작성하며 필요시, 그림등을 포함하여 자세하게 작성</i></span></p>
@@ -23,7 +23,7 @@
 		    				<p><br></p>
 		    				<p><br></p>
 		    				<p><br></p>
-		    				<div onclick="javaScript:document.getElementById('guide1').style.display='none';">
+		    				<div onclick="javaScript:document.getElementById('guide1').innerHTML='';">
 			    				<p><span style="font-size: 10pt;"><b>2. 조작순서 및 사용방법</b></span></p>
 			    				<p id="guide1"><span style="color: rgb(255, 0, 0);">각각의 기능에 대하여 구분하여 자세하게 작성</span></p>
 			    				<p><br></p>
