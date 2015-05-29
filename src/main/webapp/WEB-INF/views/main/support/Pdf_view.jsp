@@ -6,7 +6,7 @@
 <title>PDF_View</title>
 </head>
 <body marginwidth="0" marginheight="0" style="background-color: rgb(38,38,38); height:100%;" naver_screen_capture_injected="true">
-	<embed width="100%" height="100%" name="plugin" src="/resources/inc/pdf/Paper.pdf" type="application/pdf">
+	<embed width="100%" height="100%" name="plugin" src="/resources/inc/pdf/<%=request.getParameter("pdf") %>" type="application/pdf">
 	<script type="text/javascript" charset="utf-8" src="chrome-extension://eobejphpabbjeehffmbiecckpkggpbai/js/content-script/page_context.js"></script>
 </body>
 	<div style="position:fixed; bottom:2px; left:2px; padding:5px; cursor:hand; cursor:pointer;" onclick="javaScript:history.go(-1)">

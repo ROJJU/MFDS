@@ -39,25 +39,25 @@
 													<div style="text-align:left; position:relative; margin:0 auto; width:600px; padding-left:380px; top:132px; height:220px;">
 														<table style="float:left; margin-right:40px;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-join.jpg" width="150px;"></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/05.jpg" width="150px;"></td>
 																<td style="vertical-align:top; padding-left:5px;"><b>제1부</b><br><b style="color:grey;">회원가입</b></td>
 															</tr>
 															<tr>
 																<td style="vertical-align:bottom; padding-left:5px;">
-																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="goUrl('/Support.do?page_seq=3')">
-																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="goUrl('/Support.do?page_seq=4')">
+																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="showPDF('Member.pdf', '3')">
+																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="showPDF('Member.pdf', '4')">
 																</td>
 															</tr>
 														</table>
 														<table style="float:left;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-form.jpg" width="150px;"></td>
-																<td style="vertical-align:top; padding-left:5px;"><b>제2부</b><br><b style="color:grey;">양식작성</b></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/03.jpg" width="150px;"></td>
+																<td style="vertical-align:top; padding-left:5px;"><b>제2부</b><br><b style="color:grey;">메인페이지</b></td>
 															</tr>
 															<tr>
 																<td style="vertical-align:bottom; padding-left:5px;">
-																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="goUrl('/Support.do?page_seq=3')">
-																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="goUrl('/Support.do?page_seq=4')">
+																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="showPDF('Main.pdf', '3')">
+																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="showPDF('Main.pdf', '4')">
 																</td>
 															</tr>
 														</table>
@@ -65,37 +65,37 @@
 													<div style="text-align:left; position:relative; margin:0 auto; width:900px; padding-left:80px; top:159px; height:220px;">
 														<table style="float:left; margin-right:40px;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-mypage.jpg" width="150px;"></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/02.jpg" width="150px;"></td>
 																<td style="vertical-align:top; padding-left:5px;"><b>제3부</b><br><b style="color:grey;">마이페이지</b></td>
 															</tr>
 															<tr>
 																<td style="vertical-align:bottom; padding-left:5px;">
-																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="goUrl('/Support.do?page_seq=3')">
-																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="goUrl('/Support.do?page_seq=4')">
+																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="showPDF('My.pdf', '3')">
+																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="showPDF('My.pdf', '4')">
 																</td>
 															</tr>
 														</table>
 														<table style="float:left; margin-right:40px;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-form.jpg" width="150px;"></td>
-																<td style="vertical-align:top; padding-left:5px;"><b>제1부</b><br><b style="color:grey;">사용 시작</b></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/01.jpg" width="150px;"></td>
+																<td style="vertical-align:top; padding-left:5px;"><b>제4부</b><br><b style="color:grey;">결제</b></td>
 															</tr>
 															<tr>
 																<td style="vertical-align:bottom; padding-left:5px;">
-																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="goUrl('/Support.do?page_seq=3')">
-																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="goUrl('/Support.do?page_seq=4')">
+																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="showPDF('Payment.pdf', '3')">
+																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="showPDF('Payment.pdf', '4')">
 																</td>
 															</tr>
 														</table>
 														<table style="float:left;">
 															<tr>
-																<td rowspan="2"><img src="/resources/img/main/guide/User Manual-form.jpg" width="150px;"></td>
-																<td style="vertical-align:top; padding-left:5px;"><b>제1부</b><br><b style="color:grey;">사용 시작</b></td>
+																<td rowspan="2"><img src="/resources/img/main/guide/04.jpg" width="150px;"></td>
+																<td style="vertical-align:top; padding-left:5px;"><b>제5부</b><br><b style="color:grey;">서식작성</b></td>
 															</tr>
 															<tr>
 																<td style="vertical-align:bottom; padding-left:5px;">
-																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="goUrl('/Support.do?page_seq=3')">
-																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="goUrl('/Support.do?page_seq=4')">
+																	<input type="image" src="/resources/img/main/PDF_button.png" width="45px;" onclick="showPDF('Form.pdf', '3')">
+																	<input type="image" src="/resources/img/main/EBOOK_button.png" width="50px;" onclick="showPDF('Form.pdf', '4')">
 																</td>
 															</tr>
 														</table>
@@ -154,5 +154,10 @@
 		</div>
 		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
+		<script type="text/javascript">
+			function showPDF(PDF, page){
+				location.href="/Support.do?page_seq="+page+"&pdf="+PDF;
+			}
+		</script>
 	</body>
 </html>

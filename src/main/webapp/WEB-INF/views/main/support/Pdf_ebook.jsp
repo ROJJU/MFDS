@@ -18,15 +18,16 @@
     <link type="text/css" rel="stylesheet" href="chrome-extension://eobejphpabbjeehffmbiecckpkggpbai/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://eobejphpabbjeehffmbiecckpkggpbai/js/content-script/page_context.js"></script><style id="PDFJS_FONT_STYLE_TAG"></style>
     </head>
     <body >
+    	<input type="hidden" value="<%=request.getParameter("pdf")%>" id="pdf">
         <div id="documentViewer" class="flexpaper_viewer" style="position:absolute; width:100%;height:100%"></div>
         <script type="text/javascript">
-
+			var pdf = document.getElementById("pdf").value;
             var startDocument = "Paper";
 
             $('#documentViewer').FlexPaperViewer(
                    { config : {
 
-                     PDFFile : '/resources/inc/pdf/Paper.pdf',
+                     PDFFile : '/resources/inc/pdf/'+pdf,
 
                      Scale : 0.6,
                      ZoomTransition : 'easeOut',
@@ -53,7 +54,6 @@
                    }}
             );
         </script>
-        
     <div style="position:fixed; bottom:2px; left:2px; padding:5px; cursor:hand; cursor:pointer;" onclick="javaScript:history.go(-1)">
     	<img src="/resources/img/btn/go_back.png">	
 	</div>
