@@ -490,6 +490,7 @@ public class FormsController {
 				forms.setContents(null);
 				forms.setContents_name("contents"+contents_name);
 				forms.setck_form(ck_form);
+				/*
 					if(firstForm.getLogic_text().equals(null)||firstForm.getLogic_text().equals("")){
 						Forms formsForReset = new Forms();
 						formsForReset.setForms_seq(forms_seq);
@@ -526,6 +527,7 @@ public class FormsController {
 						formsForReset4.setList_seq("2");
 						forms_service.resetContents(formsForReset4);
 					}
+				*/
 				finalCheck=forms_service.insertContents(forms);
 				if(finalCheck.equals("yes")){
 					msg="임시저장 완료하였습니다.";

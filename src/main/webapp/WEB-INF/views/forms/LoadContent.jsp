@@ -156,7 +156,7 @@
 		  			<td class="first_th" width="160px" >[일회용의료기기 여부]</td>
 		  			<td class="first_td" >
 		  				<c:choose>
-		  					<c:when test="${firstForm.makingName==1}">
+		  					<c:when test="${firstForm.disposableness==1}">
 		  						예
 		  					</c:when>
 		  					<c:otherwise>
@@ -644,7 +644,7 @@ ${forms.contents43}
 		  			<td class="first_th" width="160px" >[일회용의료기기 여부]</td>
 		  			<td class="first_td" >
 		  				<c:choose>
-		  					<c:when test="${firstForm.makingName==1}">
+		  					<c:when test="${firstForm.disposableness==1}">
 		  						예
 		  					</c:when>
 		  					<c:otherwise>
