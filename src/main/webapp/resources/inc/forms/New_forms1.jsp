@@ -10,7 +10,7 @@
 		  	<input type="hidden" value="ck_form1" name="ck_form" id="ck_form">
 		  	<p><b><span style="font-size: 12pt;">ㅣ 의료기기 기술문서 등 심사의뢰서</span></b></p><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="4">▶ 의뢰인</td></tr>
+		  		<tr><td class="first_title" colspan="4" bgcolor="#EAEAEA">▶ 의뢰인</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[성명(대표자)]</td>
 		  			<td class="first_td" width="300px">${memberInfo.kor_name}</td>
@@ -20,7 +20,7 @@
 		  		<tr><td class="first_th">[주소]</td><td class="first_td" colspan="3">${memberInfo.address}</td></tr>
 		  	</table><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="4">▶ 제조(수입)업소</td></tr>
+		  		<tr><td class="first_title" colspan="4" bgcolor="#EAEAEA">▶ 제조(수입)업소</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[명칭(상호)]</td>
 		  			<td class="first_td" width="300px" colspan="3"><input type="text" placeholder="업소명칭(상호)" style="width:99%;" name="makeCompanyName" value="${firstForm.makeCompanyName}"></td>
@@ -36,7 +36,7 @@
 		  			<td class="first_td"><input type="text" placeholder="입허가번호" style="width:98%;" name="makeLicenseNo" value="${firstForm.makeLicenseNo}"></td></tr>
 		  	</table><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 심사의뢰의 구분</td></tr>
+		  		<tr><td class="first_title" colspan="2" bgcolor="#EAEAEA">▶ 심사의뢰의 구분</td></tr>
 		  		<tr><td class="first_th" >[심사의 종류]</td><td class="first_td" >기술문서 심사</td></tr>
 		  		<tr>
 		  			<td class="first_th">[제조/수입 구분]</td>
@@ -105,7 +105,7 @@
 	  			</tr>
 		  	</table><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 상세내용</td></tr>
+		  		<tr><td class="first_title" colspan="2" bgcolor="#EAEAEA">▶ 상세내용</td></tr>
 		  		<tr><td class="first_th" >[제품명]</td><td class="first_td" >${forms.kor_name}, ${forms.code}</td></tr>
 		  		<tr>
 		  			<td class="first_th">[상품명]</td>
@@ -139,7 +139,7 @@
 		  		<tr><td class="first_th" >[등급]</td><td class="first_td" >${forms.p_class}</td></tr>
 		  	</table><br>
 	  		<table class="first_form">
-		  		<tr><td class="first_title" colspan="3">▶ 사용목적</td></tr>
+		  		<tr><td class="first_title" colspan="3" bgcolor="#EAEAEA">▶ 사용목적</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[사용목적]</td>
 		  			<td class="first_td" colspan="2"><input type="text" style="width:98%;" placeholder="사용목적" name="purpose" value="${firstForm.purpose}"></td>
@@ -171,7 +171,7 @@
 	  			</tr>
 		  	</table><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 신청항목</td></tr>
+		  		<tr><td class="first_title" colspan="2" bgcolor="#EAEAEA">▶ 신청항목</td></tr>
 		  		<tr><td class="first_th" >[원재료]</td><td class="first_td" >별첨</td></tr>
 		  		<tr><td class="first_th">[제조방법]</td><td class="first_td">별첨</td></tr>
 		  		<tr><td class="first_th">[사용방법]</td><td class="first_td">별첨</td></tr>
@@ -185,7 +185,7 @@
 	  			</tr>
 		  	</table><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 제조원</td></tr>
+		  		<tr><td class="first_title" colspan="2" bgcolor="#EAEAEA">▶ 제조원</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[제조의뢰자]</td>
 		  			<td class="first_td" >
@@ -208,7 +208,7 @@
 			  	</ul>
 		  	<br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 비고</td></tr>
+		  		<tr><td class="first_title" colspan="2" bgcolor="#EAEAEA">▶ 비고</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[일회용의료기기 여부]</td>
 		  			<td class="first_td" >
@@ -262,14 +262,14 @@
 		  	</table><br>
 		  	<c:if test="${forms.mix=='1'}">
 		  		<table class="first_form">
-			  		<tr><td class="first_title" >▶ 조합의료기기</td></tr>
+			  		<tr><td class="first_title" bgcolor="#EAEAEA">▶ 조합의료기기</td></tr>
 			  		<tr>
 			  			<td class="first_td" style="height:30px;"><input type="text" style="width:98%;" placeholder="품목명, 분류번호, 등급" name="mix" value="${firstForm.etc}"></td>
 		  			</tr>
 			  	</table><br>
 		  	</c:if>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" >▶ 모델명/포장단위</td></tr>
+		  		<tr><td class="first_title" bgcolor="#EAEAEA">▶ 모델명/포장단위</td></tr>
 		  	</table>
 		  	<table class="first_form">
 		  		<tr>
@@ -384,7 +384,7 @@
 		  		<li>외부 파일 첨부시 txt 파일외의 다른 파일을 넣을 경우 오류가 날 수 있습니다.</li>
 		  	</ul><br>
 		    <table class="first_form">
-		  		<tr><td class="first_title" colspan="3">▶ 모양 및 구조</td></tr>
+		  		<tr><td class="first_title" colspan="3" bgcolor="#EAEAEA">▶ 모양 및 구조</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[작용원리]</td>
 		  				<c:choose>
@@ -471,7 +471,7 @@
 		  		<li>별첨 작성 중 직접입력을 누르시면 기존에 작성 되어 있던 별첨 내용은 모두 삭제 됩니다.</li>
 		  	</ul><br>
 		  	<table class="first_form">
-		  		<tr><td class="first_title" colspan="2">▶ 담당자</td></tr>
+		  		<tr><td class="first_title" colspan="2" bgcolor="#EAEAEA">▶ 담당자</td></tr>
 		  		<tr><td class="first_th" >[성명]</td><td class="first_td">${memberInfo.kor_name}</td></tr>
 		  		<tr><td class="first_th">[전화번호]</td><td class="first_td">${memberInfo.phone1}-${memberInfo.phone2}-${memberInfo.phone3}</td></tr>
 		  		<tr><td class="first_th">[이메일]</td><td class="first_td">${memberInfo.email1}@${memberInfo.email2}</td></tr>

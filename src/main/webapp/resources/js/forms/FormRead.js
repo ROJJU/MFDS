@@ -46,6 +46,7 @@
 		  
 		  function save_hwp(){
 			  var list_seq = document.getElementById("num").value;
+			  alert(list_seq);
 			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
 			  if(list_seq=='1'){
 				  $(".first_form").attr("width","640px");
@@ -53,68 +54,63 @@
 				  $(".first_form").attr("cellspacing","0");
 				  $(".first_form").attr("bordercolor","black");
 				  $(".first_th").attr("width","170px");
-			  }else if(list_seq=='44'){
-				  $(".first_form").attr("width","640px");
-				  $(".first_form").attr("border","1");
-				  $(".first_form").attr("cellspacing","0");
-				  $(".first_form").attr("bordercolor","black");
-				  $(".first_th").attr("width","170px");
-				  
-				  $(".__se_tbl").attr("width","640px");
-				  $(".__se_tbl").attr("border","1");
-				  $(".__se_tbl").attr("cellspacing","0");
-				  $(".__se_tbl").attr("bordercolor","black");
-	
-				  $(".__se_tbl td").attr("width","");
-				  $(".hong td").attr("width","");
-				  $(".test td").attr("width","");
-				  $(".hong").attr("width","640px");
-				  $(".hong").attr("border","1");
-				  $(".hong").attr("cellspacing","0");
-				  $(".hong").attr("bordercolor","black");
-				  $(".test").attr("width","200px");
-				  $(".test2").attr("width","440px");
-				  $(".rule1").attr("width","240px");
-				  $(".rule2").attr("width","100px");
-				  $(".rule3").attr("width","100px");
-				  $(".rule4").attr("width","100px");
-				  $(".rule5").attr("width","100px");
-				  $(".__se_tbl td").attr("bordercolor","black");
-				  $(".__se_tbl td").attr("height","25px");
-				  
-				  $(".hong td").attr("height","25px");
-				  $(".hong td").attr("bordercolor","black");
-				  
-				  $(".test td").attr("height","25px");
-				  $(".test td").attr("bordercolor","black");
 			  }else{
 				  $(".__se_tbl").attr("width","640px");
 				  $(".__se_tbl").attr("border","1");
 				  $(".__se_tbl").attr("cellspacing","0");
 				  $(".__se_tbl").attr("bordercolor","black");
-	
-				  $(".__se_tbl td").attr("width","");
-				  $(".hong td").attr("width","");
-				  $(".test td").attr("width","");
-				  $(".hong").attr("width","640px");
-				  $(".hong").attr("border","1");
-				  $(".hong").attr("cellspacing","0");
-				  $(".hong").attr("bordercolor","black");
-				  $(".test").attr("width","200px");
-				  $(".test2").attr("width","440px");
-				  $(".rule1").attr("width","240px");
-				  $(".rule2").attr("width","100px");
-				  $(".rule3").attr("width","100px");
-				  $(".rule4").attr("width","100px");
-				  $(".rule5").attr("width","100px");
-				  $(".__se_tbl td").attr("bordercolor","black");
-				  $(".__se_tbl td").attr("height","25px");
+				  $(".__se_tbl td").attr("height","35px");
 				  
-				  $(".hong td").attr("height","25px");
-				  $(".hong td").attr("bordercolor","black");
-				  
-				  $(".test td").attr("height","25px");
-				  $(".test td").attr("bordercolor","black");
+				  if(list_seq=='44'){
+					  $(".first_form").attr("width","640px");
+					  $(".first_form").attr("border","1");
+					  $(".first_form").attr("cellspacing","0");
+					  $(".first_form").attr("bordercolor","black");
+					  $(".first_th").attr("width","170px");
+		
+					  $(".hong td").attr("width","");
+					  $(".test td").attr("width","");
+					  $(".hong").attr("width","640px");
+					  $(".hong").attr("border","1");
+					  $(".hong").attr("cellspacing","0");
+					  $(".hong").attr("bordercolor","black");
+					  $(".test").attr("width","200px");
+					  $(".test2").attr("width","440px");
+					  $(".rule1").attr("width","240px");
+					  $(".rule2").attr("width","100px");
+					  $(".rule3").attr("width","100px");
+					  $(".rule4").attr("width","100px");
+					  $(".rule5").attr("width","100px");
+					  
+					  $(".hong td").attr("height","25px");
+					  $(".hong td").attr("bordercolor","black");
+					  
+					  $(".test td").attr("height","25px");
+					  $(".test td").attr("bordercolor","black");
+				  }else if(list_seq=='19'||list_seq=='24'){
+					  $(".write1").attr("width","220px");
+					  $(".write2").attr("width","420px");
+				  }else{
+					  $(".hong td").attr("width","");
+					  $(".test td").attr("width","");
+					  $(".hong").attr("width","640px");
+					  $(".hong").attr("border","1");
+					  $(".hong").attr("cellspacing","0");
+					  $(".hong").attr("bordercolor","black");
+					  $(".test").attr("width","200px");
+					  $(".test2").attr("width","440px");
+					  $(".rule1").attr("width","240px");
+					  $(".rule2").attr("width","100px");
+					  $(".rule3").attr("width","100px");
+					  $(".rule4").attr("width","100px");
+					  $(".rule5").attr("width","100px");
+					  
+					  $(".hong td").attr("height","25px");
+					  $(".hong td").attr("bordercolor","black");
+					  
+					  $(".test td").attr("height","25px");
+					  $(".test td").attr("bordercolor","black");
+				  }
 			  }
 			  
 			  

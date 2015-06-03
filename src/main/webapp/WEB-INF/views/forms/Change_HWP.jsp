@@ -33,6 +33,9 @@ window.onload=function help(){
 	  $(".first_form").attr("cellspacing","0");
 	  $(".first_form").attr("bordercolor","black");
 	  $(".first_th").attr("width","150px");
+	  
+	  $(".write1").attr("width","220px");
+	  $(".write2").attr("width","420px");
 	 
 	  document.hwp.contents.value=document.getElementById("form").innerHTML;
 	document.hwp.submit();
