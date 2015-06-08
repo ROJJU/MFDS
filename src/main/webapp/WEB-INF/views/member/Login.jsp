@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="/resources/inc/Login_header.jsp"/>
 <%
 	Cookie[] cookie=request.getCookies();
 	String id1 = "";
@@ -32,10 +31,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/img/ico/STED-Favicon(144px)_v7.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/img/ico/STED-Favicon(72px)_v7.png">
+	<link rel="icon" href="http://k-gmp.com/water/favicon_16px.png" sizes="16x16"/>
+	<link rel="icon" href="/resources/img/ico/STED-Favicon(144px)_v7.png" sizes="144x144">
+	<link rel="icon" href="/resources/img/ico/STED-Favicon(114px)_v7.png" sizes="114x114">
+	<link rel="icon" href="/resources/img/ico/STED-Favicon(72px)_v7.png" sizes="72x72">
 	<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png">
+	<link rel="icon" href="/resources/img/ico/STED-Favicon(57px)_v7.png" sizes="57x57">
 	<title>STED</title>
 	
 	<link rel="stylesheet" href="/resources/css/member/Login.css"/>
