@@ -211,7 +211,7 @@ public class FormsController {
 		    			   @RequestParam(value = "find", required = false, defaultValue = "") String find){
 		ModelAndView mav = new ModelAndView();
 			//send parameter
-			Map<String, Object> pageAll = forms_service.getProducts(currentPage, "/fileList", search, find, list_seq);
+			Map<String, Object> pageAll = forms_service.getProducts(currentPage, "/fileList.do", search, find, list_seq);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
