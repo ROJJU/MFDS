@@ -246,7 +246,7 @@
 		</div>
 		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
-		<script type="text/javascript" src="<c:url value="/resources/js/forms/NewForm.js"/>"></script>
+		<script type="text/javascript" src="/resources/js/forms/NewForm.js"></script>
 		<!--arcodion s-->
         <script type="text/javascript" src="/resources/js/account/jquery.accordion.2.0.js" ></script>
         <script type="text/javascript">

@@ -153,16 +153,47 @@ form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #
 	width:214px;
 }
 #login_info{
-width:215px;
-margin:0 auto;
+	width:215px;
+	margin:0 auto;
 }
 
 .button:hover { background:#ddd; }
 
 #login_btn{
-cursor:hand;
-cursor:pointer;
-width:100%;
-height:25px;
+	cursor:hand;
+	cursor:pointer;
+	width:100%;
+	height:25px;
+}
+
+#hiddenLogo{
+	display:none;
+}
+#login_info2{
+	width:400px;
+	margin:0 auto;
+}
+.phoneTd{
+	background-color:#ffffff; border:1px solid grey;
+	height:25px;
+	padding:5px;
+}
+#loginBoxPhone{
+	display:none;
+}
+
+/* media  */
+
+@media (max-width: 767px) {
+	#iview{
+    display:none;
+    }
+    .btn-sign{
+   	width:260px;
+   	font-size:20px;
+    }
+    #hiddenLogo{
+    display:block;
+    }
 }
 			

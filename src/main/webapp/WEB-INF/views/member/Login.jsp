@@ -30,7 +30,7 @@
 %>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="icon" href="http://k-gmp.com/water/favicon_16px.png" sizes="16x16"/>
 	<link rel="icon" href="/resources/img/ico/STED-Favicon(144px)_v7.png" sizes="144x144">
 	<link rel="icon" href="/resources/img/ico/STED-Favicon(114px)_v7.png" sizes="114x114">
@@ -43,22 +43,6 @@
 	<link rel="stylesheet" href="/resources/css/member/styles.css"/>
 	<link rel="stylesheet" href="/resources/css/member/iview.css"/>
 	<link rel="stylesheet" href="/resources/css/member/skin 1/style.css"/>
-	<style type="text/css">
-		@media (max-width: 768px) {
-			  #iview{
-			    display:none;
-			    }
-		      .btn-sign{
-		      	width:260px;
-		      	font-size:20px;
-		      }
-		    }
-	    @media (min-width: 768px) {
-		  #hiddenLogo{
-		    display:none;
-		    }
-	    }
-	</style>
 	</head>
 <body>
 	<div id="cont">
@@ -103,9 +87,47 @@
 			</div>
 		</div>
 <!--login btn-->
-	    <div class="btn-sign">
+	    <div class="btn-sign" id="login-btn">
 			<a href="#login-box" class="login-window">Log in / Sign In</a>
 	    </div><br><br><br>
+	     <!--LOGIN FOR PHONE  -->
+		<div id="loginBoxPhone">
+			<form method="post" class="signin" action="/LoginProc.do" name="loginPhone">
+              	<div id="login_info2">
+	              	<table style="color:black; width:100%;">
+               			<tr>
+               				<td width="155px">ID(사업자 등록 번호)</td>
+               				<td class="phoneTd">
+               					<input type="number" style="width:40px; border:none;" maxlength="3" name="id1" placeholder="ID" id="username2" value="<%=id1%>">
+								 <b style="color:black;">-</b> <input type="number" style="width:30px; border:none;" maxlength="2" name="id2" placeholder="ID" id="username" value="<%=id2%>">
+								 <b style="color:black;">-</b> <input type="number" style="width:60px; border:none;" maxlength="5" name="id3" placeholder="ID" id="username" value="<%=id3%>">
+               				</td>
+               			</tr>
+               			<tr>
+               				<td>E-MAIL</td>
+               				<td class="phoneTd">
+               					<input type="text" id="email" style="width:60px; border:none;" name="email1"  placeholder="E-MAIL" value="<%=email1%>">
+				  				<b style="color:black;">@</b> <input type="text" id="email" style="width:105px; border:none;" name="email2"  placeholder="E-MAIL" value="<%=email2%>">
+               				</td>
+               			</tr>
+               			<tr>
+							<td>PASSWORD</td>
+							<td class="phoneTd"><input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px; border:none;" onKeyDown="inputSendit();"></td>	               			
+               			</tr>
+               		</table>
+	                <table>
+	                	<tr>
+	                		<td style="vertical-align:top;"><input type="checkbox" name="id_rem" id="id_rem" <%if(id1.length() >1) out.println("checked"); %>></td>
+	                		<td style="vertical-align:top;"><label for="id_rem"><b style="color:grey; padding-top:3px;">&nbsp;REMEMBER <font color="red">ID</font>/<font color="red">EMAIL</font></b> </label></td>
+	               		</tr>
+	                </table>
+	                <img src="/resources/img/member/Login_button_big.png" id="login_btn" onclick= "formCheck('2');">
+	                <p>
+	                <a class="forgot" href="/Find_pw_step1.do">Forgot your password?</a> | <a class="forgot" href="/Join_step1.do">Sign up</a>
+	                </p><br><br>
+              	</div>
+	       </form>
+		</div>
 	   <jsp:include page="/resources/inc/Member_footer.jsp"/>
 	</div>
 <!--pop up box!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->        
@@ -115,30 +137,30 @@
                <fieldset class="textbox">
                	<img src="<c:url value="/resources/img/common/sted_logo.png"/>" width="330px"><br><br>
 	               	<div id="login_info">
-		            	<label class="username">
-			                <span>ID(사업자 등록 번호)</span>
-			                <input type="text" style="width:30px;" maxlength="3" name="id1" placeholder="ID" id="username" value="<%=id1%>">
-							 <b style="color:black;">-</b> <input type="text" style="width:20px;" maxlength="2" name="id2" placeholder="ID" id="username" value="<%=id2%>">
-							 <b style="color:black;">-</b> <input type="text" style="width:50px;" maxlength="5" name="id3" placeholder="ID" id="username" value="<%=id3%>">
-		                </label>
-		                
-		                <label class="email">
-		                <span>E-MAIL</span>
-		                	<input type="text" id="email" style="width:60px;" name="email1"  placeholder="E-MAIL" value="<%=email1%>">
-						  	<b style="color:black;">@</b> <input type="text" id="email" style="width:105px;" name="email2"  placeholder="E-MAIL" value="<%=email2%>">
-		                </label>
-		                
-		                <label class="password">
-		                <span>PASSWORD</span>
-		                <input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit();"><br>
-		                </label>
+               		<label class="username">
+		                <span>ID(사업자 등록 번호)2</span>
+		                <input type="text" style="width:40px;" maxlength="3" name="id1" placeholder="ID" id="username" value="<%=id1%>">
+						 <b style="color:black;">-</b> <input type="text" style="width:30px;" maxlength="2" name="id2" placeholder="ID" id="username" value="<%=id2%>">
+						 <b style="color:black;">-</b> <input type="text" style="width:60px;" maxlength="5" name="id3" placeholder="ID" id="username" value="<%=id3%>">
+	                </label>
+	                
+	                <label class="email">
+	                <span>E-MAIL</span>
+	                	<input type="text" id="email" style="width:60px;" name="email1"  placeholder="E-MAIL" value="<%=email1%>">
+					  	<b style="color:black;">@</b> <input type="text" id="email" style="width:105px;" name="email2"  placeholder="E-MAIL" value="<%=email2%>">
+	                </label>
+	                
+	                <label class="password">
+	                <span>PASSWORD</span>
+	                <input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit();"><br>
+	                </label>
 		                <table>
 		                	<tr>
 		                		<td style="vertical-align:top;"><input type="checkbox" name="id_rem" id="id_rem" <%if(id1.length() >1) out.println("checked"); %>></td>
 		                		<td style="vertical-align:top;"><label for="id_rem"><b style="color:grey; padding-top:3px;">&nbsp;REMEMBER <font color="red">ID</font>/<font color="red">EMAIL</font></b> </label></td>
 	                		</tr>
 		                </table>
-		                <img src="/resources/img/member/Login_button_big.png" id="login_btn" onclick= "formCheck();">
+		                <img src="/resources/img/member/Login_button_big.png" id="login_btn" onclick= "formCheck('1');">
 		                <p>
 		                <a class="forgot" href="/Find_pw_step1.do">Forgot your password?</a> | <a class="forgot" href="/Join_step1.do">Sign up</a>
 		                </p><br>
@@ -152,39 +174,5 @@
 	<script type="text/javascript" src="/resources/js/member/jquery.easing.js"></script>
 	<script type="text/javascript" src="/resources/js/member/Login.js"></script>
 	<script src="/resources/js/member/iview.js"></script>
-	<script type="text/javascript">
-		function formCheck(){
-			document.login.submit();
-		}
-		
-		function inputSendit(){
-			if(event.keyCode==13) { 
-				document.login.submit();
-			}
-		}
-		
-		//쿠키값 가져오는 함수
-		function notice_getCookie( name ) {
-		 var nameOfCookie = name + "=";
-		 var x = 0;
-		 while ( x <= document.cookie.length ) {
-		  var y = (x+nameOfCookie.length);
-		   if (document.cookie.substring( x, y ) == nameOfCookie ) {
-		    if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
-		     endOfCookie = document.cookie.length;
-		     return unescape( document.cookie.substring( y, endOfCookie ) );
-		    }
-		    x = document.cookie.indexOf( " ", x ) + 1;
-		    if ( x == 0 )
-		    break;
-		   }
-		   return "";
-		  }
-		//쿠키 체크로 팝업여부 결정
-		if ( notice_getCookie( "pop2" ) != "done" ) {
-		//팝업창 경로,위치,크기
-			window.open("/resources/inc/popup/popup.html","scheRead","width=560px, height=590px, left=700px, top=10px, location=no, toolbar=no, realzable=no scrollbars =no");
-		}
-	</script>
 	</body>
 </html>
