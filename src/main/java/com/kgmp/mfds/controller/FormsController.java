@@ -1057,4 +1057,55 @@ public class FormsController {
 		model.addAttribute("resultList", list);
         return "/forms/Country";
     }
+	
+	@RequestMapping(value = "/selectDel.do")
+    public ModelAndView selectDel(Model model,
+    						   String delInfo,
+							   HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		String check=null;
+		String msg=null;
+		String url=null;
+		Forms formsInfo= new Forms();
+		formsInfo.setId1((String)session.getAttribute("id1"));
+		formsInfo.setId2((String)session.getAttribute("id2"));
+		formsInfo.setId3((String)session.getAttribute("id3"));
+		formsInfo.setEmail1((String)session.getAttribute("email1"));
+		formsInfo.setEmail2((String)session.getAttribute("email2"));
+		
+		String[] del_form = delInfo.split("/");//문자열로 구분자 자르기
+		
+		//setting parameter e
+		mav.setViewName("/forms/New_forms");
+
+		for(String forms_seq_array : del_form){
+			int forms_seq = Integer.parseInt(forms_seq_array);
+			formsInfo.setForms_seq(forms_seq);
+			
+			try{
+				check=forms_service.delForm(formsInfo);
+				if(check.equals("yes")){
+					String checkFirst = null;
+					checkFirst = forms_service.delFirstForm(forms_seq);
+					if(checkFirst.equals("yes")){
+						msg="성공하였습니다.";
+						url="/MyPage.do?page_seq=6";
+					}else{
+						msg="실패하였습니다.";
+						url="/MyPage.do?page_seq=6";
+					}
+				}else{
+					msg="실패하였습니다.";
+					url="/MyPage.do?page_seq=6";
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+		mav.setViewName("/Check_proc");
+		mav.addObject("msg", msg);
+		mav.addObject("url", url);
+        return mav;
+    }
 }

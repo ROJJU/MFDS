@@ -9,9 +9,7 @@
 	 border: 1px solid black;
 	}
 </style>
-<link rel="stylesheet" href="/resources/daumeditor-7.4.1/css/editor.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="/resources/css/forms/style.css">
-<script src="/resources/daumeditor-7.4.1/js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
 		<!--[if gte IE 9]>
 		  <style type="text/css">
 			.gradient {
@@ -263,16 +261,16 @@
 				<table width="100%">
 					<tr>
 						<td height="40px;" style="border-right:2px solid #ffffff;" align="center">
-							<input type="text" value="1" id="min" style="border:none; width:15px; background:none; font-weight:bolder;"> :
-							<input type="text" value="60" id="sec" style="border:none; width:15px; background:none; font-weight:bolder;"><br>
+							<input type="text" value="1" id="min" style="border:none; width:15px; background:none; font-weight:bolder;" readonly> :
+							<input type="text" value="60" id="sec" style="border:none; width:15px; background:none; font-weight:bolder;" readonly><br>
 							<input type="image" src="/resources/img/btn/final_button.png" width="55px" onclick="finalSave(44)" style="padding-top:5px; padding-right:5px;" title="최종저장">
 							<input type="hidden" value="<%=request.getParameter("list_seq") %>" id="list_seq">
 						</td>						
 						<td align="center">
-							<a href="#" style="color:#ffffff;" id="autoState"><img src="/resources/img/forms/sandglass.gif" width="30px"></a>
+							<a style="color:#ffffff;" id="autoState"><img src="/resources/img/forms/sandglass.gif" width="30px"></a>
 						</td>
 					</tr>
 				</table>
-				</div>
+			</div>
 	</body>
 </html>

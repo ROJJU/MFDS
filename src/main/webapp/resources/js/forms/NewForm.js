@@ -373,10 +373,10 @@
 				                cache: false,
 				                data : formData,
 				                succes: function(){
-				                	
+				                	response.html('ok');
 				                },
 				                error: function(errMsg) {
-				    				response.html('errors');
+				    				
 				                }          
 				          	});
 							

@@ -17,6 +17,8 @@
 
 <script src='js/smarteditor2.js' charset='utf-8'></script>
 <script src='photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js' charset='utf-8'></script>
+
+
 </head>
 <body>
 
@@ -28,7 +30,6 @@
 <div id="smart_editor2">
 	<div id="smart_editor2_content"><a href="#se2_iframe" class="blind">글쓰기영역으로 바로가기</a>
 		<div class="se2_tool" id="se2_tool">
-			
 			<div class="se2_text_tool husky_seditor_text_tool">
 			<ul class="se2_font_type">
 				<li class="husky_seditor_ui_fontName"><button type="button" class="se2_font_family" title="글꼴"><span class="husky_se2m_current_fontName">글꼴</span></button>
@@ -590,7 +591,7 @@
 
 		<hr>
 		<!-- 입력 -->
-		<div class="se2_input_area husky_seditor_editing_area_container">
+		<div class="se2_input_area husky_seditor_editing_area_container" id="sizefix">
 			
 			
 			<iframe src="about:blank" id="se2_iframe" name="se2_iframe" class="se2_input_wysiwyg" width="400" height="300" title="글쓰기 영역 : 도구 모음은 ALT+F10을, 도움말은 ALT+0을 누르세요." frameborder="0" style="display:block;"></iframe>
@@ -789,7 +790,5 @@
 	</div>
 </div>
 <!-- SE2 Markup End -->
-
-
 </body>
 </html>

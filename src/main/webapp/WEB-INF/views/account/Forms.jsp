@@ -76,6 +76,8 @@
 																	 	<img src="/resources/img/forms/Books.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=2">작성완료(<font color="blue">${countDone}</font>)</a>&nbsp;
 																	</td>
 																	<td align="right" style="border:none;">
+																		<input type="checkbox" id="checkall"><label for="checkall" style="cursor:pointer; cursor:hand;">모두선택/해지</label>
+																		<input type="button" value="선택삭제" onclick="delForms()">
 																		<input type="image" src="/resources/img/btn/repage_btn.png" width="25px;" title="새로고침" onclick="location.href='/MyPage.do?page_seq=6';">
 																	</td>
 																</tr>
@@ -94,39 +96,31 @@
 														<div class="example_3">
 															<ul>
 																<c:forEach var="a" items="${list}">
-																	<c:if test="${a.payment=='1'||a.payment=='2'}">
-																		<li style="text-align:center; width:120px; height:100px; overflow:auto;" onclick="payment(${a.forms_seq},${a.payment});">
-																	</c:if>
-																	<c:if test="${a.payment=='3'}">
-																		<c:if test="${a.state=='1'}"><li style="text-align:center; width:120px; height:100px; overflow:auto;" onclick="payment(${a.forms_seq},${a.payment});"></c:if>
-																		<c:if test="${a.state=='2'}">
-																			<c:choose>
-																				<c:when test="${a.help_state=='1'||a.help_state=='3'}">
-																					<li style="text-align:center; width:120px; height:100px; overflow:auto;" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')">
-																				</c:when>
-																				<c:otherwise>
-																					<li style="text-align:center; width:120px; height:100px; overflow:auto;" onclick="tiny_box(${a.forms_seq});">
-																				</c:otherwise>
-																			</c:choose>
+																	<li style="text-align:center; width:120px; height:100px; overflow:auto;">
+																		<c:if test="${a.state=='1'}">
+																			<c:if test="${a.payment=='1'||a.payment=='2'}">
+																				<input type="image" src="/resources/img/forms/Books1.png" onclick="payment(${a.forms_seq},${a.payment});">
+																			</c:if>
+																			<c:if test="${a.payment=='3'}">
+																				<input type="image" src="/resources/img/forms/Books1.png" onclick="payment(${a.forms_seq},${a.payment});">
+																			</c:if>
 																		</c:if>
-																	</c:if>
-																		<c:if test="${a.state=='1'}"><input type="image" src="/resources/img/forms/Books1.png"></c:if>
 																		<c:if test="${a.state=='2'}">
 																			<c:choose>
 																				<c:when test="${a.help_state=='1'}">
-																					<input type="image" src="/resources/img/forms/Books_help3.png">
+																					<input type="image" src="/resources/img/forms/Books_help3.png" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')">
 																				</c:when>
 																				<c:when test="${a.help_state=='2'}">
-																					<input type="image" src="/resources/img/forms/Books_help2.png">
+																					<input type="image" src="/resources/img/forms/Books_help2.png" onclick="tiny_box(${a.forms_seq});">
 																				</c:when>
 																				<c:when test="${a.help_state=='3'}">
-																					<input type="image" src="/resources/img/forms/Books_help1.png">
+																					<input type="image" src="/resources/img/forms/Books_help1.png" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')">
 																				</c:when>
 																				<c:when test="${a.help_state=='4'}">
-																					<input type="image" src="/resources/img/forms/Books_help4.png">
+																					<input type="image" src="/resources/img/forms/Books_help4.png" onclick="tiny_box(${a.forms_seq});">
 																				</c:when>
 																				<c:otherwise>
-																					<input type="image" src="/resources/img/forms/Books.png">
+																					<input type="image" src="/resources/img/forms/Books.png" onclick="tiny_box(${a.forms_seq});">
 																				</c:otherwise>
 																			</c:choose>
 																		</c:if>
@@ -134,12 +128,13 @@
 																		<c:if test="${a.payment=='1'}"><b style="color:red;">[미결제]</b></c:if>
 																		<c:if test="${a.payment=='2'}"><b style="color:blue;">[결제대기]</b></c:if>
 																		<c:if test="${a.payment=='3'}"><b style="color:blue;">[결제완료]</b></c:if>
-																		<br>${a.title}
+																		<br>
+																		${a.title}
+																		<input type="checkbox" value="${a.forms_seq}" name="delForm" id="delForm">
 																	</li>
 																</c:forEach>
 																<c:if test="${list=='[]'}"><font color="red"><br><br><br><br><br><img src="/resources/img/common/coution.gif">&nbsp;작성된 서류가 없습니다.</font></c:if>
 															</ul>
-															
 														</div>
 													</div>
 													<br><br><br>
@@ -156,35 +151,10 @@
 		</div>
 		<div class="total_footer" id="total_footer"></div>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
-		
 	<!--forms files s-->
 	<script type="text/javascript" src="/resources/js/account/jquery.promptumenu.min.js"></script>
 	<script type="text/javascript" src="/resources/js/account/tinybox.js"></script>
 	<!--forms files e-->
-		<script type="text/javascript">
-			function tiny_box(forms_seq){TINY.box.show('/OTP.do?forms_seq='+forms_seq,1,300,150,1)};
-			function payment(forms_seq, payment){
-				window.open('/Payment.do?forms_seq='+forms_seq+'&payment='+payment,'payment','width=755 height=526 scrollbars=yes');
-			}
-			$(function(){
-				$('.example_3 ul').promptumenu({
-					'height': 500,
-					'width':1000,
-					'rows': 3,
-					'columns': 5,
-					'direction': 'horizontal',
-					'pages': true
-				});
-			});
-			function CheckOtp(forms_seq){
-				var otp1=document.getElementById("otp1").value;
-				var otp2=document.getElementById("otp2").value;
-				if(otp1==otp2){
-					goUrl('/updateOtp.do?forms_seq='+forms_seq+'&list_seq=1&otp='+otp1);
-				}else{
-					alert('잘못된 OTP를 입력하셨습니다.');
-				}
-			}
-		</script>
+	<script type="text/javascript" src="/resources/js/forms/formView.js"></script>
 	</body>
 </html>
