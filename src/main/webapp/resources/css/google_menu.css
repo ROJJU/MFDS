@@ -68,10 +68,6 @@ z-index:1;
 color:#FFFFFF;
 font-weight:bold;
 }
-.active a:hover{
-background-color:white;
-color:#3366CC;
-}
 .active ul a:hover{
 background-color:#e4ebf8;
 }

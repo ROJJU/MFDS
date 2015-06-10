@@ -36,6 +36,8 @@
 		cursor :hand;
 		cursor:pointer;
 		}
+		
+		.ellipsis { width: 100px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } 
 	</style>
 	</head>
 	<body>
@@ -76,8 +78,8 @@
 																	 	<img src="/resources/img/forms/Books.png" width="20px" class="file_img"><a class="file_text" href="/MyPage.do?page_seq=6&find=2">작성완료(<font color="blue">${countDone}</font>)</a>&nbsp;
 																	</td>
 																	<td align="right" style="border:none;">
-																		<input type="checkbox" id="checkall"><label for="checkall" style="cursor:pointer; cursor:hand;">모두선택/해지</label>
-																		<input type="button" value="선택삭제" onclick="delForms()">
+																		<input type="checkbox" id="checkall"><label for="checkall" style="cursor:pointer; cursor:hand;">&nbsp;모두선택/해지</label>
+																		<input type="image" src="/resources/img/account/formDel.png" onclick="delForms()" width="70px;">&nbsp;
 																		<input type="image" src="/resources/img/btn/repage_btn.png" width="25px;" title="새로고침" onclick="location.href='/MyPage.do?page_seq=6';">
 																	</td>
 																</tr>
@@ -96,41 +98,42 @@
 														<div class="example_3">
 															<ul>
 																<c:forEach var="a" items="${list}">
-																	<li style="text-align:center; width:120px; height:100px; overflow:auto;">
+																	<li style="text-align:center; width:120px; height:100px; overflow:auto;" title="${a.title}">
+																	<p style="margin-bottom:5px;">
+																		<input type="checkbox" value="${a.forms_seq}" name="delForm" id="delForm">
+																		<c:if test="${a.payment=='1'}"><b style="color:red;">[미결제]</b></c:if>
+																		<c:if test="${a.payment=='2'}"><b style="color:blue;">[결제대기]</b></c:if>
+																		<c:if test="${a.payment=='3'}"><b style="color:blue;">[결제완료]</b></c:if>
+																	</p>
 																		<c:if test="${a.state=='1'}">
 																			<c:if test="${a.payment=='1'||a.payment=='2'}">
-																				<input type="image" src="/resources/img/forms/Books1.png" onclick="payment(${a.forms_seq},${a.payment});">
+																				<input type="image" src="/resources/img/forms/Books1.png" onclick="payment(${a.forms_seq},${a.payment});" width="60px">
 																			</c:if>
 																			<c:if test="${a.payment=='3'}">
-																				<input type="image" src="/resources/img/forms/Books1.png" onclick="payment(${a.forms_seq},${a.payment});">
+																				<input type="image" src="/resources/img/forms/Books1.png" onclick="payment(${a.forms_seq},${a.payment});" width="60px">
 																			</c:if>
 																		</c:if>
 																		<c:if test="${a.state=='2'}">
 																			<c:choose>
 																				<c:when test="${a.help_state=='1'}">
-																					<input type="image" src="/resources/img/forms/Books_help3.png" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')">
+																					<input type="image" src="/resources/img/forms/Books_help3.png" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')" width="60px">
 																				</c:when>
 																				<c:when test="${a.help_state=='2'}">
-																					<input type="image" src="/resources/img/forms/Books_help2.png" onclick="tiny_box(${a.forms_seq});">
+																					<input type="image" src="/resources/img/forms/Books_help2.png" onclick="tiny_box(${a.forms_seq});" width="60px">
 																				</c:when>
 																				<c:when test="${a.help_state=='3'}">
-																					<input type="image" src="/resources/img/forms/Books_help1.png" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')">
+																					<input type="image" src="/resources/img/forms/Books_hel p1.png" onclick="javaScrip:alert('보완신청중인 서류는 열람하실 수 없습니다.')" width="60px">
 																				</c:when>
 																				<c:when test="${a.help_state=='4'}">
-																					<input type="image" src="/resources/img/forms/Books_help4.png" onclick="tiny_box(${a.forms_seq});">
+																					<input type="image" src="/resources/img/forms/Books_help4.png" onclick="tiny_box(${a.forms_seq});" width="60px">
 																				</c:when>
 																				<c:otherwise>
-																					<input type="image" src="/resources/img/forms/Books.png" onclick="tiny_box(${a.forms_seq});">
+																					<input type="image" src="/resources/img/forms/Books.png" onclick="tiny_box(${a.forms_seq});" width="60px">
 																				</c:otherwise>
 																			</c:choose>
 																		</c:if>
 																		<br>
-																		<c:if test="${a.payment=='1'}"><b style="color:red;">[미결제]</b></c:if>
-																		<c:if test="${a.payment=='2'}"><b style="color:blue;">[결제대기]</b></c:if>
-																		<c:if test="${a.payment=='3'}"><b style="color:blue;">[결제완료]</b></c:if>
-																		<br>
-																		${a.title}
-																		<input type="checkbox" value="${a.forms_seq}" name="delForm" id="delForm">
+																		<center><p class="ellipsis">${a.title}</p></center>
 																	</li>
 																</c:forEach>
 																<c:if test="${list=='[]'}"><font color="red"><br><br><br><br><br><img src="/resources/img/common/coution.gif">&nbsp;작성된 서류가 없습니다.</font></c:if>

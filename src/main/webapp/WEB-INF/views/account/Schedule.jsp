@@ -50,19 +50,6 @@ int a=-1;
 	<link rel="stylesheet" href="<c:url value="/resources/css/common/Sub.css"/>"/>
 	<link rel="stylesheet" href="/resources/css/account/flipclock.css"><!--time css-->
 	<link rel="stylesheet" href="/resources/css/account/arcodion.css"><!--arcodion css-->
-	<script type="text/javascript">
-			function popupScheAdd(year, month, day){
-				   window.open("ScheduleAdd.jsp?year="+year+"&month="+month+"&day="+day,"scheAdd","width=520px, height=340px, left=0px, top=0px, location=no, toolbar=no, realzable=no scrollbars = yes");
-				}
-			function popupPerson(writer, year, month, day){
-				   window.open("SchedulePerson.jsp?year="+year+"&month="+month+"&day="+day+"&writer="+encodeURI(encodeURIComponent(writer)),"schePerson","width=520px, height=280px, left=0px, top=0px, location=no, toolbar=no, realzable=no scrollbars = yes");
-				}
-			function goToday(nowyear, nowmonth)
-			{
-				alert('오늘 ['+nowyear+'년'+nowmonth+'월]로 이동 됩니다.');
-				location.href="/MyPage.do?page_seq=7&year="+nowyear+"&month="+nowmonth;
-			}
-    </script>
     <style type="text/css">
     a{
     text-decoration:none;
@@ -492,6 +479,35 @@ int a=-1;
             		document.notice.submit();
             	}
             }
+            
+            function showShedule(year, month){            	
+            	/*  /MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>*/
+            	
+            	$.ajax({
+	                type: "POST",
+	                url: urlLink,
+	                cache: false,
+	                data : formData,
+	                succes: function(){
+	                	response.html('ok');
+	                },
+	                error: function(errMsg) {
+	    				
+	                }          
+	          	});
+            }
+            
+            function popupScheAdd(year, month, day){
+				   window.open("ScheduleAdd.jsp?year="+year+"&month="+month+"&day="+day,"scheAdd","width=520px, height=340px, left=0px, top=0px, location=no, toolbar=no, realzable=no scrollbars = yes");
+				}
+			function popupPerson(writer, year, month, day){
+				   window.open("SchedulePerson.jsp?year="+year+"&month="+month+"&day="+day+"&writer="+encodeURI(encodeURIComponent(writer)),"schePerson","width=520px, height=280px, left=0px, top=0px, location=no, toolbar=no, realzable=no scrollbars = yes");
+				}
+			function goToday(nowyear, nowmonth)
+			{
+				alert('오늘 ['+nowyear+'년'+nowmonth+'월]로 이동 됩니다.');
+				location.href="/MyPage.do?page_seq=7&year="+nowyear+"&month="+nowmonth;
+			}
         </script>
 		<!--arcodion e-->
 	</body>

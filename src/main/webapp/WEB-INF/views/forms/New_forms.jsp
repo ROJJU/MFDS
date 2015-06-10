@@ -3,12 +3,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style type="text/css">
-	.firstForm{
-	 width:100%;
-	 border: 1px solid black;
-	}
-</style>
 <link rel="stylesheet" href="/resources/css/forms/style.css">
 		<!--[if gte IE 9]>
 		  <style type="text/css">
@@ -31,6 +25,10 @@
 <!--text edieter e-->
 	<meta name="robots" content="all">
 	<style type="text/css">
+	.firstForm{
+	 width:100%;
+	 border: 1px solid black;
+	}
 	a{
 	color:grey;
 	text-decoration:none;
@@ -38,6 +36,7 @@
 	a:hover{
 	color:#369;
 	}
+	.ellipsis { width: 100px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } 
 	</style>
 </head>
 	<body>
@@ -172,7 +171,7 @@
 											 <input type="hidden" id="ck_form43" value="${forms.ck_form43}">
 										</td>
 										<td style="padding-right:8px;">
-											<input type="button" value="초기화" title="서식 초기화 가능" onclick="resetForm('<%=request.getParameter("forms_seq")%>', '<%=request.getParameter("list_seq")%>', '<%=request.getParameter("contents_name")%>');">
+											<input type="image" src="/resources/img/forms/reset.png" title="서식 초기화" onclick="resetForm('<%=request.getParameter("forms_seq")%>', '<%=request.getParameter("list_seq")%>', '<%=request.getParameter("contents_name")%>');">
 										</td>
 										<td style="border:1px solid black; padding:3px; background-color:#EAEAEA; " align="right" width="510px">
 											<img src="/resources/img/forms/guide_text.gif" width="400px">&nbsp;&nbsp;&nbsp;
