@@ -94,37 +94,43 @@
 		<div id="loginBoxPhone">
 			<form method="post" class="signin" action="/LoginProc.do" name="loginPhone">
               	<div id="login_info2">
-	              	<table style="color:black; width:100%;">
+	              	<table style="color:grey; width:100%; border:1px solid #BDBDBD; padding:20px;  ">
                			<tr>
-               				<td width="155px">ID(사업자 등록 번호)</td>
-               				<td class="phoneTd">
-               					<input type="number" style="width:40px; border:none;" maxlength="3" name="id1" placeholder="ID" id="username2" value="<%=id1%>">
-								 <b style="color:black;">-</b> <input type="number" style="width:30px; border:none;" maxlength="2" name="id2" placeholder="ID" id="username" value="<%=id2%>">
-								 <b style="color:black;">-</b> <input type="number" style="width:60px; border:none;" maxlength="5" name="id3" placeholder="ID" id="username" value="<%=id3%>">
+               				<td>
+               					<h3 class="phoneLogin">ID(사업자 등록 번호)</h3>
+               					<input type="number" style="width:60px;" maxlength="3" name="id1" placeholder="ID" id="username2" value="<%=id1%>" class="phoneText">
+								 <b style="color:black;">-</b> <input type="number" style="width:50px;" maxlength="2" name="id2" placeholder="ID" id="username" value="<%=id2%>" class="phoneText">
+								 <b style="color:black;">-</b> <input type="number" style="width:80px;" maxlength="5" name="id3" placeholder="ID" id="username" value="<%=id3%>" class="phoneText">
+								 <br><br>
                				</td>
                			</tr>
                			<tr>
-               				<td>E-MAIL</td>
-               				<td class="phoneTd">
-               					<input type="text" id="email" style="width:60px; border:none;" name="email1"  placeholder="E-MAIL" value="<%=email1%>">
-				  				<b style="color:black;">@</b> <input type="text" id="email" style="width:105px; border:none;" name="email2"  placeholder="E-MAIL" value="<%=email2%>">
+               				<td >
+               					<h3 class="phoneLogin">E-MAIL</h3>
+               					<input type="text" id="email" style="width:60px;" name="email1"  placeholder="E-MAIL" value="<%=email1%>" class="phoneText">
+				  				<b style="color:black;">@</b>
+				  				<input type="text" id="email" style="width:105px;" name="email2"  placeholder="E-MAIL" value="<%=email2%>" class="phoneText">
+				  				<br><br>
                				</td>
                			</tr>
                			<tr>
-							<td>PASSWORD</td>
-							<td class="phoneTd"><input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px; border:none;" onKeyDown="inputSendit();"></td>	               			
+               				<td>
+               				<h3 class="phoneLogin">PASSWORD2</h3>
+							<input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit();" class="phoneText">
+							<br>
+							</td>	               			
                			</tr>
-               		</table>
+               		</table><br>
 	                <table>
 	                	<tr>
 	                		<td style="vertical-align:top;"><input type="checkbox" name="id_rem" id="id_rem" <%if(id1.length() >1) out.println("checked"); %>></td>
-	                		<td style="vertical-align:top;"><label for="id_rem"><b style="color:grey; padding-top:3px;">&nbsp;REMEMBER <font color="red">ID</font>/<font color="red">EMAIL</font></b> </label></td>
+	                		<td style="vertical-align:top;"><label for="id_rem"><b style="color:grey; padding-top:3px;">&nbsp;REMEMBER <font color="red">ID</font>/<font color="red">E-MAIL</font></b> </label></td>
 	               		</tr>
-	                </table>
-	                <img src="/resources/img/member/Login_button_big.png" id="login_btn" onclick= "formCheck('2');">
-	                <p>
+	                </table><br>
+	                <img src="/resources/img/member/login_btn.png" onclick= "formCheck('2');" width="100%">
+	                <p style="font-size:16px;">
 	                <a class="forgot" href="/Find_pw_step1.do">Forgot your password?</a> | <a class="forgot" href="/Join_step1.do">Sign up</a>
-	                </p><br><br>
+	                </p><br><br><br>
               	</div>
 	       </form>
 		</div>
@@ -157,7 +163,7 @@
 		                <table>
 		                	<tr>
 		                		<td style="vertical-align:top;"><input type="checkbox" name="id_rem" id="id_rem" <%if(id1.length() >1) out.println("checked"); %>></td>
-		                		<td style="vertical-align:top;"><label for="id_rem"><b style="color:grey; padding-top:3px;">&nbsp;REMEMBER <font color="red">ID</font>/<font color="red">EMAIL</font></b> </label></td>
+		                		<td style="vertical-align:top;"><label for="id_rem"><b style="color:grey; padding-top:3px;">&nbsp;REMEMBER <font color="red">ID</font>/<font color="red">E-MAIL</font></b> </label></td>
 	                		</tr>
 		                </table>
 		                <img src="/resources/img/member/Login_button_big.png" id="login_btn" onclick= "formCheck('1');">
