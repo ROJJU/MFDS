@@ -147,6 +147,7 @@ public class MyAcountController{
 			mav.addObject("countDone", countDone);
 			mav.addObject("list", forms);
 		}else if(page_seq.equals("7")){
+			System.out.println("test!!!!!!!!!!");
 			mav.setViewName("/account/Schedule");
 			Forms form=new Forms();
 			Forms Viewinfo = null;

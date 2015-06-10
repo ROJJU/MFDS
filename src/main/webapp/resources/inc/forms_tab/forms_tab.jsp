@@ -8,7 +8,7 @@
 				<table>
 					<tr>
 						<td><b>폴더명</b> :</td>
-						<td><div class="ellipsis"><b style="color:red;">${forms.title}</b></div></td>
+						<td title="${forms.title}"><div class="ellipsis"><b style="color:red;">${forms.title}</b></div></td>
 						<td>| <b>품목명</b> :</td>
 						<td>${forms.kor_name}[${forms.eng_name}]</td>
 						<td>| <b>등급</b> :</td>

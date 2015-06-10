@@ -60,6 +60,8 @@ int a=-1;
     color:blue;
     font-weight:bolder;
     }
+    
+    .ellipsis { width: 130px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } 
     </style>
 	</head>
 	<body>
@@ -370,7 +372,7 @@ int a=-1;
 																	       	<tr>
 																	       		<td height="100" id="a" align="left">
 									<!--DB print-->
-																					<div style="overflow-y:auto; height:90px;">
+																					<div style="overflow-y:auto; height:90px;" >
 																						<%
 																						a++;
 																						%>
@@ -378,27 +380,29 @@ int a=-1;
 																							<c:if test="${a.add_year==year}">
 																								<c:if test="${a.add_month==month}">
 																									<c:if test="${a.add_day==i}">
-																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>"><img src="/resources/img/account/calendar_je.png" width="15px;">&nbsp;${a.title}<br></a>
+																										<p class="ellipsis" title="${a.title}"><a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>"><img src="/resources/img/account/calendar_je.png" width="15px;">&nbsp;${a.title}</a></p>
 																									</c:if>
 																								</c:if>
 																							</c:if>
 																							<c:if test="${a.payment_year==year}">
 																								<c:if test="${a.payment_month==month}">
 																									<c:if test="${a.payment_day==i}">
-																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>"><img src="/resources/img/account/calendar_ge.png" width="15px;">&nbsp;${a.title}<br></a>
+																										<p class="ellipsis" title="${a.title}"><a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>"><img src="/resources/img/account/calendar_ge.png" width="15px;">&nbsp;${a.title}</a></p>
 																									</c:if>
 																								</c:if>
 																							</c:if>
 																							<c:if test="${a.help_year==year}">
 																								<c:if test="${a.help_month==month}">
 																									<c:if test="${a.help_day==i}">
-																										<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>">
-																										<c:if test="${a.help_state=='1'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[1차_진행중]</b></c:if>
-																										<c:if test="${a.help_state=='2'}"><b style="color:red;"><img src="/resources/img/account/calendar_if.png" width="15px;">[1차_완료]</b></c:if>
-																										<c:if test="${a.help_state=='3'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[2차_진행중]</b></c:if>
-																										<c:if test="${a.help_state=='4'}"><b style="color:red;"><img src="/resources/img/account/calendar_if.png" width="15px;">[2차_완료]</b></c:if>
-																										&nbsp;${a.title}<br>
-																										</a>
+																										<p class="ellipsis" title="${a.title}">
+																											<a href="/MyPage.do?page_seq=7&forms_seq=${a.forms_seq}&search=title&find=<%=find%>&year=<%=year%>&month=<%=month%>">
+																											<c:if test="${a.help_state=='1'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[1차_진행중]</b></c:if>
+																											<c:if test="${a.help_state=='2'}"><b style="color:red;"><img src="/resources/img/account/calendar_if.png" width="15px;">[1차_완료]</b></c:if>
+																											<c:if test="${a.help_state=='3'}"><b style="color:red;"><img src="/resources/img/account/calendar_ban.png" width="15px;">[2차_진행중]</b></c:if>
+																											<c:if test="${a.help_state=='4'}"><b style="color:red;"><img src="/resources/img/account/calendar_if.png" width="15px;">[2차_완료]</b></c:if>
+																											&nbsp;${a.title}
+																											</a>
+																										</p>
 																									</c:if>
 																								</c:if>
 																							</c:if>
@@ -478,23 +482,6 @@ int a=-1;
             	}else{
             		document.notice.submit();
             	}
-            }
-            
-            function showShedule(year, month){            	
-            	/*  /MyPage.do?page_seq=7&year=<%= month-1 == 0? year-1:year%>&month=<%=month-1==0? 12:month-1%>&forms_seq=<%=forms_seq%>*/
-            	
-            	$.ajax({
-	                type: "POST",
-	                url: urlLink,
-	                cache: false,
-	                data : formData,
-	                succes: function(){
-	                	response.html('ok');
-	                },
-	                error: function(errMsg) {
-	    				
-	                }          
-	          	});
             }
             
             function popupScheAdd(year, month, day){
