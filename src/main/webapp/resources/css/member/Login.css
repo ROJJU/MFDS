@@ -187,7 +187,7 @@ form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #
 	border-left:1px solid #000;
 	border-right:1px solid #333;
 	border-top:1px solid #000;
-	color:#fff; 
+	color:grey; 
 	border-radius: 3px 3px 3px 3px;
 	-moz-border-radius: 3px;
     -webkit-border-radius: 3px;
