@@ -28,9 +28,12 @@ location.href="/";
 <title>STED</title>
 	<!--drop down menu s-->
 	<script type="text/javascript" src="/resources/js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.google_menu.js"></script>
-	<link rel="stylesheet" type="text/css" href="/resources/css/google_menu.css"/>
+	<script type="text/javascript" src="/resources/js/jquery.google_menu.js"></script><!--process-->
+	<script type="text/javascript" src="/resources/js/pace.min.js"></script><!--process-->
+	
+	<link rel="stylesheet" type="text/css" href="/resources/css/google_menu.css"/><!--process-->
 	<link rel="stylesheet" type="text/css" href="/resources/css/common/Header.css" media="all" /><!--drop down menu e-->
+	<link rel="stylesheet" type="text/css" href="/resources/css/common/process.css" media="all" /><!--drop down menu e-->
 <script type="text/javascript">
 		function goUrl(url){
 			location.href=url;

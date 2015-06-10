@@ -257,7 +257,22 @@
         </script>
 		<!--arcodion e-->
 			<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:100px; right:2px; border-top:3px solid grey;">
-			<a href="#" style="color:#ffffff;">TOP</a>
+				<a href="#" style="color:#ffffff;">TOP</a>
 			</div>
+			<div style="padding:5px 5px 5px 2px; vertical-align:middle; width:100px;  background-color:#DDDDDE; position:fixed; bottom:170px; right:2px; border-top:3px solid grey; font-size:5px;">
+				<table width="100%">
+					<tr>
+						<td height="40px;" style="border-right:2px solid #ffffff;" align="center">
+							<input type="text" value="1" id="min" style="border:none; width:15px; background:none; font-weight:bolder;"> :
+							<input type="text" value="60" id="sec" style="border:none; width:15px; background:none; font-weight:bolder;"><br>
+							<input type="image" src="/resources/img/btn/final_button.png" width="55px" onclick="finalSave(44)" style="padding-top:5px; padding-right:5px;" title="최종저장">
+							<input type="hidden" value="<%=request.getParameter("list_seq") %>" id="list_seq">
+						</td>						
+						<td align="center">
+							<a href="#" style="color:#ffffff;" id="autoState"><img src="/resources/img/forms/sandglass.gif" width="30px"></a>
+						</td>
+					</tr>
+				</table>
+				</div>
 	</body>
 </html>

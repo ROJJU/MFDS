@@ -8,7 +8,8 @@
 		<link rel="icon" href="/resources/img/ico/STED-Favicon(144px)_v7.png" sizes="144x144">
 		<link rel="icon" href="/resources/img/ico/STED-Favicon(114px)_v7.png" sizes="114x114">
 		<link rel="icon" href="/resources/img/ico/STED-Favicon(72px)_v7.png" sizes="72x72">
-		<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png">
+		<!-- <link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png"> -->
+		<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-iphone(512x512)_v1.png">
 		<link rel="icon" href="/resources/img/ico/STED-Favicon(57px)_v7.png" sizes="57x57">
 	</head>
 	<frameset rows="0,*" frameborder="no" framespacing="0"><frame src="about:blank" frameborder="No" framespacing="0" marginheight="" marginwidth="0" noresize scrolling="no">

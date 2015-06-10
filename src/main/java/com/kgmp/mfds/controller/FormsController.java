@@ -303,6 +303,7 @@ public class FormsController {
 									@RequestParam("contents_name") String contents_name,
 									@RequestParam("url") String p_url,
 									@RequestParam("ck_form") String ck_form){
+		System.out.println("test");
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
 		String url=p_url;
@@ -328,6 +329,7 @@ public class FormsController {
 		mav.setViewName("/Check_proc");
 		return mav;
 	}
+	
 		
 	@RequestMapping(value = "/FirstFormsProc.do")
 	public ModelAndView insertFirstForms(@RequestParam(value="forms_seq", required = false, defaultValue = "") int forms_seq,

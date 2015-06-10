@@ -8,7 +8,7 @@
 		  	<input type="hidden" value="3" name="contents_name">
 		  	<input type="hidden" value="/NewForms.do?forms_seq=<%=request.getParameter("forms_seq")%>&list_seq=3&contents_name=<%=request.getParameter("contents_name")%>" name="url"  id="p_url">
 		  	<input type="hidden" value="ck_form3" name="ck_form" id="ck_form">
-		    <textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
+		  	<textarea id="txtContent" name="contents" rows="30" style="width:100%; height:900px; color:#ffffff;">
 		    	<c:choose>
 		    		<c:when test="${forms.contents3!=null}">
 		    			${forms.contents3}
@@ -32,6 +32,7 @@
 		    	</c:choose>
 		    	
 		    </textarea>
+		    
 		  </div>
 	 </form><br><br><br><br>
 </div>

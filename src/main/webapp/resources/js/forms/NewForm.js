@@ -344,3 +344,50 @@
 			  function mixCheck(forms_seq, mix, list_seq, contents_name){
 				  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix+'&list_seq='+list_seq+'&contents_name='+contents_name;
 			  }
+			  
+			  function autoSave(){
+					var min = parseInt(document.getElementById("min").value);
+					var sec = parseInt(document.getElementById("sec").value);
+					var list_seq = document.getElementById("list_seq").value;
+					var countSec = sec-1;
+					var resetSec = "60";
+					var resetMin = "1";
+					var countMin = min;
+					var urlLink ="";
+					
+					if(list_seq==1){
+						urlLink="/FirstFormsProc.do";
+					}else{
+						urlLink="/FormsProc.do";
+					}
+					
+					if(countSec==-1){
+						if(countMin==0){
+							var formData = $("#boardWriteForm").serialize();
+							var response = $('#autoState');
+							oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []);
+							
+							$.ajax({
+				                type: "POST",
+				                url: urlLink,
+				                cache: false,
+				                data : formData,
+				                succes: function(){
+				                	
+				                },
+				                error: function(errMsg) {
+				    				response.html('errors');
+				                }          
+				          	});
+							
+							document.getElementById("sec").value=resetSec;
+						}else{
+							countMin = min-1;
+							document.getElementById("sec").value=resetSec;
+							document.getElementById("min").value=countMin;
+						}
+					}else{
+						document.getElementById("sec").value=countSec;
+					}
+				}
+				setInterval("autoSave()", 1000);

@@ -297,88 +297,90 @@
 		  			<td class="file_td"><input type="file" name="pakingFileNmae" ></td>
 		  			<td class="file_td">
 		  				${firstForm.pakingFileNmae} |
+		  				<input type="hidden" value="${firstForm.pakingFileNmae}" id="pakingFileNmae">
 		  				<input type="hidden" name="file2_old" value="${firstForm.pakingFileNmae}">
 	  				</td>
 		  		</tr>
 		  	</table>
 		    <textarea id="txtContent" style="width:100%; color:#ffffff;" name="model">
-		    <c:choose>
-		    	<c:when test="${firstForm.model!=null}">
-		    		${firstForm.model}
-		    	</c:when>
-		    	<c:otherwise>
-		    		▶ 모델명
-			    	<c:choose>
-			    		<c:when test="${firstForm.modelFileName!=null}">
-			    			<table class="first_form">
-					    		<tr>
-									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
-									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[모델명]</p></td>
-									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
-								</tr>
-					    		${modelFileName}
-			    			</table>
-			    		</c:when>
-			    		<c:otherwise>
-			    			<table class="first_form">
-					    		<tbody>
-									<tr>
-										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
-										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[모델명]</p></td>
-										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
-									</tr>
-									<tr>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
-									</tr>
-									<tr>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
-									</tr>
-								</tbody>
-							</table>
-			    		</c:otherwise>
-			    	</c:choose>
-			    	<br>
-					▶ 포장단위
-					<c:choose>
-						<c:when test="${firstForm.pakingFileNmae!=null}">
-							<table class="first_form">
-					    		<tr>
-									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
-									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[포장단위]</p></td>
-									<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
-								</tr>
-					    		${pakingFileNmae}
-			    			</table>
-						</c:when>
-						<c:otherwise>
-							<table class="first_form">
-					    		<tbody>
-									<tr>
-										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
-										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[포장단위]</p></td>
-										<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
-									</tr>
-									<tr>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
-									</tr>
-									<tr>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
-										<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
-									</tr>
-								</tbody>
-							</table>
-						</c:otherwise>
-					</c:choose>
-		    	</c:otherwise>
-		    </c:choose>
+				    <c:choose>
+				    	<c:when test="${firstForm.model!=null}">
+				    		${firstForm.model}
+				    	</c:when>
+				    	<c:otherwise>
+				    		▶ 모델명
+					    	<c:choose>
+					    		<c:when test="${firstForm.modelFileName!=null}">
+					    			<table class="first_form">
+							    		<tr>
+											<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+											<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[모델명]</p></td>
+											<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
+										</tr>
+							    		${modelFileName}
+					    			</table>
+					    		</c:when>
+					    		<c:otherwise>
+					    			<table class="first_form">
+							    		<tbody>
+											<tr>
+												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[모델명]</p></td>
+												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
+											</tr>
+											<tr>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
+											</tr>
+											<tr>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
+											</tr>
+										</tbody>
+									</table>
+					    		</c:otherwise>
+					    	</c:choose>
+					    	<br>
+							▶ 포장단위
+							<c:choose>
+								<c:when test="${firstForm.pakingFileNmae!=null}">
+									<table class="first_form">
+							    		<tr>
+											<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+											<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[포장단위]</p></td>
+											<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
+										</tr>
+							    		${pakingFileNmae}
+					    			</table>
+								</c:when>
+								<c:otherwise>
+									<table class="first_form">
+							    		<tbody>
+											<tr>
+												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
+												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="430"  border='1' border-color='black'><p>&nbsp;[포장단위]</p></td>
+												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="110"  border='1' border-color='black'><p>&nbsp;[수출용여부]</p></td>
+											</tr>
+											<tr>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
+											</tr>
+											<tr>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="100"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="430"  border='1' border-color='black'><p>&nbsp;</p></td>
+												<td style="border:1px solid #000000; background-color:#ffffff;" width="110"  border='1' border-color='black'><p>&nbsp;</p></td>
+											</tr>
+										</tbody>
+									</table>
+								</c:otherwise>
+							</c:choose>
+				    	</c:otherwise>
+				    </c:choose>
 		    </textarea>
+		    
 		    <ul style="color:red;">
 		  		<li>상단 에디터 내의 양식은 모델명, 포장단위 추가를 위한 툴이며 최종 저장시 기본 양식으로 변경 됩니다.</li>
 		  		<li>외부 파일 첨부시 txt 파일외의 다른 파일을 넣을 경우 오류가 날 수 있습니다.</li>
