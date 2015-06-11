@@ -115,11 +115,11 @@
 				<li>
 					<label for="folder3">첨부자료</label> <input type="checkbox" checked id="folder3" /> 
 					<ol>
-						<li class="file"><a href="javaScript:requestHello('39', 'contents39');"><c:if test="${forms.contents39==null}"><img src="/resources/img/forms/arrow.gif"></c:if>목차</a></li>
-						<li class="file"><a href="javaScript:requestHello('40', 'contents40');"><c:if test="${forms.contents40==null}"><img src="/resources/img/forms/arrow.gif"></c:if>제조공정에 관한 자료</a></li>
-						<li class="file"><a href="javaScript:requestHello('41', 'contents41');"><c:if test="${forms.contents41==null}"><img src="/resources/img/forms/arrow.gif"></c:if>위험분석 보고서</a></li>
-						<li class="file"><a href="javaScript:requestHello('42', 'contents42');"><c:if test="${forms.contents42==null}"><img src="/resources/img/forms/arrow.gif"></c:if>제품검증 및 유효성 확인 자료</a></li>
-						<li class="file"><a href="javaScript:requestHello('43', 'contents43');"><c:if test="${forms.contents43==null}"><img src="/resources/img/forms/arrow.gif"></c:if>참고 문헌</a></li>
+						<li class="file"><a href="javaScript:requestHello('39', 'contents39');"><c:if test="${forms.ck_form39==null}"><img src="/resources/img/forms/arrow.gif"></c:if>목차</a></li>
+						<li class="file"><a href="javaScript:requestHello('40', 'contents40');"><c:if test="${forms.ck_form40==null}"><img src="/resources/img/forms/arrow.gif"></c:if>제조공정에 관한 자료</a></li>
+						<li class="file"><a href="javaScript:requestHello('41', 'contents41');"><c:if test="${forms.ck_form41==null}"><img src="/resources/img/forms/arrow.gif"></c:if>위험분석 보고서</a></li>
+						<li class="file"><a href="javaScript:requestHello('42', 'contents42');"><c:if test="${forms.ck_form42==null}"><img src="/resources/img/forms/arrow.gif"></c:if>제품검증 및 유효성 확인 자료</a></li>
+						<li class="file"><a href="javaScript:requestHello('43', 'contents43');"><c:if test="${forms.ck_form43==null}"><img src="/resources/img/forms/arrow.gif"></c:if>참고 문헌</a></li>
 					</ol>
 				</li>
 			</ol><br>
