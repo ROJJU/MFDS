@@ -262,7 +262,7 @@
 						<td height="40px;" style="border-right:2px solid #ffffff;" align="center">
 							<input type="text" value="1" id="min" style="border:none; width:15px; background:none; font-weight:bolder;" readonly> :
 							<input type="text" value="60" id="sec" style="border:none; width:15px; background:none; font-weight:bolder;" readonly><br>
-							<input type="image" src="/resources/img/btn/final_button.png" width="55px" onclick="finalSave(44)" style="padding-top:5px; padding-right:5px;" title="최종저장">
+							<input type="image" src="/resources/img/btn/final_button.png" width="55px" onclick="finalSave(${forms.forms_seq})" style="padding-top:5px; padding-right:5px;" title="최종저장">
 							<input type="hidden" value="<%=request.getParameter("list_seq") %>" id="list_seq">
 						</td>						
 						<td align="center">
