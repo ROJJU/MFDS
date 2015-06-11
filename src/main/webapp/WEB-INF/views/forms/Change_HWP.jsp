@@ -52,7 +52,7 @@ window.onload=function help(){
 			<a id="form">
 		<%if(num.equals("1")){%>
 		<input type="hidden" value="1.Applications" id="title" name="title">
-		<div class="contentDiv">
+	<div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="1" name="contents_name">
@@ -62,34 +62,35 @@ window.onload=function help(){
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="4">▶ 의뢰인</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[성명(대표자)]</td>
-		  			<td class="first_td" width="170px">${memberInfo.kor_name}</td>
-		  			<td class="first_th" width="150px">[생년월일]</td>
-		  			<td class="first_td" width="170px">${firstForm.birthDay}</td>
+		  			<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;"  width="160px">[성명(대표자)]</td>
+		  			<td style="border:1px solid black; "  width="160px">${memberInfo.kor_name}</td>
+		  			<td style="border:1px solid black; background-color:#DDDDDE;" width="160px">[생년월일]</td>
+		  			<td style="border:1px solid black; ">${firstForm.birthDay}</td>
 	  			</tr>
-		  		<tr><td class="first_th" width="150px">[주소]</td><td class="first_td" colspan="3">${memberInfo.address}</td></tr>
+		  		<tr><td style="border:1px solid black; padding:5px; background-color:#DDDDDE;">[주소]</td><td class="first_td" colspan="3">${memberInfo.address}</td></tr>
 		  	</table>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="4">▶ 제조(수입)업소</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[명칭(상호)]</td>
-		  			<td class="first_td" width="300px" colspan="3">${firstForm.makeCompanyName}</td>
+		  			<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;" width="160px" >[명칭(상호)]</td>
+		  			<td style="border:1px solid black; " colspan="3">${firstForm.makeCompanyName}</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[주소]</td>
-		  			<td class="first_td" colspan="3">${firstForm.makeAddr}</td>
+		  			<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;" width="160px">[주소]</td>
+		  			<td style="border:1px solid black; " colspan="3">${firstForm.makeAddr}</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[사업자등록번호]</td>
-		  			<td class="first_td" width="170px">${firstForm.makeCompanyNo}</td>
-		  			<td class="first_th" width="150px">[입허가번호]</td>
-		  			<td class="first_td" width="170px">${firstForm.makeLicenseNo}</td></tr>
+		  			<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;" width="160px" >[사업자등록번호]</td>
+		  			<td style="border:1px solid black; " width="160px">${firstForm.makeCompanyNo}</td>
+		  			<td style="border:1px solid black; background-color:#DDDDDE;" width="160px">[입허가번호]</td>
+		  			<td style="border:1px solid black; " width="160px">${firstForm.makeLicenseNo}</td>
+	  			</tr>
 		  	</table>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 심사의뢰의 구분</td></tr>
-		  		<tr><td class="first_th" width="150px" >[심사의 종류]</td><td class="first_td" >기술문서 심사</td></tr>
+		  		<tr><td class="first_th" width="160px" >[심사의 종류]</td><td class="first_td" >기술문서 심사</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[제조/수입 구분]</td>
+		  			<td class="first_th" width="160px">[제조/수입 구분]</td>
 		  			<td class="first_td">
 		  			<c:choose>
 		  				<c:when test="${firstForm.makingOrImport==1}">
@@ -102,7 +103,7 @@ window.onload=function help(){
 		  			</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[제품의 구분]</td>
+		  			<td class="first_th" width="160px" >[제품의 구분]</td>
 		  			<td class="first_td" >
 		  				<c:choose>
 		  					<c:when test="${firstForm.divisionOfProduct==1}">
@@ -123,13 +124,13 @@ window.onload=function help(){
 		  	</table>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 상세내용</td></tr>
-		  		<tr><td class="first_th" width="150px" >[제품명]</td><td class="first_td" >${forms.kor_name}, ${forms.code}</td></tr>
+		  		<tr><td class="first_th" width="160px" >[제품명]</td><td class="first_td" >${forms.kor_name}, ${forms.code}</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[상품명]</td>
+		  			<td class="first_th" width="160px">[상품명]</td>
 		  			<td class="first_td">${firstForm.nameOfProduct}</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[업소명 표기 여부]</td>
+		  			<td class="first_th" width="160px" >[업소명 표기 여부]</td>
 		  			<td class="first_td" >
 		  				<c:choose>
 		  					<c:when test="${firstForm.checkForBrandName==1}">
@@ -141,18 +142,18 @@ window.onload=function help(){
 		  				</c:choose>
 		  			</td>
 	  			</tr>
-		  		<tr><td class="first_th" width="150px" >[품목명]</td><td class="first_td" >${forms.kor_name}</td></tr>
-		  		<tr><td class="first_th" width="150px" >[품목분류번호]</td><td class="first_td" >${forms.code}</td></tr>
-		  		<tr><td class="first_th" width="150px" >[등급]</td><td class="first_td" >${forms.p_class}</td></tr>
+		  		<tr><td class="first_th" width="160px" >[품목명]</td><td class="first_td" >${forms.kor_name}</td></tr>
+		  		<tr><td class="first_th" width="160px" >[품목분류번호]</td><td class="first_td" >${forms.code}</td></tr>
+		  		<tr><td class="first_th" width="160px" >[등급]</td><td class="first_td" >${forms.p_class}</td></tr>
 		  	</table>
 	  		<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 사용목적</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[사용목적]</td>
+		  			<td class="first_th" width="160px" >[사용목적]</td>
 		  			<td class="first_td" >${firstForm.purpose}</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[성능]</td>
+		  			<td class="first_th" width="170px">[성능]</td>
 		  			<c:choose>
 	  					<c:when test="${firstForm.performance_text==''||firstForm.performance_text==null}">
 	  						<td class="first_td">
@@ -169,29 +170,29 @@ window.onload=function help(){
 		  	</table>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 신청항목</td></tr>
-		  		<tr><td class="first_th" width="150px" >[원재료]</td><td class="first_td" >별첨</td></tr>
-		  		<tr><td class="first_th" width="150px">[제조방법]</td><td class="first_td">별첨</td></tr>
-		  		<tr><td class="first_th" width="150px">[사용방법]</td><td class="first_td">별첨</td></tr>
-		  		<tr><td class="first_th" width="150px">[사용 시 주의사항]</td><td class="first_td">별첨</td></tr>
-		  		<tr><td class="first_th" width="150px">[저장방법]</td><td class="first_td">별첨</td></tr>
-		  		<tr><td class="first_th" width="150px">[사용기한]</td><td class="first_td">별첨</td></tr>
-		  		<tr><td class="first_th" width="150px">[시험규격]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th" width="160px" >[원재료]</td><td class="first_td" >별첨</td></tr>
+		  		<tr><td class="first_th" width="160px">[제조방법]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th" width="160px">[사용방법]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th" width="160px">[사용 시 주의사항]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th" width="160px">[저장방법]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th" width="160px">[사용기한]</td><td class="first_td">별첨</td></tr>
+		  		<tr><td class="first_th" width="160px">[시험규격]</td><td class="first_td">별첨</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[허가조건]</td>
+		  			<td class="first_th" width="160px">[허가조건]</td>
 		  			<td class="first_td">${firstForm.permission}</td>
 	  			</tr>
 		  	</table>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 제조원</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[제조의뢰자]</td>
+		  			<td class="first_th" width="160px" >[제조의뢰자]</td>
 		  			<td class="first_td" >
 		  				${firstForm.requestName}
 		  				(${firstForm.country1},${firstForm.requestPlace})
 		  			</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[제조자]</td>
+		  			<td class="first_th" width="160px">[제조자]</td>
 		  			<td class="first_td" >
 		  				${firstForm.makingName}
 		  				(${firstForm.country2},${firstForm.makingPlace})
@@ -201,10 +202,10 @@ window.onload=function help(){
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 비고</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[일회용의료기기 여부]</td>
+		  			<td class="first_th" width="160px" >[일회용의료기기 여부]</td>
 		  			<td class="first_td" >
 		  				<c:choose>
-		  					<c:when test="${firstForm.makingName==1}">
+		  					<c:when test="${firstForm.disposableness==1}">
 		  						예
 		  					</c:when>
 		  					<c:otherwise>
@@ -214,7 +215,7 @@ window.onload=function help(){
 		  			</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[추적관리대상의료기기]</td>
+		  			<td class="first_th" width="160px">[추적관리대상의료기기]</td>
 		  			<td class="first_td">
 		  				<c:choose>
 		  					<c:when test="${firstForm.chase==1}">
@@ -227,7 +228,7 @@ window.onload=function help(){
 		  			</td>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[비고(신청근거)]</td>
+		  			<td class="first_th" width="160px">[비고(신청근거)]</td>
 		  			<td class="first_td">${firstForm.etc}</td>
 	  			</tr>
 		  	</table>
@@ -247,43 +248,43 @@ window.onload=function help(){
 			    		<c:when test="${firstForm.modelFileName!=null}">
 			    			<table class="first_form">
 					    		<tr>
-									<td class="first_th" width="60"><p>&nbsp;[일렬번호]</p></td>
-									<td class="first_th" width="490"><p>&nbsp;[모델명]</p></td>
-									<td class="first_th" width="90"><p>&nbsp;[수출용여부]</p></td>
+									<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;" width="100"><p>&nbsp;[일렬번호]</p></td>
+									<td style="border:1px solid black; background-color:#DDDDDE;" width="430"><p>&nbsp;[모델명]</p></td>
+									<td style="border:1px solid black; background-color:#DDDDDE;" width="110"><p>&nbsp;[수출용여부]</p></td>
 								</tr>
 					    		${modelFileName}
 			    			</table>
 			    		</c:when>
-			    		<c:otherwise>ㅁㅁㅁ
+			    		<c:otherwise>
 			    			<table class="first_form">
 					    		<tbody>
 									<tr>
-										<td class="first_th" width="60"><p>&nbsp;[일렬번호]</p></td>
-										<td class="first_th" width="490"><p>&nbsp;[모델명]</p></td>
-										<td class="first_th" width="90"><p>&nbsp;[수출용여부]</p></td>
+										<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;" width="100"><p>&nbsp;[일렬번호]</p></td>
+										<td style="border:1px solid black; background-color:#DDDDDE;" width="430"><p>&nbsp;[모델명]</p></td>
+										<td style="border:1px solid black; background-color:#DDDDDE;" width="110"><p>&nbsp;[수출용여부]</p></td>
 									</tr>
 									<tr>
-										<td class="first_td" width="60"><p>&nbsp;</p></td>
-										<td class="first_td" width="490"><p>&nbsp;</p></td>
-										<td class="first_td" width="90"><p>&nbsp;</p></td>
+										<td style="border:1px solid black; padding:5px;" ><p>&nbsp;</p></td>
+										<td style="border:1px solid black;" ><p>&nbsp;</p></td>
+										<td style="border:1px solid black;" ><p>&nbsp;</p></td>
 									</tr>
 									<tr>
-										<td class="first_td" width="60"><p>&nbsp;</p></td>
-										<td class="first_td" width="490"><p>&nbsp;</p></td>
-										<td class="first_td" width="90"><p>&nbsp;</p></td>
+										<td style="border:1px solid black; padding:5px;" ><p>&nbsp;</p></td>
+										<td style="border:1px solid black;" ><p>&nbsp;</p></td>
+										<td style="border:1px solid black;" ><p>&nbsp;</p></td>
 									</tr>
 								</tbody>
 							</table>
 			    		</c:otherwise>
-			    	</c:choose>
+			    	</c:choose><br>
 					▶ 포장단위
 					<c:choose>
 						<c:when test="${firstForm.pakingFileNmae!=null}">
 							<table class="first_form">
 					    		<tr>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[일렬번호]</p></td>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="489"><p>&nbsp;[모델명]</p></td>
-									<td style="border:1px solid #000000; border-top:0; border-right:0; background-color:#DDDDDE;" width="189"><p>&nbsp;[수출용여부]</p></td>
+					    			<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;" width="100"><p>&nbsp;[일렬번호]</p></td>
+									<td style="border:1px solid black; background-color:#DDDDDE;" width="430"><p>&nbsp;[포장단위]</p></td>
+									<td style="border:1px solid black; background-color:#DDDDDE;" width="110"><p>&nbsp;[수출용여부]</p></td>
 								</tr>
 					    		${pakingFileNmae}
 			    			</table>
@@ -292,27 +293,27 @@ window.onload=function help(){
 							<table class="first_form">
 								<tbody>
 									<tr>
-										<td class="first_th" width="234"><p>&nbsp;[일렬번호]</p></td>
-										<td class="first_th" width="634"><p>&nbsp;[포장단위]</p></td>
+										<td style="border:1px solid black; padding:5px; background-color:#DDDDDE;"  width="100"><p>&nbsp;[일렬번호]</p></td>
+										<td style="border:1px solid black; background-color:#DDDDDE;" width="540"><p>&nbsp;[포장단위]</p></td>
 									</tr>
 									<tr>
-										<td class="first_td" width="234"><p>&nbsp;</p></td>
-										<td class="first_td" width="634"><p>&nbsp;</p></td>
+										<td style="border:1px solid black; padding:5px;" ><p>&nbsp;</p></td>
+										<td style="border:1px solid black; padding:5px;" ><p>&nbsp;</p></td>
 									</tr>
 									<tr>
-										<td class="first_td" width="234"><p>&nbsp;</p></td>
-										<td class="first_td" width="634"><p>&nbsp;</p></td>
+										<td style="border:1px solid black; padding:5px;" ><p>&nbsp;</p></td>
+										<td style="border:1px solid black; padding:5px;" ><p>&nbsp;</p></td>
 									</tr>
 								</tbody>
 							</table>
 						</c:otherwise>
 					</c:choose>
 		    	</c:otherwise>
-		    </c:choose><br>
+		    </c:choose>
 		    <table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 모양 및 구조</td></tr>
 		  		<tr>
-		  			<td class="first_th" width="150px" >[작용원리]</td>
+		  			<td class="first_th" width="160px" >[작용원리]</td>
 		  				<c:choose>
 		  					<c:when test="${firstForm.logic_text==''||firstForm.logic_text==null}">
 		  						<td class="first_td">
@@ -327,7 +328,7 @@ window.onload=function help(){
 		  				</c:choose>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[외형]</td>
+		  			<td class="first_th" width="160px">[외형]</td>
 		  			<c:choose>
 	  					<c:when test="${firstForm.shape_text==''||firstForm.shape_text==null}">
 	  						<td class="first_td">
@@ -342,7 +343,7 @@ window.onload=function help(){
 	  				</c:choose>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[치수]</td>
+		  			<td class="first_th" width="160px">[치수]</td>
 		  			<c:choose>
 	  					<c:when test="${firstForm.size_text==''||firstForm.size_text==null}">
 	  						<td class="first_td">
@@ -357,16 +358,16 @@ window.onload=function help(){
 	  				</c:choose>
 	  			</tr>
 		  		<tr>
-		  			<td class="first_th" width="150px">[특성]</td>
+		  			<td class="first_th" width="160px">[특성]</td>
 		  			<td class="first_td" >별첨</td>
 	  			</tr>
 		  	</table>
 		  	<table class="first_form">
 		  		<tr><td class="first_title" colspan="2">▶ 담당자</td></tr>
-		  		<tr><td class="first_th" width="150px" >[성명]</td><td class="first_td">${memberInfo.kor_name}</td></tr>
-		  		<tr><td class="first_th" width="150px">[전화번호]</td><td class="first_td">${memberInfo.phone1}-${memberInfo.phone2}-${memberInfo.phone3}</td></tr>
-		  		<tr><td class="first_th" width="150px">[이메일]</td><td class="first_td">${memberInfo.email1}@${memberInfo.email2}</td></tr>
-		  		<tr><td class="first_th" width="150px">[휴대폰]</td><td class="first_td">${memberInfo.cell_phone1}-${memberInfo.cell_phone2}-${memberInfo.cell_phone3}</td></tr>
+		  		<tr><td class="first_th" width="160px" >[성명]</td><td class="first_td">${memberInfo.kor_name}</td></tr>
+		  		<tr><td class="first_th" width="160px">[전화번호]</td><td class="first_td">${memberInfo.phone1}-${memberInfo.phone2}-${memberInfo.phone3}</td></tr>
+		  		<tr><td class="first_th" width="160px">[이메일]</td><td class="first_td">${memberInfo.email1}@${memberInfo.email2}</td></tr>
+		  		<tr><td class="first_th" width="160px">[휴대폰]</td><td class="first_td">${memberInfo.cell_phone1}-${memberInfo.cell_phone2}-${memberInfo.cell_phone3}</td></tr>
 		  	</table><br>
 		  </div>
 		<%}else if(num.equals("2")){%>
