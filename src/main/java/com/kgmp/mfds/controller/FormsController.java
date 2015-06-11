@@ -112,8 +112,8 @@ public class FormsController {
 			forms=forms_service.getUserForms(formsInfo);
 			forms.getForms_seq();
 			firstForm = forms_service.getFirstForm(forms_seq);
-			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "c:/save/notice");
-			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "c:/save/notice");
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -392,7 +392,7 @@ public class FormsController {
 				  System.out.println(modelFileName_old);
 				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 				  replaceName1 = cal.getTimeInMillis() + fileType;  //change file name
-				  String path = "c:/save/notice";
+				  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice";
 				  FileUpload.fileUpload(file, path, replaceName1);
 				  try{
 						//del file s		
@@ -421,7 +421,7 @@ public class FormsController {
 					  System.out.println("file not null");
 					  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 					  replaceName2 = cal.getTimeInMillis() + fileType;  //change file name
-					  String path ="c:/save/notice";
+					  String path ="/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice";
 					  //String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment";
 					  FileUpload.fileUpload(file, path, replaceName2);
 					  try{
@@ -683,8 +683,8 @@ public class FormsController {
 		try{
 			forms=forms_service.getFormsRead(formsInfo);
 			firstForm = forms_service.getFirstForm(forms_seq);
-			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "c:/save/notice");
-			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "c:/save/notice");
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -726,8 +726,8 @@ public class FormsController {
 		try{
 			forms=forms_service.getForms(formsInfo);
 			firstForm = forms_service.getFirstForm(forms_seq);
-			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "c:/save/notice");
-			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "c:/save/notice");
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
 		}catch(Exception e){
 			e.printStackTrace();
 		}

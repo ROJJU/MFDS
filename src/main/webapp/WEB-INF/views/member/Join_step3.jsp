@@ -59,10 +59,10 @@
 												 </td><td style="color:red;">&nbsp;거래 관련 이메일, 회사의 주요정책 관련 공지메일 등이 발송됩니다.</td>
 											</tr>
 											<tr>
-												<td>비밀번호 :</td><td><input type="password" id="pw_1" name="pw_1"></td><td style="color:red;">&nbsp;8~15자의 영문/숫자/특수문자 혼용만 가능합니다.</td>
+												<td>비밀번호 :</td><td><input type="password" id="pw_1" name="pw_1" onkeyup="checkPw()"></td><td style="color:red;">&nbsp;8~15자의 영문/숫자/특수문자 혼용만 가능합니다.</td>
 											</tr>
 											<tr>
-												<td>비밀번호 재확인:</td><td><input type="password" id="pw_2" name="pw_2"></td><td>&nbsp;<label id="lbl_pw_check"></label></td>
+												<td>비밀번호 재확인:</td><td><input type="password" id="pw_2" name="pw_2" onkeyup="checkPw()"></td><td>&nbsp;<label id="lbl_pw_check"></label></td>
 											</tr>
 										</table><br>
 									</td>

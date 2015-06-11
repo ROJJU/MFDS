@@ -302,7 +302,7 @@
 	  				</td>
 		  		</tr>
 		  	</table>
-		    <textarea id="txtContent" style="width:100%; color:#ffffff;" name="model">
+		    <textarea id="txtContent" style="width:100%; color:#ffffff;" name="model" >
 				    <c:choose>
 				    	<c:when test="${firstForm.model!=null}">
 				    		${firstForm.model}
@@ -321,7 +321,7 @@
 					    			</table>
 					    		</c:when>
 					    		<c:otherwise>
-					    			<table class="first_form">
+					    			<table class="first_form"  onclick="javaScript:alert('모델명 추가 파일 첨부를 초기 1회 진행 하신 후 작성하실수 있습니다.');">
 							    		<tbody>
 											<tr>
 												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>
@@ -356,7 +356,7 @@
 					    			</table>
 								</c:when>
 								<c:otherwise>
-									<table class="first_form">
+									<table class="first_form" onclick="javaScript:alert('포장단위 추가 파일 첨부를 초기 1회 진행 하신 후 작성하실수 있습니다.');">
 							    		<tbody>
 											<tr>
 												<td style="border:1px solid #000000; background-color:#DDDDDE;" width="100"  border='1' border-color='black'><p>&nbsp;[일렬번호]</p></td>

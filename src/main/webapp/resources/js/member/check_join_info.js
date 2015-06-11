@@ -1,4 +1,22 @@
-	$(function(){  /* 비밀번호 동일 확인 */
+	/* 비밀번호 동일 확인 제이쿼리가 작동하지 않아 스크립트로 변경 */
+	function checkPw(){
+		var pw1 = document.getElementById("pw_1").value;
+		var pw2 = document.getElementById("pw_2").value;
+		var txtArea = document.getElementById("lbl_pw_check");
+		var txt = "";
+		if(pw1 == pw2){
+			txtArea.style.color="blue";
+			txt = "두 암호가 일치합니다.";
+		}else{
+			txtArea.style.color="red";
+			txt = "두 암호가 일치하지 않습니다.";
+		}
+		txtArea.innerHTML=txt;
+	}
+
+
+	/* 비밀번호 동일 확인 
+		$(function(){  
 			$("#pw_2").bind("keyup",function(){
 				var pw1 = $("#pw_1").val();
 				var pw2 = $("#pw_2").val();
@@ -26,6 +44,7 @@
 				$("#lbl_pw_check").text(txt);
 			});
 		});
+		*/
 		function isFile(company_file){
 		    var IMG_FORMAT = "\.\(bmp|gif|jpg|jpeg|png)$";
 		    var pattern = new RegExp(IMG_FORMAT, "i");
