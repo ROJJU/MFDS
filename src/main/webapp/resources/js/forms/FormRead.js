@@ -58,7 +58,7 @@
 				  $(".__se_tbl").attr("border","1");
 				  $(".__se_tbl").attr("cellspacing","0");
 				  $(".__se_tbl").attr("bordercolor","black");
-				  $(".__se_tbl td").attr("height","35px");
+				  $(".__se_tbl td").attr("height","30px");
 				  $(".__se_tbl td").attr("bordercolor","black");
 				  
 				  if(list_seq=='44'){

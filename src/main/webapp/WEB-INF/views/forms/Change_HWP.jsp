@@ -5,54 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script><!--this is for time and arcodion  -->
-<script type="text/javascript" src="/resources/js/account/jquery.accordion.2.0.js" ></script>
-<script type="text/javascript">
-window.onload=function help(){
-	  $(".__se_tbl").attr("width","640px");
-	  $(".__se_tbl").attr("border","1");
-	  $(".__se_tbl").attr("cellspacing","0");
-	  $(".__se_tbl").attr("bordercolor","black");
-	  $("td").attr("width","");
-	  $(".hong").attr("width","640px");
-	  $(".hong").attr("border","1");
-	  $(".hong").attr("cellspacing","0");
-	  $(".hong").attr("bordercolor","black");
-	  $(".test").attr("width","200px");
-	  $(".test2").attr("width","440px");
-	  $(".rule1").attr("width","240px");
-	  $(".rule2").attr("width","100px");
-	  $(".rule3").attr("width","100px");
-	  $(".rule4").attr("width","100px");
-	  $(".rule5").attr("width","100px");
-	  $("td").attr("bordercolor","black");
-	  $("td").attr("height","25px");
-	  
-	  $(".first_form").attr("width","640px");
-	  $(".first_form").attr("border","1");
-	  $(".first_form").attr("cellspacing","0");
-	  $(".first_form").attr("bordercolor","black");
-	  $(".first_th").attr("width","150px");
-	  
-	  $(".write1").attr("width","220px");
-	  $(".write2").attr("width","420px");
-	 
-	  document.hwp.contents.value=document.getElementById("form").innerHTML;
-	document.hwp.submit();
-  }
-</script>
 <title>한글 변화 서류 미리보기 및 한글 파일 변환</title>
 </head>
 <body>
 	<div style="width:630px; margin:0 auto;">
 		<form name="hwp" action="/download_hwpProc.do" method="post">
+			<input type="hidden" value="<%=num%>" id="list_seq">
 			<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
 			<input type="hidden" name="add_date" value="${forms.add_date}">
 			<input type="hidden" name="contents">
 			<a id="form">
 		<%if(num.equals("1")){%>
 		<input type="hidden" value="1.Applications" id="title" name="title">
-	<div class="contentDiv">
+		 <div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
 		  	<input type="hidden" value="1" name="contents_name">
@@ -159,12 +124,12 @@ window.onload=function help(){
 	  						<td class="first_td">
 					  				별첨
 			  				</td>
-  						</c:when>
+	 						</c:when>
 	  					<c:otherwise>
 	  						<td class="first_td">
 				  				${firstForm.performance_text}
 			  				</td>
-  						</c:otherwise>
+	 						</c:otherwise>
 	  				</c:choose>
 	  			</tr>
 		  	</table>
@@ -334,12 +299,12 @@ window.onload=function help(){
 	  						<td class="first_td">
 					  				별첨
 			  				</td>
-  						</c:when>
+	 						</c:when>
 	  					<c:otherwise>
 	  						<td class="first_td">
 				  				${firstForm.shape_text}
 			  				</td>
-  						</c:otherwise>
+	 						</c:otherwise>
 	  				</c:choose>
 	  			</tr>
 		  		<tr>
@@ -349,12 +314,12 @@ window.onload=function help(){
 	  						<td class="first_td">
 					  				별첨
 			  				</td>
-  						</c:when>
+	 						</c:when>
 	  					<c:otherwise>
 	  						<td class="first_td">
 				  				${firstForm.size_text}
 			  				</td>
-  						</c:otherwise>
+	 						</c:otherwise>
 	  				</c:choose>
 	  			</tr>
 		  		<tr>
@@ -503,5 +468,85 @@ window.onload=function help(){
 		<%} %>
 		</form>
 	</div>
+<!--Script -->
+	<script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript">
+	window.onload=function help(){
+		var list_seq = $("#list_seq").val();
+		if(list_seq=='1'){
+			  $(".first_form").attr("width","640px");
+			  $(".first_form").attr("border","1");
+			  $(".first_form").attr("cellspacing","0");
+			  $(".first_form").attr("bordercolor","black");
+			  $(".first_th").attr("width","170px");
+		  }else{
+			  $(".__se_tbl").attr("width","640px");
+			  $(".__se_tbl").attr("border","1");
+			  $(".__se_tbl").attr("cellspacing","0");
+			  $(".__se_tbl").attr("bordercolor","black");
+			  $(".__se_tbl td").attr("height","30px");
+			  $(".__se_tbl td").attr("bordercolor","black");
+			  
+			  if(list_seq=='44'){
+				  $(".first_form").attr("width","640px");
+				  $(".first_form").attr("border","1");
+				  $(".first_form").attr("cellspacing","0");
+				  $(".first_form").attr("bordercolor","black");
+				  $(".first_th").attr("width","170px");
+	
+				  $(".hong td").attr("width","");
+				  $(".test td").attr("width","");
+				  $(".hong").attr("width","640px");
+				  $(".hong").attr("border","1");
+				  $(".hong").attr("cellspacing","0");
+				  $(".hong").attr("bordercolor","black");
+				  $(".test").attr("width","200px");
+				  $(".test2").attr("width","440px");
+				  $(".rule1").attr("width","240px");
+				  $(".rule2").attr("width","100px");
+				  $(".rule3").attr("width","100px");
+				  $(".rule4").attr("width","100px");
+				  $(".rule5").attr("width","100px");
+				  
+				  $(".hong td").attr("height","25px");
+				  $(".hong td").attr("bordercolor","black");
+				  
+				  $(".test td").attr("height","25px");
+				  $(".test td").attr("bordercolor","black");
+			  }else if(list_seq=='19'||list_seq=='24'){
+				  $(".write1").attr("width","220px");
+				  $(".write2").attr("width","420px");
+			  }else if(list_seq=='8'){
+				  $("#num").attr("width","80px");
+				  $("#list").attr("width","120px");
+				  $("#sample").attr("width","220px");
+				  $("#how").attr("width","220px");
+			  }else{
+				  $(".hong td").attr("width","");
+				  $(".test td").attr("width","");
+				  $(".hong").attr("width","640px");
+				  $(".hong").attr("border","1");
+				  $(".hong").attr("cellspacing","0");
+				  $(".hong").attr("bordercolor","black");
+				  $(".test").attr("width","200px");
+				  $(".test2").attr("width","440px");
+				  $(".rule1").attr("width","240px");
+				  $(".rule2").attr("width","100px");
+				  $(".rule3").attr("width","100px");
+				  $(".rule4").attr("width","100px");
+				  $(".rule5").attr("width","100px");
+				  
+				  $(".hong td").attr("height","25px");
+				  $(".hong td").attr("bordercolor","black");
+				  
+				  $(".test td").attr("height","25px");
+				  $(".test td").attr("bordercolor","black");
+			  }
+		  }
+		 
+		  document.hwp.contents.value=document.getElementById("form").innerHTML;
+		  document.hwp.submit();
+	  }
+	</script>
 </body>
 </html>
