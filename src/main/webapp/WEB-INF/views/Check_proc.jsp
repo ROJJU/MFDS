@@ -2,8 +2,7 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <script type="text/javascript"> 
 var message = '${msg}'; 
-var returnUrl = '${url}'; 
-alert(message); 
-document.location.href = returnUrl; 
+var returnUrl = '${url}';
+document.location.href = returnUrl+"&msg="+message; 
 </script>
 
