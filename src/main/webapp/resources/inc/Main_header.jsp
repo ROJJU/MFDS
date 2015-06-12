@@ -31,9 +31,9 @@ location.href="/";
 	<script type="text/javascript" src="/resources/js/jquery.google_menu.js"></script><!--process-->
 	<script type="text/javascript" src="/resources/js/pace.min.js"></script><!--process-->
 	
-	<link rel="stylesheet" type="text/css" href="/resources/css/google_menu.css"/><!--process-->
+	<link rel="stylesheet" type="text/css" href="/resources/css/google_menu.css"/><!--drop down menu e-->
 	<link rel="stylesheet" type="text/css" href="/resources/css/common/Header.css" media="all" /><!--drop down menu e-->
-	<link rel="stylesheet" type="text/css" href="/resources/css/common/process.css" media="all" /><!--drop down menu e-->
+	<link rel="stylesheet" type="text/css" href="/resources/css/common/process.css" media="all" /><!--process-->
 <script type="text/javascript">
 		function goUrl(url){
 			location.href=url;

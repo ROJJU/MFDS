@@ -13,6 +13,6 @@ if(condition==null){
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 </head>
 	<div class="total_footer" id="total_footer">
-		<div id="hong"><img src="/resources/img/common/warning.png" width="15px;">&nbsp;<b>상태</b> : <%=condition%></div>
+		<div id="condition"><img src="/resources/img/common/warning.png" width="15px;">&nbsp;<b>상태</b> : <%=condition%></div>
 	</div>
 </html>

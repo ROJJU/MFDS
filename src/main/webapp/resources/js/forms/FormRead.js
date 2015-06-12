@@ -39,10 +39,9 @@
 	//hwp > form
 	
 		  function HwpIt(forms_seq){
-			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-			  for(var i=1;i<=43;i++)
-			  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+i,''+i+'','width=755 height=526 scrollbars=yes');
-			  }
+			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.!!!!');
+			  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq,'processDown','width=755 height=726 scrollbars=yes');
+		  }
 		  
 		  function save_hwp(){
 			  var list_seq = document.getElementById("num").value;

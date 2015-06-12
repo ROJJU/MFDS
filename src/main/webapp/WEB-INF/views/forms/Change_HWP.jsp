@@ -467,6 +467,7 @@
 		<%=request.getParameter("contents") %>
 		<%} %>
 		</form>
+		<input type="hidden" value="<%=request.getParameter("num2")%>" id="num2">
 	</div>
 <!--Script -->
 	<script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script>
@@ -546,7 +547,11 @@
 		 
 		  document.hwp.contents.value=document.getElementById("form").innerHTML;
 		  document.hwp.submit();
+		  var num2= document.getElementById("num2").value;
+		  window.opener.document.getElementById(num2).innerHTML="<b style='color:red;'>완료!</b>";
+		  
 	  }
+	setTimeout('self.close();', 10000);
 	</script>
 </body>
 </html>

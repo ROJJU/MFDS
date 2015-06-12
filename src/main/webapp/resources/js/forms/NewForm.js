@@ -350,8 +350,8 @@
 					var sec = parseInt(document.getElementById("sec").value);
 					var list_seq = document.getElementById("list_seq").value;
 					var countSec = sec-1;
-					var resetSec = "60";
-					var resetMin = "1";
+					var resetSec = "10";
+					var resetMin = "0";
 					var countMin = min;
 					var urlLink ="";
 					
@@ -364,7 +364,7 @@
 					if(countSec==-1){
 						if(countMin==0){
 							var formData = $("#boardWriteForm").serialize();
-							var response = $('#autoState');
+							var response = $('#condition');
 							oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []);
 							
 							$.ajax({
@@ -373,10 +373,10 @@
 				                cache: false,
 				                data : formData,
 				                succes: function(){
-				                	response.html('ok');
+				                	response.text('임시저장을 완료 하였습니다.');
 				                },
 				                error: function(errMsg) {
-				    				
+				                	response.text('임시저장중 오류가 발생하였습니다.');
 				                }          
 				          	});
 							
