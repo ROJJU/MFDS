@@ -454,7 +454,7 @@ int a=-1;
 				<jsp:include page="/resources/inc/Sub_footer.jsp"/>
 			</div>
 		</div>
-		<jsp:include page="/resources/inc/Main_footer.html"/>
+		<jsp:include page="/resources/inc/Main_footer.jsp"/>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 		<!--timer s-->
 		<!--this is for time and arcodion  -->
