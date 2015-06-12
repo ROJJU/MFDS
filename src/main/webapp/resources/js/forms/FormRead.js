@@ -59,6 +59,7 @@
 				  $(".__se_tbl").attr("cellspacing","0");
 				  $(".__se_tbl").attr("bordercolor","black");
 				  $(".__se_tbl td").attr("height","35px");
+				  $(".__se_tbl td").attr("bordercolor","black");
 				  
 				  if(list_seq=='44'){
 					  $(".first_form").attr("width","640px");
@@ -89,6 +90,11 @@
 				  }else if(list_seq=='19'||list_seq=='24'){
 					  $(".write1").attr("width","220px");
 					  $(".write2").attr("width","420px");
+				  }else if(list_seq=='8'){
+					  $("#num").attr("width","80px");
+					  $("#list").attr("width","120px");
+					  $("#sample").attr("width","220px");
+					  $("#how").attr("width","220px");
 				  }else{
 					  $(".hong td").attr("width","");
 					  $(".test td").attr("width","");

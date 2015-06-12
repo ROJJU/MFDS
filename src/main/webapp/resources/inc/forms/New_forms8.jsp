@@ -26,10 +26,10 @@
 						<td bgcolor="#EAEAEA" class="" colspan="4" rowspan="1" style="width: 1212px; height: 18px; padding: 3px 4px 2px; color: rgb(255, 255, 255); text-align: left; font-weight: normal; background-color: rgb(98, 132, 171);"><p><b><span style="font-size: 10pt;">&nbsp;&gt;성능에 관한 시험</span></b></p></td>
 						</tr>
 						<tr>
-						<td class="" width="80px" style="border:1px solid #cccccc; width: 297px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p style="text-align: center;"><span style="font-size: 13.3333330154419px; line-height: 20px;">번호</span></p></td>
-						<td class="" width="120px"style="border:1px solid #cccccc; width: 290px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center; "><b>시험항목</b></p></td>
-						<td class="" width="220px" style="border:1px solid #cccccc; width: 296px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center; "><b>시험기준</b></p></td>
-						<td class="" width="220px"style="border:1px solid #cccccc; width: 329px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center;" align="center"><b>시험방법</b></p></td>
+						<td class="" id="num" width="80px" style="border:1px solid #cccccc; width: 297px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); text-align: left; font-weight: normal; background-color: rgb(246, 248, 250);"><p style="text-align: center;"><span style="font-size: 13.3333330154419px; line-height: 20px;">번호</span></p></td>
+						<td class="" id="list" width="120px"style="border:1px solid #cccccc; width: 290px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center; "><b>시험항목</b></p></td>
+						<td class="" id="sample" width="220px" style="border:1px solid #cccccc; width: 296px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center; "><b>시험기준</b></p></td>
+						<td class="" id="how" width="220px"style="border:1px solid #cccccc; width: 329px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center;" align="center"><b>시험방법</b></p></td>
 						</tr>
 						<tr><td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p align="center">1</p></td>
 						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
