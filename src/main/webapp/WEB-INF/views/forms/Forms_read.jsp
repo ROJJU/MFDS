@@ -76,7 +76,7 @@
 				<jsp:include page="/resources/inc/Sub_footer.jsp"/>
 			</div>
 		</div>
-		<div class="total_footer" id="total_footer"></div>
+		<jsp:include page="/resources/inc/Main_footer.html"/>
 		<script type="text/javascript" src="<c:url value="/resources/js/Main/Window_size.js"/>"></script>
 		<script type="text/javascript" src="/resources/js/forms/FormRead.js"></script>
 		<div style="padding:10px; vertical-align:middle; width:30px; height:30px; background-color:#102967; color:#ffffff; position:fixed; bottom:100px; right:2px; border-top:3px solid grey;">
