@@ -31,15 +31,15 @@
 						<td class="" id="sample" width="220px" style="border:1px solid #cccccc; width: 296px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center; "><b>시험기준</b></p></td>
 						<td class="" id="how" width="220px"style="border:1px solid #cccccc; width: 329px; height: 18px; padding: 3px 4px 2px; color: rgb(61, 118, 171); background-color: rgb(246, 248, 250);"><p style="text-align: center;" align="center"><b>시험방법</b></p></td>
 						</tr>
-						<tr><td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p align="center">1</p></td>
-						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
-						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
-						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
+						<tr><td id="num" width="80px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p align="center">1</p></td>
+						<td id="list" width="120px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p>&nbsp;</p></td>
+						<td id="sample" width="220px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p>&nbsp;</p></td>
+						<td id="how" width="220px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p>&nbsp;</p></td>
 						</tr>
-						<tr><td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p align="center">2</p></td>
-						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
-						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
-						<td style="border:1px solid #cccccc; border-top:0; border-right:0; background-color:#ffffff" width="217"><p>&nbsp;</p></td>
+						<tr><td id="num" width="80px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p align="center">2</p></td>
+						<td id="list" width="120px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p>&nbsp;</p></td>
+						<td id="sample" width="220px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p>&nbsp;</p></td>
+						<td id="how" width="220px" style="border:1px solid #cccccc;  background-color:#ffffff" width="217"><p>&nbsp;</p></td>
 						</tr>
 						</tbody>
 						</table>
