@@ -134,26 +134,16 @@
 			}	
 	    }
 	 
-	 function HwpIt(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.!!!!');
-		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=1','processDown','width=755 height=726 scrollbars=yes');
+	 function HwpIt(forms_seq, state){
+		 if(window.chrome){
+			 alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+			 window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state='+state,'processDown','width=755 height=726 scrollbars=yes');
+			 
+		 }else{
+			 alert('한글 변환은 크롬을 이용해 주세요')
+		 }
 	  }
-	 
-	 function HwpItPart1(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=2','processDown','width=755 height=726 scrollbars=yes');
-	  }
-	 
-	 function HwpItPart2(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=3','processDown','width=755 height=726 scrollbars=yes');
-	  }
-	 
-	 function HwpItPart3(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=4','processDown','width=755 height=726 scrollbars=yes');
-	  }
-	 
+	
 	 //select all forms
 	  function selectAll(){
 		  if(confirm('모든 서류 보기를 선택하시겠습니까? 모든 서류 보기(모두선택)에서는 모든 서류 저장 모든 서류 인쇄를 하실 수 있습니다.')){

@@ -204,7 +204,7 @@ location.href="/";
 					<td>
 						<c:choose>
 							<c:when test="${forms.state==2}">
-								<input type="image" src="/resources/img/common/kor_icon.png" title="모든 서류 한글파일다운" width="25px" class="top_icons" onclick="javascript:HwpIt(<%=request.getParameter("forms_seq")%>)">
+								<input type="image" src="/resources/img/common/kor_icon.png" title="모든 서류 한글파일다운" width="25px" class="top_icons" onclick="javascript:HwpIt(<%=request.getParameter("forms_seq")%>, '1')">
 							</c:when>
 							<c:otherwise>
 								<input type="image" src="/resources/img/common/kor_icon_x.png" title="모든 서류 한글파일다운" width="25px" class="top_icons" onclick="formsCoution2()">

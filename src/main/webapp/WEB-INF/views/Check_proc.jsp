@@ -7,6 +7,7 @@
 <script type="text/javascript"> 
 var message = '${msg}'; 
 var returnUrl = '${url}';
-document.location.href = returnUrl+"&msg="+message;
+//document.location.href = returnUrl+"&msg="+message;
+document.location.href = returnUrl;
 </script>
 
