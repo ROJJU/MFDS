@@ -112,10 +112,28 @@ color:blue;
 	</div>
 </div>
 <input type="hidden" value="<%=request.getParameter("forms_seq")%>" id="forms_seq">
+<input type="hidden" value="<%=request.getParameter("state")%>" id="state">
 <script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script>
 <script type="text/javascript">
+	var state = document.getElementById("state").value;
+	var count =0;
+	var i=0;
+	if(state==1){
+		count=43;
+		i=0;
+	}else if(state==2){
+		count=14;
+		i=0;
+	}else if(state==3){
+		count=38;
+		i=15;
+	}else if(state==4){
+		count=43;
+		i=39;
+	}
+
 	function help(){
-		for(var i=0; i<=43; i++){
+		for(i; i<=count; i++){
 			var forms_seq = document.getElementById("forms_seq").value;
 		window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+i+'&num2=form'+i,''+i+'','width=1 height=1 scrollbars=yes');
 		}

@@ -356,11 +356,14 @@
 					var resetMin = "0";
 					var countMin = min;
 					var urlLink ="";
+					var userErrMsg = "";
 					
 					if(list_seq==1){
 						urlLink="/FirstFormsProc.do";
+						userErrMsg="신청서 자동저장을 완료 하였습니다.";
 					}else{
 						urlLink="/FormsProc.do";
+						userErrMsg ="자동저장중 오류가 발생하였습니다."
 					}
 					
 					if(countSec==-1){
@@ -379,7 +382,7 @@
 				                	countSave++;
 				                },
 				                error: function(errMsg) {
-				                	response.text('자동저장중 오류가 발생하였습니다.');
+				                	response.text(userErrMsg);
 				                }          
 				          	});
 							

@@ -36,13 +36,8 @@
 	    win.print();
 	    win.close();
 	  }
+	  
 	//hwp > form
-	
-		  function HwpIt(forms_seq){
-			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.!!!!');
-			  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq,'processDown','width=755 height=726 scrollbars=yes');
-		  }
-		  
 		  function save_hwp(){
 			  var list_seq = document.getElementById("num").value;
 			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
@@ -117,14 +112,12 @@
 				  }
 			  }
 			  
-			  
-			  
-			  
 			  document.hwp.action="/download_hwpProc.do";
 			  document.hwp.method="post";
 			  document.hwp.contents.value=document.getElementById("form").innerHTML;
 			  document.hwp.submit();
 		  }
+		  
 	  //change form
 	  function selChange(){
 		  var test = $("#check1").val();
@@ -140,7 +133,28 @@
 				}
 			}	
 	    }
-	  //select all forms
+	 
+	 function HwpIt(forms_seq){
+		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.!!!!');
+		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=1','processDown','width=755 height=726 scrollbars=yes');
+	  }
+	 
+	 function HwpItPart1(forms_seq){
+		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=2','processDown','width=755 height=726 scrollbars=yes');
+	  }
+	 
+	 function HwpItPart2(forms_seq){
+		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=3','processDown','width=755 height=726 scrollbars=yes');
+	  }
+	 
+	 function HwpItPart3(forms_seq){
+		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+		  window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state=4','processDown','width=755 height=726 scrollbars=yes');
+	  }
+	 
+	 //select all forms
 	  function selectAll(){
 		  if(confirm('모든 서류 보기를 선택하시겠습니까? 모든 서류 보기(모두선택)에서는 모든 서류 저장 모든 서류 인쇄를 하실 수 있습니다.')){
 			  requestHello(3);
@@ -151,23 +165,6 @@
 		 window.open('/resources/inc/Help_phpup.jsp?forms_seq='+forms_seq+'&help_state='+help_state+'&otp='+otp,'help','width=600 height=580 scrollbars=yes');		 
 	 }
 	 
-	 function HwpItPart1(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  for(var i=1;i<=14;i++)
-		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+i,''+i+'','width=755 height=526 scrollbars=yes');
-	  }
-	 
-	 function HwpItPart2(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  for(var i=15;i<=38;i++)
-		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+i,''+i+'','width=755 height=526 scrollbars=yes');
-	  }
-	 
-	 function HwpItPart3(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  for(var i=39;i<=43;i++)
-		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+i,''+i+'','width=755 height=526 scrollbars=yes');
-	  }
 	 function CheckOtp(){
 			var otp1=document.getElementById("otp1").value;
 			var otp2=document.getElementById("otp2").value;
@@ -178,6 +175,7 @@
 				location.href='/Main.do';
 			}
 		}CheckOtp();
+		
 	var forms_seq2=document.getElementById("forms_seq").value;
 	requestHello('1', 'contents1');
 	 
@@ -186,6 +184,7 @@
 		location.href="/resources/inc/Form_check.jsp";
 		}
 	 }
+	
 	function requestHello(num, contents) {
 		if(num==44){
 			URL = "/LoadAllContent.do?forms_seq="+forms_seq2+"&num="+num+"&contents_name="+contents;
