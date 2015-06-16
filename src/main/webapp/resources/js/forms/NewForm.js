@@ -25,10 +25,11 @@
 			
 			function loadAndSave(forms_seq, list_seq, contents_name){
 				 oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용합니다.
+				 var getList_seq = document.getElementById("list_seq").value;
 				 var boardWriteForm = document.getElementById("boardWriteForm");
 				 //to do -> need change url link
 				 var firstFormUrl ='http://192.168.0.31/NewForms.do?forms_seq='+forms_seq+'&list_seq=1&contents_name=1';
-				 if(document.URL==firstFormUrl){
+				 if(getList_seq==1){
 					boardWriteForm.action ="/FirstFormsProc.do";  //저장할 페이지로 쏩니다.
 				 }else{
 				 	boardWriteForm.action ="/FormsProc.do";  //저장할 페이지로 쏩니다.
@@ -344,7 +345,8 @@
 			  function mixCheck(forms_seq, mix, list_seq, contents_name){
 				  location.href='/update_mixProc.do?forms_seq='+forms_seq+'&mix='+mix+'&list_seq='+list_seq+'&contents_name='+contents_name;
 			  }
-			  
+				
+			  var countSave=0;
 			  function autoSave(){
 					var min = parseInt(document.getElementById("min").value);
 					var sec = parseInt(document.getElementById("sec").value);
@@ -372,11 +374,12 @@
 				                url: urlLink,
 				                cache: false,
 				                data : formData,
-				                succes: function(){
-				                	response.text('임시저장을 완료 하였습니다.');
+				                success: function(data){
+				                	response.text('자동저장을 완료 하였습니다. ['+countSave+'회]');
+				                	countSave++;
 				                },
 				                error: function(errMsg) {
-				                	response.text('임시저장중 오류가 발생하였습니다.');
+				                	response.text('자동저장중 오류가 발생하였습니다.');
 				                }          
 				          	});
 							
