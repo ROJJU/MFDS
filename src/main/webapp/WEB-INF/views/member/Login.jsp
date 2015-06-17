@@ -61,7 +61,7 @@
 				</div>
 	
 				<div data-iview:image="/resources/img/member/main3.jpg" data-iview:type="video" data-iview:transition="strip-right-fade,strip-left-fade">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/xq72hc4va9w" frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/iF5TJEKdHIA" frameborder="0" allowfullscreen></iframe>
 					<!--  <video src="https://www.youtube.com/watch?v=xq72hc4va9w&feature=youtu.be" controls width="100%" poster="/resources/img/member/main3.jpg"></video>-->
 					<div class="iview-caption caption2" data-x="450" data-y="340" data-transition="wipeRight">Video</div>
 					<div class="iview-caption caption3" data-x="600" data-y="345" data-transition="wipeLeft">Click!!</div>
