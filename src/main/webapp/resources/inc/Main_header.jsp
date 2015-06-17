@@ -103,7 +103,6 @@ location.href="/";
 	    }   
 	}   
 	
-	
 	$('document').ready(function(){
         $('.wrap').fixedMenu();
     });
