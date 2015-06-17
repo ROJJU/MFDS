@@ -548,7 +548,7 @@
 		  document.hwp.contents.value=document.getElementById("form").innerHTML;
 		  document.hwp.submit();
 		  var num2= document.getElementById("num2").value;
-		  window.opener.document.getElementById(num2).innerHTML="<b style='color:red;'>완료!</b>";
+		  window.opener.document.getElementById(num2).innerHTML="<b style='color:rgb(221, 38, 38);'>OK</b>";
 		  
 	  }
 	setTimeout('self.close();', 10000);
