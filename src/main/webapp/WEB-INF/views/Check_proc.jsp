@@ -7,7 +7,12 @@
 <script type="text/javascript"> 
 var message = '${msg}'; 
 var returnUrl = '${url}';
-//document.location.href = returnUrl+"&msg="+message;
-document.location.href = returnUrl;
+if(message=='로그인 되었습니다.'||message=='아이디 혹은 비밀번호가 잘못 되었습니다.'){
+	document.location.href = returnUrl+"?msg="+message;
+}else{
+	document.location.href = returnUrl+"&msg="+message;
+}
+
+//document.location.href = returnUrl;
 </script>
 
