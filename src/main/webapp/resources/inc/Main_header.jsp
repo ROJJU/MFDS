@@ -62,9 +62,11 @@ location.href="/";
 			      elem.click(); 
 			   } 
 	}
+		
 	function getSearch(){
 		window.open('/Search.do','getInfo','width=755 height=526');
 	}
+	
 	document.onmousedown = function (){// 우클릭 방지
 		 if(event.button == 2 || event.button == 3){
 		  document.oncontextmenu = function() {return false;};
@@ -74,8 +76,9 @@ location.href="/";
 		  document.onselectstart = function() {return false;};
 		 }
 		}
+	
 	//f1~f12 막기 // 새창열기, 새로고침 막기 ctrl+n, ctrl+d
-	function KeyEventHandle(){
+	/*function KeyEventHandle(){
 		if( 
 		( event.ctrlKey == true && ( event.keyCode == 78 || event.keyCode == 82 ) ) ||
 		( event.keyCode >= 112 && event.keyCode <= 123 )){
@@ -85,7 +88,21 @@ location.href="/";
 		}
 	}
 	document.onkeydown=KeyEventHandle;
-	document.onkeyup=KeyEventHandle;
+	document.onkeyup=KeyEventHandle;*/
+	
+	document.onkeydown = function(e) {   
+	    var evtK = (e) ? e.which : window.event.keyCode;   
+	    var isCtrl = ((typeof isCtrl != 'undefined' && isCtrl) || ((e && evtK == 17) || (!e && event.ctrlKey))) ? true : false;   
+	  
+	    if ((isCtrl && evtK == 82) || evtK == 116) {   
+	        if (e) { evtK = 505; } else { event.keyCode = evtK = 505; }   
+	    }   
+	    if (evtK == 505) {
+	        location.replace(document.URL);   
+	        return false;   
+	    }   
+	}   
+	
 	
 	$('document').ready(function(){
         $('.wrap').fixedMenu();
