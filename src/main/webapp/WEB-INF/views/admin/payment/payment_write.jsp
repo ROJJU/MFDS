@@ -74,7 +74,7 @@
 							</table>
 							<div align="left"><br><br>
 								<center>
-									<input type="image" src="/resources/img/btn/save_btn.png" onclick="javaScript:document.payment_pic.submit()" width="60px">
+									<input type="image" src="/resources/img/btn/save_btn.png" onclick="formCheck()" width="60px">
 									<input type="image" src="/resources/img/btn/list_btn.png" onclick="history.go(-2);" width="60px;">
 								</center>
 								<br><hr>
@@ -88,6 +88,26 @@
     </tr>
 </table>
 <jsp:include page="/resources/inc/admin/Footer.jsp"/>
+<script>
+	function isFile(payment_pic){
+	    var IMG_FORMAT = "\.\(bmp|gif|jpg|jpeg|png)$";
+	    var pattern = new RegExp(IMG_FORMAT, "i");
+	 
+	    return pattern.test(payment_pic);
+	}
+
+	function formCheck(){
+		var payment_pic = document.payment_pic.payment_pic.value;
+		
+		if(!isFile(payment_pic)){
+			alert('이미지만 등록 하실 수 있습니다.');
+			document.payment_pic.payment_pic.focus();
+			return false;
+		}else{
+			document.payment_pic.submit();
+		}
+	}
+</script>
 </body>
 </html>
 </body>
