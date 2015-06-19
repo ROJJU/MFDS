@@ -692,7 +692,7 @@ public class AdminController {
     }
 	
 	@RequestMapping(value = "/FirstFormsAdminProc.do")
-	public ModelAndView insertFirstFormsAdmin(@RequestParam(value="forms_seq", required = false, defaultValue = "") int forms_seq,
+	public ModelAndView insertFirstForms(@RequestParam(value="forms_seq", required = false, defaultValue = "") int forms_seq,
 										@RequestParam(value="birthDay", required = false, defaultValue = "") String birthDay,
 										@RequestParam(value="makeCompanyName", required = false, defaultValue = "") String makeCompanyName,
 										@RequestParam(value="makeAddr", required = false, defaultValue = "") String makeAddr,
@@ -752,7 +752,7 @@ public class AdminController {
 				  System.out.println(modelFileName_old);
 				  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 				  replaceName1 = cal.getTimeInMillis() + fileType;  //change file name
-				  String path = "c:/save/notice";
+				  String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice";
 				  FileUpload.fileUpload(file, path, replaceName1);
 				  try{
 						//del file s		
@@ -781,7 +781,7 @@ public class AdminController {
 					  System.out.println("file not null");
 					  String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 					  replaceName2 = cal.getTimeInMillis() + fileType;  //change file name
-					  String path ="c:/save/notice";
+					  String path ="/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice";
 					  //String path = "/usr/local/tomcat/webapps/ROOT/resources/img/upload/payment";
 					  FileUpload.fileUpload(file, path, replaceName2);
 					  try{
@@ -841,6 +841,7 @@ public class AdminController {
 		firstForm.setShape_text(shape_text);
 		firstForm.setSize_text(size_text);
 		firstForm.setPerformance_text(performance_text);
+		System.out.println("makingName:"+makingName);
 		String check=null;
 		try{
 			check=forms_service.insertFirstContents(firstForm);
@@ -851,6 +852,7 @@ public class AdminController {
 				forms.setContents(null);
 				forms.setContents_name("contents"+contents_name);
 				forms.setck_form(ck_form);
+				/*
 					if(firstForm.getLogic_text().equals(null)||firstForm.getLogic_text().equals("")){
 						Forms formsForReset = new Forms();
 						formsForReset.setForms_seq(forms_seq);
@@ -887,8 +889,8 @@ public class AdminController {
 						formsForReset4.setList_seq("2");
 						forms_service.resetContents(formsForReset4);
 					}
+				*/
 				finalCheck=forms_service.insertContents(forms);
-				System.out.println(forms.getContents_name());
 				if(finalCheck.equals("yes")){
 					msg="임시저장 완료하였습니다.";
 				}else{

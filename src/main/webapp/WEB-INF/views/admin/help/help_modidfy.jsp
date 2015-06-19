@@ -30,38 +30,6 @@ int next =list_seq+1;
 <script type="text/javascript" src="/resources/se/js/HuskyEZCreator.js" charset="utf-8"></script>
 <!--text edieter e-->
 	<meta name="robots" content="all">
-	<script type="text/javascript">
-	var win=null;
-	  function printIt(printThis){
-	    win = window.open('','offprint','width=755 height=526');
-	    self.focus();
-	    win.document.open();
-	    win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
-	    win.document.write('body{font-size:10px;}p{font-size:10px;}');
-	    win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
-	    win.document.write('<hr style="border: solid 1px grey;"/><br/>');
-	    win.document.write(printThis);
-	    win.document.write('<br/><hr style="border: solid 1px grey;"/>');
-	    win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
-	    win.document.close();
-	    win.print();
-	    win.close();
-	  }
-	  function selChange(){
-		  var test = $("#check1").val();
-			if(test=="hi"){
-				if(confirm('조합용 의료기기 서류를 삭제 하시겠습니까?')){
-				$("#check1").val("ture");
-				$( "#find" ).hide();
-				}
-			}else{
-				if(confirm('조합용 의료기기 서류를 추가 하시겠습니까?')){
-				$("#check1").val("hi");
-				$( "#find" ).show();
-				}
-			}	
-	    }
-	</script>
 	<style type="text/css">
 	a{
 	color:grey;
@@ -197,6 +165,38 @@ int next =list_seq+1;
 		location.href="/resources/inc/Form_check.jsp";
 		}
 	 }
+	
+	var win=null;
+	  function printIt(printThis){
+	    win = window.open('','offprint','width=755 height=526');
+	    self.focus();
+	    win.document.open();
+	    win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
+	    win.document.write('body{font-size:10px;}p{font-size:10px;}');
+	    win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
+	    win.document.write('<hr style="border: solid 1px grey;"/><br/>');
+	    win.document.write(printThis);
+	    win.document.write('<br/><hr style="border: solid 1px grey;"/>');
+	    win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
+	    win.document.close();
+	    win.print();
+	    win.close();
+	  }
+	  
+	  function selChange(){
+		  var test = $("#check1").val();
+			if(test=="hi"){
+				if(confirm('조합용 의료기기 서류를 삭제 하시겠습니까?')){
+				$("#check1").val("ture");
+				$( "#find" ).hide();
+				}
+			}else{
+				if(confirm('조합용 의료기기 서류를 추가 하시겠습니까?')){
+				$("#check1").val("hi");
+				$( "#find" ).show();
+				}
+			}	
+	    }
 </script>
 <!--arcodion s-->
 <script type="text/javascript" src="/resources/js/account/jquery-1.4.2.min.js" ></script><!--this is for time and arcodion  -->
