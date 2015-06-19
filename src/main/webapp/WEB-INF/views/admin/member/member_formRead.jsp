@@ -74,95 +74,42 @@
 	  }
 	//hwp > form
 	
-		  function HwpItPart1(forms_seq){
-		  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-		  <%for(int i=1;i<=14;i++){%>
-		  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
-		  <%}%>
-		  }
-		 
-		 function HwpItPart2(forms_seq){
-			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-			  <%for(int i=15;i<=38;i++){%>
-			  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
-			  <%}%>
-		  }
-		 
-		 function HwpItPart3(forms_seq){
-			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-			  <%for(int i=39;i<=43;i++){%>
-			  window.open('/change_hwpProc.do?forms_seq='+forms_seq+'&num='+<%=i%>,'<%=i%>','width=755 height=526 scrollbars=yes');
-			  <%}%>
-		  }
-		  
-		  function save_hwp(){
-			  alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
-			  $(".__se_tbl").attr("border","1");
-			  $(".__se_tbl").attr("width","632px");
-			  $(".__se_tbl").attr("cellspacing","0");
-			  $(".__se_tbl").attr("bordercolor","black");
-			  $("td").attr("bordercolor","black");
-			  $("td").attr("width","");
-			  $("td").css("border-top","1px");
-			  $("td").css("border-right","1px");
-			  document.hwp.action="/download_hwpProc.do";
-			  document.hwp.method="post";
-			  document.hwp.contents.value=document.getElementById("form").innerHTML;
-			  document.hwp.submit();
-		  }
-	  //change form
-	  function selChange(){
-		  var test = $("#check1").val();
-			if(test=="hi"){
-				if(confirm('조합용 의료기기 서류를 삭제 하시겠습니까?')){
-				$("#check1").val("ture");
-				$( "#find" ).hide();
-				}
-			}else{
-				if(confirm('조합용 의료기기 서류를 추가 하시겠습니까?')){
-				$("#check1").val("hi");
-				$( "#find" ).show();
-				}
-			}	
-	    }
-	  //select all forms
-	  function selectAll(){
-		  if(confirm('모든 서류 보기를 선택하시겠습니까? 모든 서류 보기(모두선택)에서는 모든 서류 저장 모든 서류 인쇄를 하실 수 있습니다.')){
-			  requestHello(3);
-		  }
+		  function HwpIt(forms_seq, state){
+		 if(window.chrome){
+			 alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
+			 window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state='+state,'processDown','width=755 height=726 scrollbars=yes');
+			 
+		 }else{
+			 alert('한글 변환은 크롬을 이용해 주세요')
+		 }
 	  }
-
-	 function help(forms_seq, help_state){
-		 window.open('/resources/inc/Help_phpup.jsp?forms_seq='+forms_seq+'&help_state='+help_state,'help','width=600 height=300 scrollbars=yes');		 
-	 }
+		  
+		  var forms_seq2=document.getElementById("forms_seq").value;
+			requestHello('1', 'contents1');
+			 
+			window.onload=function check(){
+				if(forms_seq2==null||forms_seq2==""){
+				location.href="/resources/inc/Form_check.jsp";
+				}
+			 }
+			function requestHello(num, contents) {
+			    URL = "/LoadContent.do?forms_seq="+forms_seq2+"&num="+num+"&contents_name="+contents;
+			    xhr = getXMLHttpRequest();//XMLHttpRequest 객체 얻기
+			    xhr.open("GET", URL, true);//연결
+			    xhr.onreadystatechange = function () {//콜백 함수  등록
+			        if (xhr.readyState == 4) {//완료
+			            if (xhr.status == 200) {//오류없이 OK
+			                var str = xhr.responseText;//서버에서 보낸 내용 받기
+			                document.getElementById("form").innerHTML = str;//보여주기    
+			            } else {
+			               // alert("Fail : " + xhr.status);알수 없는 오류로 주석 처리
+			            }
+			        }
+			    }// 응답
+			    xhr.send(null);//전송
+			}// 서버에 요청
 	
 </script>
-<script type="text/javascript">
-		var forms_seq2=document.getElementById("forms_seq").value;
-		requestHello('1', 'contents1');
-		 
-		window.onload=function check(){
-			if(forms_seq2==null||forms_seq2==""){
-			location.href="/resources/inc/Form_check.jsp";
-			}
-		 }
-		function requestHello(num, contents) {
-		    URL = "/LoadContent.do?forms_seq="+forms_seq2+"&num="+num+"&contents_name="+contents;
-		    xhr = getXMLHttpRequest();//XMLHttpRequest 객체 얻기
-		    xhr.open("GET", URL, true);//연결
-		    xhr.onreadystatechange = function () {//콜백 함수  등록
-		        if (xhr.readyState == 4) {//완료
-		            if (xhr.status == 200) {//오류없이 OK
-		                var str = xhr.responseText;//서버에서 보낸 내용 받기
-		                document.getElementById("form").innerHTML = str;//보여주기    
-		            } else {
-		               // alert("Fail : " + xhr.status);알수 없는 오류로 주석 처리
-		            }
-		        }
-		    }// 응답
-		    xhr.send(null);//전송
-		}// 서버에 요청
-		</script>
 </body>
 </html>
 </body>
