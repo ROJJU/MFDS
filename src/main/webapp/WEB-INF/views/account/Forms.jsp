@@ -94,7 +94,8 @@
 															</td>
 														</tr>
 													</table>
-													<div class="container">
+													<div class="container"><br>
+													<br>
 														<div class="example_3">
 															<ul>
 																<c:forEach var="a" items="${list}">

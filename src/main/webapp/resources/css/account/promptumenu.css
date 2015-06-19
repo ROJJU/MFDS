@@ -1,9 +1,8 @@
 .promptumenu_nav{
 	z-index: 5;
-	position: absolute;
+	position: relative;
 	top:5px;
 	left: 50%;
-	margin-right: -50%;
 }
 .promptumenu_window{
 	cursor: move;
