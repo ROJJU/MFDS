@@ -59,7 +59,7 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();
 		if(page_seq.equals("1")){//select list notice info
 			//send parameter
-			Map<String, Object> pageAll = main_service.getNews(currentPage, "/News?page_seq=1", search, find);
+			Map<String, Object> pageAll = main_service.getNews(currentPage, "/News.do?page_seq=1", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
@@ -118,7 +118,7 @@ public class MainController {
 			*/
 		}else if(page_seq.equals("8")){//select list news info
 			//send parameter
-			Map<String, Object> pageAll = main_service.getNotice(currentPage, "/News?page_seq=8", search, find);
+			Map<String, Object> pageAll = main_service.getNotice(currentPage, "/News.do?page_seq=8", search, find);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")
