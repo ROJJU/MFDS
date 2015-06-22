@@ -1,7 +1,9 @@
 function tiny_box(forms_seq){TINY.box.show('/OTP.do?forms_seq='+forms_seq,1,300,150,1)};
+
 function payment(forms_seq, payment){
 	window.open('/Payment.do?forms_seq='+forms_seq+'&payment='+payment,'payment','width=755 height=526 scrollbars=yes');
 }
+
 $(function(){
 	$('.example_3 ul').promptumenu({
 		'height': 500,
@@ -12,6 +14,7 @@ $(function(){
 		'pages': true
 	});
 });
+
 
 function CheckOtp(forms_seq){
 	var otp1=document.getElementById("otp1").value;

@@ -27,7 +27,6 @@ location.href="/";
 <head>
 <title>STED</title>
 	<!--drop down menu s-->
-	<script type="text/javascript" src="/resources/js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="/resources/js/jquery.google_menu.js"></script><!--process-->
 	<script type="text/javascript" src="/resources/js/pace.min.js"></script><!--process-->
 	
@@ -106,6 +105,7 @@ location.href="/";
 	$('document').ready(function(){
         $('.wrap').fixedMenu();
     });
+	
 </script>
 <link rel="shortcut icon" href="/resources/favicon.ico"/>
 <link rel="icon" href="/resources/img/ico/STED-Favicon(144px)_v7.png" sizes="144x144">

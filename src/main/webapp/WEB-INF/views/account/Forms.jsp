@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/resources/inc/preloader.jsp"/>
 <jsp:include page="/resources/inc/Main_header.jsp"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -38,6 +39,7 @@
 		}
 		
 		.ellipsis { width: 100px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } 
+		
 	</style>
 	</head>
 	<body>
@@ -96,7 +98,7 @@
 													</table>
 													<div class="container"><br>
 													<br>
-														<div class="example_3">
+														<div class="example_3" id="example_3">
 															<ul>
 																<c:forEach var="a" items="${list}">
 																	<li style="text-align:center; width:120px; height:100px; overflow:auto;" title="${a.title}">
