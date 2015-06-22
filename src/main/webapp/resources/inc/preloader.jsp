@@ -25,7 +25,7 @@
 			position: absolute;
 			top: 50%;
 			width: 200px;
-		}
+		},,
 </style>
 <script type="text/javascript">
 $(window).load(function() {
