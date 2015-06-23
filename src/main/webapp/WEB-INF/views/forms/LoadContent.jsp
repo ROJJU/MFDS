@@ -186,7 +186,16 @@
 		  	<table class="first_form">
 		  		<tr><td class="first_title" >▶ 조합의료기기</td></tr>
 		  		<tr>
-		  			<td class="first_td" style="height:30px;">${firstForm.etc}</td>
+		  			<td class="first_td" style="height:30px;">
+		  				<c:choose>
+		  					<c:when test="${forms.mix=='2'}">
+		  						해당없음
+		  					</c:when>
+		  					<c:otherwise>
+		  						${firstForm.etc}
+		  					</c:otherwise>
+		  				</c:choose>
+		  			</td>
 	  			</tr>
 		  	</table><br>
 		    <c:choose>

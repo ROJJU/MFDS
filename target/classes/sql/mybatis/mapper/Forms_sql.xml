@@ -49,7 +49,7 @@
 		where forms_seq=#{forms_seq} and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2}
 	</select>
 	<select id="getFormsRead" parameterType="com.kgmp.mfds.vo.Forms" resultType="com.kgmp.mfds.vo.Forms">
-		select ${contents_name}, kor_name, code, p_class  from forms where forms_seq=#{forms_seq}
+		select ${contents_name}, kor_name, code, p_class, mix from forms where forms_seq=#{forms_seq}
 	</select>
 	<update id="updateHelpState" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set help_state=#{help_state} where forms_seq=#{forms_seq}
