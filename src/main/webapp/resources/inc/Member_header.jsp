@@ -10,6 +10,12 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/img/ico/STED-Favicon(72px)_v7.png">
 	<link rel="apple-touch-icon-precomposed" href="/resources/img/ico/STED-Favicon(57px)_v7.png">
 	<title>K-GMP_STED</title>
+	<script type="text/javascript">
+	history.pushState(null, null, location.href);
+	window.onpopstate = function(event) {
+		history.go(1);
+	};
+	</script>
 		<style type="text/css">
 			#m_header_wrap{
 			position:relative;
