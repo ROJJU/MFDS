@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
+<%@ page import="java.net.*"%>
 <%
 
-String title = request.getParameter("title");
+String title = URLEncoder.encode(request.getParameter("title"),"UTF-8");
 String add_date = request.getParameter("add_date");
 String destFileName = "["+add_date+"]"+title+".hwp";
 response.setHeader("Content-Disposition", "attachment;filename=".concat(String.valueOf(destFileName)));

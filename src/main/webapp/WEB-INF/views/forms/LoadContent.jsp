@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <input type="hidden" value="<%=request.getParameter("num")%>" id="num">
 <%if(request.getParameter("num").equals("1")){ %>
-<input type="hidden" value="1.Applications" id="title" name="title">
+<input type="hidden" value="1.신청서" id="title" name="title">
 	<div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
@@ -332,171 +332,171 @@
 		  </div>
 <%}else if(request.getParameter("num").equals("2")){%>
 <c:if test="${forms.contents2==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="2.Ingredients" id="title" name="title">
+<input type="hidden" value="2.원재료" id="title" name="title">
 ${forms.contents2}
 <%}else if(request.getParameter("num").equals("3")){%>
 <c:if test="${forms.contents3==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="3.Manufacturing method" id="title" name="title">
+<input type="hidden" value="3.제조방법" id="title" name="title">
 ${forms.contents3}
 <%}else if(request.getParameter("num").equals("4")){%>
 <c:if test="${forms.contents4==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="4.How to use" id="title" name="title">
+<input type="hidden" value="4.사용방법" id="title" name="title">
 ${forms.contents4}
 <%}else if(request.getParameter("num").equals("5")){%>
 <c:if test="${forms.contents5==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="5.Precautions" id="title" name="title">
+<input type="hidden" value="5.사용시주의사항" id="title" name="title">
 ${forms.contents5}
 <%}else if(request.getParameter("num").equals("6")){%>
 <c:if test="${forms.contents6==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="6.How to Save" id="title" name="title">
+<input type="hidden" value="6.저장방법" id="title" name="title">
 ${forms.contents6}
 <%}else if(request.getParameter("num").equals("7")){%>
 <c:if test="${forms.contents7==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="7.Expiration date" id="title" name="title">
+<input type="hidden" value="7.사용기한" id="title" name="title">
 ${forms.contents7}
 <%}else if(request.getParameter("num").equals("8")){%>
 <c:if test="${forms.contents8==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="8.Test Specification" id="title" name="title">
+<input type="hidden" value="8.시험규격" id="title" name="title">
 ${forms.contents8}
 <%}else if(request.getParameter("num").equals("9")){%>
 <c:if test="${forms.contents9==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="9.Shape and Structure" id="title" name="title">
+<input type="hidden" value="9.모양 및 구조_특성" id="title" name="title">
 ${forms.contents9}
 <%}else if(request.getParameter("num").equals("10")){%>
 <c:if test="${forms.contents10==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="10.Others" id="title" name="title">
+<input type="hidden" value="10.모양 및 구조_작용원리" id="title" name="title">
 ${forms.contents10}
 <%}else if(request.getParameter("num").equals("11")){%>
 <c:if test="${forms.contents11==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="11.Contents" id="title" name="title">
+<input type="hidden" value="11.모양 및 구조_외형" id="title" name="title">
 ${forms.contents11}
 <%}else if(request.getParameter("num").equals("12")){%>
 <c:if test="${forms.contents12==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="12.Device Description" id="title" name="title">
+<input type="hidden" value="12.모양 및 구조_치수" id="title" name="title">
 ${forms.contents12}
 <%}else if(request.getParameter("num").equals("13")){%>
 <c:if test="${forms.contents13==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="13.Product Specifications" id="title" name="title">
+<input type="hidden" value="13.성능" id="title" name="title">
 ${forms.contents13}
 <%}else if(request.getParameter("num").equals("14")){%>
 <c:if test="${forms.contents14==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="14.References to similar instruments and products based hunger" id="title" name="title">
+<input type="hidden" value="14.기타" id="title" name="title">
 ${forms.contents14}
 <%}else if(request.getParameter("num").equals("15")){%>
 <c:if test="${forms.contents15==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="15.Labeling" id="title" name="title">
+<input type="hidden" value="15.목차" id="title" name="title">
 ${forms.contents15}
 <%}else if(request.getParameter("num").equals("16")){%>
 <c:if test="${forms.contents16==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="16.Machine Design Overview" id="title" name="title">
+<input type="hidden" value="16.기기설명" id="title" name="title">
 ${forms.contents16}
 <%}else if(request.getParameter("num").equals("17")){%>
 <c:if test="${forms.contents17==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="17.Manufacturing Process Summary" id="title" name="title">
+<input type="hidden" value="17.제품사양" id="title" name="title">
 ${forms.contents17}
 <%}else if(request.getParameter("num").equals("18")){%>
 <c:if test="${forms.contents18==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="18.Design and manufacturing location summary" id="title" name="title">
+<input type="hidden" value="18.유사기기 및 기 허가된 제품에 대한 자료" id="title" name="title">
 ${forms.contents18}
 <%}else if(request.getParameter("num").equals("19")){%>
 <c:if test="${forms.contents19==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="19.Essential Principles Checklist" id="title" name="title">
+<input type="hidden" value="19.표시기재(안)" id="title" name="title">
 ${forms.contents19}
 <%}else if(request.getParameter("num").equals("20")){%>
 <c:if test="${forms.contents20==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="20.Risk Analysis and Management Summary" id="title" name="title">
+<input type="hidden" value="20.기기설계 계요" id="title" name="title">
 ${forms.contents20}
 <%}else if(request.getParameter("num").equals("21")){%>
 <c:if test="${forms.contents21==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="21.Declaration of Conformity to Standards" id="title" name="title">
+<input type="hidden" value="21.제조공정 요약" id="title" name="title">
 ${forms.contents21}
 <%}else if(request.getParameter("num").equals("22")){%>
 <c:if test="${forms.contents22==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="22.Validation of Equipment Design Overview" id="title" name="title">
+<input type="hidden" value="22.설계 및 제조장소 요약" id="title" name="title">
 ${forms.contents22}
 <%}else if(request.getParameter("num").equals("23")){%>
 <c:if test="${forms.contents23==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="23.Electrical and mechanical safety test summary" id="title" name="title">
+<input type="hidden" value="23.필수원칙 체크리스트" id="title" name="title">
 ${forms.contents23}
 <%}else if(request.getParameter("num").equals("24")){%>
 <c:if test="${forms.contents24==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="24.Biological safety testing summary" id="title" name="title">
+<input type="hidden" value="24.위험분석과 관리요약" id="title" name="title">
 ${forms.contents24}
 <%}else if(request.getParameter("num").equals("25")){%>
 <c:if test="${forms.contents25==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="25.Summary on radiation safety testing" id="title" name="title">
+<input type="hidden" value="25.규격에 대한 적합선언" id="title" name="title">
 ${forms.contents25}
 <%}else if(request.getParameter("num").equals("26")){%>
 <c:if test="${forms.contents26==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="26.Electromagnetic Safety Test Summary" id="title" name="title">
+<input type="hidden" value="26.기기설계의 유효성 확인 개요" id="title" name="title">
 ${forms.contents26}
 <%}else if(request.getParameter("num").equals("27")){%>
 <c:if test="${forms.contents27==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="27.Summary data on the performance" id="title" name="title">
+<input type="hidden" value="27.전기, 기계적 안전성 시험 요약" id="title" name="title">
 ${forms.contents27}
 <%}else if(request.getParameter("num").equals("28")){%>
 <c:if test="${forms.contents28==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="28.Software Verification and Validation Data Summary" id="title" name="title">
+<input type="hidden" value="28.생물학적 안전성 시험 요약" id="title" name="title">
 ${forms.contents28}
 <%}else if(request.getParameter("num").equals("29")){%>
 <c:if test="${forms.contents29==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="29.Physical and chemical properties data summary" id="title" name="title">
+<input type="hidden" value="29.방사선에 관한 안전성 시험 요약" id="title" name="title">
 ${forms.contents29}
 <%}else if(request.getParameter("num").equals("30")){%>
 <c:if test="${forms.contents30==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="30.Summary of safety data for animal-derived materials" id="title" name="title">
+<input type="hidden" value="30.전자파 안전성 시험 요약" id="title" name="title">
 ${forms.contents30}
 <%}else if(request.getParameter("num").equals("31")){%>
 <c:if test="${forms.contents31==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="31.Safety Test Summary" id="title" name="title">
+<input type="hidden" value="31.성능에 관한 자료 요약" id="title" name="title">
 ${forms.contents31}
 <%}else if(request.getParameter("num").equals("32")){%>
 <c:if test="${forms.contents32==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="32.Complex" id="title" name="title">
+<input type="hidden" value="32.소프트웨어 검증 및 유효성 확인자료 요약" id="title" name="title">
 ${forms.contents32}
 <%}else if(request.getParameter("num").equals("33")){%>
 <c:if test="${forms.contents33==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="33.Animal data summary" id="title" name="title">
+<input type="hidden" value="33.물리, 화학적 특성 자료 요약" id="title" name="title">
 ${forms.contents33}
 <%}else if(request.getParameter("num").equals("34")){%>
 <c:if test="${forms.contents34==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="34.Clinical trial data summary" id="title" name="title">
+<input type="hidden" value="34.동물 유래 물질에 대한 안전성 자료 요약" id="title" name="title">
 ${forms.contents34}
 <%}else if(request.getParameter("num").equals("35")){%>
 <c:if test="${forms.contents35==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="35.Attached document Contents" id="title" name="title">
+<input type="hidden" value="35.안전성 시험 요약" id="title" name="title">
 ${forms.contents35}
 <%}else if(request.getParameter("num").equals("36")){%>
 <c:if test="${forms.contents36==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="36.Data on manufacturing" id="title" name="title">
+<input type="hidden" value="36.복합, 조합된 의약품에 대한 정보 요약" id="title" name="title">
 ${forms.contents36}
 <%}else if(request.getParameter("num").equals("37")){%>
 <c:if test="${forms.contents37==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="37.Risk Analysis Report" id="title" name="title">
+<input type="hidden" value="37.동물시험 자료 요약" id="title" name="title">
 ${forms.contents37}
 <%}else if(request.getParameter("num").equals("38")){%>
 <c:if test="${forms.contents38==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="38.Product verification and validation data" id="title" name="title">
+<input type="hidden" value="38.임상시험 자료 요약" id="title" name="title">
 ${forms.contents38}
 <%}else if(request.getParameter("num").equals("39")){%>
 <c:if test="${forms.contents39==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="39.References" id="title" name="title">
+<input type="hidden" value="39.목차" id="title" name="title">
 ${forms.contents39}
 <%}else if(request.getParameter("num").equals("40")){%>
 <c:if test="${forms.contents40==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="40.References" id="title" name="title">
+<input type="hidden" value="40.제조공정에 관한 자료" id="title" name="title">
 ${forms.contents40}
 <%}else if(request.getParameter("num").equals("41")){%>
 <c:if test="${forms.contents41==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="41.References" id="title" name="title">
+<input type="hidden" value="41.위험분석 보고서" id="title" name="title">
 ${forms.contents41}
 <%}else if(request.getParameter("num").equals("42")){%>
 <c:if test="${forms.contents42==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="42.References" id="title" name="title">
+<input type="hidden" value="42.제품검증 및 유효성 확인 자료" id="title" name="title">
 ${forms.contents42}
 <%}else if(request.getParameter("num").equals("43")){%>
 <c:if test="${forms.contents43==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="43.References" id="title" name="title">
+<input type="hidden" value="43.참고문헌" id="title" name="title">
 ${forms.contents43}
 <%}else if(request.getParameter("num").equals("44")){%>
 <input type="hidden" value="44.All" id="title" name="title">

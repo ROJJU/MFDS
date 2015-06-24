@@ -16,7 +16,7 @@
 			<input type="hidden" name="contents">
 			<a id="form">
 		<%if(num.equals("1")){%>
-		<input type="hidden" value="1.Applications" id="title" name="title">
+		<input type="hidden" value="1.신청서" id="title" name="title">
 		 <div class="contentDiv">
 		  	<input type="hidden" value="<%=request.getParameter("forms_seq")%>" name="forms_seq">
 		  	<input type="hidden" value="<%=request.getParameter("list_seq")%>" name="list_seq">
@@ -336,130 +336,130 @@
 		  	</table><br>
 		  </div>
 		<%}else if(num.equals("2")){%>
-		<input type="hidden" value="2.Ingredients" id="title" name="title">
+		<input type="hidden" value="2.원재료" id="title" name="title">
 		${forms.contents2}
 		<%}else if(num.equals("3")){%>
-		<input type="hidden" value="3.Manufacturing method" id="title" name="title">
+		<input type="hidden" value="3.제조방법" id="title" name="title">
 		${forms.contents3}
 		<%}else if(num.equals("4")){%>
-		<input type="hidden" value="4.How to use" id="title" name="title">
+		<input type="hidden" value="4.사용방법" id="title" name="title">
 		${forms.contents4}
 		<%}else if(num.equals("5")){%>
-		<input type="hidden" value="5.Precautions" id="title" name="title">
+		<input type="hidden" value="5.사용시 주의사항" id="title" name="title">
 		${forms.contents5}
 		<%}else if(num.equals("6")){%>
-		<input type="hidden" value="6.How to Save" id="title" name="title">
+		<input type="hidden" value="6.저장방법" id="title" name="title">
 		${forms.contents6}
 		<%}else if(num.equals("7")){%>
-		<input type="hidden" value="7.Expiration date" id="title" name="title">
+		<input type="hidden" value="7.사용기한" id="title" name="title">
 		${forms.contents7}
 		<%}else if(num.equals("8")){%>
-		<input type="hidden" value="8.Test Specification" id="title" name="title">
+		<input type="hidden" value="8.시험규격" id="title" name="title">
 		${forms.contents8}
 		<%}else if(num.equals("9")){%>
-		<input type="hidden" value="9.Shape and Structure" id="title" name="title">
+		<input type="hidden" value="9.모양 및 구조_특성" id="title" name="title">
 		${forms.contents9}
 		<%}else if(num.equals("10")){%>
-		<input type="hidden" value="10.Others" id="title" name="title">
+		<input type="hidden" value="10.모양 및 구조_작용원리" id="title" name="title">
 		${forms.contents10}
 		<%}else if(num.equals("11")){%>
-		<input type="hidden" value="11.Contents" id="title" name="title">
+		<input type="hidden" value="11.모양 및 구조_외형" id="title" name="title">
 		${forms.contents11}
 		<%}else if(num.equals("12")){%>
-		<input type="hidden" value="12.Device Description" id="title" name="title">
+		<input type="hidden" value="12.모양 및 구조_치수" id="title" name="title">
 		${forms.contents12}
 		<%}else if(num.equals("13")){%>
-		<input type="hidden" value="13.Product Specifications" id="title" name="title">
+		<input type="hidden" value="13.성능" id="title" name="title">
 		${forms.contents13}
 		<%}else if(num.equals("14")){%>
-		<input type="hidden" value="14.References to similar instruments and products based hunger" id="title" name="title">
+		<input type="hidden" value="14.기타" id="title" name="title">
 		${forms.contents14}
 		<%}else if(num.equals("15")){%>
-		<input type="hidden" value="15.Labeling" id="title" name="title">
+		<input type="hidden" value="15.목차" id="title" name="title">
 		${forms.contents15}
 		<%}else if(num.equals("16")){%>
-		<input type="hidden" value="16.Machine Design Overview" id="title" name="title">
+		<input type="hidden" value="16.기기설명" id="title" name="title">
 		${forms.contents16}
 		<%}else if(num.equals("17")){%>
-		<input type="hidden" value="17.Manufacturing Process Summary" id="title" name="title">
+		<input type="hidden" value="17.제품사양" id="title" name="title">
 		${forms.contents17}
 		<%}else if(num.equals("18")){%>
-		<input type="hidden" value="18.Design and manufacturing location summary" id="title" name="title">
+		<input type="hidden" value="18.유사기기 및 기 허가 제품에 대한 자료" id="title" name="title">
 		${forms.contents18}
 		<%}else if(num.equals("19")){%>
-		<input type="hidden" value="19.Essential Principles Checklist" id="title" name="title">
+		<input type="hidden" value="19.표시기재(안)" id="title" name="title">
 		${forms.contents19}
 		<%}else if(num.equals("20")){%>
-		<input type="hidden" value="20.Risk Analysis and Management Summary" id="title" name="title">
+		<input type="hidden" value="20.기기설계 계요" id="title" name="title">
 		${forms.contents20}
 		<%}else if(num.equals("21")){%>
-		<input type="hidden" value="21.Declaration of Conformity to Standards" id="title" name="title">
+		<input type="hidden" value="21.제조공정 요약" id="title" name="title">
 		${forms.contents21}
 		<%}else if(num.equals("22")){%>
-		<input type="hidden" value="22.Validation of Equipment Design Overview" id="title" name="title">
+		<input type="hidden" value="22.설계 및 제조장소 요약" id="title" name="title">
 		${forms.contents22}
 		<%}else if(num.equals("23")){%>
-		<input type="hidden" value="23.Electrical and mechanical safety test summary" id="title" name="title">
+		<input type="hidden" value="23.필수원칙 체크리스트" id="title" name="title">
 		${forms.contents23}
 		<%}else if(num.equals("24")){%>
-		<input type="hidden" value="24.Biological safety testing summary" id="title" name="title">
+		<input type="hidden" value="24.위험분석과 관리요약" id="title" name="title">
 		${forms.contents24}
 		<%}else if(num.equals("25")){%>
-		<input type="hidden" value="25.Summary on radiation safety testing" id="title" name="title">
+		<input type="hidden" value="25.규격에 대한 적합선언" id="title" name="title">
 		${forms.contents25}
 		<%}else if(num.equals("26")){%>
-		<input type="hidden" value="26.Electromagnetic Safety Test Summary" id="title" name="title">
+		<input type="hidden" value="26.기기설계의 유효성 확인 개요" id="title" name="title">
 		${forms.contents26}
 		<%}else if(num.equals("27")){%>
-		<input type="hidden" value="27.Summary data on the performance" id="title" name="title">
+		<input type="hidden" value="27.전기, 기계적 안전성 시험 요약" id="title" name="title">
 		${forms.contents27}
 		<%}else if(num.equals("28")){%>
-		<input type="hidden" value="28.Software Verification and Validation Data Summary" id="title" name="title">
+		<input type="hidden" value="28.생물학적 안전성 시험 요약" id="title" name="title">
 		${forms.contents28}
 		<%}else if(num.equals("29")){%>
-		<input type="hidden" value="29.Physical and chemical properties data summary" id="title" name="title">
+		<input type="hidden" value="29.방사선에 관한 안전성 시험 요약" id="title" name="title">
 		${forms.contents29}
 		<%}else if(num.equals("30")){%>
-		<input type="hidden" value="30.Summary of safety data for animal-derived materials" id="title" name="title">
+		<input type="hidden" value="30.전자파 안전성 시험 요약" id="title" name="title">
 		${forms.contents30}
 		<%}else if(num.equals("31")){%>
-		<input type="hidden" value="31.Safety Test Summary" id="title" name="title">
+		<input type="hidden" value="31.성능에 관한 자료 요약" id="title" name="title">
 		${forms.contents31}
 		<%}else if(num.equals("32")){%>
-		<input type="hidden" value="32.Complex" id="title" name="title">
+		<input type="hidden" value="32.소프트웨어 검증 및 유효성 확인자료 요약" id="title" name="title">
 		${forms.contents32}
 		<%}else if(num.equals("33")){%>
-		<input type="hidden" value="33.Animal data summary" id="title" name="title">
+		<input type="hidden" value="33.물리, 화학적 특성 자료 요약" id="title" name="title">
 		${forms.contents33}
 		<%}else if(num.equals("34")){%>
-		<input type="hidden" value="34.Clinical trial data summary" id="title" name="title">
+		<input type="hidden" value="34.동물 유래 물질에 대한 안전성 자료 요약" id="title" name="title">
 		${forms.contents34}
 		<%}else if(num.equals("35")){%>
-		<input type="hidden" value="35.Attached document Contents" id="title" name="title">
+		<input type="hidden" value="35.안전성 시험 요약" id="title" name="title">
 		${forms.contents35}
 		<%}else if(num.equals("36")){%>
-		<input type="hidden" value="36.Data on manufacturing" id="title" name="title">
+		<input type="hidden" value="36.복합, 조합된 의약품에 대한 정보 요약" id="title" name="title">
 		${forms.contents36}
 		<%}else if(num.equals("37")){%>
-		<input type="hidden" value="37.Risk Analysis Report" id="title" name="title">
+		<input type="hidden" value="37.동물시험 자료 요약" id="title" name="title">
 		${forms.contents37}
 		<%}else if(num.equals("38")){%>
-		<input type="hidden" value="38.Product verification and validation data" id="title" name="title">
+		<input type="hidden" value="38.임상시험 자료 요약" id="title" name="title">
 		${forms.contents38}
 		<%}else if(num.equals("39")){%>
-		<input type="hidden" value="39.References" id="title" name="title">
+		<input type="hidden" value="39.목차" id="title" name="title">
 		${forms.contents39}
 		<%}else if(num.equals("40")){%>
-		<input type="hidden" value="40.References" id="title" name="title">
+		<input type="hidden" value="40.제조공정에 관한 자료" id="title" name="title">
 		${forms.contents40}
 		<%}else if(num.equals("41")){%>
-		<input type="hidden" value="41.References" id="title" name="title">
+		<input type="hidden" value="41.위험분석 보고서" id="title" name="title">
 		${forms.contents41}
 		<%}else if(num.equals("42")){%>
-		<input type="hidden" value="42.References" id="title" name="title">
+		<input type="hidden" value="42.제품검증 및 유효성 확인 자료" id="title" name="title">
 		${forms.contents42}
 		<%}else if(num.equals("43")){%>
-		<input type="hidden" value="43.References" id="title" name="title">
+		<input type="hidden" value="43.참고 문헌" id="title" name="title">
 		${forms.contents43}
 		<%}%>
 		</a>
