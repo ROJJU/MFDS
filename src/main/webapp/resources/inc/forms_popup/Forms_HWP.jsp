@@ -32,8 +32,8 @@ font-size:2px;
 	<b class="one">●</b> 신청내용
 	<table style=" width:100%;" cellspacing="0">
 		<tr>
-			<td class="title">신청서</td><td><div id="form0" class="loading">대기</div></td>
-			<td class="title">원재료</td><td><div id="form1" class="loading">대기</div></td>
+			<td class="title">신청서</td><td><div id="form1" class="loading">대기</div></td>
+			<td class="title">원재료</td><td><div id="form2" class="loading">대기</div></td>
 			<td class="title">제조방법</td><td><div id="form3" class="loading">대기</div></td>
 			<td class="title">사용방법</td><td><div id="form4" class="loading">대기</div></td>
 		</tr>
@@ -65,7 +65,7 @@ font-size:2px;
 			<td class="title">유사기기 및 허가된 제품에 대한 참고자료</td><td><div id="form18" class="loading">대기</div></td>
 		</tr>
 		<tr>
-			<td class="title">표시기재(안)</td><td><div id="form19" class="loading">대기</div></td>
+			<td class="title">표시기재[안]</td><td><div id="form19" class="loading">대기</div></td>
 			<td class="title">기기설계 계요</td><td><div id="form20" class="loading">대기</div></td>
 			<td class="title">제조공정 요약</td><td><div id="form21" class="loading">대기</div></td>
 			<td class="title">설계 및 제조장소 요약</td><td><div id="form22" class="loading">대기</div></td>
@@ -77,7 +77,7 @@ font-size:2px;
 			<td class="title">기기설계의 유효성 확인 개요</td><td><div id="form26" class="loading">대기</div></td>
 		</tr>
 		<tr>
-			<td class="title">전기 · 기계적 안전성 시험 요약</td><td><div id="form27" class="loading">대기</div></td>
+			<td class="title">전기/기계적 안전성 시험 요약</td><td><div id="form27" class="loading">대기</div></td>
 			<td class="title">생물학적 안전성 시험 요약</td><td><div id="form28" class="loading">대기</div></td>
 			<td class="title">방사선에 관한 안전성 시험 요약</td><td><div id="form29" class="loading">대기</div></td>
 			<td class="title">전자파 안전성 시험 요약</td><td><div id="form30" class="loading">대기</div></td>
@@ -125,10 +125,10 @@ font-size:2px;
 	var i=0;
 	if(state==1){
 		count=43;
-		i=0;
+		i=1;
 	}else if(state==2){
 		count=14;
-		i=0;
+		i=1;
 	}else if(state==3){
 		count=38;
 		i=15;

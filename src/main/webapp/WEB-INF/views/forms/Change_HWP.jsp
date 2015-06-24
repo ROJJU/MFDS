@@ -387,7 +387,7 @@
 		<input type="hidden" value="18.유사기기 및 기 허가 제품에 대한 자료" id="title" name="title">
 		${forms.contents18}
 		<%}else if(num.equals("19")){%>
-		<input type="hidden" value="19.표시기재(안)" id="title" name="title">
+		<input type="hidden" value="19.표시기재안" id="title" name="title">
 		${forms.contents19}
 		<%}else if(num.equals("20")){%>
 		<input type="hidden" value="20.기기설계 계요" id="title" name="title">
@@ -411,7 +411,7 @@
 		<input type="hidden" value="26.기기설계의 유효성 확인 개요" id="title" name="title">
 		${forms.contents26}
 		<%}else if(num.equals("27")){%>
-		<input type="hidden" value="27.전기, 기계적 안전성 시험 요약" id="title" name="title">
+		<input type="hidden" value="27.전기 및 기계적 안전성 시험 요약" id="title" name="title">
 		${forms.contents27}
 		<%}else if(num.equals("28")){%>
 		<input type="hidden" value="28.생물학적 안전성 시험 요약" id="title" name="title">
@@ -429,7 +429,7 @@
 		<input type="hidden" value="32.소프트웨어 검증 및 유효성 확인자료 요약" id="title" name="title">
 		${forms.contents32}
 		<%}else if(num.equals("33")){%>
-		<input type="hidden" value="33.물리, 화학적 특성 자료 요약" id="title" name="title">
+		<input type="hidden" value="33.물리 및 화학적 특성 자료 요약" id="title" name="title">
 		${forms.contents33}
 		<%}else if(num.equals("34")){%>
 		<input type="hidden" value="34.동물 유래 물질에 대한 안전성 자료 요약" id="title" name="title">
@@ -438,7 +438,7 @@
 		<input type="hidden" value="35.안전성 시험 요약" id="title" name="title">
 		${forms.contents35}
 		<%}else if(num.equals("36")){%>
-		<input type="hidden" value="36.복합, 조합된 의약품에 대한 정보 요약" id="title" name="title">
+		<input type="hidden" value="36.복합 및 조합된 의약품에 대한 정보 요약" id="title" name="title">
 		${forms.contents36}
 		<%}else if(num.equals("37")){%>
 		<input type="hidden" value="37.동물시험 자료 요약" id="title" name="title">

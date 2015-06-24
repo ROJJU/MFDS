@@ -400,7 +400,7 @@ ${forms.contents17}
 ${forms.contents18}
 <%}else if(request.getParameter("num").equals("19")){%>
 <c:if test="${forms.contents19==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="19.표시기재(안)" id="title" name="title">
+<input type="hidden" value="19.표시기재안" id="title" name="title">
 ${forms.contents19}
 <%}else if(request.getParameter("num").equals("20")){%>
 <c:if test="${forms.contents20==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
@@ -432,7 +432,7 @@ ${forms.contents25}
 ${forms.contents26}
 <%}else if(request.getParameter("num").equals("27")){%>
 <c:if test="${forms.contents27==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="27.전기, 기계적 안전성 시험 요약" id="title" name="title">
+<input type="hidden" value="27.전기 및 기계적 안전성 시험 요약" id="title" name="title">
 ${forms.contents27}
 <%}else if(request.getParameter("num").equals("28")){%>
 <c:if test="${forms.contents28==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
@@ -456,7 +456,7 @@ ${forms.contents31}
 ${forms.contents32}
 <%}else if(request.getParameter("num").equals("33")){%>
 <c:if test="${forms.contents33==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="33.물리, 화학적 특성 자료 요약" id="title" name="title">
+<input type="hidden" value="33.물리 및 화학적 특성 자료 요약" id="title" name="title">
 ${forms.contents33}
 <%}else if(request.getParameter("num").equals("34")){%>
 <c:if test="${forms.contents34==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
@@ -468,7 +468,7 @@ ${forms.contents34}
 ${forms.contents35}
 <%}else if(request.getParameter("num").equals("36")){%>
 <c:if test="${forms.contents36==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
-<input type="hidden" value="36.복합, 조합된 의약품에 대한 정보 요약" id="title" name="title">
+<input type="hidden" value="36.복합 및 조합된 의약품에 대한 정보 요약" id="title" name="title">
 ${forms.contents36}
 <%}else if(request.getParameter("num").equals("37")){%>
 <c:if test="${forms.contents37==null}"><font color="red">아직 작성 완료 되지 않은 부분 입니다.</font></c:if>
