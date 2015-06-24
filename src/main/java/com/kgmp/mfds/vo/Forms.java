@@ -142,9 +142,16 @@ public class Forms {
 	private int country_seq;
 	private String country;
 //country end
+	private String purpose;
 	
 	
-
+	
+	public String getPurpose() {
+		return purpose;
+	}
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
+	}
 	public String getList_seq() {
 		return list_seq;
 	}

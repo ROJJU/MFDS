@@ -142,7 +142,14 @@
 		  		<tr><td class="first_title" colspan="3" bgcolor="#EAEAEA">▶ 사용목적</td></tr>
 		  		<tr>
 		  			<td class="first_th" >[사용목적]</td>
-		  			<td class="first_td" colspan="2"><input type="text" style="width:98%;" placeholder="사용목적" name="purpose" value="${firstForm.purpose}"></td>
+		  			<td class="first_td" colspan="2">
+		  				<div id="purposeWrap" style="display:none;">
+		  					<input type="text" style="width:98%;" placeholder="사용목적" name="purpose" id="purpose">
+		  					<input type="hidden" id="firstForm_purpose" value="${firstForm.purpose}">
+		  					<input type="hidden" id="forms_purpose" value="${forms.purpose}">
+		  				</div>
+		  				${forms.purpose}
+	  				</td>
 	  			</tr>
 		  		<tr>
 		  			<td class="first_th">[성능]</td>
@@ -565,4 +572,17 @@
 	function getPost(num){
 		window.open('/Post.do?num='+num,'getPost','width=501 height=618 scrollbars=yes');
 	}
+	
+	function chk_purpose(){
+		var forms_purpose = document.getElementById("forms_purpose").value;
+		var firstForm_purpose = document.getElementById("firstForm_purpose").value;
+		var purposeWrap = document.getElementById("purposeWrap");
+		if(forms_purpose==null||forms_purpose==""){
+			purposeWrap.style.display="block";
+			document.getElementById("purpose").value=firstForm_purpose;
+		}else{
+			document.getElementById("purpose").value=forms_purpose;
+		}
+	}
+	chk_purpose();
 </script>

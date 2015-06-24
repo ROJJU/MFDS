@@ -17,7 +17,7 @@
 	<table id="list_table">
 		<tr>
 			<td class="list_table_th">목차</td>
-			<td class="list_table_th">입력값</td>
+			<td class="list_table_th" width="375px">입력값</td>
 		</tr>
 		<tr>
 			<td class="list_table_td"><font color="red">*&nbsp;</font>품목명</td>
@@ -49,6 +49,13 @@
 			<td class="list_table_td">
 				<%=request.getParameter("code")%>
 				<input type="hidden" name="code" value="<%=request.getParameter("code")%>">
+			</td>
+		</tr>
+		<tr>
+			<td class="list_table_td"><font color="red">*&nbsp;</font>사용 목적</td>
+			<td class="list_table_td">
+				<%=request.getParameter("purpose")%>
+				<input type="hidden" name="purpose" value="<%=request.getParameter("purpose")%>">
 			</td>
 		</tr>
 		<tr>

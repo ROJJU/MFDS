@@ -102,7 +102,7 @@ if(request.getParameter("find")!=null){
 				</tr>
 			</c:if>
 			<c:forEach var="a" items="${list}">
-				<tr id="click" onclick="javaScript:location.href='/BasicInfo.do?kor_name=${a.kor_name}&p_class=${a.p_class}&div_sub=${a.div_sub}&div_mid=${a.div_mid}&eng_name=${a.eng_name}&code=${a.code}'">
+				<tr id="click" onclick="javaScript:location.href='/BasicInfo.do?kor_name=${a.kor_name}&p_class=${a.p_class}&div_sub=${a.div_sub}&div_mid=${a.div_mid}&eng_name=${a.eng_name}&code=${a.code}&purpose=${a.purpose}'">
 					<td class="list_table_td" style="text-align:center;">${a.product_seq}</td>
 					<td class="list_table_td" style="text-align:center;">${a.p_class}</td>
 					<td class="list_table_td" style="text-align:center;">${a.code}</td>

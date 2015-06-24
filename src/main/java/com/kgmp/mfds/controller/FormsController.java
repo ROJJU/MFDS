@@ -250,7 +250,8 @@ public class FormsController {
     						  @RequestParam("email2") String email2,
     						  @RequestParam("state") int state,
     						  @RequestParam("payment") int payment,
-    						  @RequestParam("code") String code){
+    						  @RequestParam("code") String code,
+    						  @RequestParam("purpose") String purpose){
 		ModelAndView mav = new ModelAndView();
 		String msg=null;
 		String url=null;
@@ -278,6 +279,7 @@ public class FormsController {
 		forms.setState(state);
 		forms.setPayment(payment);
 		forms.setCode(code);
+		forms.setPurpose(purpose);
 		String check=null;
 		try{
 			check=forms_service.insertForms(forms);
