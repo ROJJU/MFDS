@@ -480,6 +480,7 @@
 		  		<tr><td class="first_th">[휴대폰]</td><td class="first_td">${memberInfo.cell_phone1}-${memberInfo.cell_phone2}-${memberInfo.cell_phone3}</td></tr>
 		  	</table><br>
 		  </div>
+		  <input type="hidden" value="0" name="chk_state" id="chk_state">
 	 </form>
 </div>
 <script>
@@ -498,6 +499,8 @@
 			$("#logic_tool").css("display", "block");
 			$("#change1").css("display", "none");
 			document.getElementById('logic_text').value="";
+			document.getElementById("chk_state").value=4;
+			onWrite(1);
 		}
 	}
 	
@@ -514,6 +517,8 @@
 			$("#shape_tool").css("display", "block");
 			$("#change2").css("display", "none");
 			document.getElementById('shape_text').value="";
+			document.getElementById("chk_state").value=3;
+			onWrite(1);
 		}
 	}
 	
@@ -530,6 +535,8 @@
 			$("#size_tool").css("display", "block");
 			$("#change3").css("display", "none");
 			document.getElementById('size_text').value="";
+			document.getElementById("chk_state").value=2;
+			onWrite(1);
 		}
 	}
 	
@@ -546,6 +553,8 @@
 			$("#performance_tool").css("display", "block");
 			$("#change4").css("display", "none");
 			document.getElementById('performance_text').value="";
+			document.getElementById("chk_state").value=1;
+			onWrite(1);
 		}
 	}
 	

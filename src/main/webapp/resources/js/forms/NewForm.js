@@ -13,7 +13,6 @@
 			 
 			var onWrite = function(list_seq){
 			 oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용합니다.
-			 
 			 var boardWriteForm = document.getElementById("boardWriteForm");
 				 if(list_seq==1){
 					boardWriteForm.action ="/FirstFormsProc.do";  //저장할 페이지로 쏩니다.
@@ -39,7 +38,7 @@
 			}
 			 
 			var pasteHTML = function(filename){                     //업로드한 사진을 화면에 보여주게 만드는 스크립트입니다.
-				var url="('ChangeSize.jsp?filename="+filename+"','sizeChange','width=300 height=420 scrollbars=yes')";
+				var url="('/resources/se/ChangeSize.jsp?filename="+filename+"','sizeChange','width=300 height=420 scrollbars=yes')";
 			    //var sHTML = '<img src="http://sted.kr/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
 			    var sHTML = '<img src="http://192.168.0.31/resources/upload/'+filename+'" id="'+filename+'" onclick="javaScript:window.open'+url+';">'; //사진이 저장된 경로입니다.
 			    oEditors.getById["txtContent"].exec("PASTE_HTML", [sHTML]);

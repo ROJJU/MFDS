@@ -364,7 +364,8 @@ public class FormsController {
 										@RequestParam(value="file1_old", required = false, defaultValue = "") String file1_old,
 										@RequestParam(value="file2_old", required = false, defaultValue = "") String file2_old,
 										@RequestParam(value="ck_form", required = false, defaultValue = "") String ck_form,
-										@RequestParam(value="performance_text", required = false, defaultValue = "") String performance_text){
+										@RequestParam(value="performance_text", required = false, defaultValue = "") String performance_text,
+										@RequestParam(value="chk_state", required = false, defaultValue = "") String chk_state){
 		//file upload s modelFileName
 		String replaceName1=null;
 		String replaceName2=null;
@@ -481,7 +482,7 @@ public class FormsController {
 		firstForm.setShape_text(shape_text);
 		firstForm.setSize_text(size_text);
 		firstForm.setPerformance_text(performance_text);
-		System.out.println("makingName:"+makingName);
+		System.out.println("makingName:"+chk_state);
 		String check=null;
 		try{
 			check=forms_service.insertFirstContents(firstForm);
@@ -492,47 +493,19 @@ public class FormsController {
 				forms.setContents(null);
 				forms.setContents_name("contents"+contents_name);
 				forms.setck_form(ck_form);
-				/*
-					if(firstForm.getLogic_text().equals(null)||firstForm.getLogic_text().equals("")){
-						Forms formsForReset = new Forms();
-						formsForReset.setForms_seq(forms_seq);
-						formsForReset.setContents(null);
-						formsForReset.setContents_name("contents10");
-						formsForReset.setck_form("ck_form10");
-						formsForReset.setList_seq("2");
-						forms_service.resetContents(formsForReset);
-					}
-					if(firstForm.getShape_text().equals(null)||firstForm.getShape_text().equals("")){
-						Forms formsForReset2 = new Forms();
-						formsForReset2.setForms_seq(forms_seq);
-						formsForReset2.setContents(null);
-						formsForReset2.setContents_name("contents11");
-						formsForReset2.setck_form("ck_form11");
-						formsForReset2.setList_seq("2");
-						forms_service.resetContents(formsForReset2);
-					}
-					if(firstForm.getSize_text().equals(null)||firstForm.getSize_text().equals("")){
-						Forms formsForReset3 = new Forms();
-						formsForReset3.setForms_seq(forms_seq);
-						formsForReset3.setContents(null);
-						formsForReset3.setContents_name("contents12");
-						formsForReset3.setck_form("ck_form12");
-						formsForReset3.setList_seq("2");
-						forms_service.resetContents(formsForReset3);
-					}
-					if(firstForm.getPerformance_text().equals(null)||firstForm.getPerformance_text().equals("")){
-						Forms formsForReset4 = new Forms();
-						formsForReset4.setForms_seq(forms_seq);
-						formsForReset4.setContents(null);
-						formsForReset4.setContents_name("contents13");
-						formsForReset4.setck_form("ck_form13");
-						formsForReset4.setList_seq("2");
-						forms_service.resetContents(formsForReset4);
-					}
-				*/
 				finalCheck=forms_service.insertContents(forms);
 				if(finalCheck.equals("yes")){
 					msg="임시저장 완료하였습니다.";
+					if(chk_state.equals("1")){
+						resetForm(null, forms_seq, "13", "13", "ck_form13");
+					}else if(chk_state.equals("2")){
+						resetForm(null, forms_seq, "12", "12", "ck_form12");
+					}else if(chk_state.equals("3")){
+						resetForm(null, forms_seq, "11", "11", "ck_form11");
+					}else if(chk_state.equals("4")){
+						resetForm(null, forms_seq, "10", "10", "ck_form10");
+					}
+					
 				}else{
 					msg="실패하였습니다.";
 				}
