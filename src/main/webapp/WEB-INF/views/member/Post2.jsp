@@ -12,9 +12,9 @@
 		if(num==1){
 			window.opener.document.join.address.value = post1+post2;
 		}else if(num==2){
-			window.opener.document.join.company_address.value = post1+post2;
+			window.opener.document.join.company_address.value = post1+" "+post2;
 		}else{
-			window.opener.document.firstForm.makeAddr.value = post1+post2;
+			window.opener.document.firstForm.makeAddr.value = post1+" "+post2;
 		}
 		window.close();
 	}
