@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+String purpose =null;
+if(request.getParameter("purpose")==null||request.getParameter("purpose")==""){
+	purpose = "<b style='color:red'>DB 준비 중입니다.<br>(서류 생성 후 신청서 입력란에서 직접 입력 가능합니다.)</b>";
+}else{
+	purpose = request.getParameter("purpose");
+}
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -54,7 +62,7 @@
 		<tr>
 			<td class="list_table_td"><font color="red">*&nbsp;</font>사용 목적</td>
 			<td class="list_table_td">
-				<%=request.getParameter("purpose")%>
+				<%=purpose%>
 				<input type="hidden" name="purpose" value="<%=request.getParameter("purpose")%>">
 			</td>
 		</tr>
