@@ -119,7 +119,7 @@ public class Account_service_impl implements Account_service{
 		try {
 			int totalPostsQty = 0;
 				totalPostsQty = account_dao.getPaymentQty(info);
-			
+				System.out.println(totalPostsQty);
 			
 			//setting
 			int totalPageQty = ((totalPostsQty-1)/bundlePosts)+1;

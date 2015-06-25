@@ -61,7 +61,7 @@
 		SELECT forms_seq, p_class, div_mid, title, kor_name, eng_name, payment_bank, payment_name, state, payment FROM (SELECT @rownum:=@rownum+1 rn, a.* FROM (SELECT *	FROM (select * from forms T1, (SELECT @rownum := 0) T2 where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} and (payment=2 or payment=3) ORDER BY forms_seq desc)as forms) a)as t3 WHERE t3.rn BETWEEN #{startNum} AND #{endNum}
 	</select>
 	<select id="getPaymentQty" resultType="int" parameterType="Map" >
-		select count(*) from (select * from forms where ${search} LIKE CONCAT('%', #{find}, '%')) as payment
+		select count(*) from (select * from forms where ${search} LIKE CONCAT('%', #{find}, '%') and id1=#{id1} and id2=#{id2} and id3=#{id3} and email1=#{email1} and email2=#{email2} and (payment=3 or payment=2)) as payment 
 	</select>
 	<update id="modifyPaymetPic" parameterType="com.kgmp.mfds.vo.Forms">
 		update forms set payment_pic=#{payment_pic}, payment=3, payment_add_date=DATE_FORMAT(now(),'%Y/%m/%d') where forms_seq=#{forms_seq}
