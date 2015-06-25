@@ -610,25 +610,59 @@ public class AdminController {
 					e.printStackTrace();
 				}
 			//set form e
-			//set member s
-				Member member= new Member();
-				member.setId1(id1);
-				member.setId2(id2);
-				member.setId3(id3);
-				member.setEmail1(email1);
-				member.setEmail2(email2);
-				try{
-					Member memberInfo = member_service.selectMember(member);
-					mav.addObject("memberInfo", memberInfo);
-				}catch(Exception e){
-					e.printStackTrace();
-				}
-			//set member e
 				mav.addObject("forms", forms);
 				mav.setViewName("/admin/member/member_formRead");
 		    }
         return mav;
     }
+	
+	@RequestMapping(value = "/LoadAdminContent.do")
+	public ModelAndView loadAdminContent(@RequestParam("forms_seq") int forms_seq,
+										@RequestParam("num") int num,
+										@RequestParam(value = "contents_name", required = false, defaultValue = "1") String contents_name,
+										@RequestParam(value = "id1", required = false, defaultValue = "1") String id1,
+				      					@RequestParam(value = "id2", required = false, defaultValue = "1") String id2,
+				      					@RequestParam(value = "id3", required = false, defaultValue = "1") String id3,
+				      					@RequestParam(value = "email1", required = false, defaultValue = "1") String email1,
+				      					@RequestParam(value = "email2", required = false, defaultValue = "1") String email2,
+										HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		StringBuffer modelFileName = null;
+		StringBuffer pakingFileNmae = null;
+		Forms forms = null;
+		Forms formsInfo = new Forms();
+		FirstForm firstForm = null;
+		formsInfo.setContents_name(contents_name);
+		formsInfo.setForms_seq(forms_seq);
+		//setting parameter s
+		Member member= new Member();
+		member.setId1(id1);
+		member.setId2(id2);
+		member.setId3(id3);
+		member.setEmail1(email1);
+		member.setEmail2(email2);
+		//setting parameter e
+		try{
+			Member memberInfo = member_service.selectMember(member);
+			mav.addObject("memberInfo", memberInfo);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		try{
+			forms=forms_service.getFormsRead(formsInfo);
+			firstForm = forms_service.getFirstForm(forms_seq);
+			modelFileName=forms_service.inseretTxt(firstForm.getModelFileName(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
+			pakingFileNmae=forms_service.inseretTxt(firstForm.getPakingFileNmae(), "/usr/local/tomcat/webapps/ROOT/resources/img/upload/notice");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		mav.addObject("pakingFileNmae", pakingFileNmae.toString());
+		mav.addObject("modelFileName", modelFileName.toString());
+		mav.addObject("firstForm", firstForm);
+		mav.addObject("forms", forms);
+		mav.setViewName("/forms/LoadContent");
+	    return mav;
+	}
 	
 	@RequestMapping(value = "/AdminHelp.do")
     public ModelAndView help(

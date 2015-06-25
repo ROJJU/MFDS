@@ -24,6 +24,11 @@
 				<input type="hidden" value="${forms.forms_seq}" id="forms_seq" name="forms_seq">
 				<input type="hidden" id="contents" name="contents">
 				<input type="hidden" name="add_date" value="${forms.add_date}">
+				<input type="hidden" id="id1" value="<%=request.getParameter("id1")%>">
+				<input type="hidden" id="id2" value="<%=request.getParameter("id2")%>">
+				<input type="hidden" id="id3" value="<%=request.getParameter("id3")%>">
+				<input type="hidden" id="email1" value="<%=request.getParameter("email1")%>">
+				<input type="hidden" id="email2" value="<%=request.getParameter("email2")%>">
 				<b id="form"></b>
 			</form>
 		</div><br><br>
@@ -74,7 +79,7 @@
 	  }
 	//hwp > form
 	
-		  function HwpIt(forms_seq, state){
+	  function HwpIt(forms_seq, state){
 		 if(window.chrome){
 			 alert('변환 되는 한글 파일은 기본 스타일만 적용 됩니다.');
 			 window.open('/resources/inc/forms_popup/Forms_HWP.jsp?forms_seq='+forms_seq+'&state='+state,'processDown','width=755 height=726 scrollbars=yes');
@@ -85,6 +90,12 @@
 	  }
 		  
 		  var forms_seq2=document.getElementById("forms_seq").value;
+		  var id1=document.getElementById("id1").value;
+		  var id2=document.getElementById("id2").value;
+		  var id3=document.getElementById("id3").value;
+		  var email1=document.getElementById("email1").value;
+		  var email2=document.getElementById("email2").value;
+		  
 			requestHello('1', 'contents1');
 			 
 			window.onload=function check(){
@@ -93,7 +104,7 @@
 				}
 			 }
 			function requestHello(num, contents) {
-			    URL = "/LoadContent.do?forms_seq="+forms_seq2+"&num="+num+"&contents_name="+contents;
+			    URL = "/LoadAdminContent.do?forms_seq="+forms_seq2+"&num="+num+"&contents_name="+contents+"&id1="+id1+"&id2="+id2+"&id3="+id3+"&email1="+email1+"&email2="+email2;
 			    xhr = getXMLHttpRequest();//XMLHttpRequest 객체 얻기
 			    xhr.open("GET", URL, true);//연결
 			    xhr.onreadystatechange = function () {//콜백 함수  등록
