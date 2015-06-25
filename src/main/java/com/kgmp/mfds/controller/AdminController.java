@@ -594,6 +594,7 @@ public class AdminController {
 			mav.addObject("list", forms);
 			mav.setViewName("/admin/member/member_formList");
 		}else if(page_seq.equals("17")){
+			//set form s
 				Forms forms = null;
 				Forms formsInfo= new Forms();
 				formsInfo.setId1(id1);
@@ -602,11 +603,27 @@ public class AdminController {
 				formsInfo.setEmail1(email1);
 				formsInfo.setEmail2(email2);
 				formsInfo.setForms_seq(forms_seq);
+				
 				try{
 					forms=forms_service.getUserForms(formsInfo);
 				}catch(Exception e){
 					e.printStackTrace();
 				}
+			//set form e
+			//set member s
+				Member member= new Member();
+				member.setId1(id1);
+				member.setId2(id2);
+				member.setId3(id3);
+				member.setEmail1(email1);
+				member.setEmail2(email2);
+				try{
+					Member memberInfo = member_service.selectMember(member);
+					mav.addObject("memberInfo", memberInfo);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			//set member e
 				mav.addObject("forms", forms);
 				mav.setViewName("/admin/member/member_formRead");
 		    }

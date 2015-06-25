@@ -96,7 +96,7 @@ public class MyAcountController{
 			String id3=(String)session.getAttribute("id3");
 			String email1=(String)session.getAttribute("email1");
 			String email2=(String)session.getAttribute("email2");
-			Map<String, Object> pageAll = account_service.selectPayment(currentPage, "/MyPage?page_seq=3", search, find, id1, id2, id3, email1, email2);
+			Map<String, Object> pageAll = account_service.selectPayment(currentPage, "/MyPage.do?page_seq=3", search, find, id1, id2, id3, email1, email2);
 			//setting data
 			String pageList = (String)pageAll.get("pageList");
 			@SuppressWarnings("unchecked")

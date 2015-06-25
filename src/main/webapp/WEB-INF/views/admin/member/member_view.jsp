@@ -48,7 +48,7 @@
 				</tr>
 			<c:if test="${list=='[]'}">
 				<tr>
-					<td colspan="5" align="center" style="color:red;">게시물이 없습니다.</td>
+					<td colspan="10" align="center" style="color:red;">가입된 고객이 없습니다.</td>
 				</tr>
 			</c:if>
 			<c:forEach var="a" items="${list}">

@@ -113,7 +113,7 @@ public class Account_service_impl implements Account_service{
 		info.put("email1", email1);
 		info.put("email2", email2);
 		
-		int bundlePage = 5;
+		int bundlePage = 10;
 		int bundlePosts = 15;
 
 		try {
