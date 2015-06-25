@@ -4,7 +4,8 @@
 	z-index: 5;
 	position: relative;
 	top:5px;
-	left: 50%;
+	left: 50.5%;
+	padding-bottom:20px;
 }
 .promptumenu_window{
 	cursor: move;

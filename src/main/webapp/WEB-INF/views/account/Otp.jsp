@@ -10,7 +10,7 @@
 			<br>전송된 이메일 주소 : <b>[${email1}@${email2}]</b></font></td></tr>
 		<tr>
 			<td align="center">
-				<input type="text" name="otp1" id="otp1" value="${num}">
+				<input type="text" name="otp1" id="otp1">
 				<input type="hidden" value="${num}" name="otp2" id="otp2">
 				<input type="image" src="/resources/img/main/input_button.png" onclick="CheckOtp(<%=request.getParameter("forms_seq")%>)" width="50px;">
 				<input type="image" src="/resources/img/btn/cancel_button.png" onclick="goUrl('/MyPage.do?page_seq=6');" width="50px;">
