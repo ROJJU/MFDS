@@ -37,6 +37,7 @@ location.href="/";
 		function goUrl(url){
 			location.href=url;
 		}
+		
 		function bookmark(title, url){
 			 if(window.external && ('AddFavorite' in window.external))
 			   {
@@ -106,11 +107,11 @@ location.href="/";
         $('.wrap').fixedMenu();
     });
 	
-	//뒤로가기 무효화
+	/*/뒤로가기 무효화
 	history.pushState(null, null, location.href);
 	window.onpopstate = function(event) {
 		history.go(1);
-	};
+	};*/
 </script>
 <link rel="shortcut icon" href="/resources/favicon.ico"/>
 <link rel="icon" href="/resources/img/ico/STED-Favicon(144px)_v7.png" sizes="144x144">

@@ -78,7 +78,6 @@
 								<table id="button" width="1064px">
 									<tr height=100px;>
 										<td align="center"><br>
-										<input type="image" src="/resources/img/member/print_btn.png" onClick="javascript:printIt(document.getElementById('certificate').innerHTML)" width="60px">&nbsp;
 										<input type="image" src="/resources/img/btn/down_button.png"  width="60px"  onclick="javaScript:document.down.submit();">
 										<br><br>
 										</td>

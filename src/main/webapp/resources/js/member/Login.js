@@ -82,7 +82,7 @@ if (notice_getCookie( "pop2" ) != "done" ) {
 //경로 확인
 window.onload=function checkuAgent(){
 	var uAgent = navigator.userAgent.toLowerCase();
-	var mobilePhones = new Array('iphone','ipod','android','blackberry','windows ce','nokia','webos','opera mini','sonyericsson','opera mobi','iemobile','mobile');
+	var mobilePhones = new Array('iphone','ipod','android','blackberry','windows ce','nokia','webos','opera mini','sonyericsson','opera mobi','iemobile','mobile', 'safari');
 	for(var i=0;i<mobilePhones.length;i++)
 	if(uAgent.indexOf(mobilePhones[i]) != -1){
 	var mobile_chk = '1';
