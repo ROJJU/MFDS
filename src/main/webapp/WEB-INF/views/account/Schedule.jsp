@@ -35,6 +35,7 @@ int a=-1;
    
     int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
     int week = cal.get(Calendar.DAY_OF_WEEK);
+    
    String find="";
    String search="title";
     if(request.getParameter("find")!=null){
@@ -491,6 +492,7 @@ int a=-1;
 			function popupPerson(writer, year, month, day){
 				   window.open("SchedulePerson.jsp?year="+year+"&month="+month+"&day="+day+"&writer="+encodeURI(encodeURIComponent(writer)),"schePerson","width=520px, height=280px, left=0px, top=0px, location=no, toolbar=no, realzable=no scrollbars = yes");
 				}
+			
 			function goToday(nowyear, nowmonth)
 			{
 				alert('오늘 ['+nowyear+'년'+nowmonth+'월]로 이동 됩니다.');
