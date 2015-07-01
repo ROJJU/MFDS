@@ -27,6 +27,13 @@
 			}
 		}
 	}
+	
+	String condition =request.getParameter("msg");
+	if(condition==null){
+		condition ="STED에 방문해 주셔서 감사합니다.";
+	}else{
+		condition =request.getParameter("msg");
+	}
 %>
 <html>
 <head>
@@ -87,9 +94,13 @@
 			</div>
 		</div>
 <!--login btn-->
+		<div style="width:100%; text-align:center; color:red; height:40px; ">
+		<%=condition%>
+		</div>
 	    <div class="btn-sign" id="login-btn">
 			<a href="#login-box" class="login-window">Log in / Sign In</a>
-	    </div><br><br><br>
+	    </div><br><br>
+	    <br>
 	     <!--LOGIN FOR PHONE  -->
 		<div id="loginBoxPhone">
 			<form method="post" class="signin" action="/LoginProc.do" name="loginPhone">
