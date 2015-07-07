@@ -198,6 +198,7 @@ public class MemberController {
 		try{
 			Member memberInfo = member_service.getPassword(member);
 			pw1 = memberInfo.getPw_1();
+			mav.addObject("msg", "해당 정보로 등록된 비밀번호가 입력하신 E-MAIL로 전송되었습니다.");
 			try{
 				MimeMessage message = mailSender.createMimeMessage();
 				 String from="K-GMP@K-GMP.com";
@@ -215,6 +216,7 @@ public class MemberController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
+			mav.addObject("msg", "정보가 잘못 되었습니다.");
 		}
         return mav;
     }

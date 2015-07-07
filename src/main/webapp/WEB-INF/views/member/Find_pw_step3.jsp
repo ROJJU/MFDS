@@ -29,7 +29,7 @@
 								</tr>
 								<tr>
 									<td width="100%" align="center">
-										<img src="/resources/img/common/coution.gif">&nbsp;<b style="color:red;">해당 정보로 등록된 비밀번호가 입력하신 E-MAIL로 전송되었습니다.</b>
+										<img src="/resources/img/common/coution.gif">&nbsp;<b style="color:red;">${msg}</b>
 									</td>
 								</tr>
 							</table>
