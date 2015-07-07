@@ -88,7 +88,14 @@
 				</table><br>
 				<center>
 					<input type="image" src="/resources/img/btn/kr_back_btn.png" onclick="javaScript:history.go(-1)">
-					<input type="image" src="/resources/img/btn/kr_next_btn.png" onclick="formCheck();">
+					<c:choose>
+						<c:when test="${resultList=='[]'}">
+							<input type="image" src="/resources/img/btn/kr_next_btn.png" onclick="alert('등록된 ID가 없습니다.');">
+						</c:when>
+						<c:otherwise>
+							<input type="image" src="/resources/img/btn/kr_next_btn.png" onclick="formCheck();">
+						</c:otherwise>
+					</c:choose>
 				</center><br>
 				<hr>
 				<jsp:include page="/resources/inc/Member_footer.jsp"/>

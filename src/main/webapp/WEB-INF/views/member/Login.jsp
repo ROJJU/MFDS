@@ -127,7 +127,7 @@
                			<tr>
                				<td>
                				<h3 class="phoneLogin">PASSWORD2</h3>
-							<input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit();" class="phoneText">
+							<input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit('2');" class="phoneText">
 							<br>
 							</td>	               			
                			</tr>
@@ -169,7 +169,7 @@
 	                
 	                <label class="password">
 	                <span>PASSWORD</span>
-	                <input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit();"><br>
+	                <input id="password" name="pw_1" type="password" placeholder="PASSWORD" style="width:200px;" onKeyDown="inputSendit('1');"><br>
 	                </label>
 		                <table>
 		                	<tr>

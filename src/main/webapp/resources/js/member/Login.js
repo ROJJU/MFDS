@@ -50,9 +50,13 @@ function formCheck(num){
 	}
 }
 
-function inputSendit(){
+function inputSendit(num){
 	if(event.keyCode==13) { 
-		document.login.submit();
+		if(num==1){
+			document.login.submit();				
+		}else{
+			document.loginPhone.submit();
+		}
 	}
 }
 
